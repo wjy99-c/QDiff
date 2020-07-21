@@ -8,16 +8,16 @@ import transitionBackend.Pyquilbackend as Pb
 import re
 
 
-def generate(address: str, name: str):
+def generate(address: str, name: str, iteration: int):
     simup = re.compile("Simulator_pyquil")
     qcp = re.compile("QC_pyquil")
     classcp = re.compile("Classical_pyquil")
 
     if simup.match(name):
-        return Pb.simulator_to_qc(address), Pb.simulator_to_state_vector(address)
+        return Pb.simulator_to_qc(address,iteration), Pb.simulator_to_state_vector(address,iteration)
 
     if qcp.match(name):
-        return Pb.qc_to_simulator(address), Pb.qc_to_state_vector(address)
+        return Pb.qc_to_simulator(address,iteration), Pb.qc_to_state_vector(address,iteration)
 
     if classcp.match(name):
-        return Pb.state_vector_to_qc(address), Pb.state_vector_to_qc(address)
+        return Pb.state_vector_to_qc(address,iteration), Pb.state_vector_to_qc(address,iteration)

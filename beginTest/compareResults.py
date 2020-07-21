@@ -53,15 +53,19 @@ def compare(path:str, thershold:float):
             if answer == -1:
                 answer = 0
 
-    wrong_out = []
-    max_diff = thershold
+    wrong_out = []      # wrong_out -> the output that is more than threshold could bare
+    max_diff = 0        # max k_S score
     print("Right answer:"+candidates[answer])
+    max_diff_name = ''
+
     for i in range(0, len(data)):
         k = ks_score(np.asarray(data[i]),candidates[answer])
+        if k > max_diff:
+            max_diff = k
+            max_diff_name = name[i]
         if k > thershold:
             print(name[i]+":"+str(data[i]))
             wrong_out.append(name[i])
-            if k > max_diff:
-                max_diff = k
 
-    return wrong_out, max_diff
+
+    return wrong_out, max_diff, max_diff_name
