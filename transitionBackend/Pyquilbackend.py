@@ -39,6 +39,7 @@ def qc_to_simulator (address:str, iteration:int):
             writefile.write("   qc = get_qc(9q-qvm)")
         else:
             writefile.write(line+"\n")
+        line = readfile.readline()
 
     writefile.close()
     readfile.close()
@@ -59,6 +60,7 @@ def qc_to_state_vector (address:str, iteration:int):
             writefile.write("   state = conn.wavefunction(prog)")
         else:
             writefile.write(line+"\n")
+        line = readfile.readline()
 
     writefile.close()
     readfile.close()
@@ -78,6 +80,7 @@ def state_vector_to_qc (address:str, iteration:int):
         else:
             if pattern1.match(line) is None:
                 writefile.write(line+"\n")
+        line = readfile.readline()
 
     writefile.close()
     readfile.close()
@@ -92,6 +95,7 @@ def state_vector_to_simulator (address:str, iteration:int):
         m = pattern.match(line)
         if m is None:
             writefile.write(line+"\n")
+        line = readfile.readline()
 
     writefile.close()
     readfile.close()
@@ -109,6 +113,7 @@ def simulator_to_state_vector (address:str, iteration:int):
             writefile.write("   state = conn.wavefunction(prog)")
         else:
             writefile.write(line+"\n")
+        line = readfile.readline()
 
     writefile.close()
     readfile.close()

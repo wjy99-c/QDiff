@@ -49,6 +49,7 @@ def qc_to_simulator (address:str, iteration:int):
         else:
             if (pattern1.match(line) is None) and (pattern3.match(line) is None):
                 writefile.write(line+"\n")
+        line = readfile.readline()
 
     writefile.close()
     readfile.close()
@@ -71,6 +72,7 @@ def qc_to_state_vector (address:str, iteration:int):
         else:
             if (pattern1.match(line) is None) and (pattern3.match(line) is None):
                 writefile.write(line+"\n")
+        line = readfile.readline()
 
     writefile.close()
     readfile.close()
@@ -90,6 +92,7 @@ def state_vector_to_qc (address:str, iteration:int):
             writefile.write("   results = sampler.run(circuit, repetitions=circuit_sample_count)")
         else:
             writefile.write(line+"\n")
+        line = readfile.readline()
 
     writefile.close()
     readfile.close()
@@ -108,6 +111,7 @@ def state_vector_to_simulator (address:str, iteration:int):
             writefile.write("   result = simulator.run(circuit, repetitions=circuit_sample_count)")
         else:
             writefile.write(line+"\n")
+        line = readfile.readline()
 
     writefile.close()
     readfile.close()
@@ -127,6 +131,7 @@ def simulator_to_state_vector (address:str, iteration:int):
         else:
             if pattern1.match(line) is None:
                 writefile.write(line+"\n")
+        line = readfile.readline()
 
     writefile.close()
     readfile.close()
