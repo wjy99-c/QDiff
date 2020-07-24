@@ -6,9 +6,9 @@
 
 import re
 import random
-import mutation.MutateCirq as MC
-import mutation.MutateQiskit as MQ
-import mutation.MutatePyQuil as MP
+import mutation.MutateCirq_equal as MC
+import mutation.MutateQiskit_equal as MQ
+import mutation.MutatePyQuil_equal as MP
 
 
 def mutate_cirq(address_in:str, address_out:str):

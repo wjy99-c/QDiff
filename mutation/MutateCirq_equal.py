@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 6/26/20 10:09 PM
 # @Author  : lingxiangxiang
-# @File    : MutateCirq.py
+# @File    : MutateCirq_equal.py
 
 import numpy as np
 import re

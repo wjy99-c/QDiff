@@ -80,12 +80,12 @@ if __name__ == '__main__':
 
         j = 0
 
-        mutate.mutate(text_list.index(seed))
+        mutate.mutate(text_list.index(seed), i)
 
         while j < 10:
 
             j = j + 1
-            equalM.mutate(text_list.index(seed))
+            equalM.mutate(text_list.index(seed), i)
             diff = backend_loop(seed, i)
 
             if diff > max_now:

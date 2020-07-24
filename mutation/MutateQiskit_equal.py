@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 7/6/20 3:12 PM
 # @Author  : lingxiangxiang
-# @File    : MutateQiskit.py
+# @File    : MutateQiskit_equal.py
 
 import re
 '''TODO: undone'''

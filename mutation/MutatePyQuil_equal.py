@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 6/29/20 2:59 PM
 # @Author  : lingxiangxiang
-# @File    : MutatePyQuil.py
+# @File    : MutatePyQuil_equal.py
 
 import re
 
