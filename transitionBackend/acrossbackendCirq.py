@@ -8,9 +8,9 @@ import transitionBackend.Cirqbackend as Cb
 import re
 
 def generate(address:str, name:str, iteration:int):
-    simup = re.compile("Simulator_cirq")
-    qcp = re.compile("QC_cirq")
-    classcp = re.compile("Classical_cirq")
+    simup = re.compile("startCirq")
+    qcp = re.compile("startCirq_QC")
+    classcp = re.compile("startCirq_Class")
 
     if simup.match(name):
         return Cb.simulator_to_qc(address, iteration), Cb.simulator_to_state_vector(address, iteration)

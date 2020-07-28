@@ -9,15 +9,15 @@ import re
 
 
 def generate(address: str, name: str, iteration: int):
-    simup = re.compile("Simulator_qiskit")
-    qcp = re.compile("QC_qiskit")
-    classcp = re.compile("Classical_qiskit")
-
-    if simup.match(name):
-        return Qb.simulator_to_qc(address,iteration), Qb.simulator_to_state_vector(address,iteration)
+    simup = re.compile("startQiskit")
+    qcp = re.compile("startQiskit_QC")
+    classcp = re.compile("startQiskit_Class")
 
     if qcp.match(name):
         return Qb.qc_to_simulator(address,iteration), Qb.qc_to_state_vector(address,iteration)
 
     if classcp.match(name):
         return Qb.state_vector_to_qc(address,iteration), Qb.state_vector_to_qc(address,iteration)
+
+    if simup.match(name):
+        return Qb.simulator_to_qc(address,iteration), Qb.simulator_to_state_vector(address,iteration)

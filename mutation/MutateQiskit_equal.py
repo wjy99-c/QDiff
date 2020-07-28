@@ -5,7 +5,6 @@
 # @File    : MutateQiskit_equal.py
 
 import re
-'''TODO: undone'''
 
 def cnot_to_hczh(codeline:str):
     if re.search('prog.cnot', codeline) is not None:

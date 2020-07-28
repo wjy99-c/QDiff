@@ -9,9 +9,9 @@ import re
 
 
 def generate(address: str, name: str, iteration: int):
-    simup = re.compile("Simulator_pyquil")
-    qcp = re.compile("QC_pyquil")
-    classcp = re.compile("Classical_pyquil")
+    simup = re.compile("startPyquil")
+    qcp = re.compile("startPyquil_QC")
+    classcp = re.compile("startPyquil_Class")
 
     if simup.match(name):
         return Pb.simulator_to_qc(address,iteration), Pb.simulator_to_state_vector(address,iteration)

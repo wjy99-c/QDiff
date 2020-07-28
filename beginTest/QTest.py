@@ -3,9 +3,9 @@
 # @Time    : 7/13/20 11:15 AM
 # @Author  : lingxiangxiang
 # @File    : QTest.py
-import beginTest.acrossbackendCirq as acC
-import beginTest.acrossbackendPyquil as acP
-import beginTest.acrossbackendQiskit as acQ
+import transitionBackend.acrossbackendCirq as acC
+import transitionBackend.acrossbackendPyquil as acP
+import transitionBackend.acrossbackendQiskit as acQ
 import os
 import beginTest.compareResults as cR
 import mutation.Mutation_diff as mutate

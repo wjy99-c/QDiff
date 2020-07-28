@@ -10,6 +10,14 @@ import mutation.MutateCirq_equal as MC
 import mutation.MutateQiskit_equal as MQ
 import mutation.MutatePyQuil_equal as MP
 
+def generate_same_cirq():
+    return 0
+
+def generate_same_pyquil():
+    return 0
+
+def generate_same_qiskit():
+    return 0
 
 def mutate_cirq(address_in:str, address_out:str):
 

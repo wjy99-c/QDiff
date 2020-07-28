@@ -10,7 +10,7 @@ def simulator_to_qc (address:str, iteration:int):
 
     pattern = re.compile("qasm_simulator")
 
-    writefile = open("QC_qiskit"+str(iteration)+".py","w")
+    writefile = open("startQiskit_QC"+str(iteration)+".py","w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -35,7 +35,7 @@ def qc_to_simulator (address:str, iteration:int):
     pattern2 = re.compile("backend = ")
     pattern3 = re.compile("not x[.]configuration")
 
-    writefile = open("Simulator_qiskit"+str(iteration)+".py","w")
+    writefile = open("startQiskit"+str(iteration)+".py","w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -57,7 +57,7 @@ def qc_to_state_vector (address:str, iteration:int):
     pattern2 = re.compile("backend = ")
     pattern3 = re.compile("not x[.]configuration")
 
-    writefile= open("Classical_qiskit"+str(iteration)+".py", "w")
+    writefile= open("startQiskit_Class"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -76,7 +76,7 @@ def qc_to_state_vector (address:str, iteration:int):
 def state_vector_to_qc (address:str, iteration:int):
     pattern = re.compile("statevector_simulator")
 
-    writefile= open("QC_qiskit"+str(iteration)+".py", "w")
+    writefile= open("startQiskit_QC"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -99,7 +99,7 @@ def state_vector_to_qc (address:str, iteration:int):
 def state_vector_to_simulator (address:str, iteration:int):
     pattern = re.compile("statevector_simulator")
 
-    writefile= open("Simulator_qiskit"+str(iteration)+".py", "w")
+    writefile= open("startQiskit"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -117,7 +117,7 @@ def state_vector_to_simulator (address:str, iteration:int):
 def simulator_to_state_vector (address:str, iteration:int):
     pattern = re.compile("qasm_simulator")
 
-    writefile= open("Classical_qiskit"+str(iteration)+".py", "w")
+    writefile= open("startQiskit_Class"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:

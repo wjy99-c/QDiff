@@ -10,7 +10,7 @@ def simulator_to_qc (address:str, iteration:int):
 
     pattern = re.compile(r"-qvm\"")
 
-    writefile = open("QC_pyquil"+str(iteration)+".py","w")
+    writefile = open("startPyquil_QC"+str(iteration)+".py","w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -23,14 +23,14 @@ def simulator_to_qc (address:str, iteration:int):
 
     writefile.close()
     readfile.close()
-    return "QC_pyquil"+str(iteration)+".py"
+    return "startPyquil_QC"+str(iteration)+".py"
 
 
 def qc_to_simulator (address:str, iteration:int):
 
     pattern = re.compile(r"\"Aspen-0")
 
-    writefile = open("Simulator_pyquil"+str(iteration)+".py","w")
+    writefile = open("startPyquil"+str(iteration)+".py","w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -43,14 +43,14 @@ def qc_to_simulator (address:str, iteration:int):
 
     writefile.close()
     readfile.close()
-    return "Simulator_pyquil"+str(iteration)+".py"
+    return "startPyquil"+str(iteration)+".py"
 
 
 def qc_to_state_vector (address:str, iteration:int):
 
     pattern = re.compile(r"\"Aspen-0")
 
-    writefile= open("Classical_pyquil"+str(iteration)+".py", "w")
+    writefile= open("startPyquil_Class"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -64,13 +64,13 @@ def qc_to_state_vector (address:str, iteration:int):
 
     writefile.close()
     readfile.close()
-    return "Classical_pyquil"+str(iteration)+".py"
+    return "startPyquil_Class"+str(iteration)+".py"
 
 def state_vector_to_qc (address:str, iteration:int):
     pattern1 = re.compile(".wavefunction\(")
     pattern2 = re.compile(r"-qvm\"")
 
-    writefile= open("QC_pyquil"+str(iteration)+".py", "w")
+    writefile= open("startPyquil_QC"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -88,7 +88,7 @@ def state_vector_to_qc (address:str, iteration:int):
 def state_vector_to_simulator (address:str, iteration:int):
     pattern = re.compile(".wavefunction\(")
 
-    writefile= open("Simulator_pyquil"+str(iteration)+".py", "w")
+    writefile= open("startPyquil"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -103,7 +103,7 @@ def state_vector_to_simulator (address:str, iteration:int):
 def simulator_to_state_vector (address:str, iteration:int):
     pattern = re.compile(r"-qvm\"")
 
-    writefile= open("Classical_pyquil"+str(iteration)+".py", "w")
+    writefile= open("startPyquil_Class"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:

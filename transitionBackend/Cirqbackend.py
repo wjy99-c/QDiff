@@ -6,14 +6,13 @@
 
 import re
 
-'''TODO: Undone, just copy qiskit'''
 
 def simulator_to_qc (address:str, iteration:int):
 
     pattern = re.compile("cirq.Simulator()")
     pattern1 = re.compile("simulator.run")
 
-    writefile = open("QC_cirq"+str(iteration)+".py","w")
+    writefile = open("startCirq_QC"+str(iteration)+".py","w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -29,7 +28,7 @@ def simulator_to_qc (address:str, iteration:int):
 
     writefile.close()
     readfile.close()
-    return "QC_cirq"+str(iteration)+".py"
+    return "startCirq_QC"+str(iteration)+".py"
 
 
 def qc_to_simulator (address:str, iteration:int):
@@ -38,7 +37,7 @@ def qc_to_simulator (address:str, iteration:int):
     pattern2 = re.compile("engine.sampler")
     pattern3 = re.compile("sampler.run")
 
-    writefile = open("Simulator_cirq"+str(iteration)+".py","w")
+    writefile = open("startCirq"+str(iteration)+".py","w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -53,7 +52,8 @@ def qc_to_simulator (address:str, iteration:int):
 
     writefile.close()
     readfile.close()
-    return "Simulator_cirq"+str(iteration)+".py"
+
+    return "startCirq"+str(iteration)+".py"
 
 
 def qc_to_state_vector (address:str, iteration:int):
@@ -62,7 +62,7 @@ def qc_to_state_vector (address:str, iteration:int):
     pattern2 = re.compile("engine.sampler")
     pattern3 = re.compile("sampler.run")
 
-    writefile= open("Classical_cirq"+str(iteration)+".py", "w")
+    writefile= open("startCirq_Class"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -76,12 +76,12 @@ def qc_to_state_vector (address:str, iteration:int):
 
     writefile.close()
     readfile.close()
-    return "Classical_cirq"+str(iteration)+".py"
+    return "startCirq_Class"+str(iteration)+".py"
 
 def state_vector_to_qc (address:str, iteration:int):
     pattern = re.compile("cirq.final_wavefunction")
 
-    writefile= open("QC_cirq"+str(iteration)+".py", "w")
+    writefile= open("startCirq_QC"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -96,12 +96,12 @@ def state_vector_to_qc (address:str, iteration:int):
 
     writefile.close()
     readfile.close()
-    return "QC_cirq"+str(iteration)+".py"
+    return "startCirq_QC"+str(iteration)+".py"
 
 def state_vector_to_simulator (address:str, iteration:int):
     pattern = re.compile("cirq.final_wavefunction")
 
-    writefile= open("Simulator_cirq"+str(iteration)+".py", "w")
+    writefile= open("startCirq"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -115,13 +115,13 @@ def state_vector_to_simulator (address:str, iteration:int):
 
     writefile.close()
     readfile.close()
-    return "Simulator_cirq"+str(iteration)+".py"
+    return "startCirq"+str(iteration)+".py"
 
 def simulator_to_state_vector (address:str, iteration:int):
     pattern = re.compile("cirq.Simulator()")
     pattern1 = re.compile("simulator.run")
 
-    writefile= open("Classical_cirq"+str(iteration)+".py", "w")
+    writefile= open("startCirq_Class"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -135,7 +135,7 @@ def simulator_to_state_vector (address:str, iteration:int):
 
     writefile.close()
     readfile.close()
-    return "Classical_cirq"+str(iteration)+".py"
+    return "startCirq_Class"+str(iteration)+".py"
 
 
 
