@@ -6,66 +6,69 @@
 
 import random
 import re
-
-def generate_same_cirq():
-    return 0
-
-def generate_same_pyquil():
-    return 0
-
-def generate_same_qiskit():
-    return 0
+gate_set_cirq = ["cirq.H","cirq.X","cirq.Y","cirq.Z","cirq.CNOT"]
+gate_set_qiskit = ["prog.h","prog.x","prog.y","prog.z","prog.cnot"]
+gate_set_pyquil = ["prog.inst(H(", "prog.inst(X(", "prog.inst(Y(", "prog.inst(Z(", "prog.inst(CNOT("]
 
 
-def mutate_cirq_add(tab:str, qubit_number:int):
+def generate_same_add(operation_number:int, address_in:str, address_out:str, add:str, total_number:int):
 
-    gate_set = ["cirq.H","cirq.X","cirq.Y","cirq.Z","cirq.CNOT"]
+    operation_find = re.compile("# number="+str(operation_number))
+    total_operation_find = re.compile("# total_number=")
+
+    readfile = open(address_in)
+    writefile = open(address_out,"w")
+    line = readfile.readline()
+
+    while line:
+
+        if operation_find.search(line):
+            writefile.write(add+"\n")
+
+        if total_operation_find.search(line):
+            writefile.write("# total_number"+str(total_number)+"\n")
+        else:
+            writefile.write(line+"\n")
+
+def generate_same_delete(operation_number:int, address_in:str, address_out:str):
+
+    operation_find = re.compile("# number=" + str(operation_number))
+
+    readfile = open(address_in)
+    writefile = open(address_out,"w")
+    line = readfile.readline()
+
+    while line:
+
+        if operation_find.search(line):
+            writefile.write("")
+        else:
+            writefile.write(line+"\n")
+
+
+def mutate_add(tab:str, qubit_number:int, total_number:int):
+
 
     operation = random.randint(5)
 
     if  operation!=4:
-        line = tab+"c.append("+gate_set[operation]+".on(input_qubit["+random.randint(qubit_number)+"]))"
+        qiskit_line = tab+gate_set_qiskit[operation]+"(input_qubit["+random.randint(qubit_number)+"])) # number="+str(total_number)
+        pyquil_line = tab + gate_set_pyquil[operation] + random.randint(qubit_number) + ")) # number=" + str(total_number)
+        cirq_line = tab + "c.append(" + gate_set_cirq[operation] + ".on(input_qubit[" + random.randint(
+            qubit_number) + "])) # number=" + str(total_number)
+
     else:
         i = random.randint(qubit_number)
         j = random.randint(qubit_number)
         while j==i:
             j = random.randint(qubit_number)
-        line = tab+"c.append(cirq.CNOT.on(input_qubit["+i+"],input_qubit["+j+"]))"
-    return line
+        qiskit_line = tab+"prog.cnot.on(input_qubit["+i+"],input_qubit["+j+"]) # number="+str(total_number)
+        pyquil_line = tab + "prog.inst(CNOT(" + i + "," + j + ")) # number=" + str(total_number)
+        cirq_line = tab + "c.append(cirq.CNOT.on(input_qubit[" + i + "],input_qubit[" + j + "])) # number=" + str(
+            total_number)
 
-def mutate_qiskit_add(tab:str, qubit_number:int):
+    return cirq_line, qiskit_line, pyquil_line
 
-    gate_set = ["prog.h","prog.x","prog.y","prog.z","prog.cnot"]
-
-    operation = random.randint(5)
-
-    if  operation!=4:
-        line = tab+gate_set[operation]+"(input_qubit["+random.randint(qubit_number)+"]))"
-    else:
-        i = random.randint(qubit_number)
-        j = random.randint(qubit_number)
-        while j==i:
-            j = random.randint(qubit_number)
-        line = tab+"prog.cnot.on(input_qubit["+i+"],input_qubit["+j+"])"
-
-    return line
-
-def mutate_pyquil_add(tab:str, qubit_number:int):
-
-    gate_set = ["prog.inst(H(","prog.inst(X(","prog.inst(Y(","prog.inst(Z(","prog.inst(CNOT("]
-
-    operation = random.randint(5)
-
-    if operation!=4:
-        line = tab + gate_set[operation] + random.randint(qubit_number)+"))"
-    else:
-        i = random.randint(qubit_number)
-        j = random.randint(qubit_number)
-        while j==i:
-            j = random.randint(qubit_number)
-        line = tab+"prog.inst(CNOT("+i+","+j+"))"
-
-    return line
 
 def figure_out_tab (line:str):
     i = 0
@@ -75,53 +78,68 @@ def figure_out_tab (line:str):
         i = i + 1
     return tab
 
-def mutate_start (address_in : str, address_out : str, type : str):
+def mutate_start (address_in : str, seed:int, write:int):
+
+    pyquil_address_in = "./benchmark/startPyquil"+ str(seed) + ".py"
+    qiskit_address_in = "./benchmark/startQiskit"+ str(seed) + ".py"
+    cirq_address_in = "./benchmark/startCirq"+ str(seed) + ".py"
 
     readfile = open(address_in)
-    writefile = open(address_out,"w")
-    qubit_number_patter = re.compile("# qubit number = ")
+    qubit_number_patter = re.compile("# qubit number=")
     circuit_patter = re.compile("# circuit begin")
+    operation_id = re.compile("# number=")
+    total_operation_id = re.compile("# total_number=")
     circuit_patter_end = re.compile("# circuit end")
 
     flag = 0
     line = readfile.readline()
-    number = 0
+    change_flag = 0
+    qubit_number = 0
+    total_number = 0
     while line:
-        if qubit_number_patter.match(line):
-            number = 1 # fix it
+        if qubit_number_patter.search(line):
+            qubit_number = int(line[qubit_number_patter.search(line).span()[1]:len(line)-1])
 
-        if circuit_patter.match(line):
+        if total_operation_id.search(line):
+            total_number = int(line[total_operation_id.search(line).span()[1]:len(line)-1])+1
+
+        if circuit_patter.search(line):
             flag = 1
 
-        if circuit_patter_end.match(line):
+        if operation_id.search(line):
+            flag = int(line[operation_id.search(line).span()[1]:len(line)-1])
+
+        if circuit_patter_end.search(line):
             flag = 0
 
-        if flag == 1:
+        if flag > 0 & change_flag!=1:
             tab = figure_out_tab(line)
             i = random.randint(5)
-            if i > 3:
-                if number == 0:
+            if i == 3:
+                if qubit_number == 0:
                     print("Error: No Qubit")
                     return 0
-                if type == "cirq":
-                    writefile.write(mutate_cirq_add(tab,number)+"\n")
-                elif type == "qiskit":
-                    writefile.write(mutate_qiskit_add(tab,number)+"\n")
-                else:
-                    writefile.write(mutate_pyquil_add(tab, number) + "\n")
+                cirq_line, qiskit_line, pyquil_line = mutate_add(tab, qubit_number, total_number)
+                generate_same_add(flag,pyquil_address_in, "./benchmark/startPyquil"+str(write)+".py", pyquil_line, total_number)
+                generate_same_add(flag,qiskit_address_in, "./benchmark/startQiskit"+str(write)+".py", qiskit_line, total_number)
+                generate_same_add(flag,cirq_address_in,"./benchmark/startCirq"+str(write)+".py",cirq_line, total_number)
+
+                break
 
             if i == 2:
-                line = ""
+                generate_same_delete(flag,pyquil_address_in,"./benchmark/startPyquil"+str(write)+".py")
+                generate_same_delete(flag,qiskit_address_in,"./benchmark/startQiskit"+str(write)+".py")
+                generate_same_delete(flag,cirq_address_in,"./benchmark/startCirq"+str(write)+".py")
 
-        writefile.write(line+"\n")
+                break
+
         line = readfile.readline()
 
 
 
 
-def mutate(seed : int, write : int):
+def mutate(seed : int, write : int, platform : str):
 
-    mutate_start("./benchmark/startCirq" + str(seed) + ".py", "./benchmark/startCirq" + str(write) + ".py", "cirq")
-    mutate_start("./benchmark/startQiskit" + str(seed) + ".py", "./benchmark/startQiskit" + str(write) + ".py", "qiskit")
-    mutate_start("./benchmark/startPyquil" + str(seed) + ".py", "./benchmark/startPyquil" + str(write) + ".py", "pyquil")
+
+    mutate_start("./benchmark/start"+platform+ str(seed) + ".py", seed, write)
 

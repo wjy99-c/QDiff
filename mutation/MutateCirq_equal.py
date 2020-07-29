@@ -7,31 +7,39 @@
 import numpy as np
 import re
 
-def cnot_to_hczh(codeline:str):
+def cnot_to_hczh(codeline:str, number:int):
     if re.search('cirq.CNOT', codeline) is not None:
-        return re.sub(r'cirq.CNOT[(](.*)[,]', "cirq.H(", codeline), re.sub('cirq.CNOT', "cirq.CZ", codeline), re.sub(r'cirq.CNOT[(](.*)[,]',"cirq.H(", codeline)
+        return re.sub(r'cirq.CNOT[(](.*)[,]', "cirq.H(", codeline)+"# number="+str(number)+"\n"+ \
+               re.sub('cirq.CNOT', "cirq.CZ", codeline)+"# number="+str(number+1)+"\n"+ \
+               re.sub(r'cirq.CNOT[(](.*)[,]',"cirq.H(", codeline)+"# number="+str(number+2)
     else:
         raise Exception('No CNOT gate for Swap transformation')
 
 def order_change(codeline1:str, codeline2:str):
     return codeline2, codeline1
 
-def swap_to_cnot(codeline:str):
+def swap_to_cnot(codeline:str,number:int):
     if re.search('cirq.SWAP', codeline) is not None:
-        return re.sub('cirq.SWAP', 'cirq.CNOT', codeline), re.sub('cirq.SWAP', "cirq.CNOT", codeline), re.sub('cirq.SWAP',"cirq.CNOT", codeline)
+        return re.sub('cirq.SWAP', 'cirq.CNOT', codeline)+"# number="+str(number)+"\n"+\
+               re.sub('cirq.SWAP', "cirq.CNOT", codeline)+"# number="+str(number+1)+"\n"+\
+               re.sub('cirq.SWAP',"cirq.CNOT", codeline)+"# number="+str(number+2)
     else:
         raise Exception('No Swap gate for Swap transformation')
 
-def x_to_cnotxcnot(codeline:str):
+def x_to_cnotxcnot(codeline:str,number:int):
     if re.search('cirq.X', codeline) is not None:
-        return re.sub(r'cirq.X[(]', "cirq.CNOT(target_qubit,", codeline), codeline, re.sub(r'cirq.X[(]', "cirq.CNOT(target_qubit,", codeline)
+        return re.sub(r'cirq.X[(]', "cirq.CNOT(target_qubit,", codeline)+"# number="+str(number)+"\n"+\
+               codeline+"# number="+str(number+1)+"\n"+\
+               re.sub(r'cirq.X[(]', "cirq.CNOT(target_qubit,", codeline)+"# number="+str(number+2)+"\n"
     else:
         raise Exception('No X gate for X transformation')
 
-def z_to_cnotzcnot(codeline:str):
+def z_to_cnotzcnot(codeline:str,number:int):
     if re.search('cirq.Z', codeline) is not None:
         codeline1 = re.sub(r'cirq.Z', "cirq.CNOT", codeline)
-        return re.sub(r'[)]', ",control_qubit)", codeline1,count=1), codeline, re.sub(r'[)]', ",control_qubit)", codeline1,count=1)
+        return re.sub(r'[)]', ",control_qubit)", codeline1,count=1)+"# number="+str(number)+"\n"+\
+               codeline+"# number="+str(number+1)+"\n"+\
+               re.sub(r'[)]', ",control_qubit)", codeline1,count=1)+"# number="+str(number+2)+"\n"
     else:
         raise Exception('No Z gate for Z transformation')
 

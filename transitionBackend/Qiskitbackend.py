@@ -14,7 +14,7 @@ def simulator_to_qc (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
     while line:
-        m = pattern.match(line)
+        m = pattern.search(line)
         if m is not None:
             writefile.write("   IBMQ.load_account()\n")
             writefile.write("   provider = IBMQ.get_provider(hub='ibm-q')\n")
@@ -39,11 +39,11 @@ def qc_to_simulator (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
     while line:
-        m = pattern2.match(line)
+        m = pattern2.search(line)
         if m is not None:
             writefile.write("   backend = Aer.get_backend('qasm_simulator')\n")
         else:
-            if (pattern1.match(line) is None) and (pattern3.match(line) is None):
+            if (pattern1.search(line) is None) and (pattern3.search(line) is None):
                 writefile.write(line+"\n")
         line = readfile.readline()
 
@@ -61,11 +61,11 @@ def qc_to_state_vector (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
     while line:
-        m = pattern2.match(line)
+        m = pattern2.search(line)
         if m is None:
             writefile.write("   backend = Aer.get_backend('qasm_simulator')\n")
         else:
-            if (pattern1.match(line) is None) and (pattern3.match(line) is None):
+            if (pattern1.search(line) is None) and (pattern3.search(line) is None):
                 writefile.write(line+"\n")
         line = readfile.readline()
 
@@ -80,7 +80,7 @@ def state_vector_to_qc (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
     while line:
-        m = pattern.match(line)
+        m = pattern.search(line)
         if m is not None:
             writefile.write("   IBMQ.load_account()\n")
             writefile.write("   provider = IBMQ.get_provider(hub='ibm-q')\n")
@@ -103,7 +103,7 @@ def state_vector_to_simulator (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
     while line:
-        m = pattern.match(line)
+        m = pattern.search(line)
         if m is not None:
             writefile.write("   backend = Aer.get_backend('qasm_simulator')\n")
         else:
@@ -121,7 +121,7 @@ def simulator_to_state_vector (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
     while line:
-        m = pattern.match(line)
+        m = pattern.search(line)
         if m is not None:
             writefile.write("   backend = Aer.get_backend('statevector_simulator')\n")
         else:

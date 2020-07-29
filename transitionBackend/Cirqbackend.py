@@ -16,13 +16,13 @@ def simulator_to_qc (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
     while line:
-        m = pattern.match(line)
+        m = pattern.search(line)
         if m is not None:
             writefile.write("   engine = cg.Engine(project_id=YOUR_PROJECT_ID, proto_version=cg.ProtoVersion.V2)")
             writefile.write("   sampler = engine.sampler(processor_id='PROCESSOR_ID', gate_set=cg.SYC_GATESET)")
             writefile.write("   results = sampler.run(circuit, repetitions=circuit_sample_count)")
         else:
-            if pattern1.match(line) is None:
+            if pattern1.search(line) is None:
                 writefile.write(line+"\n")
         line = readfile.readline()
 
@@ -41,12 +41,12 @@ def qc_to_simulator (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
     while line:
-        m = pattern2.match(line)
+        m = pattern2.search(line)
         if m is not None:
             writefile.write("   simulator = cirq.Simulator()")
             writefile.write("   result = simulator.run(circuit, repetitions=circuit_sample_count)")
         else:
-            if (pattern1.match(line) is None) and (pattern3.match(line) is None):
+            if (pattern1.search(line) is None) and (pattern3.search(line) is None):
                 writefile.write(line+"\n")
         line = readfile.readline()
 
@@ -66,11 +66,11 @@ def qc_to_state_vector (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
     while line:
-        m = pattern2.match(line)
+        m = pattern2.search(line)
         if m is None:
             writefile.write("   result = cirq.final_wavefunction(circuit)")
         else:
-            if (pattern1.match(line) is None) and (pattern3.match(line) is None):
+            if (pattern1.search(line) is None) and (pattern3.search(line) is None):
                 writefile.write(line+"\n")
         line = readfile.readline()
 
@@ -85,7 +85,7 @@ def state_vector_to_qc (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
     while line:
-        m = pattern.match(line)
+        m = pattern.search(line)
         if m is not None:
             writefile.write("   engine = cg.Engine(project_id=YOUR_PROJECT_ID, proto_version=cg.ProtoVersion.V2)")
             writefile.write("   sampler = engine.sampler(processor_id='PROCESSOR_ID', gate_set=cg.SYC_GATESET)")
@@ -105,7 +105,7 @@ def state_vector_to_simulator (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
     while line:
-        m = pattern.match(line)
+        m = pattern.search(line)
         if m is not None:
             writefile.write("   simulator = cirq.Simulator()")
             writefile.write("   result = simulator.run(circuit, repetitions=circuit_sample_count)")
@@ -125,11 +125,11 @@ def simulator_to_state_vector (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
     while line:
-        m = pattern.match(line)
+        m = pattern.search(line)
         if m is not None:
             writefile.write("   result = cirq.final_wavefunction(circuit)")
         else:
-            if pattern1.match(line) is None:
+            if pattern1.search(line) is None:
                 writefile.write(line+"\n")
         line = readfile.readline()
 

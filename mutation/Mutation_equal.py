@@ -10,6 +10,8 @@ import mutation.MutateCirq_equal as MC
 import mutation.MutateQiskit_equal as MQ
 import mutation.MutatePyQuil_equal as MP
 
+"TODO equal transformation"
+
 def generate_same_cirq():
     return 0
 
@@ -24,6 +26,7 @@ def mutate_cirq(address_in:str, address_out:str):
     readfile = open(address_in)
     writefile = open(address_out,"w")
 
+    total_operation_id = re.compile("# total_number=")
     patterns = {}
 
     patterns["CNOT"] = re.compile("cirq.CNOT")
@@ -33,21 +36,24 @@ def mutate_cirq(address_in:str, address_out:str):
     patterns["Z"] = re.compile("cirq.Z")
 
     line = readfile.readline()
+    total_number=0
     while line:
         write_line = line
+        if total_operation_id.search(line):
+            total_number = int(line[total_operation_id.search(line).span()[1]:len(line)-1])
         for pattern in patterns:
-            if patterns[pattern].match(line):
+            if patterns[pattern].search(line):
                 if random.randint(5)>2 :
                     if pattern == "CNOT":
-                        write_line = MC.cnot_to_hczh(line)
+                        write_line = MC.cnot_to_hczh(line,total_number)
                     if pattern == "H":
-                        write_line = MC.cnot_to_hczh(line)
+                        write_line = MC.cnot_to_hczh(line,total_number)
                     if pattern == "SWAP":
-                        write_line = MC.swap_to_cnot(line)
+                        write_line = MC.swap_to_cnot(line,total_number)
                     if pattern == "Z":
-                        write_line = MC.z_to_cnotzcnot(line)
+                        write_line = MC.z_to_cnotzcnot(line,total_number)
                     if pattern == "X":
-                        write_line = MC.x_to_cnotxcnot(line)
+                        write_line = MC.x_to_cnotxcnot(line,total_number)
         writefile.write(write_line+"\n")
 
         line = readfile.readline()
@@ -59,6 +65,7 @@ def mutate_qiskit(address_in:str, address_out:str):
 
     readfile = open(address_in)
     writefile = open(address_out,"w")
+    total_operation_id = re.compile("# total_number=")
 
     patterns = {}
 
@@ -69,21 +76,26 @@ def mutate_qiskit(address_in:str, address_out:str):
     patterns["Z"] = re.compile("prog.z")
 
     line = readfile.readline()
+    total_number=0
     while line:
         write_line = line
+
+        if total_operation_id.search(line):
+            total_number = int(line[total_operation_id.search(line).span()[1]:len(line)-1])
+
         for pattern in patterns:
-            if patterns[pattern].match(line):
+            if patterns[pattern].search(line):
                 if random.randint(5)>2 :
                     if pattern == "CNOT":
-                        write_line = MQ.cnot_to_hczh(line)
+                        write_line = MQ.cnot_to_hczh(line,total_number)
                     if pattern == "H":
-                        write_line = MQ.cnot_to_hczh(line)
+                        write_line = MQ.cnot_to_hczh(line, total_number)
                     if pattern == "SWAP":
-                        write_line = MQ.swap_to_cnot(line)
+                        write_line = MQ.swap_to_cnot(line, total_number)
                     if pattern == "Z":
-                        write_line = MQ.z_to_cnotzcnot(line)
+                        write_line = MQ.z_to_cnotzcnot(line, total_number)
                     if pattern == "X":
-                        write_line = MQ.x_to_cnotxcnot(line)
+                        write_line = MQ.x_to_cnotxcnot(line, total_number)
         writefile.write(write_line+"\n")
 
         line = readfile.readline()
@@ -96,6 +108,8 @@ def mutate_pyquil(address_in:str, address_out:str):
 
     readfile = open(address_in)
     writefile = open(address_out,"w")
+    total_operation_id = re.compile("# total_number=")
+    total_number = 0
 
     patterns = {}
 
@@ -108,19 +122,23 @@ def mutate_pyquil(address_in:str, address_out:str):
     line = readfile.readline()
     while line:
         write_line = line
+
+        if total_operation_id.search(line):
+            total_number = int(line[total_operation_id.search(line).span()[1]:len(line)-1])
+
         for pattern in patterns:
-            if patterns[pattern].match(line):
+            if patterns[pattern].search(line):
                 if random.randint(5)>2 :
                     if pattern == "CNOT":
-                        write_line = MP.cnot_to_hczh(line)
+                        write_line = MP.cnot_to_hczh(line,total_number)
                     if pattern == "H":
-                        write_line = MP.cnot_to_hczh(line)
+                        write_line = MP.cnot_to_hczh(line,total_number)
                     if pattern == "SWAP":
-                        write_line = MP.swap_to_cnot(line)
+                        write_line = MP.swap_to_cnot(line,total_number)
                     if pattern == "Z":
-                        write_line = MP.z_to_cnotzcnot(line)
+                        write_line = MP.z_to_cnotzcnot(line,total_number)
                     if pattern == "X":
-                        write_line = MP.x_to_cnotxcnot(line)
+                        write_line = MP.x_to_cnotxcnot(line,total_number)
         writefile.write(write_line+"\n")
 
         line = readfile.readline()

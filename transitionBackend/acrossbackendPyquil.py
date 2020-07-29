@@ -13,11 +13,11 @@ def generate(address: str, name: str, iteration: int):
     qcp = re.compile("startPyquil_QC")
     classcp = re.compile("startPyquil_Class")
 
-    if simup.match(name):
+    if simup.search(name):
         return Pb.simulator_to_qc(address,iteration), Pb.simulator_to_state_vector(address,iteration)
 
-    if qcp.match(name):
+    if qcp.search(name):
         return Pb.qc_to_simulator(address,iteration), Pb.qc_to_state_vector(address,iteration)
 
-    if classcp.match(name):
+    if classcp.search(name):
         return Pb.state_vector_to_qc(address,iteration), Pb.state_vector_to_qc(address,iteration)

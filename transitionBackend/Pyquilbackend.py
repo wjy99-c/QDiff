@@ -14,7 +14,7 @@ def simulator_to_qc (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
     while line:
-        m = pattern.match(line)
+        m = pattern.search(line)
         if m is not None:
             writefile.write("   qc = get_qc(\"Aspen-0\")")
         else:
@@ -34,7 +34,7 @@ def qc_to_simulator (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
     while line:
-        m = pattern.match(line)
+        m = pattern.search(line)
         if m is not None:
             writefile.write("   qc = get_qc(9q-qvm)")
         else:
@@ -54,7 +54,7 @@ def qc_to_state_vector (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
     while line:
-        m = pattern.match(line)
+        m = pattern.search(line)
         if m is None:
             writefile.write("   qc = get_qc(9q-qvm)")
             writefile.write("   state = conn.wavefunction(prog)")
@@ -74,11 +74,11 @@ def state_vector_to_qc (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
     while line:
-        m = pattern2.match(line)
+        m = pattern2.search(line)
         if m is not None:
             writefile.write("   qc = get_qc(\"Aspen-0\")")
         else:
-            if pattern1.match(line) is None:
+            if pattern1.search(line) is None:
                 writefile.write(line+"\n")
         line = readfile.readline()
 
@@ -92,7 +92,7 @@ def state_vector_to_simulator (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
     while line:
-        m = pattern.match(line)
+        m = pattern.search(line)
         if m is None:
             writefile.write(line+"\n")
         line = readfile.readline()
@@ -107,7 +107,7 @@ def simulator_to_state_vector (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
     while line:
-        m = pattern.match(line)
+        m = pattern.search(line)
         if m is not None:
             writefile.write(line+"\n")
             writefile.write("   state = conn.wavefunction(prog)")
