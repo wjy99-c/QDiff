@@ -120,6 +120,7 @@ def mutate_start (address_in : str, seed:int, write:int):
                     print("Error: No Qubit")
                     return 0
                 cirq_line, qiskit_line, pyquil_line = mutate_add(tab, qubit_number, total_number)
+                readfile.close()
                 generate_same_add(flag,pyquil_address_in, "./benchmark/startPyquil"+str(write)+".py", pyquil_line, total_number)
                 generate_same_add(flag,qiskit_address_in, "./benchmark/startQiskit"+str(write)+".py", qiskit_line, total_number)
                 generate_same_add(flag,cirq_address_in,"./benchmark/startCirq"+str(write)+".py",cirq_line, total_number)
@@ -127,6 +128,7 @@ def mutate_start (address_in : str, seed:int, write:int):
                 break
 
             if i == 2:
+                readfile.close()
                 generate_same_delete(flag,pyquil_address_in,"./benchmark/startPyquil"+str(write)+".py")
                 generate_same_delete(flag,qiskit_address_in,"./benchmark/startQiskit"+str(write)+".py")
                 generate_same_delete(flag,cirq_address_in,"./benchmark/startCirq"+str(write)+".py")

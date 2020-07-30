@@ -12,21 +12,68 @@ import mutation.MutatePyQuil_equal as MP
 
 "TODO equal transformation"
 
-def generate_same_cirq():
-    return 0
+def generate_same(operation_number:int, address_in:str, address_out:str, total_number:int, pattern:str, platform:str):
 
-def generate_same_pyquil():
-    return 0
-
-def generate_same_qiskit():
-    return 0
-
-def mutate_cirq(address_in:str, address_out:str):
+    operation_find = re.compile("# number="+str(operation_number))
+    total_operation_find = re.compile("# total_number=")
 
     readfile = open(address_in)
     writefile = open(address_out,"w")
+    line = readfile.readline()
+
+    while line:
+
+        write_line=line
+        if operation_find.search(line):
+            if platform=="Qiskit":
+                if pattern == "CNOT":
+                    write_line = MQ.cnot_to_hczh(line, total_number)
+                if pattern == "H":
+                    write_line = MQ.cnot_to_hczh(line, total_number)
+                if pattern == "SWAP":
+                    write_line = MQ.swap_to_cnot(line, total_number)
+                if pattern == "Z":
+                    write_line = MQ.z_to_cnotzcnot(line, total_number)
+                if pattern == "X":
+                    write_line = MQ.x_to_cnotxcnot(line, total_number)
+            elif platform=="Cirq":
+                if pattern == "CNOT":
+                    write_line = MC.cnot_to_hczh(line, total_number)
+                if pattern == "H":
+                    write_line = MC.cnot_to_hczh(line, total_number)
+                if pattern == "SWAP":
+                    write_line = MC.swap_to_cnot(line, total_number)
+                if pattern == "Z":
+                    write_line = MC.z_to_cnotzcnot(line, total_number)
+                if pattern == "X":
+                    write_line = MC.x_to_cnotxcnot(line, total_number)
+            else:
+                if pattern == "CNOT":
+                    write_line = MP.cnot_to_hczh(line, total_number)
+                if pattern == "H":
+                    write_line = MP.cnot_to_hczh(line, total_number)
+                if pattern == "SWAP":
+                    write_line = MP.swap_to_cnot(line, total_number)
+                if pattern == "Z":
+                    write_line = MP.z_to_cnotzcnot(line, total_number)
+                if pattern == "X":
+                    write_line = MP.x_to_cnotxcnot(line, total_number)
+
+            writefile.write(write_line)
+
+        if total_operation_find.search(line):
+            writefile.write("# total_number"+str(total_number+2)+"\n") #update total operation number
+        else:
+            writefile.write(line+"\n")
+
+
+
+def mutate_main(seed:int, write:int):
+
+    readfile = open("")
 
     total_operation_id = re.compile("# total_number=")
+    operation_id = re.compile("# number=")
     patterns = {}
 
     patterns["CNOT"] = re.compile("cirq.CNOT")
@@ -37,119 +84,41 @@ def mutate_cirq(address_in:str, address_out:str):
 
     line = readfile.readline()
     total_number=0
+    flag=0
+
+    cirq_address_in = "./benchmark/startCirq"+str(seed)+".py"
+    pyquil_address_in = "./benchmark/startPyquil"+ str(seed) + ".py"
+    qiskit_address_in = "./benchmark/startQiskit"+ str(seed) + ".py"
+
+    cirq_address_out = "./benchmark/startCirq"+str(write)+".py"
+    pyquil_address_out = "./benchmark/startPyquil"+ str(write) + ".py"
+    qiskit_address_out = "./benchmark/startQiskit"+ str(write) + ".py"
     while line:
-        write_line = line
-        if total_operation_id.search(line):
-            total_number = int(line[total_operation_id.search(line).span()[1]:len(line)-1])
-        for pattern in patterns:
-            if patterns[pattern].search(line):
-                if random.randint(5)>2 :
-                    if pattern == "CNOT":
-                        write_line = MC.cnot_to_hczh(line,total_number)
-                    if pattern == "H":
-                        write_line = MC.cnot_to_hczh(line,total_number)
-                    if pattern == "SWAP":
-                        write_line = MC.swap_to_cnot(line,total_number)
-                    if pattern == "Z":
-                        write_line = MC.z_to_cnotzcnot(line,total_number)
-                    if pattern == "X":
-                        write_line = MC.x_to_cnotxcnot(line,total_number)
-        writefile.write(write_line+"\n")
-
-        line = readfile.readline()
-
-    writefile.close()
-    readfile.close()
-
-def mutate_qiskit(address_in:str, address_out:str):
-
-    readfile = open(address_in)
-    writefile = open(address_out,"w")
-    total_operation_id = re.compile("# total_number=")
-
-    patterns = {}
-
-    patterns["CNOT"] = re.compile("prog.CNOT")
-    patterns["H"] = re.compile("prog.h")
-    patterns["X"] = re.compile("prog.x")
-    patterns["SWAP"] = re.compile("prog.swap")
-    patterns["Z"] = re.compile("prog.z")
-
-    line = readfile.readline()
-    total_number=0
-    while line:
-        write_line = line
 
         if total_operation_id.search(line):
             total_number = int(line[total_operation_id.search(line).span()[1]:len(line)-1])
 
-        for pattern in patterns:
-            if patterns[pattern].search(line):
-                if random.randint(5)>2 :
-                    if pattern == "CNOT":
-                        write_line = MQ.cnot_to_hczh(line,total_number)
-                    if pattern == "H":
-                        write_line = MQ.cnot_to_hczh(line, total_number)
-                    if pattern == "SWAP":
-                        write_line = MQ.swap_to_cnot(line, total_number)
-                    if pattern == "Z":
-                        write_line = MQ.z_to_cnotzcnot(line, total_number)
-                    if pattern == "X":
-                        write_line = MQ.x_to_cnotxcnot(line, total_number)
-        writefile.write(write_line+"\n")
-
-        line = readfile.readline()
-
-    writefile.close()
-    readfile.close()
-
-
-def mutate_pyquil(address_in:str, address_out:str):
-
-    readfile = open(address_in)
-    writefile = open(address_out,"w")
-    total_operation_id = re.compile("# total_number=")
-    total_number = 0
-
-    patterns = {}
-
-    patterns["CNOT"] = re.compile("CNOT")
-    patterns["H"] = re.compile("H")
-    patterns["X"] = re.compile("X")
-    patterns["SWAP"] = re.compile("SWAP")
-    patterns["Z"] = re.compile("Z")
-
-    line = readfile.readline()
-    while line:
-        write_line = line
-
-        if total_operation_id.search(line):
-            total_number = int(line[total_operation_id.search(line).span()[1]:len(line)-1])
+        if operation_id.search(line):
+            flag = int(line[operation_id.search(line).span()[1]:len(line)-1])
 
         for pattern in patterns:
             if patterns[pattern].search(line):
-                if random.randint(5)>2 :
-                    if pattern == "CNOT":
-                        write_line = MP.cnot_to_hczh(line,total_number)
-                    if pattern == "H":
-                        write_line = MP.cnot_to_hczh(line,total_number)
-                    if pattern == "SWAP":
-                        write_line = MP.swap_to_cnot(line,total_number)
-                    if pattern == "Z":
-                        write_line = MP.z_to_cnotzcnot(line,total_number)
-                    if pattern == "X":
-                        write_line = MP.x_to_cnotxcnot(line,total_number)
-        writefile.write(write_line+"\n")
+                if random.randint(5)>3 :
+
+                    readfile.close()
+                    generate_same(flag, cirq_address_in, cirq_address_out, total_number, pattern, "Cirq")
+                    generate_same(flag, pyquil_address_in, pyquil_address_out, total_number, pattern, "Pyquil")
+                    generate_same(flag, qiskit_address_in, qiskit_address_out, total_number, pattern, "Qiskit")
+                    break
 
         line = readfile.readline()
 
-    writefile.close()
     readfile.close()
 
 def mutate(seed : int, write : int):
 
-    mutate_cirq("./benchmark/startCirq"+str(seed)+".py", "./benchmark/startCirq"+str(write)+".py")
+    mutate_main(seed, write)
 
-    mutate_pyquil("./benchmark/startPyquil"+str(seed)+".py", "./benchmark/startPyquil"+str(write)+".py")
+#("./benchmark/startPyquil"+str(seed)+".py", "./benchmark/startPyquil"+str(write)+".py")
 
-    mutate_qiskit("./benchmark/startQiskit"+str(seed)+".py", "./benchmark/startQiskit"+str(write)+".py")
+    #mutate_qiskit("./benchmark/startQiskit"+str(seed)+".py", "./benchmark/startQiskit"+str(write)+".py")
