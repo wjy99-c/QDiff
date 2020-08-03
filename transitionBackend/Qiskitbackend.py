@@ -10,7 +10,7 @@ def simulator_to_qc (address:str, iteration:int):
 
     pattern = re.compile("qasm_simulator")
 
-    writefile = open("startQiskit_QC"+str(iteration)+".py","w")
+    writefile = open("../benchmark/startQiskit_QC"+str(iteration)+".py","w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -27,7 +27,7 @@ def simulator_to_qc (address:str, iteration:int):
 
     writefile.close()
     readfile.close()
-
+    return "startQiskit_QC"+str(iteration)+".py"
 
 def qc_to_simulator (address:str, iteration:int):
 
@@ -35,7 +35,7 @@ def qc_to_simulator (address:str, iteration:int):
     pattern2 = re.compile("backend = ")
     pattern3 = re.compile("not x[.]configuration")
 
-    writefile = open("startQiskit"+str(iteration)+".py","w")
+    writefile = open("../benchmark/startQiskit"+str(iteration)+".py","w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -49,6 +49,7 @@ def qc_to_simulator (address:str, iteration:int):
 
     writefile.close()
     readfile.close()
+    return "startQiskit"+str(iteration)+".py"
 
 
 def qc_to_state_vector (address:str, iteration:int):
@@ -57,7 +58,7 @@ def qc_to_state_vector (address:str, iteration:int):
     pattern2 = re.compile("backend = ")
     pattern3 = re.compile("not x[.]configuration")
 
-    writefile= open("startQiskit_Class"+str(iteration)+".py", "w")
+    writefile= open("../benchmark/startQiskit_Class"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -71,12 +72,13 @@ def qc_to_state_vector (address:str, iteration:int):
 
     writefile.close()
     readfile.close()
+    return "startQiskit_Class"+str(iteration)+".py"
 
 
 def state_vector_to_qc (address:str, iteration:int):
     pattern = re.compile("statevector_simulator")
 
-    writefile= open("startQiskit_QC"+str(iteration)+".py", "w")
+    writefile= open("../benchmark/startQiskit_QC"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -94,12 +96,13 @@ def state_vector_to_qc (address:str, iteration:int):
 
     writefile.close()
     readfile.close()
+    return "startQiskit_QC"+str(iteration)+".py"
 
 
 def state_vector_to_simulator (address:str, iteration:int):
     pattern = re.compile("statevector_simulator")
 
-    writefile= open("startQiskit"+str(iteration)+".py", "w")
+    writefile= open("../benchmark/startQiskit"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -112,12 +115,13 @@ def state_vector_to_simulator (address:str, iteration:int):
 
     writefile.close()
     readfile.close()
+    return "startQiskit"+str(iteration)+".py"
 
 
 def simulator_to_state_vector (address:str, iteration:int):
     pattern = re.compile("qasm_simulator")
 
-    writefile= open("startQiskit_Class"+str(iteration)+".py", "w")
+    writefile= open("../benchmark/startQiskit_Class"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -130,5 +134,5 @@ def simulator_to_state_vector (address:str, iteration:int):
 
     writefile.close()
     readfile.close()
-
+    return "startQiskit_Class"+str(iteration)+".py"
 

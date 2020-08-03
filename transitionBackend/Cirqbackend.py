@@ -12,7 +12,7 @@ def simulator_to_qc (address:str, iteration:int):
     pattern = re.compile("cirq.Simulator()")
     pattern1 = re.compile("simulator.run")
 
-    writefile = open("startCirq_QC"+str(iteration)+".py","w")
+    writefile = open("../benchmark/startCirq_QC"+str(iteration)+".py","w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -37,7 +37,7 @@ def qc_to_simulator (address:str, iteration:int):
     pattern2 = re.compile("engine.sampler")
     pattern3 = re.compile("sampler.run")
 
-    writefile = open("startCirq"+str(iteration)+".py","w")
+    writefile = open("../benchmark/startCirq"+str(iteration)+".py","w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -62,7 +62,7 @@ def qc_to_state_vector (address:str, iteration:int):
     pattern2 = re.compile("engine.sampler")
     pattern3 = re.compile("sampler.run")
 
-    writefile= open("startCirq_Class"+str(iteration)+".py", "w")
+    writefile= open("../benchmark/startCirq_Class"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -81,7 +81,7 @@ def qc_to_state_vector (address:str, iteration:int):
 def state_vector_to_qc (address:str, iteration:int):
     pattern = re.compile("cirq.final_wavefunction")
 
-    writefile= open("startCirq_QC"+str(iteration)+".py", "w")
+    writefile= open("../benchmark/startCirq_QC"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -101,7 +101,7 @@ def state_vector_to_qc (address:str, iteration:int):
 def state_vector_to_simulator (address:str, iteration:int):
     pattern = re.compile("cirq.final_wavefunction")
 
-    writefile= open("startCirq"+str(iteration)+".py", "w")
+    writefile= open("../benchmark/startCirq"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -121,7 +121,7 @@ def simulator_to_state_vector (address:str, iteration:int):
     pattern = re.compile("cirq.Simulator()")
     pattern1 = re.compile("simulator.run")
 
-    writefile= open("startCirq_Class"+str(iteration)+".py", "w")
+    writefile= open("../benchmark/startCirq_Class"+str(iteration)+".py", "w")
     readfile = open(address)
     line = readfile.readline()
     while line:

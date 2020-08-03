@@ -143,5 +143,5 @@ def mutate_start (address_in : str, seed:int, write:int):
 def mutate(seed : int, write : int, platform : str):
 
 
-    mutate_start("./benchmark/start"+platform+ str(seed) + ".py", seed, write)
+    mutate_start("../benchmark/start"+platform+str(seed) + ".py", seed, write)
 

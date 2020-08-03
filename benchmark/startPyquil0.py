@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 7/13/20 10:53 AM
+# @Time    : 7/30/20 2:42 PM
 # @Author  : lingxiangxiang
-# @File    : startCirq0.py
+# @File    : startPyquil0.py
 
 # total number=1

@@ -15,47 +15,49 @@ import sys
 
 def backend_loop(seed_num:int, out_num:int):
 
-    cirqP1, cirqP2 = acC.generate(os.getcwd() + "/benchmark", "startCirq" + str(seed_num) + ".py", out_num)
-    pyquilP1, pyquilP2 = acP.generate(os.getcwd() + "/benchmark", "startPyquil" + str(seed_num) + ".py", out_num)
-    qiskitP1, qiskitP2 = acQ.generate(os.getcwd() + "/benchmark", "startQiskit" + str(seed_num) + ".py", out_num)
+    cirqP1, cirqP2 = acC.generate("../benchmark/"+ "startCirq" + str(seed_num) + ".py","startCirq" + str(seed_num) + ".py", out_num)
+    pyquilP1, pyquilP2 = acP.generate("../benchmark/"+ "startPyquil" + str(seed_num) + ".py","startPyquil" + str(seed_num) + ".py", out_num)
+    qiskitP1, qiskitP2 = acQ.generate("../benchmark/"+ "startQiskit" + str(seed_num) + ".py", "startQiskit" + str(seed_num) + ".py",out_num)
 
     try:
-        os.system('./benchmark/' + cirqP1)
+        os.system('python ../benchmark/' + cirqP1)
     except Exception as e:
         print("OS error:" + str(e))
         print("Save document as:" + cirqP1)
 
     try:
-        os.system('./benchmark/' + cirqP2)
+        os.system('python ../benchmark/' + cirqP2)
     except Exception as e:
         print("OS error:" + str(e))
         print("Save document as:" + cirqP2)
 
     try:
-        os.system('./benchmark' + pyquilP1)
+        os.system('python ../benchmark/' + pyquilP1)
     except Exception as e:
         print("OS error:" + str(e))
         print("Save document as:" + pyquilP1)
 
+    print("python ../benchmark/" + pyquilP2)
+
     try:
-        os.system('./benchmark' + pyquilP2)
+        os.system('python ../benchmark/' + pyquilP2)
     except Exception as e:
         print("OS error:" + str(e))
         print("Save document as:" + pyquilP2)
 
     try:
-        os.system('./benchmark' + qiskitP1)
+        os.system('../benchmark/' + qiskitP1)
     except Exception as e:
         print("OS error:" + str(e))
         print("Save document as:" + qiskitP1)
 
     try:
-        os.system('./benchmark' + qiskitP2)
+        os.system('../benchmark' + qiskitP2)
     except Exception as e:
         print("OS error:" + str(e))
         print("Save document as:" + qiskitP2)
 
-    wrong, diff, name = cR.compare("/data", thershold=thershold)
+    wrong, diff, name = cR.compare("../data", thershold=thershold)
 
     if wrong is None:
         return diff
@@ -80,7 +82,7 @@ if __name__ == '__main__':
 
         j = 0
 
-        mutate.mutate(text_list.index(seed), i)
+        mutate.mutate(text_list.index(seed), i,"Cirq")
 
         while j < 10:
 

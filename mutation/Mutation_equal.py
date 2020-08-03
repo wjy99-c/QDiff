@@ -10,7 +10,6 @@ import mutation.MutateCirq_equal as MC
 import mutation.MutateQiskit_equal as MQ
 import mutation.MutatePyQuil_equal as MP
 
-"TODO equal transformation"
 
 def generate_same(operation_number:int, address_in:str, address_out:str, total_number:int, pattern:str, platform:str):
 
@@ -68,9 +67,8 @@ def generate_same(operation_number:int, address_in:str, address_out:str, total_n
 
 
 
-def mutate_main(seed:int, write:int):
+def mutate(seed:int, write:int):
 
-    readfile = open("")
 
     total_operation_id = re.compile("# total_number=")
     operation_id = re.compile("# number=")
@@ -82,17 +80,18 @@ def mutate_main(seed:int, write:int):
     patterns["SWAP"] = re.compile("cirq.SWAP")
     patterns["Z"] = re.compile("cirq.Z")
 
-    line = readfile.readline()
     total_number=0
     flag=0
 
-    cirq_address_in = "./benchmark/startCirq"+str(seed)+".py"
-    pyquil_address_in = "./benchmark/startPyquil"+ str(seed) + ".py"
-    qiskit_address_in = "./benchmark/startQiskit"+ str(seed) + ".py"
+    cirq_address_in = "../benchmark/startCirq"+str(seed)+".py"
+    pyquil_address_in = "../benchmark/startPyquil"+ str(seed) + ".py"
+    qiskit_address_in = "../benchmark/startQiskit"+ str(seed) + ".py"
+    readfile = open(cirq_address_in)
+    line = readfile.readline()
 
-    cirq_address_out = "./benchmark/startCirq"+str(write)+".py"
-    pyquil_address_out = "./benchmark/startPyquil"+ str(write) + ".py"
-    qiskit_address_out = "./benchmark/startQiskit"+ str(write) + ".py"
+    cirq_address_out = "../benchmark/startCirq"+str(write)+".py"
+    pyquil_address_out = "../benchmark/startPyquil"+ str(write) + ".py"
+    qiskit_address_out = "../benchmark/startQiskit"+ str(write) + ".py"
     while line:
 
         if total_operation_id.search(line):
@@ -114,10 +113,6 @@ def mutate_main(seed:int, write:int):
         line = readfile.readline()
 
     readfile.close()
-
-def mutate(seed : int, write : int):
-
-    mutate_main(seed, write)
 
 #("./benchmark/startPyquil"+str(seed)+".py", "./benchmark/startPyquil"+str(write)+".py")
 
