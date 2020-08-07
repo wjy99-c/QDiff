@@ -6,12 +6,14 @@
 import transitionBackend.acrossbackendCirq as acC
 import transitionBackend.acrossbackendPyquil as acP
 import transitionBackend.acrossbackendQiskit as acQ
-import os
-import beginTest.compareResults as cR
+import os,sys
+import compare.compareResults as cR
 import mutation.Mutation_diff as mutate
 import random
 import mutation.Mutation_equal as equalM
-import sys
+import beginTest.check_qubit_number as q_number
+import cirq
+
 
 def backend_loop(seed_num:int, out_num:int):
 
@@ -20,19 +22,19 @@ def backend_loop(seed_num:int, out_num:int):
     qiskitP1, qiskitP2 = acQ.generate("../benchmark/"+ "startQiskit" + str(seed_num) + ".py", "startQiskit" + str(seed_num) + ".py",out_num)
 
     try:
-        os.system('python ../benchmark/' + cirqP1)
+        os.system('python3.7 ../benchmark/' + cirqP1)
     except Exception as e:
         print("OS error:" + str(e))
         print("Save document as:" + cirqP1)
 
     try:
-        os.system('python ../benchmark/' + cirqP2)
+        os.system('python3.7 ../benchmark/' + cirqP2)
     except Exception as e:
         print("OS error:" + str(e))
         print("Save document as:" + cirqP2)
 
     try:
-        os.system('python ../benchmark/' + pyquilP1)
+        os.system('python3.7 ../benchmark/' + pyquilP1)
     except Exception as e:
         print("OS error:" + str(e))
         print("Save document as:" + pyquilP1)
@@ -40,33 +42,37 @@ def backend_loop(seed_num:int, out_num:int):
     print("python ../benchmark/" + pyquilP2)
 
     try:
-        os.system('python ../benchmark/' + pyquilP2)
+        os.system('python3.7 ../benchmark/' + pyquilP2)
     except Exception as e:
         print("OS error:" + str(e))
         print("Save document as:" + pyquilP2)
 
     try:
-        os.system('../benchmark/' + qiskitP1)
+        os.system('python3.7 ../benchmark/' + qiskitP1)
     except Exception as e:
         print("OS error:" + str(e))
         print("Save document as:" + qiskitP1)
 
     try:
-        os.system('../benchmark' + qiskitP2)
+        os.system('python3.7 ../benchmark/' + qiskitP2)
     except Exception as e:
         print("OS error:" + str(e))
         print("Save document as:" + qiskitP2)
 
-    wrong, diff, name = cR.compare("../data", thershold=thershold)
+
+
+    wrong, diff, name = cR.compare("../data", thershold=thershold,
+                                   qubit_number=q_number.check("../benchmark/"+ "startCirq" + str(seed_num) + ".py"))
 
     if wrong is None:
         return diff
     else:
-        print("Wrong Output Detect:" + wrong)
+        print("Wrong Output Detect:", wrong)
         return -1
 
 
 if __name__ == '__main__':
+
     thershold = 0.2
 
 
@@ -88,6 +94,7 @@ if __name__ == '__main__':
 
             j = j + 1
             equalM.mutate(text_list.index(seed), i)
+            print("now we are at:",i)
             diff = backend_loop(seed, i)
 
             if diff > max_now:

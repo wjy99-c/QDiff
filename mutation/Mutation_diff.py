@@ -98,16 +98,16 @@ def mutate_start (address_in : str, seed:int, write:int):
     total_number = 0
     while line:
         if qubit_number_patter.search(line):
-            qubit_number = int(line[qubit_number_patter.search(line).span()[1]:len(line)-1])
+            qubit_number = int(line[qubit_number_patter.search(line).span()[1]:])
 
         if total_operation_id.search(line):
-            total_number = int(line[total_operation_id.search(line).span()[1]:len(line)-1])+1
+            total_number = int(line[total_operation_id.search(line).span()[1]:])+1
 
         if circuit_patter.search(line):
             flag = 1
 
         if operation_id.search(line):
-            flag = int(line[operation_id.search(line).span()[1]:len(line)-1])
+            flag = int(line[operation_id.search(line).span()[1]:])
 
         if circuit_patter_end.search(line):
             flag = 0

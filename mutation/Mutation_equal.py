@@ -19,6 +19,7 @@ def generate_same(operation_number:int, address_in:str, address_out:str, total_n
     readfile = open(address_in)
     writefile = open(address_out,"w")
     line = readfile.readline()
+    print("write at:",address_out)
 
     while line:
 
@@ -65,6 +66,9 @@ def generate_same(operation_number:int, address_in:str, address_out:str, total_n
         else:
             writefile.write(line+"\n")
 
+    writefile.close()
+    readfile.close()
+
 
 
 def mutate(seed:int, write:int):
@@ -102,13 +106,13 @@ def mutate(seed:int, write:int):
 
         for pattern in patterns:
             if patterns[pattern].search(line):
-                if random.randint(5)>3 :
+                if random.randint(0,5)>3 :
 
                     readfile.close()
                     generate_same(flag, cirq_address_in, cirq_address_out, total_number, pattern, "Cirq")
                     generate_same(flag, pyquil_address_in, pyquil_address_out, total_number, pattern, "Pyquil")
                     generate_same(flag, qiskit_address_in, qiskit_address_out, total_number, pattern, "Qiskit")
-                    break
+                    return
 
         line = readfile.readline()
 

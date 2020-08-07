@@ -6,32 +6,53 @@
 
 import numpy as np
 import os
+import re
 
+#TODO: need to fix when no measure = '00000'
 def ks_score(r1, r2):
     r = r1-r2
     max_ks = max(max(r), 0)
     min_ks = min(min(r), 0)
     return (max_ks+min_ks)/r1.sum()
 
-def read_results(filename: str):
+def trans_str(qubit_number:int, number:int):
+
+    results = bin(number)
+    results = results[2:len(results)]
+
+    return results.zfill(qubit_number)+"':"
+
+def trans_cirq(data:str,qubit_number:int):
+    result = re.split(',|}',data)
+    final_data = []
+
+    for i in range(0,pow(2,qubit_number)-1):
+        pattern = re.compile(trans_str(qubit_number,i))
+        for results in result:
+            s = re.search(pattern,results)
+            if s is not None:
+                final_data.append(float(results[s.span()[1]:]))
+
+    return final_data
+
+def read_results(filename: str, qubit_number:int):
     data = []
     with open(filename, 'r') as f:
         line = f.readline()
         while line:
-            eachline = line.split()
-            data = [float(x) for x in eachline]
+            data = trans_cirq(line,qubit_number)
             line = f.readline()
     return data
 
-def compare(path:str, thershold:float):
+def compare(path:str, thershold:float, qubit_number:int):
     data = []
     name = []
 
     files = os.listdir(path)
-
+    print(qubit_number)
     for file in files:
         if not os.path.isdir(file):
-            data.append(read_results(path+"/"+file))
+            data.append(read_results(path+"/"+file, qubit_number))
             name.append(file)
 
     candidates = []
@@ -55,7 +76,7 @@ def compare(path:str, thershold:float):
 
     wrong_out = []      # wrong_out -> the output that is more than threshold could bare
     max_diff = 0        # max k_S score
-    print("Right answer:"+candidates[answer])
+    print("Right answer:",candidates[answer])
     max_diff_name = ''
 
     for i in range(0, len(data)):
