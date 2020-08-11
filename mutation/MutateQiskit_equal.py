@@ -7,10 +7,10 @@
 import re
 
 def cnot_to_hczh(codeline:str,number:int):
-    if re.search('prog.cnot', codeline) is not None:
-        return re.sub('cnot', "h", codeline)+"# number="+str(number)+"\n"+\
-               re.sub('cnot', "cz", codeline)+"# number="+str(number+1)+"\n"+\
-               re.sub('cnot',"h", codeline)+"# number="+str(number+2)+"\n"
+    if re.search('prog.cx', codeline) is not None:
+        return re.sub('cx', "h", codeline)+"# number="+str(number)+"\n"+\
+               re.sub('cx', "cz", codeline)+"# number="+str(number+1)+"\n"+\
+               re.sub('cx',"h", codeline)+"# number="+str(number+2)+"\n"
     else:
         raise Exception('No CNOT gate for Swap transformation')
 
@@ -27,15 +27,15 @@ def swap_to_cnot(codeline:str,number:int):
 
 def x_to_cnotxcnot(codeline:str,number:int):
     if re.search('prog.x', codeline) is not None:
-        return re.sub('x[(]', "cnot(controls[0],", codeline)+"# number="+str(number)+"\n"+\
+        return re.sub('x[(]', "cx(input_qubit[0],", codeline)+"# number="+str(number)+"\n"+\
                codeline+"# number="+str(number+1)+"\n"+\
-               re.sub(r'x[(]', "cnot(controls[0],", codeline)+"# number="+str(number+2)+"\n"
+               re.sub(r'x[(]', "cx(input_qubit[0],", codeline)+"# number="+str(number+2)+"\n"
     else:
         raise Exception('No X gate for X transformation')
 
 def z_to_cnotzcnot(codeline:str,number:int):
     if re.search('prog.z', codeline) is not None:
-        codeline1 = re.sub(r'z', "cnot", codeline)
+        codeline1 = re.sub(r'z', "cx", codeline)
         return re.sub(r'[)]', ",controls[0])", codeline1,count=1)+"# number="+str(number)+"\n"+\
                codeline+"# number="+str(number+1)+"\n"+\
                re.sub(r'[)]', ",controls[0])", codeline1,count=1)+"# number="+str(number+2)+"\n"

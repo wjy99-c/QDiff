@@ -14,7 +14,10 @@ import mutation.MutatePyQuil_equal as MP
 def generate_same(operation_number:int, address_in:str, address_out:str, total_number:int, pattern:str, platform:str):
 
     operation_find = re.compile("# number="+str(operation_number))
-    total_operation_find = re.compile("# total_number=")
+    writefile_address = "../data/"+address_out[13:-3]+".csv"
+    print(writefile_address)
+    writefile_find = re.compile("../data/"+address_in[13:-3]+".csv")
+    total_operation_find = re.compile("# total number=")
 
     readfile = open(address_in)
     writefile = open(address_out,"w")
@@ -24,11 +27,15 @@ def generate_same(operation_number:int, address_in:str, address_out:str, total_n
     while line:
 
         write_line=line
+        if writefile_find.search(line):
+            write_line = re.sub(writefile_find,writefile_address,write_line)
+            writefile.write(write_line)
+            line = readfile.readline()
+            continue
+
         if operation_find.search(line):
             if platform=="Qiskit":
                 if pattern == "CNOT":
-                    write_line = MQ.cnot_to_hczh(line, total_number)
-                if pattern == "H":
                     write_line = MQ.cnot_to_hczh(line, total_number)
                 if pattern == "SWAP":
                     write_line = MQ.swap_to_cnot(line, total_number)
@@ -39,8 +46,6 @@ def generate_same(operation_number:int, address_in:str, address_out:str, total_n
             elif platform=="Cirq":
                 if pattern == "CNOT":
                     write_line = MC.cnot_to_hczh(line, total_number)
-                if pattern == "H":
-                    write_line = MC.cnot_to_hczh(line, total_number)
                 if pattern == "SWAP":
                     write_line = MC.swap_to_cnot(line, total_number)
                 if pattern == "Z":
@@ -50,8 +55,6 @@ def generate_same(operation_number:int, address_in:str, address_out:str, total_n
             else:
                 if pattern == "CNOT":
                     write_line = MP.cnot_to_hczh(line, total_number)
-                if pattern == "H":
-                    write_line = MP.cnot_to_hczh(line, total_number)
                 if pattern == "SWAP":
                     write_line = MP.swap_to_cnot(line, total_number)
                 if pattern == "Z":
@@ -60,11 +63,15 @@ def generate_same(operation_number:int, address_in:str, address_out:str, total_n
                     write_line = MP.x_to_cnotxcnot(line, total_number)
 
             writefile.write(write_line)
+            line = readfile.readline()
+            continue
 
         if total_operation_find.search(line):
             writefile.write("# total_number"+str(total_number+2)+"\n") #update total operation number
         else:
             writefile.write(line+"\n")
+
+        line = readfile.readline()
 
     writefile.close()
     readfile.close()
@@ -74,7 +81,7 @@ def generate_same(operation_number:int, address_in:str, address_out:str, total_n
 def mutate(seed:int, write:int):
 
 
-    total_operation_id = re.compile("# total_number=")
+    total_operation_id = re.compile("# total number=")
     operation_id = re.compile("# number=")
     patterns = {}
 

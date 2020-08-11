@@ -6,7 +6,19 @@
 
 import re
 
+def simulator_to_qc (address:str, iteration:int):
+    writefile = open("../benchmark/startCirq_QC" + str(iteration) + ".py", "w")
+    readfile = open(address)
+    line = readfile.readline()
+    while line:
+        writefile.write(line)
+        line = readfile.readline()
 
+    writefile.close()
+    readfile.close()
+    return "startCirq_QC" + str(iteration) + ".py"
+
+'''
 def simulator_to_qc (address:str, iteration:int):
 
     pattern = re.compile("cirq.Simulator()")
@@ -29,7 +41,7 @@ def simulator_to_qc (address:str, iteration:int):
     writefile.close()
     readfile.close()
     return "startCirq_QC"+str(iteration)+".py"
-
+'''
 
 def qc_to_simulator (address:str, iteration:int):
 
@@ -43,8 +55,8 @@ def qc_to_simulator (address:str, iteration:int):
     while line:
         m = pattern2.search(line)
         if m is not None:
-            writefile.write("   simulator = cirq.Simulator()")
-            writefile.write("   result = simulator.run(circuit, repetitions=circuit_sample_count)")
+            writefile.write("   simulator = cirq.Simulator()\n")
+            writefile.write("   result = simulator.run(circuit, repetitions=circuit_sample_count)\n")
         else:
             if (pattern1.search(line) is None) and (pattern3.search(line) is None):
                 writefile.write(line+"\n")
@@ -68,10 +80,10 @@ def qc_to_state_vector (address:str, iteration:int):
     while line:
         m = pattern2.search(line)
         if m is None:
-            writefile.write("   result = cirq.final_wavefunction(circuit)")
+            writefile.write("   result = cirq.final_wavefunction(circuit)\n")
         else:
             if (pattern1.search(line) is None) and (pattern3.search(line) is None):
-                writefile.write(line+"\n")
+                writefile.write(line)
         line = readfile.readline()
 
     writefile.close()
@@ -107,8 +119,8 @@ def state_vector_to_simulator (address:str, iteration:int):
     while line:
         m = pattern.search(line)
         if m is not None:
-            writefile.write("   simulator = cirq.Simulator()")
-            writefile.write("   result = simulator.run(circuit, repetitions=circuit_sample_count)")
+            writefile.write("   simulator = cirq.Simulator()\n")
+            writefile.write("   result = simulator.run(circuit, repetitions=circuit_sample_count\n)")
         else:
             writefile.write(line+"\n")
         line = readfile.readline()
@@ -127,7 +139,7 @@ def simulator_to_state_vector (address:str, iteration:int):
     while line:
         m = pattern.search(line)
         if m is not None:
-            writefile.write("   result = cirq.final_wavefunction(circuit)")
+            writefile.write("    result = cirq.final_wavefunction(circuit)\n")
         else:
             if pattern1.search(line) is None:
                 writefile.write(line+"\n")

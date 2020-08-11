@@ -7,6 +7,19 @@
 import re
 
 def simulator_to_qc (address:str, iteration:int):
+    writefile = open("../benchmark/startPyquil_QC" + str(iteration) + ".py", "w")
+    readfile = open(address)
+    line = readfile.readline()
+    while line:
+        writefile.write(line)
+        line = readfile.readline()
+
+    writefile.close()
+    readfile.close()
+    return "startPyquil_QC" + str(iteration) + ".py"
+
+'''
+def simulator_to_qc (address:str, iteration:int):
 
     pattern = re.compile(r"-qvm\"")
 
@@ -24,7 +37,7 @@ def simulator_to_qc (address:str, iteration:int):
     writefile.close()
     readfile.close()
     return "startPyquil_QC"+str(iteration)+".py"
-
+'''
 
 def qc_to_simulator (address:str, iteration:int):
 
@@ -56,8 +69,8 @@ def qc_to_state_vector (address:str, iteration:int):
     while line:
         m = pattern.search(line)
         if m is None:
-            writefile.write("   qc = get_qc(9q-qvm)")
-            writefile.write("   state = conn.wavefunction(prog)")
+            writefile.write("   qc = get_qc(9q-qvm)\n")
+            writefile.write("   state = conn.wavefunction(prog)\n")
         else:
             writefile.write(line+"\n")
         line = readfile.readline()

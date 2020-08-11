@@ -77,7 +77,7 @@ if __name__ == '__main__':
 
 
     n = 100
-    i = 0
+    i = 1
     seed = 0
     max_now = 0
     text_list = []

@@ -8,7 +8,6 @@ import numpy as np
 import os
 import re
 
-#TODO: need to fix when no measure = '00000'
 def ks_score(r1, r2):
     r = r1-r2
     max_ks = max(max(r), 0)
@@ -22,16 +21,20 @@ def trans_str(qubit_number:int, number:int):
 
     return results.zfill(qubit_number)+"':"
 
-def trans_cirq(data:str,qubit_number:int):
+def trans(data:str,qubit_number:int):
     result = re.split(',|}',data)
     final_data = []
 
     for i in range(0,pow(2,qubit_number)-1):
         pattern = re.compile(trans_str(qubit_number,i))
+        flag = 0
         for results in result:
             s = re.search(pattern,results)
             if s is not None:
                 final_data.append(float(results[s.span()[1]:]))
+                flag = 1
+        if flag==0:
+            final_data.append(0)
 
     return final_data
 
@@ -40,7 +43,7 @@ def read_results(filename: str, qubit_number:int):
     with open(filename, 'r') as f:
         line = f.readline()
         while line:
-            data = trans_cirq(line,qubit_number)
+            data = trans(line,qubit_number)
             line = f.readline()
     return data
 

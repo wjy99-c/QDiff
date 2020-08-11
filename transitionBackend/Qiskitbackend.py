@@ -7,6 +7,19 @@
 import re
 
 def simulator_to_qc (address:str, iteration:int):
+    writefile = open("../benchmark/startQiskit_QC" + str(iteration) + ".py", "w")
+    readfile = open(address)
+    line = readfile.readline()
+    while line:
+        writefile.write(line)
+        line = readfile.readline()
+
+    writefile.close()
+    readfile.close()
+    return "startQiskit_QC" + str(iteration) + ".py"
+
+'''
+def simulator_to_qc (address:str, iteration:int):
 
     pattern = re.compile("qasm_simulator")
 
@@ -28,6 +41,7 @@ def simulator_to_qc (address:str, iteration:int):
     writefile.close()
     readfile.close()
     return "startQiskit_QC"+str(iteration)+".py"
+'''
 
 def qc_to_simulator (address:str, iteration:int):
 
@@ -41,7 +55,7 @@ def qc_to_simulator (address:str, iteration:int):
     while line:
         m = pattern2.search(line)
         if m is not None:
-            writefile.write("   backend = Aer.get_backend('qasm_simulator')\n")
+            writefile.write("   backend = BasicAer.get_backend('qasm_simulator')\n")
         else:
             if (pattern1.search(line) is None) and (pattern3.search(line) is None):
                 writefile.write(line+"\n")
@@ -64,7 +78,7 @@ def qc_to_state_vector (address:str, iteration:int):
     while line:
         m = pattern2.search(line)
         if m is None:
-            writefile.write("   backend = Aer.get_backend('qasm_simulator')\n")
+            writefile.write("    backend = BasicAer.get_backend('qasm_simulator')\n")
         else:
             if (pattern1.search(line) is None) and (pattern3.search(line) is None):
                 writefile.write(line+"\n")
@@ -108,7 +122,7 @@ def state_vector_to_simulator (address:str, iteration:int):
     while line:
         m = pattern.search(line)
         if m is not None:
-            writefile.write("   backend = Aer.get_backend('qasm_simulator')\n")
+            writefile.write("    backend = BasicAer.get_backend('qasm_simulator')\n")
         else:
             writefile.write(line+"\n")
         line = readfile.readline()
@@ -127,7 +141,7 @@ def simulator_to_state_vector (address:str, iteration:int):
     while line:
         m = pattern.search(line)
         if m is not None:
-            writefile.write("   backend = Aer.get_backend('statevector_simulator')\n")
+            writefile.write("    backend = BasicAer.get_backend('statevector_simulator')\n")
         else:
             writefile.write(line+"\n")
         line = readfile.readline()
