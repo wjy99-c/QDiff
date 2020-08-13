@@ -10,8 +10,15 @@ def simulator_to_qc (address:str, iteration:int):
     writefile = open("../benchmark/startCirq_QC" + str(iteration) + ".py", "w")
     readfile = open(address)
     line = readfile.readline()
+
+    writefile_address = re.compile("../data/startCirq")
+    writefile_change = "../data/startCirq_QC"
     while line:
-        writefile.write(line)
+        n = writefile_address.search(line)
+        if n is not None:
+            writefile.write(re.sub(writefile_address, writefile_change, line))
+        else:
+            writefile.write(line)
         line = readfile.readline()
 
     writefile.close()
@@ -134,15 +141,29 @@ def simulator_to_state_vector (address:str, iteration:int):
     pattern1 = re.compile("simulator.run")
 
     writefile= open("../benchmark/startCirq_Class"+str(iteration)+".py", "w")
+    writefile_address = re.compile("../data/startCirq")
+    writefile_change = "../data/startCirq_class"
     readfile = open(address)
+
+    pattern_follow = re.compile("frequencies = result.histogram\(key='result', fold_func=bitstring\)")
     line = readfile.readline()
     while line:
         m = pattern.search(line)
+        n = writefile_address.search(line)
+        k = pattern_follow.search(line)
         if m is not None:
-            writefile.write("    result = cirq.final_wavefunction(circuit)\n")
+            writefile.write("    info = cirq.final_wavefunction(circuit)\n")
+        elif n is not None:
+            writefile.write(re.sub(writefile_address, writefile_change, line))
+        elif k is not None:
+            writefile.write("    qubits = round(log2(len(info)))\n"
+                            "    frequencies = {\n"
+                            "        np.binary_repr(i, qubits): round((info[i]*(info[i].conjugate())).real*1024,3)\n"
+                            "        for i in range(2 ** qubits)\n"
+                            "    }\n")
         else:
             if pattern1.search(line) is None:
-                writefile.write(line+"\n")
+                writefile.write(line)
         line = readfile.readline()
 
     writefile.close()

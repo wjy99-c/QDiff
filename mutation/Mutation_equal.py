@@ -67,7 +67,7 @@ def generate_same(operation_number:int, address_in:str, address_out:str, total_n
             continue
 
         if total_operation_find.search(line):
-            writefile.write("# total_number"+str(total_number+2)+"\n") #update total operation number
+            writefile.write("# total_number="+str(total_number+2)+"\n") #update total operation number
         else:
             writefile.write(line+"\n")
 
@@ -87,7 +87,6 @@ def mutate(seed:int, write:int):
 
     patterns["CNOT"] = re.compile("cirq.CNOT")
     patterns["H"] = re.compile("cirq.H")
-    patterns["X"] = re.compile("cirq.X")
     patterns["SWAP"] = re.compile("cirq.SWAP")
     patterns["Z"] = re.compile("cirq.Z")
 
@@ -112,7 +111,7 @@ def mutate(seed:int, write:int):
             flag = int(line[operation_id.search(line).span()[1]:len(line)-1])
 
         for pattern in patterns:
-            if patterns[pattern].search(line):
+            if patterns[pattern].search(line) is not None:
                 if random.randint(0,5)>3 :
 
                     readfile.close()

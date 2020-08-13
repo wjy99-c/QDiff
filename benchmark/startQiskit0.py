@@ -6,6 +6,8 @@ import qiskit
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 from qiskit import BasicAer, execute
 from pprint import pprint
+from math import log2
+import numpy as np
 
 def make_circuit(n:int) -> QuantumCircuit:
     # circuit begin

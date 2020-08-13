@@ -16,7 +16,7 @@ def make_circuit(n:int)-> Program:
 
     return prog
 
-def summrise_results(bitstirngs) -> dict:
+def summrise_results(bitstrings) -> dict:
     d = {}
     for l in bitstrings:
         if d.get(l) is None:
@@ -34,6 +34,6 @@ if __name__ == '__main__':
     bitstrings = np.vstack([results[i] for i in qvm.qubits()]).T
     bitstrings = [''.join(map(str, l)) for l in bitstrings]
     writefile = open("../data/startPyquil0.csv","w")
-    print(summrise_results(bitstrings),writefile)
+    print(summrise_results(bitstrings),file=writefile)
     writefile.close()
 

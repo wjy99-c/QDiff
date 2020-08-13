@@ -12,10 +12,27 @@ import mutation.Mutation_diff as mutate
 import random
 import mutation.Mutation_equal as equalM
 import beginTest.check_qubit_number as q_number
-import cirq
 
 
 def backend_loop(seed_num:int, out_num:int):
+
+    try:
+        os.system('python3.7 ../benchmark/' + "startCirq" + str(out_num) + ".py")# should be out_number
+    except Exception as e:
+        print("OS error:" + str(e))
+        print("Save document as:" + "startCirq" + str(out_num) + ".py")
+
+    try:
+        os.system('python3.7 ../benchmark/' + "startPyquil" + str(out_num) + ".py") # should be out_num too. I guess I need to figure out a way
+    except Exception as e:
+        print("OS error:" + str(e))
+        print("Save document as:" + "startPyquil" + str(out_num) + ".py")
+
+    try:
+        os.system('python3.7 ../benchmark/' + "startQiskit" + str(out_num) + ".py")
+    except Exception as e:
+        print("OS error:" + str(e))
+        print("Save document as:" + "startQiskit" + str(out_num) + ".py")
 
     cirqP1, cirqP2 = acC.generate("../benchmark/"+ "startCirq" + str(seed_num) + ".py","startCirq" + str(seed_num) + ".py", out_num)
     pyquilP1, pyquilP2 = acP.generate("../benchmark/"+ "startPyquil" + str(seed_num) + ".py","startPyquil" + str(seed_num) + ".py", out_num)
@@ -39,7 +56,6 @@ def backend_loop(seed_num:int, out_num:int):
         print("OS error:" + str(e))
         print("Save document as:" + pyquilP1)
 
-    print("python ../benchmark/" + pyquilP2)
 
     try:
         os.system('python3.7 ../benchmark/' + pyquilP2)
@@ -64,7 +80,7 @@ def backend_loop(seed_num:int, out_num:int):
     wrong, diff, name = cR.compare("../data", thershold=thershold,
                                    qubit_number=q_number.check("../benchmark/"+ "startCirq" + str(seed_num) + ".py"))
 
-    if wrong is None:
+    if len(wrong)==0:
         return diff
     else:
         print("Wrong Output Detect:", wrong)
@@ -77,31 +93,32 @@ if __name__ == '__main__':
 
 
     n = 100
-    i = 1
+    tail = 1
     seed = 0
     max_now = 0
     text_list = []
 
     text_list.append(0)
 
-    while i < n:
+    while tail < n:
 
         j = 0
 
-        mutate.mutate(text_list.index(seed), i,"Cirq")
+        mutate.mutate(text_list.index(seed), tail, "Cirq")
+
 
         while j < 10:
 
             j = j + 1
-            equalM.mutate(text_list.index(seed), i)
-            print("now we are at:",i)
-            diff = backend_loop(seed, i)
+            equalM.mutate(text_list.index(seed), tail)
+            print("now we are at:", tail)
+            diff = backend_loop(tail, tail)
 
             if diff > max_now:
                 max_now = diff
-                text_list.append(i)
+                text_list.append(tail)
 
-            i = i + 1
+            tail = tail + 1
 
         seed = seed + 1
 

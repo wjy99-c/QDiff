@@ -12,7 +12,7 @@ def ks_score(r1, r2):
     r = r1-r2
     max_ks = max(max(r), 0)
     min_ks = min(min(r), 0)
-    return (max_ks+min_ks)/r1.sum()
+    return abs(max_ks+min_ks)/r1.sum()
 
 def trans_str(qubit_number:int, number:int):
 
@@ -25,7 +25,7 @@ def trans(data:str,qubit_number:int):
     result = re.split(',|}',data)
     final_data = []
 
-    for i in range(0,pow(2,qubit_number)-1):
+    for i in range(0,pow(2,qubit_number)):
         pattern = re.compile(trans_str(qubit_number,i))
         flag = 0
         for results in result:
@@ -41,6 +41,7 @@ def trans(data:str,qubit_number:int):
 def read_results(filename: str, qubit_number:int):
     data = []
     with open(filename, 'r') as f:
+        print("Now read:"+filename)
         line = f.readline()
         while line:
             data = trans(line,qubit_number)
@@ -50,11 +51,11 @@ def read_results(filename: str, qubit_number:int):
 def compare(path:str, thershold:float, qubit_number:int):
     data = []
     name = []
-
+    right_file = re.compile("start")
     files = os.listdir(path)
     print(qubit_number)
     for file in files:
-        if not os.path.isdir(file):
+        if (not os.path.isdir(file)) & (right_file.search(file) is not None):
             data.append(read_results(path+"/"+file, qubit_number))
             name.append(file)
 
@@ -65,7 +66,7 @@ def compare(path:str, thershold:float, qubit_number:int):
 
         flag = -1
         for i in range(0,len(candidates)):
-            if ks_score(candidates[i]/(candidates[i].sum()),np.asarray(results))<thershold:
+            if ks_score(candidates[i]/(candidates[i].sum()),np.asarray(results)/(np.asarray(results).sum()))<thershold:
                 flag = i
                 candidates[i] = candidates[i] + np.asarray(results)
                 if candidates[i].sum() > candidates[answer].sum():
@@ -79,11 +80,11 @@ def compare(path:str, thershold:float, qubit_number:int):
 
     wrong_out = []      # wrong_out -> the output that is more than threshold could bare
     max_diff = 0        # max k_S score
-    print("Right answer:",candidates[answer])
+    print("Right answer:",candidates[answer]/candidates[answer].sum()*1024)
     max_diff_name = ''
 
     for i in range(0, len(data)):
-        k = ks_score(np.asarray(data[i]),candidates[answer])
+        k = ks_score(np.asarray(data[i])/np.asarray(data[i]).sum(),candidates[answer]/candidates[answer].sum())
         if k > max_diff:
             max_diff = k
             max_diff_name = name[i]

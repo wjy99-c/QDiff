@@ -7,6 +7,8 @@
 # total number=2
 import cirq
 import sys
+from math import log2
+import numpy as np
 
 
 def make_circuit(n: int, input_qubit):
@@ -22,7 +24,6 @@ def bitstring(bits):
     return ''.join(str(int(b)) for b in bits)
 
 if __name__ == '__main__':
-    print(sys.path)
     qubit_count = 2
 
     input_qubits = [cirq.GridQubit(i, 0) for i in range(qubit_count)]
@@ -32,7 +33,6 @@ if __name__ == '__main__':
 
     simulator = cirq.Simulator()
     result = simulator.run(circuit, repetitions=circuit_sample_count)
-    print(result)
 
     frequencies = result.histogram(key='result', fold_func=bitstring)
     writefile = open("../data/startCirq0.csv","w+")
