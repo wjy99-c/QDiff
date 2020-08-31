@@ -46,3 +46,14 @@ def z_to_cnotzcnot(codeline:str,number:int):
     else:
         raise Exception('No Z gate for Z transformation')
 
+def two_X(tab:str,qubit_number:int, number:int):
+    return tab+"prog += X("+str(qubit_number)+") # number="+str(number+1)+"\n"+\
+           tab+"prog += X("+str(qubit_number)+") # number="+str(number+2)+"\n"
+
+def two_Y(tab:str, qubit_number:int, number:int):
+    return tab+"prog += Y("+str(qubit_number)+") # number="+str(number+1)+"\n"+\
+           tab+"prog += Y("+str(qubit_number)+") # number="+str(number+2)+"\n"
+
+def two_CNOT(tab: str, qubit_number: int, number: int):
+    return tab+"prog += CNOT("+str(qubit_number)+",0) # number="+str(number+1)+"\n"+\
+           tab+"prog += CNOT("+str(qubit_number)+",0) # number="+str(number+2)+"\n"

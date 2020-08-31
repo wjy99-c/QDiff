@@ -16,12 +16,14 @@ def make_circuit(n:int) -> QuantumCircuit:
     prog = QuantumCircuit(input_qubit, classical)
     prog.cx(input_qubit[0],input_qubit[1])  # number=1
 
+    # circuit end
+
     for i in range(n):
         prog.measure(input_qubit[i], classical[i])
 
+
     return prog
 
-    # circuit end
 
 
 if __name__ == '__main__':

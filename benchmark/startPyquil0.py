@@ -14,6 +14,8 @@ def make_circuit(n:int)-> Program:
 
     prog += CNOT(0,1) # number=1
 
+    # circuit end
+
     return prog
 
 def summrise_results(bitstrings) -> dict:

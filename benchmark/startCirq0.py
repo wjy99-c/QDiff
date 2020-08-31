@@ -15,9 +15,10 @@ def make_circuit(n: int, input_qubit):
     c = cirq.Circuit()  # circuit begin
 
     c.append(cirq.CNOT.on(input_qubit[0], input_qubit[1])) # number=1
+    # circuit end
 
     c.append(cirq.measure(*input_qubit, key='result'))
-    # circuit end
+
     return c
 
 def bitstring(bits):

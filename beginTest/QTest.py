@@ -6,17 +6,19 @@
 import transitionBackend.acrossbackendCirq as acC
 import transitionBackend.acrossbackendPyquil as acP
 import transitionBackend.acrossbackendQiskit as acQ
-import os,sys
+import os,sys,shutil
 import compare.compareResults as cR
 import mutation.Mutation_diff as mutate
 import random
 import mutation.Mutation_equal as equalM
 import beginTest.check_qubit_number as q_number
+import re
 
 
-def backend_loop(seed_num:int, out_num:int):
+def backend_loop(out_num:int):
 
     try:
+        print("Executing Simulator"+str(out_num))
         os.system('python3.7 ../benchmark/' + "startCirq" + str(out_num) + ".py")# should be out_number
     except Exception as e:
         print("OS error:" + str(e))
@@ -34,11 +36,12 @@ def backend_loop(seed_num:int, out_num:int):
         print("OS error:" + str(e))
         print("Save document as:" + "startQiskit" + str(out_num) + ".py")
 
-    cirqP1, cirqP2 = acC.generate("../benchmark/"+ "startCirq" + str(seed_num) + ".py","startCirq" + str(seed_num) + ".py", out_num)
-    pyquilP1, pyquilP2 = acP.generate("../benchmark/"+ "startPyquil" + str(seed_num) + ".py","startPyquil" + str(seed_num) + ".py", out_num)
-    qiskitP1, qiskitP2 = acQ.generate("../benchmark/"+ "startQiskit" + str(seed_num) + ".py", "startQiskit" + str(seed_num) + ".py",out_num)
+    cirqP1, cirqP2 = acC.generate("../benchmark/" + "startCirq" + str(out_num) + ".py", "startCirq" + str(out_num) + ".py", out_num)
+    pyquilP1, pyquilP2 = acP.generate("../benchmark/" + "startPyquil" + str(out_num) + ".py", "startPyquil" + str(out_num) + ".py", out_num)
+    qiskitP1, qiskitP2 = acQ.generate("../benchmark/" + "startQiskit" + str(out_num) + ".py", "startQiskit" + str(out_num) + ".py", out_num)
 
     try:
+        print("Executing Classical" + str(out_num))
         os.system('python3.7 ../benchmark/' + cirqP1)
     except Exception as e:
         print("OS error:" + str(e))
@@ -58,6 +61,7 @@ def backend_loop(seed_num:int, out_num:int):
 
 
     try:
+        print("Executing QC" + str(out_num))
         os.system('python3.7 ../benchmark/' + pyquilP2)
     except Exception as e:
         print("OS error:" + str(e))
@@ -76,16 +80,29 @@ def backend_loop(seed_num:int, out_num:int):
         print("Save document as:" + qiskitP2)
 
 
-
+def calculate_results(out_num:int):
     wrong, diff, name = cR.compare("../data", thershold=thershold,
-                                   qubit_number=q_number.check("../benchmark/"+ "startCirq" + str(seed_num) + ".py"))
+                                   qubit_number=q_number.check("../benchmark/" + "startCirq" + str(out_num) + ".py"))
 
     if len(wrong)==0:
         return diff
     else:
         print("Wrong Output Detect:", wrong)
+        print("Name:",name)
         return -1
 
+def collect_data(num:int):
+
+    if os.path.exists("../data/"+str(num)) is True:
+        shutil.rmtree("../data/"+str(num))
+
+    os.mkdir("../data/" + str(num))
+    right_file = re.compile("start")
+    files = os.listdir("../data/")
+
+    for file in files:
+        if (not os.path.isdir(file)) & (right_file.search(file) is not None):
+            shutil.move("../data/"+str(file),"../data/"+str(num))
 
 if __name__ == '__main__':
 
@@ -104,21 +121,28 @@ if __name__ == '__main__':
 
         j = 0
 
-        mutate.mutate(text_list.index(seed), tail, "Cirq")
+        print("Generating New Program at number"+str(tail))
+        text_list.append(tail)
+        tail = tail + mutate.mutate(text_list[seed], tail, "Cirq")
 
 
+        backend_loop(text_list[seed])
         while j < 10:
 
             j = j + 1
-            equalM.mutate(text_list.index(seed), tail)
-            print("now we are at:", tail)
-            diff = backend_loop(tail, tail)
+            print("Generating Equivalent Program for number"+str(text_list[seed])+"at"+str(tail))
+            equalM.mutate(text_list[seed], tail)
+            print("now we are at round:", seed)
+            backend_loop(tail)
+            diff = calculate_results(tail)
 
             if diff > max_now:
                 max_now = diff
                 text_list.append(tail)
 
             tail = tail + 1
+
+        collect_data(seed)
 
         seed = seed + 1
 
