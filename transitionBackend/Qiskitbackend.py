@@ -154,12 +154,23 @@ def simulator_to_state_vector (address:str, iteration:int):
     writefile_address = re.compile("../data/startQiskit")
     writefile_change = "../data/startQiskit_class"
 
+    delete_measure_1 = re.compile("for i in range[(]n[)]:")
+    delete_measure_2 = re.compile("prog.measure")
     readfile = open(address)
     line = readfile.readline()
     while line:
         m = pattern.search(line)
         n = writefile_address.search(line)
         k = pattern_follow.search(line)
+
+        skip_measure = delete_measure_1.search(line)
+        if skip_measure is not None:
+            line = readfile.readline()
+            continue
+        skip_measure = delete_measure_2.search(line)
+        if skip_measure is not None:
+            line = readfile.readline()
+            continue
 
         if m is not None:
             writefile.write("    backend = BasicAer.get_backend('statevector_simulator')\n")

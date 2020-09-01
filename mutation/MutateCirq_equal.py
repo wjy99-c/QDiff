@@ -14,6 +14,7 @@ def cnot_to_hczh(codeline:str, number:int):
                re.sub('cirq.CNOT', "cirq.CZ", new_codeline)+"# number="+str(number+1)+"\n"+ \
                re.sub(r'cirq.CNOT.on[(](.*)[,]',"cirq.H.on(", new_codeline)+"# number="+str(number+2)
     else:
+        print(codeline+"\n")
         raise Exception('No CNOT gate for Swap transformation')
 
 def order_change(codeline1:str, codeline2:str):
@@ -30,9 +31,8 @@ def swap_to_cnot(codeline:str,number:int):
 
 def x_to_cnotxcnot(codeline:str,number:int):
 
-
     help_qubit_now = re.compile("cirq.X.on[(]input_qubit[[]")
-    help_qubit = int(codeline[help_qubit_now.search(codeline).span()[1]+1]) #can not handle 10+ qubits
+    help_qubit = int(codeline[help_qubit_now.search(codeline).span()[1]]) #can not handle 10+ qubits
     if help_qubit==0:
         help_qubit = 1
     else:
@@ -48,11 +48,20 @@ def x_to_cnotxcnot(codeline:str,number:int):
 def z_to_cnotzcnot(codeline:str,number:int):
     new_codeline = re.sub("# number=(.*)[\n]", "", codeline)
     if re.search('cirq.Z', codeline) is not None:
+
+        help_qubit_now = re.compile("cirq.Z.on[(]input_qubit[[]")
+        help_qubit = int(codeline[help_qubit_now.search(codeline).span()[1] ])  # can not handle 10+ qubits
+        if help_qubit == 0:
+            help_qubit = 1
+        else:
+            help_qubit = 0
+
         codeline1 = re.sub(r'cirq.Z', "cirq.CNOT", new_codeline)
-        return re.sub(r'[)]', ",control_qubit)", codeline1,count=1)+"# number="+str(number)+"\n"+\
+        return re.sub(r'[)]', ",input_qubit["+str(help_qubit)+"])", codeline1,count=1)+"# number="+str(number)+"\n"+\
                codeline+"# number="+str(number+1)+"\n"+\
-               re.sub(r'[)]', ",control_qubit)", codeline1,count=1)+"# number="+str(number+2)+"\n"
+               re.sub(r'[)]', ",input_qubit["+str(help_qubit)+"])", codeline1,count=1)+"# number="+str(number+2)+"\n"
     else:
+        print(codeline)
         raise Exception('No Z gate for Z transformation')
 
 def two_X(tab:str,qubit_number:int, number:int):

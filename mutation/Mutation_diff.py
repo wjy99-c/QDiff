@@ -14,7 +14,7 @@ gate_set_pyquil = ["prog.inst(H(", "prog.inst(X(", "prog.inst(Y(", "prog.inst(Z(
 def generate_same_add(operation_number:int, address_in:str, address_out:str, add:str, total_number:int):
 
     operation_find = re.compile("# number="+str(operation_number))
-    total_operation_find = re.compile("# total_number=")
+    total_operation_find = re.compile("# total number=")
 
     writefile_address = "../data/"+address_out[13:-3]+".csv"
     writefile_find = re.compile("../data/"+address_in[13:-3]+".csv")
@@ -31,12 +31,12 @@ def generate_same_add(operation_number:int, address_in:str, address_out:str, add
             continue
 
         if operation_find.search(line):
-            writefile.write(add+"\n")
+            writefile.write(line+"\n"+add+"\n")
             line = readfile.readline()
             continue
 
         if total_operation_find.search(line):
-            writefile.write("# total_number="+str(total_number)+"\n")
+            writefile.write("# total number="+str(total_number)+"\n")
         else:
             writefile.write(line)
 
@@ -74,10 +74,11 @@ def mutate_add(tab:str, qubit_number:int, total_number:int):
     operation = random.randint(0,4)
 
     if  operation!=4:
-        qiskit_line = tab+gate_set_qiskit[operation]+"(input_qubit["+str(random.randint(0,qubit_number-1))+"]) # number="+str(total_number)
-        pyquil_line = tab + gate_set_pyquil[operation] + str(random.randint(0,qubit_number-1)) + ")) # number=" + str(total_number)
-        cirq_line = tab + "c.append(" + gate_set_cirq[operation] + ".on(input_qubit[" + str(random.randint(0,
-            qubit_number-1)) + "])) # number=" + str(total_number)
+        qubit_on = random.randint(0,qubit_number-1)
+        qiskit_line = tab+gate_set_qiskit[operation]+"(input_qubit["+str(qubit_on)+"]) # number="+str(total_number)
+        pyquil_line = tab + gate_set_pyquil[operation] + str(qubit_on) + ")) # number=" + str(total_number)
+        cirq_line = tab + "c.append(" + gate_set_cirq[operation] + ".on(input_qubit[" + str(qubit_on) + \
+                    "])) # number=" + str(total_number)
 
     else:
         i = random.randint(0,qubit_number-1)
