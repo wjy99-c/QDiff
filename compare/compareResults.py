@@ -12,7 +12,7 @@ def ks_score(r1, r2):
     r = r1-r2
     max_ks = max(max(r), 0)
     min_ks = min(min(r), 0)
-    return abs(max_ks+min_ks)/r1.sum()
+    return (abs(max_ks)+abs(min_ks))/r1.sum()
 
 def trans_str(qubit_number:int, number:int):
 
@@ -53,13 +53,12 @@ def compare(path:str, thershold:float, qubit_number:int):
     name = []
     right_file = re.compile("start")
     files = os.listdir(path)
-    print(qubit_number)
     for file in files:
         if (not os.path.isdir(file)) & (right_file.search(file) is not None):
             data.append(read_results(path+"/"+file, qubit_number))
             name.append(file)
 
-    candidates = []
+    candidates = [] # save right answer candidates
     answer = -1
 
     for results in data:
@@ -94,3 +93,6 @@ def compare(path:str, thershold:float, qubit_number:int):
 
 
     return wrong_out, max_diff, max_diff_name
+
+if __name__ == '__main__':
+    compare("../data/1",0.1,2)

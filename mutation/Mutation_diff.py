@@ -31,12 +31,12 @@ def generate_same_add(operation_number:int, address_in:str, address_out:str, add
             continue
 
         if operation_find.search(line):
-            writefile.write(line+"\n"+add+"\n")
+            writefile.write(line+add+"\n")
             line = readfile.readline()
             continue
 
         if total_operation_find.search(line):
-            writefile.write("# total number="+str(total_number)+"\n")
+            writefile.write("# total number="+str(total_number+1)+"\n")
         else:
             writefile.write(line)
 
@@ -126,7 +126,7 @@ def mutate_start (address_in : str, seed:int, write:int):
             qubit_number = int(line[qubit_number_patter.search(line).span()[1]:])
 
         if total_operation_id.search(line):
-            total_number = int(line[total_operation_id.search(line).span()[1]:])+1
+            total_number = int(line[total_operation_id.search(line).span()[1]:])
 
         if operation_id.search(line):
             flag = int(line[operation_id.search(line).span()[1]:])

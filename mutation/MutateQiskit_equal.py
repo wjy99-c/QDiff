@@ -53,7 +53,7 @@ def z_to_cnotzcnot(codeline:str,number:int):
         new_codeline = re.sub("# number=(.*)[\n]", "", codeline)
         codeline1 = re.sub(r'z', "cx", new_codeline)
         return re.sub(r'[)]', ",input_qubit["+str(help_qubit)+"])", codeline1,count=1)+"# number="+str(number)+"\n"+\
-               codeline+"# number="+str(number+1)+"\n"+\
+               new_codeline+"# number="+str(number+1)+"\n"+\
                re.sub(r'[)]', ",input_qubit["+str(help_qubit)+"])", codeline1,count=1)+"# number="+str(number+2)+"\n"
     else:
         raise Exception('No Z gate for Z transformation')

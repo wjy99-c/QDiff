@@ -145,12 +145,20 @@ def simulator_to_state_vector (address:str, iteration:int):
     writefile_change = "../data/startCirq_class"
     readfile = open(address)
 
+    delete_measure = re.compile("cirq.measure")
+
     pattern_follow = re.compile("frequencies = result.histogram\(key='result', fold_func=bitstring\)")
     line = readfile.readline()
     while line:
         m = pattern.search(line)
         n = writefile_address.search(line)
         k = pattern_follow.search(line)
+
+        skip_measure = delete_measure.search(line)
+        if skip_measure is not None:
+            line = readfile.readline()
+            continue
+
         if m is not None:
             writefile.write("    info = cirq.final_wavefunction(circuit)\n")
         elif n is not None:

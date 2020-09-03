@@ -12,7 +12,7 @@ def cnot_to_hczh(codeline:str, number:int):
         new_codeline = re.sub("# number=(.*)[\n]","",codeline)
         return re.sub(r'cirq.CNOT.on[(](.*)[,]', "cirq.H.on(", new_codeline)+"# number="+str(number)+"\n"+ \
                re.sub('cirq.CNOT', "cirq.CZ", new_codeline)+"# number="+str(number+1)+"\n"+ \
-               re.sub(r'cirq.CNOT.on[(](.*)[,]',"cirq.H.on(", new_codeline)+"# number="+str(number+2)
+               re.sub(r'cirq.CNOT.on[(](.*)[,]',"cirq.H.on(", new_codeline)+"# number="+str(number+2)+"\n"
     else:
         print(codeline+"\n")
         raise Exception('No CNOT gate for Swap transformation')
@@ -25,7 +25,7 @@ def swap_to_cnot(codeline:str,number:int):
         new_codeline = re.sub("# number=(.*)[\n]", "", codeline)
         return re.sub('cirq.SWAP', 'cirq.CNOT', new_codeline)+"# number="+str(number)+"\n"+\
                re.sub('cirq.SWAP', "cirq.CNOT", new_codeline)+"# number="+str(number+1)+"\n"+\
-               re.sub('cirq.SWAP',"cirq.CNOT", new_codeline)+"# number="+str(number+2)
+               re.sub('cirq.SWAP',"cirq.CNOT", new_codeline)+"# number="+str(number+2)+"\n"
     else:
         raise Exception('No Swap gate for Swap transformation')
 
@@ -58,7 +58,7 @@ def z_to_cnotzcnot(codeline:str,number:int):
 
         codeline1 = re.sub(r'cirq.Z', "cirq.CNOT", new_codeline)
         return re.sub(r'[)]', ",input_qubit["+str(help_qubit)+"])", codeline1,count=1)+"# number="+str(number)+"\n"+\
-               codeline+"# number="+str(number+1)+"\n"+\
+               new_codeline+"# number="+str(number+1)+"\n"+\
                re.sub(r'[)]', ",input_qubit["+str(help_qubit)+"])", codeline1,count=1)+"# number="+str(number+2)+"\n"
     else:
         print(codeline)

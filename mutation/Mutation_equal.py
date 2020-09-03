@@ -89,7 +89,7 @@ def generate_trival(address_in:str, address_out:str, total_number:int,platform:s
             continue
 
         if total_operation_find.search(line):
-            writefile.write("# total_number=" + str(total_number + 2) + "\n")  # update total operation number
+            writefile.write("# total number=" + str(total_number + 2) + "\n")  # update total operation number
         else:
             writefile.write(line)
 
@@ -105,7 +105,7 @@ def generate_trival(address_in:str, address_out:str, total_number:int,platform:s
 
 def generate_same(operation_number:int, address_in:str, address_out:str, total_number:int, pattern:str, platform:str):
 
-    operation_find = re.compile("# number="+str(operation_number))
+    operation_find = re.compile("# number="+str(operation_number)+"\n")
     writefile_address = "../data/"+address_out[13:-3]+".csv"
     print(writefile_address)
     writefile_find = re.compile("../data/"+address_in[13:-3]+".csv")
@@ -159,7 +159,7 @@ def generate_same(operation_number:int, address_in:str, address_out:str, total_n
             continue
 
         if total_operation_find.search(line):
-            writefile.write("# total_number="+str(total_number+2)+"\n") #update total operation number
+            writefile.write("# total number="+str(total_number+2)+"\n") #update total operation number
         else:
             writefile.write(line+"\n")
 

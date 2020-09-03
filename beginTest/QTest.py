@@ -19,13 +19,13 @@ def backend_loop(out_num:int):
 
     try:
         print("Executing Simulator"+str(out_num))
-        os.system('python3.7 ../benchmark/' + "startCirq" + str(out_num) + ".py")# should be out_number
+        os.system('python3.7 ../benchmark/' + "startCirq" + str(out_num) + ".py")
     except Exception as e:
         print("OS error:" + str(e))
         print("Save document as:" + "startCirq" + str(out_num) + ".py")
 
     try:
-        os.system('python3.7 ../benchmark/' + "startPyquil" + str(out_num) + ".py") # should be out_num too. I guess I need to figure out a way
+        os.system('python3.7 ../benchmark/' + "startPyquil" + str(out_num) + ".py")
     except Exception as e:
         print("OS error:" + str(e))
         print("Save document as:" + "startPyquil" + str(out_num) + ".py")
@@ -91,25 +91,32 @@ def calculate_results(out_num:int):
         print("Name:",name)
         return -1
 
-def collect_data(num:int):
+def collect_data(num:int,flag:int):
+
+    right_file = re.compile("start")
+    files = os.listdir("../data/")
+    if flag==1:
+        dir_name = "data/hasWrong"
+    else:
+        dir_name = "data/"
 
     if os.path.exists("../data/"+str(num)) is True:
         shutil.rmtree("../data/"+str(num))
 
-    os.mkdir("../data/" + str(num))
-    right_file = re.compile("start")
-    files = os.listdir("../data/")
+    os.mkdir("../"+dir_name + str(num))
 
     for file in files:
         if (not os.path.isdir(file)) & (right_file.search(file) is not None):
-            shutil.move("../data/"+str(file),"../data/"+str(num))
+            shutil.move("../data/"+str(file),"../"+dir_name+str(num))
+
+
 
 if __name__ == '__main__':
 
-    thershold = 0.2
+    thershold = 0.1
 
 
-    n = 100
+    n = 1000
     tail = 1
     seed = 0
     max_now = 0
@@ -127,6 +134,8 @@ if __name__ == '__main__':
 
 
         backend_loop(text_list[seed])
+        flag_see_wrong = 0
+
         while j < 10:
 
             j = j + 1
@@ -135,6 +144,8 @@ if __name__ == '__main__':
             print("now we are at round:", seed)
             backend_loop(tail)
             diff = calculate_results(tail)
+            if diff==-1:
+                flag_see_wrong = 1
 
             if diff > max_now:
                 max_now = diff
@@ -142,7 +153,7 @@ if __name__ == '__main__':
 
             tail = tail + 1
 
-        collect_data(seed)
+        collect_data(seed,flag_see_wrong)
 
         seed = seed + 1
 
