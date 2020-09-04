@@ -159,7 +159,7 @@ def generate_same(operation_number:int, address_in:str, address_out:str, total_n
             continue
 
         if total_operation_find.search(line):
-            writefile.write("# total number="+str(total_number+2)+"\n") #update total operation number
+            writefile.write("# total number="+str(total_number+3)+"\n") #update total operation number
         else:
             writefile.write(line+"\n")
 

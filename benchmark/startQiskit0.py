@@ -1,5 +1,5 @@
-# qubit number=1
-# total number=2
+# qubit number=3
+# total number=6
 import cirq
 import qiskit
 
@@ -14,7 +14,11 @@ def make_circuit(n:int) -> QuantumCircuit:
     input_qubit = QuantumRegister(n,"qc")
     classical = ClassicalRegister(n, "qm")
     prog = QuantumCircuit(input_qubit, classical)
+    prog.h(input_qubit[0]) # number=3
+    prog.h(input_qubit[1]) # number=4
+    prog.h(input_qubit[2]) # number=5
     prog.cx(input_qubit[0],input_qubit[1])  # number=1
+    prog.cx(input_qubit[0],input_qubit[2])  # number=2
 
     # circuit end
 
@@ -28,7 +32,7 @@ def make_circuit(n:int) -> QuantumCircuit:
 
 if __name__ == '__main__':
 
-    prog = make_circuit(2)
+    prog = make_circuit(3)
     backend = BasicAer.get_backend('qasm_simulator')
 
     info = execute(prog, backend=backend, shots=1024).result().get_counts()

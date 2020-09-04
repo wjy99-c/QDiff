@@ -65,14 +65,14 @@ def z_to_cnotzcnot(codeline:str,number:int):
         raise Exception('No Z gate for Z transformation')
 
 def two_X(tab:str,qubit_number:int, number:int):
-    return tab+"c.append(cirq.X.on(input_qubit["+str(qubit_number)+"]))"+" # number="+str(number+1)+"\n"+\
-           tab+"c.append(cirq.X.on(input_qubit["+str(qubit_number)+"]))"+" # number="+str(number+2)+"\n"
+    return tab+"c.append(cirq.X.on(input_qubit["+str(qubit_number)+"]))"+" # number="+str(number)+"\n"+\
+           tab+"c.append(cirq.X.on(input_qubit["+str(qubit_number)+"]))"+" # number="+str(number+1)+"\n"
 
 def two_Y(tab:str, qubit_number:int, number:int):
-    return tab+"c.append(cirq.Y.on(input_qubit[" + str(qubit_number) + "]))" + " # number=" + str(number + 1) + "\n" + \
-           tab+"c.append(cirq.Y.on(input_qubit[" + str(qubit_number) + "]))" + " # number=" + str(number + 2) + "\n"
+    return tab+"c.append(cirq.Y.on(input_qubit[" + str(qubit_number) + "]))" + " # number=" + str(number) + "\n" + \
+           tab+"c.append(cirq.Y.on(input_qubit[" + str(qubit_number) + "]))" + " # number=" + str(number + 1) + "\n"
 
 def two_CNOT(tab:str,qubit_number:int, number:int):
-    return tab+"c.append(cirq.CNOT.on(input_qubit[" + str(qubit_number) + "],input_qubit[0]))" + " # number=" + str(number + 1) + "\n" + \
-           tab+"c.append(cirq.CNOT.on(input_qubit[" + str(qubit_number) + "],input_qubit[0]))" + " # number=" + str(number + 2) + "\n"
+    return tab+"c.append(cirq.CNOT.on(input_qubit[" + str(qubit_number) + "],input_qubit[0]))" + " # number=" + str(number) + "\n" + \
+           tab+"c.append(cirq.CNOT.on(input_qubit[" + str(qubit_number) + "],input_qubit[0]))" + " # number=" + str(number + 1) + "\n"
 

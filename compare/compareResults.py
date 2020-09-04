@@ -43,9 +43,12 @@ def read_results(filename: str, qubit_number:int):
     with open(filename, 'r') as f:
         print("Now read:"+filename)
         line = f.readline()
-        while line:
-            data = trans(line,qubit_number)
-            line = f.readline()
+
+        end_file = line
+        while end_file:
+            end_file=f.readline()
+            line = line+end_file
+        data = trans(line, qubit_number)
     return data
 
 def compare(path:str, thershold:float, qubit_number:int):
@@ -95,4 +98,4 @@ def compare(path:str, thershold:float, qubit_number:int):
     return wrong_out, max_diff, max_diff_name
 
 if __name__ == '__main__':
-    compare("../data/1",0.1,2)
+    compare("../data/hasWrong0",0.1,2)
