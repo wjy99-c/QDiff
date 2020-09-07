@@ -142,7 +142,7 @@ def simulator_to_state_vector (address:str, iteration:int):
 
     writefile= open("../benchmark/startCirq_Class"+str(iteration)+".py", "w")
     writefile_address = re.compile("../data/startCirq")
-    writefile_change = "../data/startCirq_class"
+    writefile_change = "../data/startCirq_Class"
     readfile = open(address)
 
     delete_measure = re.compile("cirq.measure")

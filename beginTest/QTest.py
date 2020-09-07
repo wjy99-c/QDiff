@@ -8,80 +8,65 @@ import transitionBackend.acrossbackendPyquil as acP
 import transitionBackend.acrossbackendQiskit as acQ
 import os,sys,shutil
 import compare.compareResults as cR
-import mutation.Mutation_diff as mutate
-import random
-import mutation.Mutation_equal as equalM
+import mutation.Mutation_diff as diff_m
+import mutation.Mutation_equal as equal_m
+import mutation.Mutation_shadow as reverse_m
 import beginTest.check_qubit_number as q_number
-import re
+import re,random
+
+def execution(pyfile_name:str):
+    try:
+        os.system('python3.7 ' + pyfile_name)
+    except Exception as e:
+        print("OS error:" + str(e))
+        print("Save document as:" + pyfile_name)
+
 
 
 def backend_loop(out_num:int):
+    print("Executing Simulator" + str(out_num))
 
-    try:
-        print("Executing Simulator"+str(out_num))
-        os.system('python3.7 ../benchmark/' + "startCirq" + str(out_num) + ".py")
-    except Exception as e:
-        print("OS error:" + str(e))
-        print("Save document as:" + "startCirq" + str(out_num) + ".py")
+    execution('../benchmark/' + "startCirq" + str(out_num) + ".py")
+    execution('../benchmark/' + "startPyquil" + str(out_num) + ".py")
+    execution('../benchmark/' + "startQiskit" + str(out_num) + ".py")
 
-    try:
-        os.system('python3.7 ../benchmark/' + "startPyquil" + str(out_num) + ".py")
-    except Exception as e:
-        print("OS error:" + str(e))
-        print("Save document as:" + "startPyquil" + str(out_num) + ".py")
-
-    try:
-        os.system('python3.7 ../benchmark/' + "startQiskit" + str(out_num) + ".py")
-    except Exception as e:
-        print("OS error:" + str(e))
-        print("Save document as:" + "startQiskit" + str(out_num) + ".py")
 
     cirqP1, cirqP2 = acC.generate("../benchmark/" + "startCirq" + str(out_num) + ".py", "startCirq" + str(out_num) + ".py", out_num)
     pyquilP1, pyquilP2 = acP.generate("../benchmark/" + "startPyquil" + str(out_num) + ".py", "startPyquil" + str(out_num) + ".py", out_num)
     qiskitP1, qiskitP2 = acQ.generate("../benchmark/" + "startQiskit" + str(out_num) + ".py", "startQiskit" + str(out_num) + ".py", out_num)
 
-    try:
-        print("Executing Classical" + str(out_num))
-        os.system('python3.7 ../benchmark/' + cirqP1)
-    except Exception as e:
-        print("OS error:" + str(e))
-        print("Save document as:" + cirqP1)
+    print("Executing Classical" + str(out_num))
 
-    try:
-        os.system('python3.7 ../benchmark/' + cirqP2)
-    except Exception as e:
-        print("OS error:" + str(e))
-        print("Save document as:" + cirqP2)
+    execution('../benchmark/' + cirqP1)
+    execution('../benchmark/' + pyquilP1)
+    execution('../benchmark/' + qiskitP1)
 
-    try:
-        os.system('python3.7 ../benchmark/' + pyquilP1)
-    except Exception as e:
-        print("OS error:" + str(e))
-        print("Save document as:" + pyquilP1)
+    print("Executing QC" + str(out_num))
+
+    execution('../benchmark/' + cirqP2)
+    execution('../benchmark/' + pyquilP2)
+    execution('../benchmark/' + qiskitP2)
+
+    print("Executing reversion version of each program")
 
 
-    try:
-        print("Executing QC" + str(out_num))
-        os.system('python3.7 ../benchmark/' + pyquilP2)
-    except Exception as e:
-        print("OS error:" + str(e))
-        print("Save document as:" + pyquilP2)
+    execution(reverse_m.generate_reverse('../benchmark/' + "startCirq" + str(out_num) + ".py",
+                                         "../benchmark/reverse/"+ "startCirq" + str(out_num) + ".py"))
+    execution(reverse_m.generate_reverse('../benchmark/' + "startPyquil" + str(out_num) + ".py",
+                                         "../benchmark/reverse/" + "startPyquil" + str(out_num) + ".py"))
+    execution(reverse_m.generate_reverse('../benchmark/' + "startQiskit" + str(out_num) + ".py",
+                                         "../benchmark/reverse/" + "startQiskit" + str(out_num) + ".py"))
 
-    try:
-        os.system('python3.7 ../benchmark/' + qiskitP1)
-    except Exception as e:
-        print("OS error:" + str(e))
-        print("Save document as:" + qiskitP1)
-
-    try:
-        os.system('python3.7 ../benchmark/' + qiskitP2)
-    except Exception as e:
-        print("OS error:" + str(e))
-        print("Save document as:" + qiskitP2)
+    execution(reverse_m.generate_reverse('../benchmark/' + cirqP1,'../benchmark/reverse/' + cirqP1))
+    execution(reverse_m.generate_reverse('../benchmark/' + cirqP2,'../benchmark/reverse/' + cirqP2))
+    execution(reverse_m.generate_reverse('../benchmark/' + pyquilP1, '../benchmark/reverse/' + pyquilP1))
+    execution(reverse_m.generate_reverse('../benchmark/' + pyquilP2, '../benchmark/reverse/' + pyquilP2))
+    execution(reverse_m.generate_reverse('../benchmark/' + qiskitP1, '../benchmark/reverse/' + qiskitP1))
+    execution(reverse_m.generate_reverse('../benchmark/' + qiskitP2, '../benchmark/reverse/' + qiskitP2))
 
 
-def calculate_results(out_num:int):
-    wrong, diff, name = cR.compare("../data", thershold=thershold,
+def calculate_results(out_num:int, directory:str):
+    wrong, diff, name = cR.compare("../"+directory, thershold=thershold,
                                    qubit_number=q_number.check("../benchmark/" + "startCirq" + str(out_num) + ".py"))
 
     if len(wrong)==0:
@@ -89,25 +74,25 @@ def calculate_results(out_num:int):
     else:
         print("Wrong Output Detect:", wrong)
         print("Name:",name)
-        return -1
+        return 999
 
-def collect_data(num:int,flag:int):
+def collect_data(num:int,flag:int,directory:str):
 
     right_file = re.compile("start")
-    files = os.listdir("../data/")
+    files = os.listdir("../"+directory+"/")
     if flag==1:
-        dir_name = "data/hasWrong"
+        dir_name = directory+"/Wrong"
     else:
-        dir_name = "data/"
+        dir_name = directory+'/'
 
-    if os.path.exists("../data/"+str(num)) is True:
-        shutil.rmtree("../data/"+str(num))
+    if os.path.exists("../"+directory+"/"+str(num)) is True:
+        shutil.rmtree("../"+directory+"/"+str(num))
 
     os.mkdir("../"+dir_name + str(num))
 
     for file in files:
         if (not os.path.isdir(file)) & (right_file.search(file) is not None):
-            shutil.move("../data/"+str(file),"../"+dir_name+str(num))
+            shutil.move("../"+directory+"/"+str(file),"../"+dir_name+str(num))
 
 
 
@@ -130,7 +115,7 @@ if __name__ == '__main__':
 
         print("Generating New Program at number"+str(tail))
         text_list.append(tail)
-        tail = tail + mutate.mutate(text_list[seed], tail, "Cirq")
+        tail = tail + diff_m.mutate(text_list[seed], tail, "Cirq")
 
 
         backend_loop(text_list[seed])
@@ -140,11 +125,11 @@ if __name__ == '__main__':
 
             j = j + 1
             print("Generating Equivalent Program for number"+str(text_list[seed])+"at"+str(tail))
-            equalM.mutate(text_list[seed], tail)
+            equal_m.mutate(text_list[seed], tail)
             print("now we are at round:", seed)
             backend_loop(tail)
-            diff = calculate_results(tail)
-            if diff==-1:
+            diff = max(calculate_results(tail,"data"),calculate_results(tail,"shadow_data"))
+            if diff==999:
                 flag_see_wrong = 1
 
             if diff > max_now:
@@ -153,7 +138,8 @@ if __name__ == '__main__':
 
             tail = tail + 1
 
-        collect_data(seed,flag_see_wrong)
+        collect_data(seed,flag_see_wrong,"data")
+        collect_data(seed,flag_see_wrong,"shadow_data")
 
         seed = seed + 1
 

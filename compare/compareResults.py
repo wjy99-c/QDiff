@@ -82,6 +82,7 @@ def compare(path:str, thershold:float, qubit_number:int):
 
     wrong_out = []      # wrong_out -> the output that is more than threshold could bare
     max_diff = 0        # max k_S score
+    print()
     print("Right answer:",candidates[answer]/candidates[answer].sum()*1024)
     max_diff_name = ''
 
@@ -98,4 +99,4 @@ def compare(path:str, thershold:float, qubit_number:int):
     return wrong_out, max_diff, max_diff_name
 
 if __name__ == '__main__':
-    compare("../data/hasWrong0",0.1,2)
+    compare("../data/Wrong1",0.1,2)

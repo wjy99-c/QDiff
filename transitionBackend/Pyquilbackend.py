@@ -127,7 +127,7 @@ def simulator_to_state_vector (address:str, iteration:int):
 
     writefile= open("../benchmark/startPyquil_Class"+str(iteration)+".py", "w")
     writefile_address = re.compile("../data/startPyquil")
-    writefile_change = "../data/startPyquil_class"
+    writefile_change = "../data/startPyquil_Class"
 
     readfile = open(address)
     line = readfile.readline()

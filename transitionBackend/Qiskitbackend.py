@@ -152,7 +152,7 @@ def simulator_to_state_vector (address:str, iteration:int):
 
     writefile= open("../benchmark/startQiskit_Class"+str(iteration)+".py", "w")
     writefile_address = re.compile("../data/startQiskit")
-    writefile_change = "../data/startQiskit_class"
+    writefile_change = "../data/startQiskit_Class"
 
     delete_measure_1 = re.compile("for i in range[(]n[)]:")
     delete_measure_2 = re.compile("prog.measure")

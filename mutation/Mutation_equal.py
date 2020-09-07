@@ -45,7 +45,7 @@ def generate_trival(address_in:str, address_out:str, total_number:int,platform:s
 
         write_line = line
         if writefile_find.search(line):
-            write_line = re.sub(writefile_find, writefile_address, write_line)
+            write_line = re.sub(writefile_find, writefile_address, write_line) #change write file in program
             writefile.write(write_line)
             line = readfile.readline()
             continue
