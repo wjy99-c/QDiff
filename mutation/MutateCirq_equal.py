@@ -14,7 +14,6 @@ def cnot_to_hczh(codeline:str, number:int):
                re.sub('cirq.CNOT', "cirq.CZ", new_codeline)+"# number="+str(number+1)+"\n"+ \
                re.sub(r'cirq.CNOT.on[(](.*)[,]',"cirq.H.on(", new_codeline)+"# number="+str(number+2)+"\n"
     else:
-        print(codeline+"\n")
         raise Exception('No CNOT gate for Swap transformation')
 
 def order_change(codeline1:str, codeline2:str):
@@ -76,3 +75,8 @@ def two_CNOT(tab:str,qubit_number:int, number:int):
     return tab+"c.append(cirq.CNOT.on(input_qubit[" + str(qubit_number) + "],input_qubit[0]))" + " # number=" + str(number) + "\n" + \
            tab+"c.append(cirq.CNOT.on(input_qubit[" + str(qubit_number) + "],input_qubit[0]))" + " # number=" + str(number + 1) + "\n"
 
+def two_SWAP(tab:str, qubit_number:int, number:int):
+    return tab + "c.append(cirq.SWAP.on(input_qubit[" + str(qubit_number) + "],input_qubit[0]))" + " # number=" + str(
+        number) + "\n" + \
+           tab + "c.append(cirq.SWAP.on(input_qubit[" + str(qubit_number) + "],input_qubit[0]))" + " # number=" + str(
+        number + 1) + "\n"

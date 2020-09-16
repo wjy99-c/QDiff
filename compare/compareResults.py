@@ -4,6 +4,7 @@
 # @Author  : lingxiangxiang
 # @File    : compareResults.py
 
+
 import numpy as np
 import os
 import re
@@ -14,19 +15,22 @@ def ks_score(r1, r2):
     min_ks = min(min(r), 0)
     return (abs(max_ks)+abs(min_ks))/r1.sum()
 
-def trans_str(qubit_number:int, number:int):
+def trans_str(qubit_number:int, number:int)->str:
 
     results = bin(number)
     results = results[2:len(results)]
 
-    return results.zfill(qubit_number)+"':"
+    return results.zfill(qubit_number)
 
-def trans(data:str,qubit_number:int):
+def trans(data:str,qubit_number:int,flag1:int): #flag1: to check if the order is upside down
     result = re.split(',|}',data)
     final_data = []
 
     for i in range(0,pow(2,qubit_number)):
-        pattern = re.compile(trans_str(qubit_number,i))
+        if flag1==0:
+            pattern = re.compile(trans_str(qubit_number,i)+"':")
+        else:
+            pattern = re.compile(''.join(reversed(trans_str(qubit_number,i)))+"':")
         flag = 0
         for results in result:
             s = re.search(pattern,results)
@@ -40,18 +44,24 @@ def trans(data:str,qubit_number:int):
 
 def read_results(filename: str, qubit_number:int):
     data = []
+    pattern_qiskit = re.compile("Qiskit")
+    pattern_pyquilc = re.compile("Pyquil_Class")
+    flag1 = 0
     with open(filename, 'r') as f:
         print("Now read:"+filename)
+        if (re.search(pattern_pyquilc,filename) is not None) or (re.search(pattern_qiskit,filename) is not None):
+            flag1 = 1
         line = f.readline()
 
         end_file = line
         while end_file:
             end_file=f.readline()
             line = line+end_file
-        data = trans(line, qubit_number)
+        data = trans(line, qubit_number,flag1)
     return data
 
 def compare(path:str, thershold:float, qubit_number:int):
+    print("qubit_number:",qubit_number)
     data = []
     name = []
     right_file = re.compile("start")
@@ -63,6 +73,8 @@ def compare(path:str, thershold:float, qubit_number:int):
 
     candidates = [] # save right answer candidates
     answer = -1
+
+
 
     for results in data:
 
@@ -82,7 +94,6 @@ def compare(path:str, thershold:float, qubit_number:int):
 
     wrong_out = []      # wrong_out -> the output that is more than threshold could bare
     max_diff = 0        # max k_S score
-    print()
     print("Right answer:",candidates[answer]/candidates[answer].sum()*1024)
     max_diff_name = ''
 
@@ -99,4 +110,4 @@ def compare(path:str, thershold:float, qubit_number:int):
     return wrong_out, max_diff, max_diff_name
 
 if __name__ == '__main__':
-    compare("../data/Wrong1",0.1,2)
+    compare("../data/Wrong83",0.1,4)

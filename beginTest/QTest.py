@@ -3,6 +3,8 @@
 # @Time    : 7/13/20 11:15 AM
 # @Author  : lingxiangxiang
 # @File    : QTest.py
+
+logfile = open("../testing record.txt","w+")
 import transitionBackend.acrossbackendCirq as acC
 import transitionBackend.acrossbackendPyquil as acP
 import transitionBackend.acrossbackendQiskit as acQ
@@ -25,6 +27,7 @@ def execution(pyfile_name:str):
 
 def backend_loop(out_num:int):
     print("Executing Simulator" + str(out_num))
+    print("Executing Simulator" + str(out_num),file=logfile)
 
     execution('../benchmark/' + "startCirq" + str(out_num) + ".py")
     execution('../benchmark/' + "startPyquil" + str(out_num) + ".py")
@@ -36,18 +39,21 @@ def backend_loop(out_num:int):
     qiskitP1, qiskitP2 = acQ.generate("../benchmark/" + "startQiskit" + str(out_num) + ".py", "startQiskit" + str(out_num) + ".py", out_num)
 
     print("Executing Classical" + str(out_num))
+    print("Executing Classical" + str(out_num),file=logfile)
 
     execution('../benchmark/' + cirqP1)
     execution('../benchmark/' + pyquilP1)
     execution('../benchmark/' + qiskitP1)
 
     print("Executing QC" + str(out_num))
+    print("Executing QC" + str(out_num),file=logfile)
 
     execution('../benchmark/' + cirqP2)
     execution('../benchmark/' + pyquilP2)
     execution('../benchmark/' + qiskitP2)
 
     print("Executing reversion version of each program")
+    print("Executing reversion version of each program",file=logfile)
 
 
     execution(reverse_m.generate_reverse('../benchmark/' + "startCirq" + str(out_num) + ".py",
@@ -73,7 +79,9 @@ def calculate_results(out_num:int, directory:str):
         return diff
     else:
         print("Wrong Output Detect:", wrong)
+        print("Wrong Output Detect:", wrong,file=logfile)
         print("Name:",name)
+        print("Name:", name,file=logfile)
         return 999
 
 def collect_data(num:int,flag:int,directory:str):
@@ -113,7 +121,8 @@ if __name__ == '__main__':
 
         j = 0
 
-        print("Generating New Program at number"+str(tail))
+        print("Generating New Program at number"+str(tail),file=logfile)
+        print("Generating New Program at number" + str(tail))
         text_list.append(tail)
         tail = tail + diff_m.mutate(text_list[seed], tail, "Cirq")
 
@@ -124,8 +133,10 @@ if __name__ == '__main__':
         while j < 10:
 
             j = j + 1
-            print("Generating Equivalent Program for number"+str(text_list[seed])+"at"+str(tail))
+            print("Generating Equivalent Program for number"+str(text_list[seed])+"at"+str(tail),file=logfile)
+            print("Generating Equivalent Program for number" + str(text_list[seed]) + "at" + str(tail))
             equal_m.mutate(text_list[seed], tail)
+            print("now we are at round:", seed,file=logfile)
             print("now we are at round:", seed)
             backend_loop(tail)
             diff = max(calculate_results(tail,"data"),calculate_results(tail,"shadow_data"))
@@ -146,4 +157,5 @@ if __name__ == '__main__':
         if seed > len(text_list):
             seed = random.randint(seed-1)
 
+    logfile.close()
 

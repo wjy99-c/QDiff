@@ -5,6 +5,37 @@
 # @File    : Qiskitbackend.py
 
 import re
+coupling_map = [[1, 0], [2, 1], [3, 1], [1, 4]]
+basic_gate = ['cx','u3','id']
+
+def simulator_to_topology_simulator (address:str, iteration:int):
+    writefile = open("../benchmark/startQiskit_topo" + str(iteration) + ".py", "w")
+    readfile = open(address)
+    line = readfile.readline()
+
+
+    writefile_address = re.compile("../data/startQiskit")
+    writefile_change = "../data/startQiskit_topo"
+
+    pattern_backend = re.compile("execute\(prog, backend=backend, shots=1024\).result\(\).get_counts\(\)")
+
+    while line:
+        n = writefile_address.search(line)
+        m = pattern_backend.search(line)
+        if n is not None:
+            writefile.write(re.sub(writefile_address, writefile_change, line))
+        elif m is not None:
+            writefile.write("    coupling_map = "+str(coupling_map)+"\n")
+            writefile.write("    basic_gate = "+str(basic_gate)+"\n")
+            writefile.write("    info = execute(circ, backend=backend, coupling_map=coupling_map,shots=1024, basis_gates"
+                            "=basis_gate).result().get_counts()\n")
+        else:
+            writefile.write(line)
+        line = readfile.readline()
+
+    writefile.close()
+    readfile.close()
+    return "startQiskit_topo" + str(iteration) + ".py"
 
 def simulator_to_qc (address:str, iteration:int):
     writefile = open("../benchmark/startQiskit_QC" + str(iteration) + ".py", "w")
@@ -24,127 +55,6 @@ def simulator_to_qc (address:str, iteration:int):
     writefile.close()
     readfile.close()
     return "startQiskit_QC" + str(iteration) + ".py"
-
-'''
-def simulator_to_qc (address:str, iteration:int):
-
-    pattern = re.compile("qasm_simulator")
-
-    writefile = open("../benchmark/startQiskit_QC"+str(iteration)+".py","w")
-    readfile = open(address)
-    line = readfile.readline()
-    
-    writefile_address = re.compile("../data/startQiskit")
-    writefile_change = "../data/startQiskit_QC"
-    
-    while line:
-        m = pattern.search(line)
-        n = pattern.search(writefile_address)
-        if m is not None:
-            writefile.write("   IBMQ.load_account()\n")
-            writefile.write("   provider = IBMQ.get_provider(hub='ibm-q')\n")
-            writefile.write("   provider.backends()\n")
-            writefile.write("   backend = least_busy(provider.backends(filters=lambda x: x.configuration().n_qubits >= n+1 and\n")
-            writefile.write("                                                            not x.configuration().simulator and x.status().operational == True))\n")
-        elif n is not None:
-            writefile.write(re.sub(writefile_address, writefile_change, line))
-        else:
-            writefile.write(line)
-        line = readfile.readline()
-
-    writefile.close()
-    readfile.close()
-    return "startQiskit_QC"+str(iteration)+".py"
-'''
-
-def qc_to_simulator (address:str, iteration:int):
-
-    pattern1 = re.compile("provider[.]backends()")
-    pattern2 = re.compile("backend = ")
-    pattern3 = re.compile("not x[.]configuration")
-
-    writefile = open("../benchmark/startQiskit"+str(iteration)+".py","w")
-    readfile = open(address)
-    line = readfile.readline()
-    while line:
-        m = pattern2.search(line)
-        if m is not None:
-            writefile.write("   backend = BasicAer.get_backend('qasm_simulator')\n")
-        else:
-            if (pattern1.search(line) is None) and (pattern3.search(line) is None):
-                writefile.write(line+"\n")
-        line = readfile.readline()
-
-    writefile.close()
-    readfile.close()
-    return "startQiskit"+str(iteration)+".py"
-
-
-def qc_to_state_vector (address:str, iteration:int):
-
-    pattern1 = re.compile("provider[.]backends()")
-    pattern2 = re.compile("backend = ")
-    pattern3 = re.compile("not x[.]configuration")
-
-    writefile= open("../benchmark/startQiskit_Class"+str(iteration)+".py", "w")
-    readfile = open(address)
-    line = readfile.readline()
-    while line:
-        m = pattern2.search(line)
-        if m is None:
-            writefile.write("    backend = BasicAer.get_backend('qasm_simulator')\n")
-        else:
-            if (pattern1.search(line) is None) and (pattern3.search(line) is None):
-                writefile.write(line+"\n")
-        line = readfile.readline()
-
-    writefile.close()
-    readfile.close()
-    return "startQiskit_Class"+str(iteration)+".py"
-
-
-def state_vector_to_qc (address:str, iteration:int):
-    pattern = re.compile("statevector_simulator")
-
-    writefile= open("../benchmark/startQiskit_QC"+str(iteration)+".py", "w")
-    readfile = open(address)
-    line = readfile.readline()
-    while line:
-        m = pattern.search(line)
-        if m is not None:
-            writefile.write("   IBMQ.load_account()\n")
-            writefile.write("   provider = IBMQ.get_provider(hub='ibm-q')\n")
-            writefile.write("   provider.backends()\n")
-            writefile.write("   backend = least_busy(provider.backends(filters=lambda x: x.configuration().n_qubits >= n+1 and\n")
-            writefile.write("                                                            not x.configuration().simulator and x.status().operational == True))\n")
-
-        else:
-            writefile.write(line+"\n")
-        line = readfile.readline()
-
-    writefile.close()
-    readfile.close()
-    return "startQiskit_QC"+str(iteration)+".py"
-
-
-def state_vector_to_simulator (address:str, iteration:int):
-    pattern = re.compile("statevector_simulator")
-
-    writefile= open("../benchmark/startQiskit"+str(iteration)+".py", "w")
-    readfile = open(address)
-    line = readfile.readline()
-    while line:
-        m = pattern.search(line)
-        if m is not None:
-            writefile.write("    backend = BasicAer.get_backend('qasm_simulator')\n")
-        else:
-            writefile.write(line+"\n")
-        line = readfile.readline()
-
-    writefile.close()
-    readfile.close()
-    return "startQiskit"+str(iteration)+".py"
-
 
 def simulator_to_state_vector (address:str, iteration:int):
     pattern = re.compile("qasm_simulator")

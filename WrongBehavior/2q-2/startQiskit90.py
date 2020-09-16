@@ -29,40 +29,9 @@ def make_circuit(n:int) -> QuantumCircuit:
 
     prog = QuantumCircuit(input_qubit, classical)
 
-    prog.cx(input_qubit[0],input_qubit[1])  # number=1
+    prog.x(input_qubit[0])  # number=1
+    prog.x(input_qubit[2])  # number=1
 
-
-
-    prog.h(input_qubit[0]) # number=8
-
-
-
-    prog.y(input_qubit[1]) # number=7
-
-
-
-    prog.h(input_qubit[0]) # number=6
-
-
-
-    prog.z(input_qubit[1]) # number=5
-
-
-
-    prog.z(input_qubit[0]) # number=4
-
-
-
-    prog.h(input_qubit[0]) # number=9
-    prog.cz(input_qubit[1],input_qubit[0]) # number=10
-    prog.h(input_qubit[0]) # number=11
-
-
-    prog.cx(input_qubit[0],input_qubit[1]) # number=2
-
-
-
-    # circuit end
 
 
 
@@ -86,7 +55,7 @@ if __name__ == '__main__':
 
 
 
-    prog = make_circuit(2)
+    prog = make_circuit(3)
 
     backend = BasicAer.get_backend('qasm_simulator')
 
@@ -96,7 +65,7 @@ if __name__ == '__main__':
 
 
 
-    writefile = open("../data/startQiskit90.csv","w")
-    pprint(info,writefile)
+    #writefile = open("../data/startQiskit90.csv","w")
+    pprint(info)#,writefile)
 
-    writefile.close()
+    #writefile.close()

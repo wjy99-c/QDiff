@@ -21,9 +21,9 @@ def order_change(codeline1:str, codeline2:str):
 def swap_to_cnot(codeline:str,number:int):
     if re.search('prog.swap', codeline) is not None:
         new_codeline = re.sub("# number=(.*)[\n]", "", codeline)
-        return re.sub('swap', "cnot", new_codeline)+"# number="+str(number)+"\n"+\
-               re.sub('swap', "cnot", new_codeline)+"# number="+str(number+1)+"\n"+\
-               re.sub('swap',"cnot", new_codeline)+"# number="+str(number+2)+"\n"
+        return re.sub('swap', "cx", new_codeline)+"# number="+str(number)+"\n"+\
+               re.sub('swap', "cx", new_codeline)+"# number="+str(number+1)+"\n"+\
+               re.sub('swap',"cx", new_codeline)+"# number="+str(number+2)+"\n"
     else:
         raise Exception('No Swap gate for Swap transformation')
 
@@ -69,3 +69,7 @@ def two_Y(tab:str, qubit_number:int, number:int):
 def two_CNOT(tab:str, qubit_number:int, number:int):
     return tab+ "prog.cx(input_qubit["+str(qubit_number)+"],input_qubit[0]) # number=" + str(number) +"\n" +\
            tab+ "prog.cx(input_qubit["+str(qubit_number)+"],input_qubit[0]) # number=" + str(number+1) +"\n"
+
+def two_SWAP(tab:str, qubit_number:int, number:int):
+    return tab + "prog.swap(input_qubit[" + str(qubit_number) + "],input_qubit[0]) # number=" + str(number) + "\n" + \
+           tab + "prog.swap(input_qubit[" + str(qubit_number) + "],input_qubit[0]) # number=" + str(number + 1) + "\n"

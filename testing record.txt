@@ -1,0 +1,5830 @@
+Generating New Program at number1
+Executing Simulator0
+Executing Classical0
+Executing QC0
+Executing reversion version of each program
+Generating Equivalent Program for number0at2
+now we are at round: 0
+Executing Simulator2
+Executing Classical2
+Executing QC2
+Executing reversion version of each program
+Generating Equivalent Program for number0at3
+now we are at round: 0
+Executing Simulator3
+Executing Classical3
+Executing QC3
+Executing reversion version of each program
+Generating Equivalent Program for number0at4
+now we are at round: 0
+Executing Simulator4
+Executing Classical4
+Executing QC4
+Executing reversion version of each program
+Generating Equivalent Program for number0at5
+now we are at round: 0
+Executing Simulator5
+Executing Classical5
+Executing QC5
+Executing reversion version of each program
+Generating Equivalent Program for number0at6
+now we are at round: 0
+Executing Simulator6
+Executing Classical6
+Executing QC6
+Executing reversion version of each program
+Generating Equivalent Program for number0at7
+now we are at round: 0
+Executing Simulator7
+Executing Classical7
+Executing QC7
+Executing reversion version of each program
+Generating Equivalent Program for number0at8
+now we are at round: 0
+Executing Simulator8
+Executing Classical8
+Executing QC8
+Executing reversion version of each program
+Generating Equivalent Program for number0at9
+now we are at round: 0
+Executing Simulator9
+Executing Classical9
+Executing QC9
+Executing reversion version of each program
+Generating Equivalent Program for number0at10
+now we are at round: 0
+Executing Simulator10
+Executing Classical10
+Executing QC10
+Executing reversion version of each program
+Generating Equivalent Program for number0at11
+now we are at round: 0
+Executing Simulator11
+Executing Classical11
+Executing QC11
+Executing reversion version of each program
+Generating New Program at number12
+Executing Simulator1
+Executing Classical1
+Executing QC1
+Executing reversion version of each program
+Generating Equivalent Program for number1at13
+now we are at round: 1
+Executing Simulator13
+Executing Classical13
+Executing QC13
+Executing reversion version of each program
+Generating Equivalent Program for number1at14
+now we are at round: 1
+Executing Simulator14
+Executing Classical14
+Executing QC14
+Executing reversion version of each program
+Generating Equivalent Program for number1at15
+now we are at round: 1
+Executing Simulator15
+Executing Classical15
+Executing QC15
+Executing reversion version of each program
+Generating Equivalent Program for number1at16
+now we are at round: 1
+Executing Simulator16
+Executing Classical16
+Executing QC16
+Executing reversion version of each program
+Generating Equivalent Program for number1at17
+now we are at round: 1
+Executing Simulator17
+Executing Classical17
+Executing QC17
+Executing reversion version of each program
+Generating Equivalent Program for number1at18
+now we are at round: 1
+Executing Simulator18
+Executing Classical18
+Executing QC18
+Executing reversion version of each program
+Generating Equivalent Program for number1at19
+now we are at round: 1
+Executing Simulator19
+Executing Classical19
+Executing QC19
+Executing reversion version of each program
+Generating Equivalent Program for number1at20
+now we are at round: 1
+Executing Simulator20
+Executing Classical20
+Executing QC20
+Executing reversion version of each program
+Generating Equivalent Program for number1at21
+now we are at round: 1
+Executing Simulator21
+Executing Classical21
+Executing QC21
+Executing reversion version of each program
+Generating Equivalent Program for number1at22
+now we are at round: 1
+Executing Simulator22
+Executing Classical22
+Executing QC22
+Executing reversion version of each program
+Generating New Program at number23
+Executing Simulator2
+Executing Classical2
+Executing QC2
+Executing reversion version of each program
+Generating Equivalent Program for number2at24
+now we are at round: 2
+Executing Simulator24
+Executing Classical24
+Executing QC24
+Executing reversion version of each program
+Generating Equivalent Program for number2at25
+now we are at round: 2
+Executing Simulator25
+Executing Classical25
+Executing QC25
+Executing reversion version of each program
+Generating Equivalent Program for number2at26
+now we are at round: 2
+Executing Simulator26
+Executing Classical26
+Executing QC26
+Executing reversion version of each program
+Generating Equivalent Program for number2at27
+now we are at round: 2
+Executing Simulator27
+Executing Classical27
+Executing QC27
+Executing reversion version of each program
+Generating Equivalent Program for number2at28
+now we are at round: 2
+Executing Simulator28
+Executing Classical28
+Executing QC28
+Executing reversion version of each program
+Generating Equivalent Program for number2at29
+now we are at round: 2
+Executing Simulator29
+Executing Classical29
+Executing QC29
+Executing reversion version of each program
+Generating Equivalent Program for number2at30
+now we are at round: 2
+Executing Simulator30
+Executing Classical30
+Executing QC30
+Executing reversion version of each program
+Generating Equivalent Program for number2at31
+now we are at round: 2
+Executing Simulator31
+Executing Classical31
+Executing QC31
+Executing reversion version of each program
+Generating Equivalent Program for number2at32
+now we are at round: 2
+Executing Simulator32
+Executing Classical32
+Executing QC32
+Executing reversion version of each program
+Generating Equivalent Program for number2at33
+now we are at round: 2
+Executing Simulator33
+Executing Classical33
+Executing QC33
+Executing reversion version of each program
+Generating New Program at number34
+Executing Simulator3
+Executing Classical3
+Executing QC3
+Executing reversion version of each program
+Generating Equivalent Program for number3at35
+now we are at round: 3
+Executing Simulator35
+Executing Classical35
+Executing QC35
+Executing reversion version of each program
+Generating Equivalent Program for number3at36
+now we are at round: 3
+Executing Simulator36
+Executing Classical36
+Executing QC36
+Executing reversion version of each program
+Generating Equivalent Program for number3at37
+now we are at round: 3
+Executing Simulator37
+Executing Classical37
+Executing QC37
+Executing reversion version of each program
+Generating Equivalent Program for number3at38
+now we are at round: 3
+Executing Simulator38
+Executing Classical38
+Executing QC38
+Executing reversion version of each program
+Generating Equivalent Program for number3at39
+now we are at round: 3
+Executing Simulator39
+Executing Classical39
+Executing QC39
+Executing reversion version of each program
+Generating Equivalent Program for number3at40
+now we are at round: 3
+Executing Simulator40
+Executing Classical40
+Executing QC40
+Executing reversion version of each program
+Generating Equivalent Program for number3at41
+now we are at round: 3
+Executing Simulator41
+Executing Classical41
+Executing QC41
+Executing reversion version of each program
+Generating Equivalent Program for number3at42
+now we are at round: 3
+Executing Simulator42
+Executing Classical42
+Executing QC42
+Executing reversion version of each program
+Generating Equivalent Program for number3at43
+now we are at round: 3
+Executing Simulator43
+Executing Classical43
+Executing QC43
+Executing reversion version of each program
+Generating Equivalent Program for number3at44
+now we are at round: 3
+Executing Simulator44
+Executing Classical44
+Executing QC44
+Executing reversion version of each program
+Generating New Program at number45
+Executing Simulator4
+Executing Classical4
+Executing QC4
+Executing reversion version of each program
+Generating Equivalent Program for number4at46
+now we are at round: 4
+Executing Simulator46
+Executing Classical46
+Executing QC46
+Executing reversion version of each program
+Generating Equivalent Program for number4at47
+now we are at round: 4
+Executing Simulator47
+Executing Classical47
+Executing QC47
+Executing reversion version of each program
+Generating Equivalent Program for number4at48
+now we are at round: 4
+Executing Simulator48
+Executing Classical48
+Executing QC48
+Executing reversion version of each program
+Generating Equivalent Program for number4at49
+now we are at round: 4
+Executing Simulator49
+Executing Classical49
+Executing QC49
+Executing reversion version of each program
+Generating Equivalent Program for number4at50
+now we are at round: 4
+Executing Simulator50
+Executing Classical50
+Executing QC50
+Executing reversion version of each program
+Generating Equivalent Program for number4at51
+now we are at round: 4
+Executing Simulator51
+Executing Classical51
+Executing QC51
+Executing reversion version of each program
+Generating Equivalent Program for number4at52
+now we are at round: 4
+Executing Simulator52
+Executing Classical52
+Executing QC52
+Executing reversion version of each program
+Generating Equivalent Program for number4at53
+now we are at round: 4
+Executing Simulator53
+Executing Classical53
+Executing QC53
+Executing reversion version of each program
+Generating Equivalent Program for number4at54
+now we are at round: 4
+Executing Simulator54
+Executing Classical54
+Executing QC54
+Executing reversion version of each program
+Generating Equivalent Program for number4at55
+now we are at round: 4
+Executing Simulator55
+Executing Classical55
+Executing QC55
+Executing reversion version of each program
+Generating New Program at number56
+Executing Simulator6
+Executing Classical6
+Executing QC6
+Executing reversion version of each program
+Generating Equivalent Program for number6at57
+now we are at round: 5
+Executing Simulator57
+Executing Classical57
+Executing QC57
+Executing reversion version of each program
+Generating Equivalent Program for number6at58
+now we are at round: 5
+Executing Simulator58
+Executing Classical58
+Executing QC58
+Executing reversion version of each program
+Generating Equivalent Program for number6at59
+now we are at round: 5
+Executing Simulator59
+Executing Classical59
+Executing QC59
+Executing reversion version of each program
+Generating Equivalent Program for number6at60
+now we are at round: 5
+Executing Simulator60
+Executing Classical60
+Executing QC60
+Executing reversion version of each program
+Generating Equivalent Program for number6at61
+now we are at round: 5
+Executing Simulator61
+Executing Classical61
+Executing QC61
+Executing reversion version of each program
+Generating Equivalent Program for number6at62
+now we are at round: 5
+Executing Simulator62
+Executing Classical62
+Executing QC62
+Executing reversion version of each program
+Generating Equivalent Program for number6at63
+now we are at round: 5
+Executing Simulator63
+Executing Classical63
+Executing QC63
+Executing reversion version of each program
+Generating Equivalent Program for number6at64
+now we are at round: 5
+Executing Simulator64
+Executing Classical64
+Executing QC64
+Executing reversion version of each program
+Generating Equivalent Program for number6at65
+now we are at round: 5
+Executing Simulator65
+Executing Classical65
+Executing QC65
+Executing reversion version of each program
+Generating Equivalent Program for number6at66
+now we are at round: 5
+Executing Simulator66
+Executing Classical66
+Executing QC66
+Executing reversion version of each program
+Generating New Program at number67
+Executing Simulator7
+Executing Classical7
+Executing QC7
+Executing reversion version of each program
+Generating Equivalent Program for number7at68
+now we are at round: 6
+Executing Simulator68
+Executing Classical68
+Executing QC68
+Executing reversion version of each program
+Generating Equivalent Program for number7at69
+now we are at round: 6
+Executing Simulator69
+Executing Classical69
+Executing QC69
+Executing reversion version of each program
+Generating Equivalent Program for number7at70
+now we are at round: 6
+Executing Simulator70
+Executing Classical70
+Executing QC70
+Executing reversion version of each program
+Generating Equivalent Program for number7at71
+now we are at round: 6
+Executing Simulator71
+Executing Classical71
+Executing QC71
+Executing reversion version of each program
+Generating Equivalent Program for number7at72
+now we are at round: 6
+Executing Simulator72
+Executing Classical72
+Executing QC72
+Executing reversion version of each program
+Generating Equivalent Program for number7at73
+now we are at round: 6
+Executing Simulator73
+Executing Classical73
+Executing QC73
+Executing reversion version of each program
+Generating Equivalent Program for number7at74
+now we are at round: 6
+Executing Simulator74
+Executing Classical74
+Executing QC74
+Executing reversion version of each program
+Generating Equivalent Program for number7at75
+now we are at round: 6
+Executing Simulator75
+Executing Classical75
+Executing QC75
+Executing reversion version of each program
+Generating Equivalent Program for number7at76
+now we are at round: 6
+Executing Simulator76
+Executing Classical76
+Executing QC76
+Executing reversion version of each program
+Generating Equivalent Program for number7at77
+now we are at round: 6
+Executing Simulator77
+Executing Classical77
+Executing QC77
+Executing reversion version of each program
+Generating New Program at number78
+Executing Simulator12
+Executing Classical12
+Executing QC12
+Executing reversion version of each program
+Generating Equivalent Program for number12at79
+now we are at round: 7
+Executing Simulator79
+Executing Classical79
+Executing QC79
+Executing reversion version of each program
+Generating Equivalent Program for number12at80
+now we are at round: 7
+Executing Simulator80
+Executing Classical80
+Executing QC80
+Executing reversion version of each program
+Generating Equivalent Program for number12at81
+now we are at round: 7
+Executing Simulator81
+Executing Classical81
+Executing QC81
+Executing reversion version of each program
+Generating Equivalent Program for number12at82
+now we are at round: 7
+Executing Simulator82
+Executing Classical82
+Executing QC82
+Executing reversion version of each program
+Generating Equivalent Program for number12at83
+now we are at round: 7
+Executing Simulator83
+Executing Classical83
+Executing QC83
+Executing reversion version of each program
+Generating Equivalent Program for number12at84
+now we are at round: 7
+Executing Simulator84
+Executing Classical84
+Executing QC84
+Executing reversion version of each program
+Generating Equivalent Program for number12at85
+now we are at round: 7
+Executing Simulator85
+Executing Classical85
+Executing QC85
+Executing reversion version of each program
+Generating Equivalent Program for number12at86
+now we are at round: 7
+Executing Simulator86
+Executing Classical86
+Executing QC86
+Executing reversion version of each program
+Generating Equivalent Program for number12at87
+now we are at round: 7
+Executing Simulator87
+Executing Classical87
+Executing QC87
+Executing reversion version of each program
+Generating Equivalent Program for number12at88
+now we are at round: 7
+Executing Simulator88
+Executing Classical88
+Executing QC88
+Executing reversion version of each program
+Generating New Program at number89
+Executing Simulator21
+Executing Classical21
+Executing QC21
+Executing reversion version of each program
+Generating Equivalent Program for number21at90
+now we are at round: 8
+Executing Simulator90
+Executing Classical90
+Executing QC90
+Executing reversion version of each program
+Generating Equivalent Program for number21at91
+now we are at round: 8
+Executing Simulator91
+Executing Classical91
+Executing QC91
+Executing reversion version of each program
+Generating Equivalent Program for number21at92
+now we are at round: 8
+Executing Simulator92
+Executing Classical92
+Executing QC92
+Executing reversion version of each program
+Generating Equivalent Program for number21at93
+now we are at round: 8
+Executing Simulator93
+Executing Classical93
+Executing QC93
+Executing reversion version of each program
+Generating Equivalent Program for number21at94
+now we are at round: 8
+Executing Simulator94
+Executing Classical94
+Executing QC94
+Executing reversion version of each program
+Generating Equivalent Program for number21at95
+now we are at round: 8
+Executing Simulator95
+Executing Classical95
+Executing QC95
+Executing reversion version of each program
+Generating Equivalent Program for number21at96
+now we are at round: 8
+Executing Simulator96
+Executing Classical96
+Executing QC96
+Executing reversion version of each program
+Generating Equivalent Program for number21at97
+now we are at round: 8
+Executing Simulator97
+Executing Classical97
+Executing QC97
+Executing reversion version of each program
+Generating Equivalent Program for number21at98
+now we are at round: 8
+Executing Simulator98
+Executing Classical98
+Executing QC98
+Executing reversion version of each program
+Generating Equivalent Program for number21at99
+now we are at round: 8
+Executing Simulator99
+Executing Classical99
+Executing QC99
+Executing reversion version of each program
+Generating New Program at number100
+Executing Simulator23
+Executing Classical23
+Executing QC23
+Executing reversion version of each program
+Generating Equivalent Program for number23at101
+now we are at round: 9
+Executing Simulator101
+Executing Classical101
+Executing QC101
+Executing reversion version of each program
+Generating Equivalent Program for number23at102
+now we are at round: 9
+Executing Simulator102
+Executing Classical102
+Executing QC102
+Executing reversion version of each program
+Generating Equivalent Program for number23at103
+now we are at round: 9
+Executing Simulator103
+Executing Classical103
+Executing QC103
+Executing reversion version of each program
+Generating Equivalent Program for number23at104
+now we are at round: 9
+Executing Simulator104
+Executing Classical104
+Executing QC104
+Executing reversion version of each program
+Generating Equivalent Program for number23at105
+now we are at round: 9
+Executing Simulator105
+Executing Classical105
+Executing QC105
+Executing reversion version of each program
+Generating Equivalent Program for number23at106
+now we are at round: 9
+Executing Simulator106
+Executing Classical106
+Executing QC106
+Executing reversion version of each program
+Generating Equivalent Program for number23at107
+now we are at round: 9
+Executing Simulator107
+Executing Classical107
+Executing QC107
+Executing reversion version of each program
+Generating Equivalent Program for number23at108
+now we are at round: 9
+Executing Simulator108
+Executing Classical108
+Executing QC108
+Executing reversion version of each program
+Generating Equivalent Program for number23at109
+now we are at round: 9
+Executing Simulator109
+Executing Classical109
+Executing QC109
+Executing reversion version of each program
+Generating Equivalent Program for number23at110
+now we are at round: 9
+Executing Simulator110
+Executing Classical110
+Executing QC110
+Executing reversion version of each program
+Generating New Program at number111
+Executing Simulator34
+Executing Classical34
+Executing QC34
+Executing reversion version of each program
+Generating Equivalent Program for number34at112
+now we are at round: 10
+Executing Simulator112
+Executing Classical112
+Executing QC112
+Executing reversion version of each program
+Generating Equivalent Program for number34at113
+now we are at round: 10
+Executing Simulator113
+Executing Classical113
+Executing QC113
+Executing reversion version of each program
+Generating Equivalent Program for number34at114
+now we are at round: 10
+Executing Simulator114
+Executing Classical114
+Executing QC114
+Executing reversion version of each program
+Generating Equivalent Program for number34at115
+now we are at round: 10
+Executing Simulator115
+Executing Classical115
+Executing QC115
+Executing reversion version of each program
+Generating Equivalent Program for number34at116
+now we are at round: 10
+Executing Simulator116
+Executing Classical116
+Executing QC116
+Executing reversion version of each program
+Generating Equivalent Program for number34at117
+now we are at round: 10
+Executing Simulator117
+Executing Classical117
+Executing QC117
+Executing reversion version of each program
+Generating Equivalent Program for number34at118
+now we are at round: 10
+Executing Simulator118
+Executing Classical118
+Executing QC118
+Executing reversion version of each program
+Generating Equivalent Program for number34at119
+now we are at round: 10
+Executing Simulator119
+Executing Classical119
+Executing QC119
+Executing reversion version of each program
+Generating Equivalent Program for number34at120
+now we are at round: 10
+Executing Simulator120
+Executing Classical120
+Executing QC120
+Executing reversion version of each program
+Generating Equivalent Program for number34at121
+now we are at round: 10
+Executing Simulator121
+Executing Classical121
+Executing QC121
+Executing reversion version of each program
+Generating New Program at number122
+Executing Simulator42
+Executing Classical42
+Executing QC42
+Executing reversion version of each program
+Generating Equivalent Program for number42at123
+now we are at round: 11
+Executing Simulator123
+Executing Classical123
+Executing QC123
+Executing reversion version of each program
+Generating Equivalent Program for number42at124
+now we are at round: 11
+Executing Simulator124
+Executing Classical124
+Executing QC124
+Executing reversion version of each program
+Generating Equivalent Program for number42at125
+now we are at round: 11
+Executing Simulator125
+Executing Classical125
+Executing QC125
+Executing reversion version of each program
+Generating Equivalent Program for number42at126
+now we are at round: 11
+Executing Simulator126
+Executing Classical126
+Executing QC126
+Executing reversion version of each program
+Generating Equivalent Program for number42at127
+now we are at round: 11
+Executing Simulator127
+Executing Classical127
+Executing QC127
+Executing reversion version of each program
+Generating Equivalent Program for number42at128
+now we are at round: 11
+Executing Simulator128
+Executing Classical128
+Executing QC128
+Executing reversion version of each program
+Generating Equivalent Program for number42at129
+now we are at round: 11
+Executing Simulator129
+Executing Classical129
+Executing QC129
+Executing reversion version of each program
+Generating Equivalent Program for number42at130
+now we are at round: 11
+Executing Simulator130
+Executing Classical130
+Executing QC130
+Executing reversion version of each program
+Generating Equivalent Program for number42at131
+now we are at round: 11
+Executing Simulator131
+Executing Classical131
+Executing QC131
+Executing reversion version of each program
+Generating Equivalent Program for number42at132
+now we are at round: 11
+Executing Simulator132
+Executing Classical132
+Executing QC132
+Executing reversion version of each program
+Generating New Program at number133
+Executing Simulator43
+Executing Classical43
+Executing QC43
+Executing reversion version of each program
+Generating Equivalent Program for number43at134
+now we are at round: 12
+Executing Simulator134
+Executing Classical134
+Executing QC134
+Executing reversion version of each program
+Generating Equivalent Program for number43at135
+now we are at round: 12
+Executing Simulator135
+Executing Classical135
+Executing QC135
+Executing reversion version of each program
+Generating Equivalent Program for number43at136
+now we are at round: 12
+Executing Simulator136
+Executing Classical136
+Executing QC136
+Executing reversion version of each program
+Generating Equivalent Program for number43at137
+now we are at round: 12
+Executing Simulator137
+Executing Classical137
+Executing QC137
+Executing reversion version of each program
+Generating Equivalent Program for number43at138
+now we are at round: 12
+Executing Simulator138
+Executing Classical138
+Executing QC138
+Executing reversion version of each program
+Generating Equivalent Program for number43at139
+now we are at round: 12
+Executing Simulator139
+Executing Classical139
+Executing QC139
+Executing reversion version of each program
+Generating Equivalent Program for number43at140
+now we are at round: 12
+Executing Simulator140
+Executing Classical140
+Executing QC140
+Executing reversion version of each program
+Generating Equivalent Program for number43at141
+now we are at round: 12
+Executing Simulator141
+Executing Classical141
+Executing QC141
+Executing reversion version of each program
+Generating Equivalent Program for number43at142
+now we are at round: 12
+Executing Simulator142
+Executing Classical142
+Executing QC142
+Executing reversion version of each program
+Generating Equivalent Program for number43at143
+now we are at round: 12
+Executing Simulator143
+Executing Classical143
+Executing QC143
+Executing reversion version of each program
+Generating New Program at number144
+Executing Simulator44
+Executing Classical44
+Executing QC44
+Executing reversion version of each program
+Generating Equivalent Program for number44at145
+now we are at round: 13
+Executing Simulator145
+Executing Classical145
+Executing QC145
+Executing reversion version of each program
+Generating Equivalent Program for number44at146
+now we are at round: 13
+Executing Simulator146
+Executing Classical146
+Executing QC146
+Executing reversion version of each program
+Generating Equivalent Program for number44at147
+now we are at round: 13
+Executing Simulator147
+Executing Classical147
+Executing QC147
+Executing reversion version of each program
+Generating Equivalent Program for number44at148
+now we are at round: 13
+Executing Simulator148
+Executing Classical148
+Executing QC148
+Executing reversion version of each program
+Generating Equivalent Program for number44at149
+now we are at round: 13
+Executing Simulator149
+Executing Classical149
+Executing QC149
+Executing reversion version of each program
+Generating Equivalent Program for number44at150
+now we are at round: 13
+Executing Simulator150
+Executing Classical150
+Executing QC150
+Executing reversion version of each program
+Generating Equivalent Program for number44at151
+now we are at round: 13
+Executing Simulator151
+Executing Classical151
+Executing QC151
+Executing reversion version of each program
+Generating Equivalent Program for number44at152
+now we are at round: 13
+Executing Simulator152
+Executing Classical152
+Executing QC152
+Executing reversion version of each program
+Generating Equivalent Program for number44at153
+now we are at round: 13
+Executing Simulator153
+Executing Classical153
+Executing QC153
+Executing reversion version of each program
+Generating Equivalent Program for number44at154
+now we are at round: 13
+Executing Simulator154
+Executing Classical154
+Executing QC154
+Executing reversion version of each program
+Generating New Program at number155
+Executing Simulator45
+Executing Classical45
+Executing QC45
+Executing reversion version of each program
+Generating Equivalent Program for number45at156
+now we are at round: 14
+Executing Simulator156
+Executing Classical156
+Executing QC156
+Executing reversion version of each program
+Generating Equivalent Program for number45at157
+now we are at round: 14
+Executing Simulator157
+Executing Classical157
+Executing QC157
+Executing reversion version of each program
+Generating Equivalent Program for number45at158
+now we are at round: 14
+Executing Simulator158
+Executing Classical158
+Executing QC158
+Executing reversion version of each program
+Generating Equivalent Program for number45at159
+now we are at round: 14
+Executing Simulator159
+Executing Classical159
+Executing QC159
+Executing reversion version of each program
+Generating Equivalent Program for number45at160
+now we are at round: 14
+Executing Simulator160
+Executing Classical160
+Executing QC160
+Executing reversion version of each program
+Generating Equivalent Program for number45at161
+now we are at round: 14
+Executing Simulator161
+Executing Classical161
+Executing QC161
+Executing reversion version of each program
+Generating Equivalent Program for number45at162
+now we are at round: 14
+Executing Simulator162
+Executing Classical162
+Executing QC162
+Executing reversion version of each program
+Generating Equivalent Program for number45at163
+now we are at round: 14
+Executing Simulator163
+Executing Classical163
+Executing QC163
+Executing reversion version of each program
+Generating Equivalent Program for number45at164
+now we are at round: 14
+Executing Simulator164
+Executing Classical164
+Executing QC164
+Executing reversion version of each program
+Generating Equivalent Program for number45at165
+now we are at round: 14
+Executing Simulator165
+Executing Classical165
+Executing QC165
+Executing reversion version of each program
+Generating New Program at number166
+Executing Simulator54
+Executing Classical54
+Executing QC54
+Executing reversion version of each program
+Generating Equivalent Program for number54at167
+now we are at round: 15
+Executing Simulator167
+Executing Classical167
+Executing QC167
+Executing reversion version of each program
+Generating Equivalent Program for number54at168
+now we are at round: 15
+Executing Simulator168
+Executing Classical168
+Executing QC168
+Executing reversion version of each program
+Generating Equivalent Program for number54at169
+now we are at round: 15
+Executing Simulator169
+Executing Classical169
+Executing QC169
+Executing reversion version of each program
+Generating Equivalent Program for number54at170
+now we are at round: 15
+Executing Simulator170
+Executing Classical170
+Executing QC170
+Executing reversion version of each program
+Generating Equivalent Program for number54at171
+now we are at round: 15
+Executing Simulator171
+Executing Classical171
+Executing QC171
+Executing reversion version of each program
+Generating Equivalent Program for number54at172
+now we are at round: 15
+Executing Simulator172
+Executing Classical172
+Executing QC172
+Executing reversion version of each program
+Generating Equivalent Program for number54at173
+now we are at round: 15
+Executing Simulator173
+Executing Classical173
+Executing QC173
+Executing reversion version of each program
+Generating Equivalent Program for number54at174
+now we are at round: 15
+Executing Simulator174
+Executing Classical174
+Executing QC174
+Executing reversion version of each program
+Generating Equivalent Program for number54at175
+now we are at round: 15
+Executing Simulator175
+Executing Classical175
+Executing QC175
+Executing reversion version of each program
+Generating Equivalent Program for number54at176
+now we are at round: 15
+Executing Simulator176
+Executing Classical176
+Executing QC176
+Executing reversion version of each program
+Generating New Program at number177
+Executing Simulator56
+Executing Classical56
+Executing QC56
+Executing reversion version of each program
+Generating Equivalent Program for number56at178
+now we are at round: 16
+Executing Simulator178
+Executing Classical178
+Executing QC178
+Executing reversion version of each program
+Generating Equivalent Program for number56at179
+now we are at round: 16
+Executing Simulator179
+Executing Classical179
+Executing QC179
+Executing reversion version of each program
+Generating Equivalent Program for number56at180
+now we are at round: 16
+Executing Simulator180
+Executing Classical180
+Executing QC180
+Executing reversion version of each program
+Generating Equivalent Program for number56at181
+now we are at round: 16
+Executing Simulator181
+Executing Classical181
+Executing QC181
+Executing reversion version of each program
+Generating Equivalent Program for number56at182
+now we are at round: 16
+Executing Simulator182
+Executing Classical182
+Executing QC182
+Executing reversion version of each program
+Generating Equivalent Program for number56at183
+now we are at round: 16
+Executing Simulator183
+Executing Classical183
+Executing QC183
+Executing reversion version of each program
+Generating Equivalent Program for number56at184
+now we are at round: 16
+Executing Simulator184
+Executing Classical184
+Executing QC184
+Executing reversion version of each program
+Generating Equivalent Program for number56at185
+now we are at round: 16
+Executing Simulator185
+Executing Classical185
+Executing QC185
+Executing reversion version of each program
+Generating Equivalent Program for number56at186
+now we are at round: 16
+Executing Simulator186
+Executing Classical186
+Executing QC186
+Executing reversion version of each program
+Generating Equivalent Program for number56at187
+now we are at round: 16
+Executing Simulator187
+Executing Classical187
+Executing QC187
+Executing reversion version of each program
+Generating New Program at number188
+Executing Simulator67
+Executing Classical67
+Executing QC67
+Executing reversion version of each program
+Generating Equivalent Program for number67at189
+now we are at round: 17
+Executing Simulator189
+Executing Classical189
+Executing QC189
+Executing reversion version of each program
+Generating Equivalent Program for number67at190
+now we are at round: 17
+Executing Simulator190
+Executing Classical190
+Executing QC190
+Executing reversion version of each program
+Generating Equivalent Program for number67at191
+now we are at round: 17
+Executing Simulator191
+Executing Classical191
+Executing QC191
+Executing reversion version of each program
+Generating Equivalent Program for number67at192
+now we are at round: 17
+Executing Simulator192
+Executing Classical192
+Executing QC192
+Executing reversion version of each program
+Generating Equivalent Program for number67at193
+now we are at round: 17
+Executing Simulator193
+Executing Classical193
+Executing QC193
+Executing reversion version of each program
+Generating Equivalent Program for number67at194
+now we are at round: 17
+Executing Simulator194
+Executing Classical194
+Executing QC194
+Executing reversion version of each program
+Generating Equivalent Program for number67at195
+now we are at round: 17
+Executing Simulator195
+Executing Classical195
+Executing QC195
+Executing reversion version of each program
+Generating Equivalent Program for number67at196
+now we are at round: 17
+Executing Simulator196
+Executing Classical196
+Executing QC196
+Executing reversion version of each program
+Generating Equivalent Program for number67at197
+now we are at round: 17
+Executing Simulator197
+Executing Classical197
+Executing QC197
+Executing reversion version of each program
+Generating Equivalent Program for number67at198
+now we are at round: 17
+Executing Simulator198
+Executing Classical198
+Executing QC198
+Executing reversion version of each program
+Generating New Program at number199
+Executing Simulator78
+Executing Classical78
+Executing QC78
+Executing reversion version of each program
+Generating Equivalent Program for number78at200
+now we are at round: 18
+Executing Simulator200
+Executing Classical200
+Executing QC200
+Executing reversion version of each program
+Generating Equivalent Program for number78at201
+now we are at round: 18
+Executing Simulator201
+Executing Classical201
+Executing QC201
+Executing reversion version of each program
+Generating Equivalent Program for number78at202
+now we are at round: 18
+Executing Simulator202
+Executing Classical202
+Executing QC202
+Executing reversion version of each program
+Generating Equivalent Program for number78at203
+now we are at round: 18
+Executing Simulator203
+Executing Classical203
+Executing QC203
+Executing reversion version of each program
+Generating Equivalent Program for number78at204
+now we are at round: 18
+Executing Simulator204
+Executing Classical204
+Executing QC204
+Executing reversion version of each program
+Generating Equivalent Program for number78at205
+now we are at round: 18
+Executing Simulator205
+Executing Classical205
+Executing QC205
+Executing reversion version of each program
+Generating Equivalent Program for number78at206
+now we are at round: 18
+Executing Simulator206
+Executing Classical206
+Executing QC206
+Executing reversion version of each program
+Generating Equivalent Program for number78at207
+now we are at round: 18
+Executing Simulator207
+Executing Classical207
+Executing QC207
+Executing reversion version of each program
+Generating Equivalent Program for number78at208
+now we are at round: 18
+Executing Simulator208
+Executing Classical208
+Executing QC208
+Executing reversion version of each program
+Generating Equivalent Program for number78at209
+now we are at round: 18
+Executing Simulator209
+Executing Classical209
+Executing QC209
+Executing reversion version of each program
+Generating New Program at number210
+Executing Simulator89
+Executing Classical89
+Executing QC89
+Executing reversion version of each program
+Generating Equivalent Program for number89at211
+now we are at round: 19
+Executing Simulator211
+Executing Classical211
+Executing QC211
+Executing reversion version of each program
+Generating Equivalent Program for number89at212
+now we are at round: 19
+Executing Simulator212
+Executing Classical212
+Executing QC212
+Executing reversion version of each program
+Generating Equivalent Program for number89at213
+now we are at round: 19
+Executing Simulator213
+Executing Classical213
+Executing QC213
+Executing reversion version of each program
+Generating Equivalent Program for number89at214
+now we are at round: 19
+Executing Simulator214
+Executing Classical214
+Executing QC214
+Executing reversion version of each program
+Generating Equivalent Program for number89at215
+now we are at round: 19
+Executing Simulator215
+Executing Classical215
+Executing QC215
+Executing reversion version of each program
+Generating Equivalent Program for number89at216
+now we are at round: 19
+Executing Simulator216
+Executing Classical216
+Executing QC216
+Executing reversion version of each program
+Generating Equivalent Program for number89at217
+now we are at round: 19
+Executing Simulator217
+Executing Classical217
+Executing QC217
+Executing reversion version of each program
+Generating Equivalent Program for number89at218
+now we are at round: 19
+Executing Simulator218
+Executing Classical218
+Executing QC218
+Executing reversion version of each program
+Generating Equivalent Program for number89at219
+now we are at round: 19
+Executing Simulator219
+Executing Classical219
+Executing QC219
+Executing reversion version of each program
+Generating Equivalent Program for number89at220
+now we are at round: 19
+Executing Simulator220
+Executing Classical220
+Executing QC220
+Executing reversion version of each program
+Generating New Program at number221
+Executing Simulator100
+Executing Classical100
+Executing QC100
+Executing reversion version of each program
+Generating Equivalent Program for number100at222
+now we are at round: 20
+Executing Simulator222
+Executing Classical222
+Executing QC222
+Executing reversion version of each program
+Generating Equivalent Program for number100at223
+now we are at round: 20
+Executing Simulator223
+Executing Classical223
+Executing QC223
+Executing reversion version of each program
+Generating Equivalent Program for number100at224
+now we are at round: 20
+Executing Simulator224
+Executing Classical224
+Executing QC224
+Executing reversion version of each program
+Generating Equivalent Program for number100at225
+now we are at round: 20
+Executing Simulator225
+Executing Classical225
+Executing QC225
+Executing reversion version of each program
+Generating Equivalent Program for number100at226
+now we are at round: 20
+Executing Simulator226
+Executing Classical226
+Executing QC226
+Executing reversion version of each program
+Generating Equivalent Program for number100at227
+now we are at round: 20
+Executing Simulator227
+Executing Classical227
+Executing QC227
+Executing reversion version of each program
+Generating Equivalent Program for number100at228
+now we are at round: 20
+Executing Simulator228
+Executing Classical228
+Executing QC228
+Executing reversion version of each program
+Generating Equivalent Program for number100at229
+now we are at round: 20
+Executing Simulator229
+Executing Classical229
+Executing QC229
+Executing reversion version of each program
+Generating Equivalent Program for number100at230
+now we are at round: 20
+Executing Simulator230
+Executing Classical230
+Executing QC230
+Executing reversion version of each program
+Generating Equivalent Program for number100at231
+now we are at round: 20
+Executing Simulator231
+Executing Classical231
+Executing QC231
+Executing reversion version of each program
+Generating New Program at number232
+Executing Simulator105
+Executing Classical105
+Executing QC105
+Executing reversion version of each program
+Generating Equivalent Program for number105at233
+now we are at round: 21
+Executing Simulator233
+Executing Classical233
+Executing QC233
+Executing reversion version of each program
+Generating Equivalent Program for number105at234
+now we are at round: 21
+Executing Simulator234
+Executing Classical234
+Executing QC234
+Executing reversion version of each program
+Generating Equivalent Program for number105at235
+now we are at round: 21
+Executing Simulator235
+Executing Classical235
+Executing QC235
+Executing reversion version of each program
+Generating Equivalent Program for number105at236
+now we are at round: 21
+Executing Simulator236
+Executing Classical236
+Executing QC236
+Executing reversion version of each program
+Generating Equivalent Program for number105at237
+now we are at round: 21
+Executing Simulator237
+Executing Classical237
+Executing QC237
+Executing reversion version of each program
+Generating Equivalent Program for number105at238
+now we are at round: 21
+Executing Simulator238
+Executing Classical238
+Executing QC238
+Executing reversion version of each program
+Generating Equivalent Program for number105at239
+now we are at round: 21
+Executing Simulator239
+Executing Classical239
+Executing QC239
+Executing reversion version of each program
+Generating Equivalent Program for number105at240
+now we are at round: 21
+Executing Simulator240
+Executing Classical240
+Executing QC240
+Executing reversion version of each program
+Generating Equivalent Program for number105at241
+now we are at round: 21
+Executing Simulator241
+Executing Classical241
+Executing QC241
+Executing reversion version of each program
+Generating Equivalent Program for number105at242
+now we are at round: 21
+Executing Simulator242
+Executing Classical242
+Executing QC242
+Executing reversion version of each program
+Generating New Program at number243
+Executing Simulator107
+Executing Classical107
+Executing QC107
+Executing reversion version of each program
+Generating Equivalent Program for number107at244
+now we are at round: 22
+Executing Simulator244
+Executing Classical244
+Executing QC244
+Executing reversion version of each program
+Generating Equivalent Program for number107at245
+now we are at round: 22
+Executing Simulator245
+Executing Classical245
+Executing QC245
+Executing reversion version of each program
+Generating Equivalent Program for number107at246
+now we are at round: 22
+Executing Simulator246
+Executing Classical246
+Executing QC246
+Executing reversion version of each program
+Generating Equivalent Program for number107at247
+now we are at round: 22
+Executing Simulator247
+Executing Classical247
+Executing QC247
+Executing reversion version of each program
+Generating Equivalent Program for number107at248
+now we are at round: 22
+Executing Simulator248
+Executing Classical248
+Executing QC248
+Executing reversion version of each program
+Generating Equivalent Program for number107at249
+now we are at round: 22
+Executing Simulator249
+Executing Classical249
+Executing QC249
+Executing reversion version of each program
+Generating Equivalent Program for number107at250
+now we are at round: 22
+Executing Simulator250
+Executing Classical250
+Executing QC250
+Executing reversion version of each program
+Generating Equivalent Program for number107at251
+now we are at round: 22
+Executing Simulator251
+Executing Classical251
+Executing QC251
+Executing reversion version of each program
+Generating Equivalent Program for number107at252
+now we are at round: 22
+Executing Simulator252
+Executing Classical252
+Executing QC252
+Executing reversion version of each program
+Generating Equivalent Program for number107at253
+now we are at round: 22
+Executing Simulator253
+Executing Classical253
+Executing QC253
+Executing reversion version of each program
+Generating New Program at number254
+Executing Simulator108
+Executing Classical108
+Executing QC108
+Executing reversion version of each program
+Generating Equivalent Program for number108at255
+now we are at round: 23
+Executing Simulator255
+Executing Classical255
+Executing QC255
+Executing reversion version of each program
+Generating Equivalent Program for number108at256
+now we are at round: 23
+Executing Simulator256
+Executing Classical256
+Executing QC256
+Executing reversion version of each program
+Generating Equivalent Program for number108at257
+now we are at round: 23
+Executing Simulator257
+Executing Classical257
+Executing QC257
+Executing reversion version of each program
+Generating Equivalent Program for number108at258
+now we are at round: 23
+Executing Simulator258
+Executing Classical258
+Executing QC258
+Executing reversion version of each program
+Generating Equivalent Program for number108at259
+now we are at round: 23
+Executing Simulator259
+Executing Classical259
+Executing QC259
+Executing reversion version of each program
+Generating Equivalent Program for number108at260
+now we are at round: 23
+Executing Simulator260
+Executing Classical260
+Executing QC260
+Executing reversion version of each program
+Generating Equivalent Program for number108at261
+now we are at round: 23
+Executing Simulator261
+Executing Classical261
+Executing QC261
+Executing reversion version of each program
+Generating Equivalent Program for number108at262
+now we are at round: 23
+Executing Simulator262
+Executing Classical262
+Executing QC262
+Executing reversion version of each program
+Generating Equivalent Program for number108at263
+now we are at round: 23
+Executing Simulator263
+Executing Classical263
+Executing QC263
+Executing reversion version of each program
+Generating Equivalent Program for number108at264
+now we are at round: 23
+Executing Simulator264
+Executing Classical264
+Executing QC264
+Executing reversion version of each program
+Generating New Program at number265
+Executing Simulator111
+Executing Classical111
+Executing QC111
+Executing reversion version of each program
+Generating Equivalent Program for number111at266
+now we are at round: 24
+Executing Simulator266
+Executing Classical266
+Executing QC266
+Executing reversion version of each program
+Generating Equivalent Program for number111at267
+now we are at round: 24
+Executing Simulator267
+Executing Classical267
+Executing QC267
+Executing reversion version of each program
+Generating Equivalent Program for number111at268
+now we are at round: 24
+Executing Simulator268
+Executing Classical268
+Executing QC268
+Executing reversion version of each program
+Generating Equivalent Program for number111at269
+now we are at round: 24
+Executing Simulator269
+Executing Classical269
+Executing QC269
+Executing reversion version of each program
+Generating Equivalent Program for number111at270
+now we are at round: 24
+Executing Simulator270
+Executing Classical270
+Executing QC270
+Executing reversion version of each program
+Generating Equivalent Program for number111at271
+now we are at round: 24
+Executing Simulator271
+Executing Classical271
+Executing QC271
+Executing reversion version of each program
+Generating Equivalent Program for number111at272
+now we are at round: 24
+Executing Simulator272
+Executing Classical272
+Executing QC272
+Executing reversion version of each program
+Generating Equivalent Program for number111at273
+now we are at round: 24
+Executing Simulator273
+Executing Classical273
+Executing QC273
+Executing reversion version of each program
+Generating Equivalent Program for number111at274
+now we are at round: 24
+Executing Simulator274
+Executing Classical274
+Executing QC274
+Executing reversion version of each program
+Generating Equivalent Program for number111at275
+now we are at round: 24
+Executing Simulator275
+Executing Classical275
+Executing QC275
+Executing reversion version of each program
+Generating New Program at number276
+Executing Simulator122
+Executing Classical122
+Executing QC122
+Executing reversion version of each program
+Generating Equivalent Program for number122at277
+now we are at round: 25
+Executing Simulator277
+Executing Classical277
+Executing QC277
+Executing reversion version of each program
+Generating Equivalent Program for number122at278
+now we are at round: 25
+Executing Simulator278
+Executing Classical278
+Executing QC278
+Executing reversion version of each program
+Generating Equivalent Program for number122at279
+now we are at round: 25
+Executing Simulator279
+Executing Classical279
+Executing QC279
+Executing reversion version of each program
+Generating Equivalent Program for number122at280
+now we are at round: 25
+Executing Simulator280
+Executing Classical280
+Executing QC280
+Executing reversion version of each program
+Generating Equivalent Program for number122at281
+now we are at round: 25
+Executing Simulator281
+Executing Classical281
+Executing QC281
+Executing reversion version of each program
+Generating Equivalent Program for number122at282
+now we are at round: 25
+Executing Simulator282
+Executing Classical282
+Executing QC282
+Executing reversion version of each program
+Generating Equivalent Program for number122at283
+now we are at round: 25
+Executing Simulator283
+Executing Classical283
+Executing QC283
+Executing reversion version of each program
+Generating Equivalent Program for number122at284
+now we are at round: 25
+Executing Simulator284
+Executing Classical284
+Executing QC284
+Executing reversion version of each program
+Generating Equivalent Program for number122at285
+now we are at round: 25
+Executing Simulator285
+Executing Classical285
+Executing QC285
+Executing reversion version of each program
+Generating Equivalent Program for number122at286
+now we are at round: 25
+Executing Simulator286
+Executing Classical286
+Executing QC286
+Executing reversion version of each program
+Generating New Program at number287
+Executing Simulator133
+Executing Classical133
+Executing QC133
+Executing reversion version of each program
+Generating Equivalent Program for number133at288
+now we are at round: 26
+Executing Simulator288
+Executing Classical288
+Executing QC288
+Executing reversion version of each program
+Generating Equivalent Program for number133at289
+now we are at round: 26
+Executing Simulator289
+Executing Classical289
+Executing QC289
+Executing reversion version of each program
+Generating Equivalent Program for number133at290
+now we are at round: 26
+Executing Simulator290
+Executing Classical290
+Executing QC290
+Executing reversion version of each program
+Generating Equivalent Program for number133at291
+now we are at round: 26
+Executing Simulator291
+Executing Classical291
+Executing QC291
+Executing reversion version of each program
+Generating Equivalent Program for number133at292
+now we are at round: 26
+Executing Simulator292
+Executing Classical292
+Executing QC292
+Executing reversion version of each program
+Generating Equivalent Program for number133at293
+now we are at round: 26
+Executing Simulator293
+Executing Classical293
+Executing QC293
+Executing reversion version of each program
+Generating Equivalent Program for number133at294
+now we are at round: 26
+Executing Simulator294
+Executing Classical294
+Executing QC294
+Executing reversion version of each program
+Generating Equivalent Program for number133at295
+now we are at round: 26
+Executing Simulator295
+Executing Classical295
+Executing QC295
+Executing reversion version of each program
+Generating Equivalent Program for number133at296
+now we are at round: 26
+Executing Simulator296
+Executing Classical296
+Executing QC296
+Executing reversion version of each program
+Generating Equivalent Program for number133at297
+now we are at round: 26
+Executing Simulator297
+Executing Classical297
+Executing QC297
+Executing reversion version of each program
+Generating New Program at number298
+Executing Simulator144
+Executing Classical144
+Executing QC144
+Executing reversion version of each program
+Generating Equivalent Program for number144at299
+now we are at round: 27
+Executing Simulator299
+Executing Classical299
+Executing QC299
+Executing reversion version of each program
+Generating Equivalent Program for number144at300
+now we are at round: 27
+Executing Simulator300
+Executing Classical300
+Executing QC300
+Executing reversion version of each program
+Generating Equivalent Program for number144at301
+now we are at round: 27
+Executing Simulator301
+Executing Classical301
+Executing QC301
+Executing reversion version of each program
+Generating Equivalent Program for number144at302
+now we are at round: 27
+Executing Simulator302
+Executing Classical302
+Executing QC302
+Executing reversion version of each program
+Generating Equivalent Program for number144at303
+now we are at round: 27
+Executing Simulator303
+Executing Classical303
+Executing QC303
+Executing reversion version of each program
+Generating Equivalent Program for number144at304
+now we are at round: 27
+Executing Simulator304
+Executing Classical304
+Executing QC304
+Executing reversion version of each program
+Generating Equivalent Program for number144at305
+now we are at round: 27
+Executing Simulator305
+Executing Classical305
+Executing QC305
+Executing reversion version of each program
+Generating Equivalent Program for number144at306
+now we are at round: 27
+Executing Simulator306
+Executing Classical306
+Executing QC306
+Executing reversion version of each program
+Generating Equivalent Program for number144at307
+now we are at round: 27
+Executing Simulator307
+Executing Classical307
+Executing QC307
+Executing reversion version of each program
+Generating Equivalent Program for number144at308
+now we are at round: 27
+Executing Simulator308
+Executing Classical308
+Executing QC308
+Executing reversion version of each program
+Generating New Program at number309
+Executing Simulator155
+Executing Classical155
+Executing QC155
+Executing reversion version of each program
+Generating Equivalent Program for number155at310
+now we are at round: 28
+Executing Simulator310
+Executing Classical310
+Executing QC310
+Executing reversion version of each program
+Generating Equivalent Program for number155at311
+now we are at round: 28
+Executing Simulator311
+Executing Classical311
+Executing QC311
+Executing reversion version of each program
+Generating Equivalent Program for number155at312
+now we are at round: 28
+Executing Simulator312
+Executing Classical312
+Executing QC312
+Executing reversion version of each program
+Generating Equivalent Program for number155at313
+now we are at round: 28
+Executing Simulator313
+Executing Classical313
+Executing QC313
+Executing reversion version of each program
+Generating Equivalent Program for number155at314
+now we are at round: 28
+Executing Simulator314
+Executing Classical314
+Executing QC314
+Executing reversion version of each program
+Generating Equivalent Program for number155at315
+now we are at round: 28
+Executing Simulator315
+Executing Classical315
+Executing QC315
+Executing reversion version of each program
+Generating Equivalent Program for number155at316
+now we are at round: 28
+Executing Simulator316
+Executing Classical316
+Executing QC316
+Executing reversion version of each program
+Generating Equivalent Program for number155at317
+now we are at round: 28
+Executing Simulator317
+Executing Classical317
+Executing QC317
+Executing reversion version of each program
+Generating Equivalent Program for number155at318
+now we are at round: 28
+Executing Simulator318
+Executing Classical318
+Executing QC318
+Executing reversion version of each program
+Generating Equivalent Program for number155at319
+now we are at round: 28
+Executing Simulator319
+Executing Classical319
+Executing QC319
+Executing reversion version of each program
+Generating New Program at number320
+Executing Simulator166
+Executing Classical166
+Executing QC166
+Executing reversion version of each program
+Generating Equivalent Program for number166at321
+now we are at round: 29
+Executing Simulator321
+Executing Classical321
+Executing QC321
+Executing reversion version of each program
+Generating Equivalent Program for number166at322
+now we are at round: 29
+Executing Simulator322
+Executing Classical322
+Executing QC322
+Executing reversion version of each program
+Generating Equivalent Program for number166at323
+now we are at round: 29
+Executing Simulator323
+Executing Classical323
+Executing QC323
+Executing reversion version of each program
+Generating Equivalent Program for number166at324
+now we are at round: 29
+Executing Simulator324
+Executing Classical324
+Executing QC324
+Executing reversion version of each program
+Generating Equivalent Program for number166at325
+now we are at round: 29
+Executing Simulator325
+Executing Classical325
+Executing QC325
+Executing reversion version of each program
+Generating Equivalent Program for number166at326
+now we are at round: 29
+Executing Simulator326
+Executing Classical326
+Executing QC326
+Executing reversion version of each program
+Generating Equivalent Program for number166at327
+now we are at round: 29
+Executing Simulator327
+Executing Classical327
+Executing QC327
+Executing reversion version of each program
+Generating Equivalent Program for number166at328
+now we are at round: 29
+Executing Simulator328
+Executing Classical328
+Executing QC328
+Executing reversion version of each program
+Generating Equivalent Program for number166at329
+now we are at round: 29
+Executing Simulator329
+Executing Classical329
+Executing QC329
+Executing reversion version of each program
+Generating Equivalent Program for number166at330
+now we are at round: 29
+Executing Simulator330
+Executing Classical330
+Executing QC330
+Executing reversion version of each program
+Generating New Program at number331
+Executing Simulator173
+Executing Classical173
+Executing QC173
+Executing reversion version of each program
+Generating Equivalent Program for number173at332
+now we are at round: 30
+Executing Simulator332
+Executing Classical332
+Executing QC332
+Executing reversion version of each program
+Generating Equivalent Program for number173at333
+now we are at round: 30
+Executing Simulator333
+Executing Classical333
+Executing QC333
+Executing reversion version of each program
+Generating Equivalent Program for number173at334
+now we are at round: 30
+Executing Simulator334
+Executing Classical334
+Executing QC334
+Executing reversion version of each program
+Generating Equivalent Program for number173at335
+now we are at round: 30
+Executing Simulator335
+Executing Classical335
+Executing QC335
+Executing reversion version of each program
+Generating Equivalent Program for number173at336
+now we are at round: 30
+Executing Simulator336
+Executing Classical336
+Executing QC336
+Executing reversion version of each program
+Generating Equivalent Program for number173at337
+now we are at round: 30
+Executing Simulator337
+Executing Classical337
+Executing QC337
+Executing reversion version of each program
+Generating Equivalent Program for number173at338
+now we are at round: 30
+Executing Simulator338
+Executing Classical338
+Executing QC338
+Executing reversion version of each program
+Generating Equivalent Program for number173at339
+now we are at round: 30
+Executing Simulator339
+Executing Classical339
+Executing QC339
+Executing reversion version of each program
+Generating Equivalent Program for number173at340
+now we are at round: 30
+Executing Simulator340
+Executing Classical340
+Executing QC340
+Executing reversion version of each program
+Generating Equivalent Program for number173at341
+now we are at round: 30
+Executing Simulator341
+Executing Classical341
+Executing QC341
+Executing reversion version of each program
+Generating New Program at number342
+Executing Simulator174
+Executing Classical174
+Executing QC174
+Executing reversion version of each program
+Generating Equivalent Program for number174at343
+now we are at round: 31
+Executing Simulator343
+Executing Classical343
+Executing QC343
+Executing reversion version of each program
+Generating Equivalent Program for number174at344
+now we are at round: 31
+Executing Simulator344
+Executing Classical344
+Executing QC344
+Executing reversion version of each program
+Generating Equivalent Program for number174at345
+now we are at round: 31
+Executing Simulator345
+Executing Classical345
+Executing QC345
+Executing reversion version of each program
+Generating Equivalent Program for number174at346
+now we are at round: 31
+Executing Simulator346
+Executing Classical346
+Executing QC346
+Executing reversion version of each program
+Generating Equivalent Program for number174at347
+now we are at round: 31
+Executing Simulator347
+Executing Classical347
+Executing QC347
+Executing reversion version of each program
+Generating Equivalent Program for number174at348
+now we are at round: 31
+Executing Simulator348
+Executing Classical348
+Executing QC348
+Executing reversion version of each program
+Generating Equivalent Program for number174at349
+now we are at round: 31
+Executing Simulator349
+Executing Classical349
+Executing QC349
+Executing reversion version of each program
+Generating Equivalent Program for number174at350
+now we are at round: 31
+Executing Simulator350
+Executing Classical350
+Executing QC350
+Executing reversion version of each program
+Generating Equivalent Program for number174at351
+now we are at round: 31
+Executing Simulator351
+Executing Classical351
+Executing QC351
+Executing reversion version of each program
+Generating Equivalent Program for number174at352
+now we are at round: 31
+Executing Simulator352
+Executing Classical352
+Executing QC352
+Executing reversion version of each program
+Generating New Program at number353
+Executing Simulator177
+Executing Classical177
+Executing QC177
+Executing reversion version of each program
+Generating Equivalent Program for number177at354
+now we are at round: 32
+Executing Simulator354
+Executing Classical354
+Executing QC354
+Executing reversion version of each program
+Generating Equivalent Program for number177at355
+now we are at round: 32
+Executing Simulator355
+Executing Classical355
+Executing QC355
+Executing reversion version of each program
+Generating Equivalent Program for number177at356
+now we are at round: 32
+Executing Simulator356
+Executing Classical356
+Executing QC356
+Executing reversion version of each program
+Generating Equivalent Program for number177at357
+now we are at round: 32
+Executing Simulator357
+Executing Classical357
+Executing QC357
+Executing reversion version of each program
+Generating Equivalent Program for number177at358
+now we are at round: 32
+Executing Simulator358
+Executing Classical358
+Executing QC358
+Executing reversion version of each program
+Generating Equivalent Program for number177at359
+now we are at round: 32
+Executing Simulator359
+Executing Classical359
+Executing QC359
+Executing reversion version of each program
+Generating Equivalent Program for number177at360
+now we are at round: 32
+Executing Simulator360
+Executing Classical360
+Executing QC360
+Executing reversion version of each program
+Generating Equivalent Program for number177at361
+now we are at round: 32
+Executing Simulator361
+Executing Classical361
+Executing QC361
+Executing reversion version of each program
+Generating Equivalent Program for number177at362
+now we are at round: 32
+Executing Simulator362
+Executing Classical362
+Executing QC362
+Executing reversion version of each program
+Generating Equivalent Program for number177at363
+now we are at round: 32
+Executing Simulator363
+Executing Classical363
+Executing QC363
+Executing reversion version of each program
+Generating New Program at number364
+Executing Simulator188
+Executing Classical188
+Executing QC188
+Executing reversion version of each program
+Generating Equivalent Program for number188at365
+now we are at round: 33
+Executing Simulator365
+Executing Classical365
+Executing QC365
+Executing reversion version of each program
+Generating Equivalent Program for number188at366
+now we are at round: 33
+Executing Simulator366
+Executing Classical366
+Executing QC366
+Executing reversion version of each program
+Generating Equivalent Program for number188at367
+now we are at round: 33
+Executing Simulator367
+Executing Classical367
+Executing QC367
+Executing reversion version of each program
+Generating Equivalent Program for number188at368
+now we are at round: 33
+Executing Simulator368
+Executing Classical368
+Executing QC368
+Executing reversion version of each program
+Generating Equivalent Program for number188at369
+now we are at round: 33
+Executing Simulator369
+Executing Classical369
+Executing QC369
+Executing reversion version of each program
+Generating Equivalent Program for number188at370
+now we are at round: 33
+Executing Simulator370
+Executing Classical370
+Executing QC370
+Executing reversion version of each program
+Generating Equivalent Program for number188at371
+now we are at round: 33
+Executing Simulator371
+Executing Classical371
+Executing QC371
+Executing reversion version of each program
+Generating Equivalent Program for number188at372
+now we are at round: 33
+Executing Simulator372
+Executing Classical372
+Executing QC372
+Executing reversion version of each program
+Generating Equivalent Program for number188at373
+now we are at round: 33
+Executing Simulator373
+Executing Classical373
+Executing QC373
+Executing reversion version of each program
+Generating Equivalent Program for number188at374
+now we are at round: 33
+Executing Simulator374
+Executing Classical374
+Executing QC374
+Executing reversion version of each program
+Generating New Program at number375
+Executing Simulator199
+Executing Classical199
+Executing QC199
+Executing reversion version of each program
+Generating Equivalent Program for number199at376
+now we are at round: 34
+Executing Simulator376
+Executing Classical376
+Executing QC376
+Executing reversion version of each program
+Generating Equivalent Program for number199at377
+now we are at round: 34
+Executing Simulator377
+Executing Classical377
+Executing QC377
+Executing reversion version of each program
+Generating Equivalent Program for number199at378
+now we are at round: 34
+Executing Simulator378
+Executing Classical378
+Executing QC378
+Executing reversion version of each program
+Generating Equivalent Program for number199at379
+now we are at round: 34
+Executing Simulator379
+Executing Classical379
+Executing QC379
+Executing reversion version of each program
+Generating Equivalent Program for number199at380
+now we are at round: 34
+Executing Simulator380
+Executing Classical380
+Executing QC380
+Executing reversion version of each program
+Generating Equivalent Program for number199at381
+now we are at round: 34
+Executing Simulator381
+Executing Classical381
+Executing QC381
+Executing reversion version of each program
+Generating Equivalent Program for number199at382
+now we are at round: 34
+Executing Simulator382
+Executing Classical382
+Executing QC382
+Executing reversion version of each program
+Generating Equivalent Program for number199at383
+now we are at round: 34
+Executing Simulator383
+Executing Classical383
+Executing QC383
+Executing reversion version of each program
+Generating Equivalent Program for number199at384
+now we are at round: 34
+Executing Simulator384
+Executing Classical384
+Executing QC384
+Executing reversion version of each program
+Generating Equivalent Program for number199at385
+now we are at round: 34
+Executing Simulator385
+Executing Classical385
+Executing QC385
+Executing reversion version of each program
+Generating New Program at number386
+Executing Simulator210
+Executing Classical210
+Executing QC210
+Executing reversion version of each program
+Generating Equivalent Program for number210at387
+now we are at round: 35
+Executing Simulator387
+Executing Classical387
+Executing QC387
+Executing reversion version of each program
+Generating Equivalent Program for number210at388
+now we are at round: 35
+Executing Simulator388
+Executing Classical388
+Executing QC388
+Executing reversion version of each program
+Generating Equivalent Program for number210at389
+now we are at round: 35
+Executing Simulator389
+Executing Classical389
+Executing QC389
+Executing reversion version of each program
+Generating Equivalent Program for number210at390
+now we are at round: 35
+Executing Simulator390
+Executing Classical390
+Executing QC390
+Executing reversion version of each program
+Generating Equivalent Program for number210at391
+now we are at round: 35
+Executing Simulator391
+Executing Classical391
+Executing QC391
+Executing reversion version of each program
+Generating Equivalent Program for number210at392
+now we are at round: 35
+Executing Simulator392
+Executing Classical392
+Executing QC392
+Executing reversion version of each program
+Generating Equivalent Program for number210at393
+now we are at round: 35
+Executing Simulator393
+Executing Classical393
+Executing QC393
+Executing reversion version of each program
+Generating Equivalent Program for number210at394
+now we are at round: 35
+Executing Simulator394
+Executing Classical394
+Executing QC394
+Executing reversion version of each program
+Generating Equivalent Program for number210at395
+now we are at round: 35
+Executing Simulator395
+Executing Classical395
+Executing QC395
+Executing reversion version of each program
+Generating Equivalent Program for number210at396
+now we are at round: 35
+Executing Simulator396
+Executing Classical396
+Executing QC396
+Executing reversion version of each program
+Generating New Program at number397
+Executing Simulator221
+Executing Classical221
+Executing QC221
+Executing reversion version of each program
+Generating Equivalent Program for number221at398
+now we are at round: 36
+Executing Simulator398
+Executing Classical398
+Executing QC398
+Executing reversion version of each program
+Generating Equivalent Program for number221at399
+now we are at round: 36
+Executing Simulator399
+Executing Classical399
+Executing QC399
+Executing reversion version of each program
+Generating Equivalent Program for number221at400
+now we are at round: 36
+Executing Simulator400
+Executing Classical400
+Executing QC400
+Executing reversion version of each program
+Generating Equivalent Program for number221at401
+now we are at round: 36
+Executing Simulator401
+Executing Classical401
+Executing QC401
+Executing reversion version of each program
+Generating Equivalent Program for number221at402
+now we are at round: 36
+Executing Simulator402
+Executing Classical402
+Executing QC402
+Executing reversion version of each program
+Generating Equivalent Program for number221at403
+now we are at round: 36
+Executing Simulator403
+Executing Classical403
+Executing QC403
+Executing reversion version of each program
+Generating Equivalent Program for number221at404
+now we are at round: 36
+Executing Simulator404
+Executing Classical404
+Executing QC404
+Executing reversion version of each program
+Generating Equivalent Program for number221at405
+now we are at round: 36
+Executing Simulator405
+Executing Classical405
+Executing QC405
+Executing reversion version of each program
+Generating Equivalent Program for number221at406
+now we are at round: 36
+Executing Simulator406
+Executing Classical406
+Executing QC406
+Executing reversion version of each program
+Generating Equivalent Program for number221at407
+now we are at round: 36
+Executing Simulator407
+Executing Classical407
+Executing QC407
+Executing reversion version of each program
+Generating New Program at number408
+Executing Simulator232
+Executing Classical232
+Executing QC232
+Executing reversion version of each program
+Generating Equivalent Program for number232at409
+now we are at round: 37
+Executing Simulator409
+Executing Classical409
+Executing QC409
+Executing reversion version of each program
+Generating Equivalent Program for number232at410
+now we are at round: 37
+Executing Simulator410
+Executing Classical410
+Executing QC410
+Executing reversion version of each program
+Generating Equivalent Program for number232at411
+now we are at round: 37
+Executing Simulator411
+Executing Classical411
+Executing QC411
+Executing reversion version of each program
+Generating Equivalent Program for number232at412
+now we are at round: 37
+Executing Simulator412
+Executing Classical412
+Executing QC412
+Executing reversion version of each program
+Generating Equivalent Program for number232at413
+now we are at round: 37
+Executing Simulator413
+Executing Classical413
+Executing QC413
+Executing reversion version of each program
+Generating Equivalent Program for number232at414
+now we are at round: 37
+Executing Simulator414
+Executing Classical414
+Executing QC414
+Executing reversion version of each program
+Generating Equivalent Program for number232at415
+now we are at round: 37
+Executing Simulator415
+Executing Classical415
+Executing QC415
+Executing reversion version of each program
+Generating Equivalent Program for number232at416
+now we are at round: 37
+Executing Simulator416
+Executing Classical416
+Executing QC416
+Executing reversion version of each program
+Generating Equivalent Program for number232at417
+now we are at round: 37
+Executing Simulator417
+Executing Classical417
+Executing QC417
+Executing reversion version of each program
+Generating Equivalent Program for number232at418
+now we are at round: 37
+Executing Simulator418
+Executing Classical418
+Executing QC418
+Executing reversion version of each program
+Generating New Program at number419
+Executing Simulator243
+Executing Classical243
+Executing QC243
+Executing reversion version of each program
+Generating Equivalent Program for number243at420
+now we are at round: 38
+Executing Simulator420
+Executing Classical420
+Executing QC420
+Executing reversion version of each program
+Generating Equivalent Program for number243at421
+now we are at round: 38
+Executing Simulator421
+Executing Classical421
+Executing QC421
+Executing reversion version of each program
+Generating Equivalent Program for number243at422
+now we are at round: 38
+Executing Simulator422
+Executing Classical422
+Executing QC422
+Executing reversion version of each program
+Generating Equivalent Program for number243at423
+now we are at round: 38
+Executing Simulator423
+Executing Classical423
+Executing QC423
+Executing reversion version of each program
+Generating Equivalent Program for number243at424
+now we are at round: 38
+Executing Simulator424
+Executing Classical424
+Executing QC424
+Executing reversion version of each program
+Generating Equivalent Program for number243at425
+now we are at round: 38
+Executing Simulator425
+Executing Classical425
+Executing QC425
+Executing reversion version of each program
+Generating Equivalent Program for number243at426
+now we are at round: 38
+Executing Simulator426
+Executing Classical426
+Executing QC426
+Executing reversion version of each program
+Generating Equivalent Program for number243at427
+now we are at round: 38
+Executing Simulator427
+Executing Classical427
+Executing QC427
+Executing reversion version of each program
+Generating Equivalent Program for number243at428
+now we are at round: 38
+Executing Simulator428
+Executing Classical428
+Executing QC428
+Executing reversion version of each program
+Generating Equivalent Program for number243at429
+now we are at round: 38
+Executing Simulator429
+Executing Classical429
+Executing QC429
+Executing reversion version of each program
+Generating New Program at number430
+Executing Simulator254
+Executing Classical254
+Executing QC254
+Executing reversion version of each program
+Generating Equivalent Program for number254at431
+now we are at round: 39
+Executing Simulator431
+Executing Classical431
+Executing QC431
+Executing reversion version of each program
+Generating Equivalent Program for number254at432
+now we are at round: 39
+Executing Simulator432
+Executing Classical432
+Executing QC432
+Executing reversion version of each program
+Generating Equivalent Program for number254at433
+now we are at round: 39
+Executing Simulator433
+Executing Classical433
+Executing QC433
+Executing reversion version of each program
+Generating Equivalent Program for number254at434
+now we are at round: 39
+Executing Simulator434
+Executing Classical434
+Executing QC434
+Executing reversion version of each program
+Generating Equivalent Program for number254at435
+now we are at round: 39
+Executing Simulator435
+Executing Classical435
+Executing QC435
+Executing reversion version of each program
+Generating Equivalent Program for number254at436
+now we are at round: 39
+Executing Simulator436
+Executing Classical436
+Executing QC436
+Executing reversion version of each program
+Generating Equivalent Program for number254at437
+now we are at round: 39
+Executing Simulator437
+Executing Classical437
+Executing QC437
+Executing reversion version of each program
+Generating Equivalent Program for number254at438
+now we are at round: 39
+Executing Simulator438
+Executing Classical438
+Executing QC438
+Executing reversion version of each program
+Generating Equivalent Program for number254at439
+now we are at round: 39
+Executing Simulator439
+Executing Classical439
+Executing QC439
+Executing reversion version of each program
+Generating Equivalent Program for number254at440
+now we are at round: 39
+Executing Simulator440
+Executing Classical440
+Executing QC440
+Executing reversion version of each program
+Generating New Program at number441
+Executing Simulator265
+Executing Classical265
+Executing QC265
+Executing reversion version of each program
+Generating Equivalent Program for number265at442
+now we are at round: 40
+Executing Simulator442
+Executing Classical442
+Executing QC442
+Executing reversion version of each program
+Generating Equivalent Program for number265at443
+now we are at round: 40
+Executing Simulator443
+Executing Classical443
+Executing QC443
+Executing reversion version of each program
+Generating Equivalent Program for number265at444
+now we are at round: 40
+Executing Simulator444
+Executing Classical444
+Executing QC444
+Executing reversion version of each program
+Generating Equivalent Program for number265at445
+now we are at round: 40
+Executing Simulator445
+Executing Classical445
+Executing QC445
+Executing reversion version of each program
+Generating Equivalent Program for number265at446
+now we are at round: 40
+Executing Simulator446
+Executing Classical446
+Executing QC446
+Executing reversion version of each program
+Generating Equivalent Program for number265at447
+now we are at round: 40
+Executing Simulator447
+Executing Classical447
+Executing QC447
+Executing reversion version of each program
+Generating Equivalent Program for number265at448
+now we are at round: 40
+Executing Simulator448
+Executing Classical448
+Executing QC448
+Executing reversion version of each program
+Generating Equivalent Program for number265at449
+now we are at round: 40
+Executing Simulator449
+Executing Classical449
+Executing QC449
+Executing reversion version of each program
+Generating Equivalent Program for number265at450
+now we are at round: 40
+Executing Simulator450
+Executing Classical450
+Executing QC450
+Executing reversion version of each program
+Generating Equivalent Program for number265at451
+now we are at round: 40
+Executing Simulator451
+Executing Classical451
+Executing QC451
+Executing reversion version of each program
+Generating New Program at number452
+Executing Simulator276
+Executing Classical276
+Executing QC276
+Executing reversion version of each program
+Generating Equivalent Program for number276at453
+now we are at round: 41
+Executing Simulator453
+Executing Classical453
+Executing QC453
+Executing reversion version of each program
+Generating Equivalent Program for number276at454
+now we are at round: 41
+Executing Simulator454
+Executing Classical454
+Executing QC454
+Executing reversion version of each program
+Generating Equivalent Program for number276at455
+now we are at round: 41
+Executing Simulator455
+Executing Classical455
+Executing QC455
+Executing reversion version of each program
+Generating Equivalent Program for number276at456
+now we are at round: 41
+Executing Simulator456
+Executing Classical456
+Executing QC456
+Executing reversion version of each program
+Generating Equivalent Program for number276at457
+now we are at round: 41
+Executing Simulator457
+Executing Classical457
+Executing QC457
+Executing reversion version of each program
+Generating Equivalent Program for number276at458
+now we are at round: 41
+Executing Simulator458
+Executing Classical458
+Executing QC458
+Executing reversion version of each program
+Generating Equivalent Program for number276at459
+now we are at round: 41
+Executing Simulator459
+Executing Classical459
+Executing QC459
+Executing reversion version of each program
+Generating Equivalent Program for number276at460
+now we are at round: 41
+Executing Simulator460
+Executing Classical460
+Executing QC460
+Executing reversion version of each program
+Generating Equivalent Program for number276at461
+now we are at round: 41
+Executing Simulator461
+Executing Classical461
+Executing QC461
+Executing reversion version of each program
+Generating Equivalent Program for number276at462
+now we are at round: 41
+Executing Simulator462
+Executing Classical462
+Executing QC462
+Executing reversion version of each program
+Generating New Program at number463
+Executing Simulator287
+Executing Classical287
+Executing QC287
+Executing reversion version of each program
+Generating Equivalent Program for number287at464
+now we are at round: 42
+Executing Simulator464
+Executing Classical464
+Executing QC464
+Executing reversion version of each program
+Generating Equivalent Program for number287at465
+now we are at round: 42
+Executing Simulator465
+Executing Classical465
+Executing QC465
+Executing reversion version of each program
+Generating Equivalent Program for number287at466
+now we are at round: 42
+Executing Simulator466
+Executing Classical466
+Executing QC466
+Executing reversion version of each program
+Generating Equivalent Program for number287at467
+now we are at round: 42
+Executing Simulator467
+Executing Classical467
+Executing QC467
+Executing reversion version of each program
+Generating Equivalent Program for number287at468
+now we are at round: 42
+Executing Simulator468
+Executing Classical468
+Executing QC468
+Executing reversion version of each program
+Generating Equivalent Program for number287at469
+now we are at round: 42
+Executing Simulator469
+Executing Classical469
+Executing QC469
+Executing reversion version of each program
+Generating Equivalent Program for number287at470
+now we are at round: 42
+Executing Simulator470
+Executing Classical470
+Executing QC470
+Executing reversion version of each program
+Generating Equivalent Program for number287at471
+now we are at round: 42
+Executing Simulator471
+Executing Classical471
+Executing QC471
+Executing reversion version of each program
+Generating Equivalent Program for number287at472
+now we are at round: 42
+Executing Simulator472
+Executing Classical472
+Executing QC472
+Executing reversion version of each program
+Generating Equivalent Program for number287at473
+now we are at round: 42
+Executing Simulator473
+Executing Classical473
+Executing QC473
+Executing reversion version of each program
+Generating New Program at number474
+Executing Simulator298
+Executing Classical298
+Executing QC298
+Executing reversion version of each program
+Generating Equivalent Program for number298at475
+now we are at round: 43
+Executing Simulator475
+Executing Classical475
+Executing QC475
+Executing reversion version of each program
+Generating Equivalent Program for number298at476
+now we are at round: 43
+Executing Simulator476
+Executing Classical476
+Executing QC476
+Executing reversion version of each program
+Generating Equivalent Program for number298at477
+now we are at round: 43
+Executing Simulator477
+Executing Classical477
+Executing QC477
+Executing reversion version of each program
+Generating Equivalent Program for number298at478
+now we are at round: 43
+Executing Simulator478
+Executing Classical478
+Executing QC478
+Executing reversion version of each program
+Generating Equivalent Program for number298at479
+now we are at round: 43
+Executing Simulator479
+Executing Classical479
+Executing QC479
+Executing reversion version of each program
+Generating Equivalent Program for number298at480
+now we are at round: 43
+Executing Simulator480
+Executing Classical480
+Executing QC480
+Executing reversion version of each program
+Generating Equivalent Program for number298at481
+now we are at round: 43
+Executing Simulator481
+Executing Classical481
+Executing QC481
+Executing reversion version of each program
+Generating Equivalent Program for number298at482
+now we are at round: 43
+Executing Simulator482
+Executing Classical482
+Executing QC482
+Executing reversion version of each program
+Generating Equivalent Program for number298at483
+now we are at round: 43
+Executing Simulator483
+Executing Classical483
+Executing QC483
+Executing reversion version of each program
+Generating Equivalent Program for number298at484
+now we are at round: 43
+Executing Simulator484
+Executing Classical484
+Executing QC484
+Executing reversion version of each program
+Generating New Program at number485
+Executing Simulator309
+Executing Classical309
+Executing QC309
+Executing reversion version of each program
+Generating Equivalent Program for number309at486
+now we are at round: 44
+Executing Simulator486
+Executing Classical486
+Executing QC486
+Executing reversion version of each program
+Generating Equivalent Program for number309at487
+now we are at round: 44
+Executing Simulator487
+Executing Classical487
+Executing QC487
+Executing reversion version of each program
+Generating Equivalent Program for number309at488
+now we are at round: 44
+Executing Simulator488
+Executing Classical488
+Executing QC488
+Executing reversion version of each program
+Generating Equivalent Program for number309at489
+now we are at round: 44
+Executing Simulator489
+Executing Classical489
+Executing QC489
+Executing reversion version of each program
+Generating Equivalent Program for number309at490
+now we are at round: 44
+Executing Simulator490
+Executing Classical490
+Executing QC490
+Executing reversion version of each program
+Generating Equivalent Program for number309at491
+now we are at round: 44
+Executing Simulator491
+Executing Classical491
+Executing QC491
+Executing reversion version of each program
+Generating Equivalent Program for number309at492
+now we are at round: 44
+Executing Simulator492
+Executing Classical492
+Executing QC492
+Executing reversion version of each program
+Generating Equivalent Program for number309at493
+now we are at round: 44
+Executing Simulator493
+Executing Classical493
+Executing QC493
+Executing reversion version of each program
+Generating Equivalent Program for number309at494
+now we are at round: 44
+Executing Simulator494
+Executing Classical494
+Executing QC494
+Executing reversion version of each program
+Generating Equivalent Program for number309at495
+now we are at round: 44
+Executing Simulator495
+Executing Classical495
+Executing QC495
+Executing reversion version of each program
+Generating New Program at number496
+Executing Simulator320
+Executing Classical320
+Executing QC320
+Executing reversion version of each program
+Generating Equivalent Program for number320at497
+now we are at round: 45
+Executing Simulator497
+Executing Classical497
+Executing QC497
+Executing reversion version of each program
+Generating Equivalent Program for number320at498
+now we are at round: 45
+Executing Simulator498
+Executing Classical498
+Executing QC498
+Executing reversion version of each program
+Generating Equivalent Program for number320at499
+now we are at round: 45
+Executing Simulator499
+Executing Classical499
+Executing QC499
+Executing reversion version of each program
+Generating Equivalent Program for number320at500
+now we are at round: 45
+Executing Simulator500
+Executing Classical500
+Executing QC500
+Executing reversion version of each program
+Generating Equivalent Program for number320at501
+now we are at round: 45
+Executing Simulator501
+Executing Classical501
+Executing QC501
+Executing reversion version of each program
+Generating Equivalent Program for number320at502
+now we are at round: 45
+Executing Simulator502
+Executing Classical502
+Executing QC502
+Executing reversion version of each program
+Generating Equivalent Program for number320at503
+now we are at round: 45
+Executing Simulator503
+Executing Classical503
+Executing QC503
+Executing reversion version of each program
+Generating Equivalent Program for number320at504
+now we are at round: 45
+Executing Simulator504
+Executing Classical504
+Executing QC504
+Executing reversion version of each program
+Generating Equivalent Program for number320at505
+now we are at round: 45
+Executing Simulator505
+Executing Classical505
+Executing QC505
+Executing reversion version of each program
+Generating Equivalent Program for number320at506
+now we are at round: 45
+Executing Simulator506
+Executing Classical506
+Executing QC506
+Executing reversion version of each program
+Generating New Program at number507
+Executing Simulator331
+Executing Classical331
+Executing QC331
+Executing reversion version of each program
+Generating Equivalent Program for number331at508
+now we are at round: 46
+Executing Simulator508
+Executing Classical508
+Executing QC508
+Executing reversion version of each program
+Generating Equivalent Program for number331at509
+now we are at round: 46
+Executing Simulator509
+Executing Classical509
+Executing QC509
+Executing reversion version of each program
+Generating Equivalent Program for number331at510
+now we are at round: 46
+Executing Simulator510
+Executing Classical510
+Executing QC510
+Executing reversion version of each program
+Generating Equivalent Program for number331at511
+now we are at round: 46
+Executing Simulator511
+Executing Classical511
+Executing QC511
+Executing reversion version of each program
+Generating Equivalent Program for number331at512
+now we are at round: 46
+Executing Simulator512
+Executing Classical512
+Executing QC512
+Executing reversion version of each program
+Generating Equivalent Program for number331at513
+now we are at round: 46
+Executing Simulator513
+Executing Classical513
+Executing QC513
+Executing reversion version of each program
+Generating Equivalent Program for number331at514
+now we are at round: 46
+Executing Simulator514
+Executing Classical514
+Executing QC514
+Executing reversion version of each program
+Generating Equivalent Program for number331at515
+now we are at round: 46
+Executing Simulator515
+Executing Classical515
+Executing QC515
+Executing reversion version of each program
+Generating Equivalent Program for number331at516
+now we are at round: 46
+Executing Simulator516
+Executing Classical516
+Executing QC516
+Executing reversion version of each program
+Generating Equivalent Program for number331at517
+now we are at round: 46
+Executing Simulator517
+Executing Classical517
+Executing QC517
+Executing reversion version of each program
+Generating New Program at number518
+Executing Simulator342
+Executing Classical342
+Executing QC342
+Executing reversion version of each program
+Generating Equivalent Program for number342at519
+now we are at round: 47
+Executing Simulator519
+Executing Classical519
+Executing QC519
+Executing reversion version of each program
+Generating Equivalent Program for number342at520
+now we are at round: 47
+Executing Simulator520
+Executing Classical520
+Executing QC520
+Executing reversion version of each program
+Generating Equivalent Program for number342at521
+now we are at round: 47
+Executing Simulator521
+Executing Classical521
+Executing QC521
+Executing reversion version of each program
+Generating Equivalent Program for number342at522
+now we are at round: 47
+Executing Simulator522
+Executing Classical522
+Executing QC522
+Executing reversion version of each program
+Generating Equivalent Program for number342at523
+now we are at round: 47
+Executing Simulator523
+Executing Classical523
+Executing QC523
+Executing reversion version of each program
+Generating Equivalent Program for number342at524
+now we are at round: 47
+Executing Simulator524
+Executing Classical524
+Executing QC524
+Executing reversion version of each program
+Generating Equivalent Program for number342at525
+now we are at round: 47
+Executing Simulator525
+Executing Classical525
+Executing QC525
+Executing reversion version of each program
+Generating Equivalent Program for number342at526
+now we are at round: 47
+Executing Simulator526
+Executing Classical526
+Executing QC526
+Executing reversion version of each program
+Generating Equivalent Program for number342at527
+now we are at round: 47
+Executing Simulator527
+Executing Classical527
+Executing QC527
+Executing reversion version of each program
+Generating Equivalent Program for number342at528
+now we are at round: 47
+Executing Simulator528
+Executing Classical528
+Executing QC528
+Executing reversion version of each program
+Generating New Program at number529
+Executing Simulator353
+Executing Classical353
+Executing QC353
+Executing reversion version of each program
+Generating Equivalent Program for number353at530
+now we are at round: 48
+Executing Simulator530
+Executing Classical530
+Executing QC530
+Executing reversion version of each program
+Generating Equivalent Program for number353at531
+now we are at round: 48
+Executing Simulator531
+Executing Classical531
+Executing QC531
+Executing reversion version of each program
+Generating Equivalent Program for number353at532
+now we are at round: 48
+Executing Simulator532
+Executing Classical532
+Executing QC532
+Executing reversion version of each program
+Generating Equivalent Program for number353at533
+now we are at round: 48
+Executing Simulator533
+Executing Classical533
+Executing QC533
+Executing reversion version of each program
+Generating Equivalent Program for number353at534
+now we are at round: 48
+Executing Simulator534
+Executing Classical534
+Executing QC534
+Executing reversion version of each program
+Generating Equivalent Program for number353at535
+now we are at round: 48
+Executing Simulator535
+Executing Classical535
+Executing QC535
+Executing reversion version of each program
+Generating Equivalent Program for number353at536
+now we are at round: 48
+Executing Simulator536
+Executing Classical536
+Executing QC536
+Executing reversion version of each program
+Generating Equivalent Program for number353at537
+now we are at round: 48
+Executing Simulator537
+Executing Classical537
+Executing QC537
+Executing reversion version of each program
+Generating Equivalent Program for number353at538
+now we are at round: 48
+Executing Simulator538
+Executing Classical538
+Executing QC538
+Executing reversion version of each program
+Generating Equivalent Program for number353at539
+now we are at round: 48
+Executing Simulator539
+Executing Classical539
+Executing QC539
+Executing reversion version of each program
+Generating New Program at number540
+Executing Simulator364
+Executing Classical364
+Executing QC364
+Executing reversion version of each program
+Generating Equivalent Program for number364at541
+now we are at round: 49
+Executing Simulator541
+Executing Classical541
+Executing QC541
+Executing reversion version of each program
+Generating Equivalent Program for number364at542
+now we are at round: 49
+Executing Simulator542
+Executing Classical542
+Executing QC542
+Executing reversion version of each program
+Generating Equivalent Program for number364at543
+now we are at round: 49
+Executing Simulator543
+Executing Classical543
+Executing QC543
+Executing reversion version of each program
+Generating Equivalent Program for number364at544
+now we are at round: 49
+Executing Simulator544
+Executing Classical544
+Executing QC544
+Executing reversion version of each program
+Generating Equivalent Program for number364at545
+now we are at round: 49
+Executing Simulator545
+Executing Classical545
+Executing QC545
+Executing reversion version of each program
+Generating Equivalent Program for number364at546
+now we are at round: 49
+Executing Simulator546
+Executing Classical546
+Executing QC546
+Executing reversion version of each program
+Generating Equivalent Program for number364at547
+now we are at round: 49
+Executing Simulator547
+Executing Classical547
+Executing QC547
+Executing reversion version of each program
+Generating Equivalent Program for number364at548
+now we are at round: 49
+Executing Simulator548
+Executing Classical548
+Executing QC548
+Executing reversion version of each program
+Generating Equivalent Program for number364at549
+now we are at round: 49
+Executing Simulator549
+Executing Classical549
+Executing QC549
+Executing reversion version of each program
+Generating Equivalent Program for number364at550
+now we are at round: 49
+Executing Simulator550
+Executing Classical550
+Executing QC550
+Executing reversion version of each program
+Generating New Program at number551
+Executing Simulator375
+Executing Classical375
+Executing QC375
+Executing reversion version of each program
+Generating Equivalent Program for number375at552
+now we are at round: 50
+Executing Simulator552
+Executing Classical552
+Executing QC552
+Executing reversion version of each program
+Generating Equivalent Program for number375at553
+now we are at round: 50
+Executing Simulator553
+Executing Classical553
+Executing QC553
+Executing reversion version of each program
+Generating Equivalent Program for number375at554
+now we are at round: 50
+Executing Simulator554
+Executing Classical554
+Executing QC554
+Executing reversion version of each program
+Generating Equivalent Program for number375at555
+now we are at round: 50
+Executing Simulator555
+Executing Classical555
+Executing QC555
+Executing reversion version of each program
+Generating Equivalent Program for number375at556
+now we are at round: 50
+Executing Simulator556
+Executing Classical556
+Executing QC556
+Executing reversion version of each program
+Generating Equivalent Program for number375at557
+now we are at round: 50
+Executing Simulator557
+Executing Classical557
+Executing QC557
+Executing reversion version of each program
+Generating Equivalent Program for number375at558
+now we are at round: 50
+Executing Simulator558
+Executing Classical558
+Executing QC558
+Executing reversion version of each program
+Generating Equivalent Program for number375at559
+now we are at round: 50
+Executing Simulator559
+Executing Classical559
+Executing QC559
+Executing reversion version of each program
+Generating Equivalent Program for number375at560
+now we are at round: 50
+Executing Simulator560
+Executing Classical560
+Executing QC560
+Executing reversion version of each program
+Generating Equivalent Program for number375at561
+now we are at round: 50
+Executing Simulator561
+Executing Classical561
+Executing QC561
+Executing reversion version of each program
+Generating New Program at number562
+Executing Simulator386
+Executing Classical386
+Executing QC386
+Executing reversion version of each program
+Generating Equivalent Program for number386at563
+now we are at round: 51
+Executing Simulator563
+Executing Classical563
+Executing QC563
+Executing reversion version of each program
+Generating Equivalent Program for number386at564
+now we are at round: 51
+Executing Simulator564
+Executing Classical564
+Executing QC564
+Executing reversion version of each program
+Generating Equivalent Program for number386at565
+now we are at round: 51
+Executing Simulator565
+Executing Classical565
+Executing QC565
+Executing reversion version of each program
+Generating Equivalent Program for number386at566
+now we are at round: 51
+Executing Simulator566
+Executing Classical566
+Executing QC566
+Executing reversion version of each program
+Generating Equivalent Program for number386at567
+now we are at round: 51
+Executing Simulator567
+Executing Classical567
+Executing QC567
+Executing reversion version of each program
+Generating Equivalent Program for number386at568
+now we are at round: 51
+Executing Simulator568
+Executing Classical568
+Executing QC568
+Executing reversion version of each program
+Generating Equivalent Program for number386at569
+now we are at round: 51
+Executing Simulator569
+Executing Classical569
+Executing QC569
+Executing reversion version of each program
+Generating Equivalent Program for number386at570
+now we are at round: 51
+Executing Simulator570
+Executing Classical570
+Executing QC570
+Executing reversion version of each program
+Generating Equivalent Program for number386at571
+now we are at round: 51
+Executing Simulator571
+Executing Classical571
+Executing QC571
+Executing reversion version of each program
+Generating Equivalent Program for number386at572
+now we are at round: 51
+Executing Simulator572
+Executing Classical572
+Executing QC572
+Executing reversion version of each program
+Generating New Program at number573
+Executing Simulator397
+Executing Classical397
+Executing QC397
+Executing reversion version of each program
+Generating Equivalent Program for number397at574
+now we are at round: 52
+Executing Simulator574
+Executing Classical574
+Executing QC574
+Executing reversion version of each program
+Generating Equivalent Program for number397at575
+now we are at round: 52
+Executing Simulator575
+Executing Classical575
+Executing QC575
+Executing reversion version of each program
+Generating Equivalent Program for number397at576
+now we are at round: 52
+Executing Simulator576
+Executing Classical576
+Executing QC576
+Executing reversion version of each program
+Generating Equivalent Program for number397at577
+now we are at round: 52
+Executing Simulator577
+Executing Classical577
+Executing QC577
+Executing reversion version of each program
+Generating Equivalent Program for number397at578
+now we are at round: 52
+Executing Simulator578
+Executing Classical578
+Executing QC578
+Executing reversion version of each program
+Generating Equivalent Program for number397at579
+now we are at round: 52
+Executing Simulator579
+Executing Classical579
+Executing QC579
+Executing reversion version of each program
+Generating Equivalent Program for number397at580
+now we are at round: 52
+Executing Simulator580
+Executing Classical580
+Executing QC580
+Executing reversion version of each program
+Generating Equivalent Program for number397at581
+now we are at round: 52
+Executing Simulator581
+Executing Classical581
+Executing QC581
+Executing reversion version of each program
+Generating Equivalent Program for number397at582
+now we are at round: 52
+Executing Simulator582
+Executing Classical582
+Executing QC582
+Executing reversion version of each program
+Generating Equivalent Program for number397at583
+now we are at round: 52
+Executing Simulator583
+Executing Classical583
+Executing QC583
+Executing reversion version of each program
+Generating New Program at number584
+Executing Simulator402
+Executing Classical402
+Executing QC402
+Executing reversion version of each program
+Generating Equivalent Program for number402at585
+now we are at round: 53
+Executing Simulator585
+Executing Classical585
+Executing QC585
+Executing reversion version of each program
+Generating Equivalent Program for number402at586
+now we are at round: 53
+Executing Simulator586
+Executing Classical586
+Executing QC586
+Executing reversion version of each program
+Generating Equivalent Program for number402at587
+now we are at round: 53
+Executing Simulator587
+Executing Classical587
+Executing QC587
+Executing reversion version of each program
+Generating Equivalent Program for number402at588
+now we are at round: 53
+Executing Simulator588
+Executing Classical588
+Executing QC588
+Executing reversion version of each program
+Generating Equivalent Program for number402at589
+now we are at round: 53
+Executing Simulator589
+Executing Classical589
+Executing QC589
+Executing reversion version of each program
+Generating Equivalent Program for number402at590
+now we are at round: 53
+Executing Simulator590
+Executing Classical590
+Executing QC590
+Executing reversion version of each program
+Generating Equivalent Program for number402at591
+now we are at round: 53
+Executing Simulator591
+Executing Classical591
+Executing QC591
+Executing reversion version of each program
+Generating Equivalent Program for number402at592
+now we are at round: 53
+Executing Simulator592
+Executing Classical592
+Executing QC592
+Executing reversion version of each program
+Generating Equivalent Program for number402at593
+now we are at round: 53
+Executing Simulator593
+Executing Classical593
+Executing QC593
+Executing reversion version of each program
+Generating Equivalent Program for number402at594
+now we are at round: 53
+Executing Simulator594
+Executing Classical594
+Executing QC594
+Executing reversion version of each program
+Generating New Program at number595
+Executing Simulator408
+Executing Classical408
+Executing QC408
+Executing reversion version of each program
+Generating Equivalent Program for number408at596
+now we are at round: 54
+Executing Simulator596
+Executing Classical596
+Executing QC596
+Executing reversion version of each program
+Generating Equivalent Program for number408at597
+now we are at round: 54
+Executing Simulator597
+Executing Classical597
+Executing QC597
+Executing reversion version of each program
+Generating Equivalent Program for number408at598
+now we are at round: 54
+Executing Simulator598
+Executing Classical598
+Executing QC598
+Executing reversion version of each program
+Generating Equivalent Program for number408at599
+now we are at round: 54
+Executing Simulator599
+Executing Classical599
+Executing QC599
+Executing reversion version of each program
+Generating Equivalent Program for number408at600
+now we are at round: 54
+Executing Simulator600
+Executing Classical600
+Executing QC600
+Executing reversion version of each program
+Generating Equivalent Program for number408at601
+now we are at round: 54
+Executing Simulator601
+Executing Classical601
+Executing QC601
+Executing reversion version of each program
+Generating Equivalent Program for number408at602
+now we are at round: 54
+Executing Simulator602
+Executing Classical602
+Executing QC602
+Executing reversion version of each program
+Generating Equivalent Program for number408at603
+now we are at round: 54
+Executing Simulator603
+Executing Classical603
+Executing QC603
+Executing reversion version of each program
+Generating Equivalent Program for number408at604
+now we are at round: 54
+Executing Simulator604
+Executing Classical604
+Executing QC604
+Executing reversion version of each program
+Generating Equivalent Program for number408at605
+now we are at round: 54
+Executing Simulator605
+Executing Classical605
+Executing QC605
+Executing reversion version of each program
+Generating New Program at number606
+Executing Simulator419
+Executing Classical419
+Executing QC419
+Executing reversion version of each program
+Generating Equivalent Program for number419at607
+now we are at round: 55
+Executing Simulator607
+Executing Classical607
+Executing QC607
+Executing reversion version of each program
+Generating Equivalent Program for number419at608
+now we are at round: 55
+Executing Simulator608
+Executing Classical608
+Executing QC608
+Executing reversion version of each program
+Generating Equivalent Program for number419at609
+now we are at round: 55
+Executing Simulator609
+Executing Classical609
+Executing QC609
+Executing reversion version of each program
+Generating Equivalent Program for number419at610
+now we are at round: 55
+Executing Simulator610
+Executing Classical610
+Executing QC610
+Executing reversion version of each program
+Generating Equivalent Program for number419at611
+now we are at round: 55
+Executing Simulator611
+Executing Classical611
+Executing QC611
+Executing reversion version of each program
+Generating Equivalent Program for number419at612
+now we are at round: 55
+Executing Simulator612
+Executing Classical612
+Executing QC612
+Executing reversion version of each program
+Generating Equivalent Program for number419at613
+now we are at round: 55
+Executing Simulator613
+Executing Classical613
+Executing QC613
+Executing reversion version of each program
+Generating Equivalent Program for number419at614
+now we are at round: 55
+Executing Simulator614
+Executing Classical614
+Executing QC614
+Executing reversion version of each program
+Generating Equivalent Program for number419at615
+now we are at round: 55
+Executing Simulator615
+Executing Classical615
+Executing QC615
+Executing reversion version of each program
+Generating Equivalent Program for number419at616
+now we are at round: 55
+Executing Simulator616
+Executing Classical616
+Executing QC616
+Executing reversion version of each program
+Generating New Program at number617
+Executing Simulator430
+Executing Classical430
+Executing QC430
+Executing reversion version of each program
+Generating Equivalent Program for number430at618
+now we are at round: 56
+Executing Simulator618
+Executing Classical618
+Executing QC618
+Executing reversion version of each program
+Generating Equivalent Program for number430at619
+now we are at round: 56
+Executing Simulator619
+Executing Classical619
+Executing QC619
+Executing reversion version of each program
+Generating Equivalent Program for number430at620
+now we are at round: 56
+Executing Simulator620
+Executing Classical620
+Executing QC620
+Executing reversion version of each program
+Generating Equivalent Program for number430at621
+now we are at round: 56
+Executing Simulator621
+Executing Classical621
+Executing QC621
+Executing reversion version of each program
+Generating Equivalent Program for number430at622
+now we are at round: 56
+Executing Simulator622
+Executing Classical622
+Executing QC622
+Executing reversion version of each program
+Generating Equivalent Program for number430at623
+now we are at round: 56
+Executing Simulator623
+Executing Classical623
+Executing QC623
+Executing reversion version of each program
+Generating Equivalent Program for number430at624
+now we are at round: 56
+Executing Simulator624
+Executing Classical624
+Executing QC624
+Executing reversion version of each program
+Generating Equivalent Program for number430at625
+now we are at round: 56
+Executing Simulator625
+Executing Classical625
+Executing QC625
+Executing reversion version of each program
+Generating Equivalent Program for number430at626
+now we are at round: 56
+Executing Simulator626
+Executing Classical626
+Executing QC626
+Executing reversion version of each program
+Generating Equivalent Program for number430at627
+now we are at round: 56
+Executing Simulator627
+Executing Classical627
+Executing QC627
+Executing reversion version of each program
+Generating New Program at number628
+Executing Simulator441
+Executing Classical441
+Executing QC441
+Executing reversion version of each program
+Generating Equivalent Program for number441at629
+now we are at round: 57
+Executing Simulator629
+Executing Classical629
+Executing QC629
+Executing reversion version of each program
+Generating Equivalent Program for number441at630
+now we are at round: 57
+Executing Simulator630
+Executing Classical630
+Executing QC630
+Executing reversion version of each program
+Generating Equivalent Program for number441at631
+now we are at round: 57
+Executing Simulator631
+Executing Classical631
+Executing QC631
+Executing reversion version of each program
+Generating Equivalent Program for number441at632
+now we are at round: 57
+Executing Simulator632
+Executing Classical632
+Executing QC632
+Executing reversion version of each program
+Generating Equivalent Program for number441at633
+now we are at round: 57
+Executing Simulator633
+Executing Classical633
+Executing QC633
+Executing reversion version of each program
+Generating Equivalent Program for number441at634
+now we are at round: 57
+Executing Simulator634
+Executing Classical634
+Executing QC634
+Executing reversion version of each program
+Generating Equivalent Program for number441at635
+now we are at round: 57
+Executing Simulator635
+Executing Classical635
+Executing QC635
+Executing reversion version of each program
+Generating Equivalent Program for number441at636
+now we are at round: 57
+Executing Simulator636
+Executing Classical636
+Executing QC636
+Executing reversion version of each program
+Generating Equivalent Program for number441at637
+now we are at round: 57
+Executing Simulator637
+Executing Classical637
+Executing QC637
+Executing reversion version of each program
+Generating Equivalent Program for number441at638
+now we are at round: 57
+Executing Simulator638
+Executing Classical638
+Executing QC638
+Executing reversion version of each program
+Generating New Program at number639
+Executing Simulator452
+Executing Classical452
+Executing QC452
+Executing reversion version of each program
+Generating Equivalent Program for number452at640
+now we are at round: 58
+Executing Simulator640
+Executing Classical640
+Executing QC640
+Executing reversion version of each program
+Generating Equivalent Program for number452at641
+now we are at round: 58
+Executing Simulator641
+Executing Classical641
+Executing QC641
+Executing reversion version of each program
+Generating Equivalent Program for number452at642
+now we are at round: 58
+Executing Simulator642
+Executing Classical642
+Executing QC642
+Executing reversion version of each program
+Generating Equivalent Program for number452at643
+now we are at round: 58
+Executing Simulator643
+Executing Classical643
+Executing QC643
+Executing reversion version of each program
+Generating Equivalent Program for number452at644
+now we are at round: 58
+Executing Simulator644
+Executing Classical644
+Executing QC644
+Executing reversion version of each program
+Generating Equivalent Program for number452at645
+now we are at round: 58
+Executing Simulator645
+Executing Classical645
+Executing QC645
+Executing reversion version of each program
+Generating Equivalent Program for number452at646
+now we are at round: 58
+Executing Simulator646
+Executing Classical646
+Executing QC646
+Executing reversion version of each program
+Generating Equivalent Program for number452at647
+now we are at round: 58
+Executing Simulator647
+Executing Classical647
+Executing QC647
+Executing reversion version of each program
+Generating Equivalent Program for number452at648
+now we are at round: 58
+Executing Simulator648
+Executing Classical648
+Executing QC648
+Executing reversion version of each program
+Generating Equivalent Program for number452at649
+now we are at round: 58
+Executing Simulator649
+Executing Classical649
+Executing QC649
+Executing reversion version of each program
+Generating New Program at number650
+Executing Simulator463
+Executing Classical463
+Executing QC463
+Executing reversion version of each program
+Generating Equivalent Program for number463at651
+now we are at round: 59
+Executing Simulator651
+Executing Classical651
+Executing QC651
+Executing reversion version of each program
+Generating Equivalent Program for number463at652
+now we are at round: 59
+Executing Simulator652
+Executing Classical652
+Executing QC652
+Executing reversion version of each program
+Generating Equivalent Program for number463at653
+now we are at round: 59
+Executing Simulator653
+Executing Classical653
+Executing QC653
+Executing reversion version of each program
+Generating Equivalent Program for number463at654
+now we are at round: 59
+Executing Simulator654
+Executing Classical654
+Executing QC654
+Executing reversion version of each program
+Generating Equivalent Program for number463at655
+now we are at round: 59
+Executing Simulator655
+Executing Classical655
+Executing QC655
+Executing reversion version of each program
+Generating Equivalent Program for number463at656
+now we are at round: 59
+Executing Simulator656
+Executing Classical656
+Executing QC656
+Executing reversion version of each program
+Generating Equivalent Program for number463at657
+now we are at round: 59
+Executing Simulator657
+Executing Classical657
+Executing QC657
+Executing reversion version of each program
+Generating Equivalent Program for number463at658
+now we are at round: 59
+Executing Simulator658
+Executing Classical658
+Executing QC658
+Executing reversion version of each program
+Generating Equivalent Program for number463at659
+now we are at round: 59
+Executing Simulator659
+Executing Classical659
+Executing QC659
+Executing reversion version of each program
+Generating Equivalent Program for number463at660
+now we are at round: 59
+Executing Simulator660
+Executing Classical660
+Executing QC660
+Executing reversion version of each program
+Generating New Program at number661
+Executing Simulator474
+Executing Classical474
+Executing QC474
+Executing reversion version of each program
+Generating Equivalent Program for number474at662
+now we are at round: 60
+Executing Simulator662
+Executing Classical662
+Executing QC662
+Executing reversion version of each program
+Generating Equivalent Program for number474at663
+now we are at round: 60
+Executing Simulator663
+Executing Classical663
+Executing QC663
+Executing reversion version of each program
+Generating Equivalent Program for number474at664
+now we are at round: 60
+Executing Simulator664
+Executing Classical664
+Executing QC664
+Executing reversion version of each program
+Generating Equivalent Program for number474at665
+now we are at round: 60
+Executing Simulator665
+Executing Classical665
+Executing QC665
+Executing reversion version of each program
+Generating Equivalent Program for number474at666
+now we are at round: 60
+Executing Simulator666
+Executing Classical666
+Executing QC666
+Executing reversion version of each program
+Generating Equivalent Program for number474at667
+now we are at round: 60
+Executing Simulator667
+Executing Classical667
+Executing QC667
+Executing reversion version of each program
+Generating Equivalent Program for number474at668
+now we are at round: 60
+Executing Simulator668
+Executing Classical668
+Executing QC668
+Executing reversion version of each program
+Generating Equivalent Program for number474at669
+now we are at round: 60
+Executing Simulator669
+Executing Classical669
+Executing QC669
+Executing reversion version of each program
+Generating Equivalent Program for number474at670
+now we are at round: 60
+Executing Simulator670
+Executing Classical670
+Executing QC670
+Executing reversion version of each program
+Generating Equivalent Program for number474at671
+now we are at round: 60
+Executing Simulator671
+Executing Classical671
+Executing QC671
+Executing reversion version of each program
+Generating New Program at number672
+Executing Simulator485
+Executing Classical485
+Executing QC485
+Executing reversion version of each program
+Generating Equivalent Program for number485at673
+now we are at round: 61
+Executing Simulator673
+Executing Classical673
+Executing QC673
+Executing reversion version of each program
+Generating Equivalent Program for number485at674
+now we are at round: 61
+Executing Simulator674
+Executing Classical674
+Executing QC674
+Executing reversion version of each program
+Generating Equivalent Program for number485at675
+now we are at round: 61
+Executing Simulator675
+Executing Classical675
+Executing QC675
+Executing reversion version of each program
+Generating Equivalent Program for number485at676
+now we are at round: 61
+Executing Simulator676
+Executing Classical676
+Executing QC676
+Executing reversion version of each program
+Generating Equivalent Program for number485at677
+now we are at round: 61
+Executing Simulator677
+Executing Classical677
+Executing QC677
+Executing reversion version of each program
+Generating Equivalent Program for number485at678
+now we are at round: 61
+Executing Simulator678
+Executing Classical678
+Executing QC678
+Executing reversion version of each program
+Generating Equivalent Program for number485at679
+now we are at round: 61
+Executing Simulator679
+Executing Classical679
+Executing QC679
+Executing reversion version of each program
+Generating Equivalent Program for number485at680
+now we are at round: 61
+Executing Simulator680
+Executing Classical680
+Executing QC680
+Executing reversion version of each program
+Generating Equivalent Program for number485at681
+now we are at round: 61
+Executing Simulator681
+Executing Classical681
+Executing QC681
+Executing reversion version of each program
+Generating Equivalent Program for number485at682
+now we are at round: 61
+Executing Simulator682
+Executing Classical682
+Executing QC682
+Executing reversion version of each program
+Generating New Program at number683
+Executing Simulator496
+Executing Classical496
+Executing QC496
+Executing reversion version of each program
+Generating Equivalent Program for number496at684
+now we are at round: 62
+Executing Simulator684
+Executing Classical684
+Executing QC684
+Executing reversion version of each program
+Generating Equivalent Program for number496at685
+now we are at round: 62
+Executing Simulator685
+Executing Classical685
+Executing QC685
+Executing reversion version of each program
+Generating Equivalent Program for number496at686
+now we are at round: 62
+Executing Simulator686
+Executing Classical686
+Executing QC686
+Executing reversion version of each program
+Generating Equivalent Program for number496at687
+now we are at round: 62
+Executing Simulator687
+Executing Classical687
+Executing QC687
+Executing reversion version of each program
+Generating Equivalent Program for number496at688
+now we are at round: 62
+Executing Simulator688
+Executing Classical688
+Executing QC688
+Executing reversion version of each program
+Generating Equivalent Program for number496at689
+now we are at round: 62
+Executing Simulator689
+Executing Classical689
+Executing QC689
+Executing reversion version of each program
+Generating Equivalent Program for number496at690
+now we are at round: 62
+Executing Simulator690
+Executing Classical690
+Executing QC690
+Executing reversion version of each program
+Generating Equivalent Program for number496at691
+now we are at round: 62
+Executing Simulator691
+Executing Classical691
+Executing QC691
+Executing reversion version of each program
+Generating Equivalent Program for number496at692
+now we are at round: 62
+Executing Simulator692
+Executing Classical692
+Executing QC692
+Executing reversion version of each program
+Generating Equivalent Program for number496at693
+now we are at round: 62
+Executing Simulator693
+Executing Classical693
+Executing QC693
+Executing reversion version of each program
+Generating New Program at number694
+Executing Simulator507
+Executing Classical507
+Executing QC507
+Executing reversion version of each program
+Generating Equivalent Program for number507at695
+now we are at round: 63
+Executing Simulator695
+Executing Classical695
+Executing QC695
+Executing reversion version of each program
+Generating Equivalent Program for number507at696
+now we are at round: 63
+Executing Simulator696
+Executing Classical696
+Executing QC696
+Executing reversion version of each program
+Generating Equivalent Program for number507at697
+now we are at round: 63
+Executing Simulator697
+Executing Classical697
+Executing QC697
+Executing reversion version of each program
+Generating Equivalent Program for number507at698
+now we are at round: 63
+Executing Simulator698
+Executing Classical698
+Executing QC698
+Executing reversion version of each program
+Generating Equivalent Program for number507at699
+now we are at round: 63
+Executing Simulator699
+Executing Classical699
+Executing QC699
+Executing reversion version of each program
+Generating Equivalent Program for number507at700
+now we are at round: 63
+Executing Simulator700
+Executing Classical700
+Executing QC700
+Executing reversion version of each program
+Generating Equivalent Program for number507at701
+now we are at round: 63
+Executing Simulator701
+Executing Classical701
+Executing QC701
+Executing reversion version of each program
+Generating Equivalent Program for number507at702
+now we are at round: 63
+Executing Simulator702
+Executing Classical702
+Executing QC702
+Executing reversion version of each program
+Generating Equivalent Program for number507at703
+now we are at round: 63
+Executing Simulator703
+Executing Classical703
+Executing QC703
+Executing reversion version of each program
+Generating Equivalent Program for number507at704
+now we are at round: 63
+Executing Simulator704
+Executing Classical704
+Executing QC704
+Executing reversion version of each program
+Generating New Program at number705
+Executing Simulator518
+Executing Classical518
+Executing QC518
+Executing reversion version of each program
+Generating Equivalent Program for number518at706
+now we are at round: 64
+Executing Simulator706
+Executing Classical706
+Executing QC706
+Executing reversion version of each program
+Generating Equivalent Program for number518at707
+now we are at round: 64
+Executing Simulator707
+Executing Classical707
+Executing QC707
+Executing reversion version of each program
+Generating Equivalent Program for number518at708
+now we are at round: 64
+Executing Simulator708
+Executing Classical708
+Executing QC708
+Executing reversion version of each program
+Generating Equivalent Program for number518at709
+now we are at round: 64
+Executing Simulator709
+Executing Classical709
+Executing QC709
+Executing reversion version of each program
+Generating Equivalent Program for number518at710
+now we are at round: 64
+Executing Simulator710
+Executing Classical710
+Executing QC710
+Executing reversion version of each program
+Generating Equivalent Program for number518at711
+now we are at round: 64
+Executing Simulator711
+Executing Classical711
+Executing QC711
+Executing reversion version of each program
+Generating Equivalent Program for number518at712
+now we are at round: 64
+Executing Simulator712
+Executing Classical712
+Executing QC712
+Executing reversion version of each program
+Generating Equivalent Program for number518at713
+now we are at round: 64
+Executing Simulator713
+Executing Classical713
+Executing QC713
+Executing reversion version of each program
+Generating Equivalent Program for number518at714
+now we are at round: 64
+Executing Simulator714
+Executing Classical714
+Executing QC714
+Executing reversion version of each program
+Generating Equivalent Program for number518at715
+now we are at round: 64
+Executing Simulator715
+Executing Classical715
+Executing QC715
+Executing reversion version of each program
+Generating New Program at number716
+Executing Simulator529
+Executing Classical529
+Executing QC529
+Executing reversion version of each program
+Generating Equivalent Program for number529at717
+now we are at round: 65
+Executing Simulator717
+Executing Classical717
+Executing QC717
+Executing reversion version of each program
+Generating Equivalent Program for number529at718
+now we are at round: 65
+Executing Simulator718
+Executing Classical718
+Executing QC718
+Executing reversion version of each program
+Generating Equivalent Program for number529at719
+now we are at round: 65
+Executing Simulator719
+Executing Classical719
+Executing QC719
+Executing reversion version of each program
+Generating Equivalent Program for number529at720
+now we are at round: 65
+Executing Simulator720
+Executing Classical720
+Executing QC720
+Executing reversion version of each program
+Generating Equivalent Program for number529at721
+now we are at round: 65
+Executing Simulator721
+Executing Classical721
+Executing QC721
+Executing reversion version of each program
+Generating Equivalent Program for number529at722
+now we are at round: 65
+Executing Simulator722
+Executing Classical722
+Executing QC722
+Executing reversion version of each program
+Generating Equivalent Program for number529at723
+now we are at round: 65
+Executing Simulator723
+Executing Classical723
+Executing QC723
+Executing reversion version of each program
+Generating Equivalent Program for number529at724
+now we are at round: 65
+Executing Simulator724
+Executing Classical724
+Executing QC724
+Executing reversion version of each program
+Generating Equivalent Program for number529at725
+now we are at round: 65
+Executing Simulator725
+Executing Classical725
+Executing QC725
+Executing reversion version of each program
+Generating Equivalent Program for number529at726
+now we are at round: 65
+Executing Simulator726
+Executing Classical726
+Executing QC726
+Executing reversion version of each program
+Generating New Program at number727
+Executing Simulator540
+Executing Classical540
+Executing QC540
+Executing reversion version of each program
+Generating Equivalent Program for number540at728
+now we are at round: 66
+Executing Simulator728
+Executing Classical728
+Executing QC728
+Executing reversion version of each program
+Generating Equivalent Program for number540at729
+now we are at round: 66
+Executing Simulator729
+Executing Classical729
+Executing QC729
+Executing reversion version of each program
+Generating Equivalent Program for number540at730
+now we are at round: 66
+Executing Simulator730
+Executing Classical730
+Executing QC730
+Executing reversion version of each program
+Generating Equivalent Program for number540at731
+now we are at round: 66
+Executing Simulator731
+Executing Classical731
+Executing QC731
+Executing reversion version of each program
+Generating Equivalent Program for number540at732
+now we are at round: 66
+Executing Simulator732
+Executing Classical732
+Executing QC732
+Executing reversion version of each program
+Generating Equivalent Program for number540at733
+now we are at round: 66
+Executing Simulator733
+Executing Classical733
+Executing QC733
+Executing reversion version of each program
+Generating Equivalent Program for number540at734
+now we are at round: 66
+Executing Simulator734
+Executing Classical734
+Executing QC734
+Executing reversion version of each program
+Generating Equivalent Program for number540at735
+now we are at round: 66
+Executing Simulator735
+Executing Classical735
+Executing QC735
+Executing reversion version of each program
+Generating Equivalent Program for number540at736
+now we are at round: 66
+Executing Simulator736
+Executing Classical736
+Executing QC736
+Executing reversion version of each program
+Generating Equivalent Program for number540at737
+now we are at round: 66
+Executing Simulator737
+Executing Classical737
+Executing QC737
+Executing reversion version of each program
+Generating New Program at number738
+Executing Simulator551
+Executing Classical551
+Executing QC551
+Executing reversion version of each program
+Generating Equivalent Program for number551at739
+now we are at round: 67
+Executing Simulator739
+Executing Classical739
+Executing QC739
+Executing reversion version of each program
+Generating Equivalent Program for number551at740
+now we are at round: 67
+Executing Simulator740
+Executing Classical740
+Executing QC740
+Executing reversion version of each program
+Generating Equivalent Program for number551at741
+now we are at round: 67
+Executing Simulator741
+Executing Classical741
+Executing QC741
+Executing reversion version of each program
+Generating Equivalent Program for number551at742
+now we are at round: 67
+Executing Simulator742
+Executing Classical742
+Executing QC742
+Executing reversion version of each program
+Generating Equivalent Program for number551at743
+now we are at round: 67
+Executing Simulator743
+Executing Classical743
+Executing QC743
+Executing reversion version of each program
+Generating Equivalent Program for number551at744
+now we are at round: 67
+Executing Simulator744
+Executing Classical744
+Executing QC744
+Executing reversion version of each program
+Generating Equivalent Program for number551at745
+now we are at round: 67
+Executing Simulator745
+Executing Classical745
+Executing QC745
+Executing reversion version of each program
+Generating Equivalent Program for number551at746
+now we are at round: 67
+Executing Simulator746
+Executing Classical746
+Executing QC746
+Executing reversion version of each program
+Generating Equivalent Program for number551at747
+now we are at round: 67
+Executing Simulator747
+Executing Classical747
+Executing QC747
+Executing reversion version of each program
+Generating Equivalent Program for number551at748
+now we are at round: 67
+Executing Simulator748
+Executing Classical748
+Executing QC748
+Executing reversion version of each program
+Generating New Program at number749
+Executing Simulator562
+Executing Classical562
+Executing QC562
+Executing reversion version of each program
+Generating Equivalent Program for number562at750
+now we are at round: 68
+Executing Simulator750
+Executing Classical750
+Executing QC750
+Executing reversion version of each program
+Generating Equivalent Program for number562at751
+now we are at round: 68
+Executing Simulator751
+Executing Classical751
+Executing QC751
+Executing reversion version of each program
+Generating Equivalent Program for number562at752
+now we are at round: 68
+Executing Simulator752
+Executing Classical752
+Executing QC752
+Executing reversion version of each program
+Generating Equivalent Program for number562at753
+now we are at round: 68
+Executing Simulator753
+Executing Classical753
+Executing QC753
+Executing reversion version of each program
+Generating Equivalent Program for number562at754
+now we are at round: 68
+Executing Simulator754
+Executing Classical754
+Executing QC754
+Executing reversion version of each program
+Generating Equivalent Program for number562at755
+now we are at round: 68
+Executing Simulator755
+Executing Classical755
+Executing QC755
+Executing reversion version of each program
+Generating Equivalent Program for number562at756
+now we are at round: 68
+Executing Simulator756
+Executing Classical756
+Executing QC756
+Executing reversion version of each program
+Generating Equivalent Program for number562at757
+now we are at round: 68
+Executing Simulator757
+Executing Classical757
+Executing QC757
+Executing reversion version of each program
+Generating Equivalent Program for number562at758
+now we are at round: 68
+Executing Simulator758
+Executing Classical758
+Executing QC758
+Executing reversion version of each program
+Generating Equivalent Program for number562at759
+now we are at round: 68
+Executing Simulator759
+Executing Classical759
+Executing QC759
+Executing reversion version of each program
+Generating New Program at number760
+Executing Simulator573
+Executing Classical573
+Executing QC573
+Executing reversion version of each program
+Generating Equivalent Program for number573at761
+now we are at round: 69
+Executing Simulator761
+Executing Classical761
+Executing QC761
+Executing reversion version of each program
+Generating Equivalent Program for number573at762
+now we are at round: 69
+Executing Simulator762
+Executing Classical762
+Executing QC762
+Executing reversion version of each program
+Generating Equivalent Program for number573at763
+now we are at round: 69
+Executing Simulator763
+Executing Classical763
+Executing QC763
+Executing reversion version of each program
+Generating Equivalent Program for number573at764
+now we are at round: 69
+Executing Simulator764
+Executing Classical764
+Executing QC764
+Executing reversion version of each program
+Generating Equivalent Program for number573at765
+now we are at round: 69
+Executing Simulator765
+Executing Classical765
+Executing QC765
+Executing reversion version of each program
+Generating Equivalent Program for number573at766
+now we are at round: 69
+Executing Simulator766
+Executing Classical766
+Executing QC766
+Executing reversion version of each program
+Generating Equivalent Program for number573at767
+now we are at round: 69
+Executing Simulator767
+Executing Classical767
+Executing QC767
+Executing reversion version of each program
+Generating Equivalent Program for number573at768
+now we are at round: 69
+Executing Simulator768
+Executing Classical768
+Executing QC768
+Executing reversion version of each program
+Generating Equivalent Program for number573at769
+now we are at round: 69
+Executing Simulator769
+Executing Classical769
+Executing QC769
+Executing reversion version of each program
+Generating Equivalent Program for number573at770
+now we are at round: 69
+Executing Simulator770
+Executing Classical770
+Executing QC770
+Executing reversion version of each program
+Generating New Program at number771
+Executing Simulator584
+Executing Classical584
+Executing QC584
+Executing reversion version of each program
+Generating Equivalent Program for number584at772
+now we are at round: 70
+Executing Simulator772
+Executing Classical772
+Executing QC772
+Executing reversion version of each program
+Generating Equivalent Program for number584at773
+now we are at round: 70
+Executing Simulator773
+Executing Classical773
+Executing QC773
+Executing reversion version of each program
+Generating Equivalent Program for number584at774
+now we are at round: 70
+Executing Simulator774
+Executing Classical774
+Executing QC774
+Executing reversion version of each program
+Generating Equivalent Program for number584at775
+now we are at round: 70
+Executing Simulator775
+Executing Classical775
+Executing QC775
+Executing reversion version of each program
+Generating Equivalent Program for number584at776
+now we are at round: 70
+Executing Simulator776
+Executing Classical776
+Executing QC776
+Executing reversion version of each program
+Generating Equivalent Program for number584at777
+now we are at round: 70
+Executing Simulator777
+Executing Classical777
+Executing QC777
+Executing reversion version of each program
+Generating Equivalent Program for number584at778
+now we are at round: 70
+Executing Simulator778
+Executing Classical778
+Executing QC778
+Executing reversion version of each program
+Generating Equivalent Program for number584at779
+now we are at round: 70
+Executing Simulator779
+Executing Classical779
+Executing QC779
+Executing reversion version of each program
+Generating Equivalent Program for number584at780
+now we are at round: 70
+Executing Simulator780
+Executing Classical780
+Executing QC780
+Executing reversion version of each program
+Generating Equivalent Program for number584at781
+now we are at round: 70
+Executing Simulator781
+Executing Classical781
+Executing QC781
+Executing reversion version of each program
+Generating New Program at number782
+Executing Simulator595
+Executing Classical595
+Executing QC595
+Executing reversion version of each program
+Generating Equivalent Program for number595at783
+now we are at round: 71
+Executing Simulator783
+Executing Classical783
+Executing QC783
+Executing reversion version of each program
+Generating Equivalent Program for number595at784
+now we are at round: 71
+Executing Simulator784
+Executing Classical784
+Executing QC784
+Executing reversion version of each program
+Generating Equivalent Program for number595at785
+now we are at round: 71
+Executing Simulator785
+Executing Classical785
+Executing QC785
+Executing reversion version of each program
+Generating Equivalent Program for number595at786
+now we are at round: 71
+Executing Simulator786
+Executing Classical786
+Executing QC786
+Executing reversion version of each program
+Generating Equivalent Program for number595at787
+now we are at round: 71
+Executing Simulator787
+Executing Classical787
+Executing QC787
+Executing reversion version of each program
+Generating Equivalent Program for number595at788
+now we are at round: 71
+Executing Simulator788
+Executing Classical788
+Executing QC788
+Executing reversion version of each program
+Generating Equivalent Program for number595at789
+now we are at round: 71
+Executing Simulator789
+Executing Classical789
+Executing QC789
+Executing reversion version of each program
+Generating Equivalent Program for number595at790
+now we are at round: 71
+Executing Simulator790
+Executing Classical790
+Executing QC790
+Executing reversion version of each program
+Generating Equivalent Program for number595at791
+now we are at round: 71
+Executing Simulator791
+Executing Classical791
+Executing QC791
+Executing reversion version of each program
+Generating Equivalent Program for number595at792
+now we are at round: 71
+Executing Simulator792
+Executing Classical792
+Executing QC792
+Executing reversion version of each program
+Generating New Program at number793
+Executing Simulator606
+Executing Classical606
+Executing QC606
+Executing reversion version of each program
+Generating Equivalent Program for number606at794
+now we are at round: 72
+Executing Simulator794
+Executing Classical794
+Executing QC794
+Executing reversion version of each program
+Generating Equivalent Program for number606at795
+now we are at round: 72
+Executing Simulator795
+Executing Classical795
+Executing QC795
+Executing reversion version of each program
+Generating Equivalent Program for number606at796
+now we are at round: 72
+Executing Simulator796
+Executing Classical796
+Executing QC796
+Executing reversion version of each program
+Generating Equivalent Program for number606at797
+now we are at round: 72
+Executing Simulator797
+Executing Classical797
+Executing QC797
+Executing reversion version of each program
+Generating Equivalent Program for number606at798
+now we are at round: 72
+Executing Simulator798
+Executing Classical798
+Executing QC798
+Executing reversion version of each program
+Generating Equivalent Program for number606at799
+now we are at round: 72
+Executing Simulator799
+Executing Classical799
+Executing QC799
+Executing reversion version of each program
+Generating Equivalent Program for number606at800
+now we are at round: 72
+Executing Simulator800
+Executing Classical800
+Executing QC800
+Executing reversion version of each program
+Generating Equivalent Program for number606at801
+now we are at round: 72
+Executing Simulator801
+Executing Classical801
+Executing QC801
+Executing reversion version of each program
+Generating Equivalent Program for number606at802
+now we are at round: 72
+Executing Simulator802
+Executing Classical802
+Executing QC802
+Executing reversion version of each program
+Generating Equivalent Program for number606at803
+now we are at round: 72
+Executing Simulator803
+Executing Classical803
+Executing QC803
+Executing reversion version of each program
+Generating New Program at number804
+Executing Simulator617
+Executing Classical617
+Executing QC617
+Executing reversion version of each program
+Generating Equivalent Program for number617at805
+now we are at round: 73
+Executing Simulator805
+Executing Classical805
+Executing QC805
+Executing reversion version of each program
+Generating Equivalent Program for number617at806
+now we are at round: 73
+Executing Simulator806
+Executing Classical806
+Executing QC806
+Executing reversion version of each program
+Generating Equivalent Program for number617at807
+now we are at round: 73
+Executing Simulator807
+Executing Classical807
+Executing QC807
+Executing reversion version of each program
+Generating Equivalent Program for number617at808
+now we are at round: 73
+Executing Simulator808
+Executing Classical808
+Executing QC808
+Executing reversion version of each program
+Generating Equivalent Program for number617at809
+now we are at round: 73
+Executing Simulator809
+Executing Classical809
+Executing QC809
+Executing reversion version of each program
+Generating Equivalent Program for number617at810
+now we are at round: 73
+Executing Simulator810
+Executing Classical810
+Executing QC810
+Executing reversion version of each program
+Generating Equivalent Program for number617at811
+now we are at round: 73
+Executing Simulator811
+Executing Classical811
+Executing QC811
+Executing reversion version of each program
+Generating Equivalent Program for number617at812
+now we are at round: 73
+Executing Simulator812
+Executing Classical812
+Executing QC812
+Executing reversion version of each program
+Generating Equivalent Program for number617at813
+now we are at round: 73
+Executing Simulator813
+Executing Classical813
+Executing QC813
+Executing reversion version of each program
+Generating Equivalent Program for number617at814
+now we are at round: 73
+Executing Simulator814
+Executing Classical814
+Executing QC814
+Executing reversion version of each program
+Generating New Program at number815
+Executing Simulator628
+Executing Classical628
+Executing QC628
+Executing reversion version of each program
+Generating Equivalent Program for number628at816
+now we are at round: 74
+Executing Simulator816
+Executing Classical816
+Executing QC816
+Executing reversion version of each program
+Generating Equivalent Program for number628at817
+now we are at round: 74
+Executing Simulator817
+Executing Classical817
+Executing QC817
+Executing reversion version of each program
+Generating Equivalent Program for number628at818
+now we are at round: 74
+Executing Simulator818
+Executing Classical818
+Executing QC818
+Executing reversion version of each program
+Generating Equivalent Program for number628at819
+now we are at round: 74
+Executing Simulator819
+Executing Classical819
+Executing QC819
+Executing reversion version of each program
+Generating Equivalent Program for number628at820
+now we are at round: 74
+Executing Simulator820
+Executing Classical820
+Executing QC820
+Executing reversion version of each program
+Generating Equivalent Program for number628at821
+now we are at round: 74
+Executing Simulator821
+Executing Classical821
+Executing QC821
+Executing reversion version of each program
+Generating Equivalent Program for number628at822
+now we are at round: 74
+Executing Simulator822
+Executing Classical822
+Executing QC822
+Executing reversion version of each program
+Generating Equivalent Program for number628at823
+now we are at round: 74
+Executing Simulator823
+Executing Classical823
+Executing QC823
+Executing reversion version of each program
+Generating Equivalent Program for number628at824
+now we are at round: 74
+Executing Simulator824
+Executing Classical824
+Executing QC824
+Executing reversion version of each program
+Generating Equivalent Program for number628at825
+now we are at round: 74
+Executing Simulator825
+Executing Classical825
+Executing QC825
+Executing reversion version of each program
+Generating New Program at number826
+Executing Simulator639
+Executing Classical639
+Executing QC639
+Executing reversion version of each program
+Generating Equivalent Program for number639at827
+now we are at round: 75
+Executing Simulator827
+Executing Classical827
+Executing QC827
+Executing reversion version of each program
+Generating Equivalent Program for number639at828
+now we are at round: 75
+Executing Simulator828
+Executing Classical828
+Executing QC828
+Executing reversion version of each program
+Generating Equivalent Program for number639at829
+now we are at round: 75
+Executing Simulator829
+Executing Classical829
+Executing QC829
+Executing reversion version of each program
+Generating Equivalent Program for number639at830
+now we are at round: 75
+Executing Simulator830
+Executing Classical830
+Executing QC830
+Executing reversion version of each program
+Generating Equivalent Program for number639at831
+now we are at round: 75
+Executing Simulator831
+Executing Classical831
+Executing QC831
+Executing reversion version of each program
+Generating Equivalent Program for number639at832
+now we are at round: 75
+Executing Simulator832
+Executing Classical832
+Executing QC832
+Executing reversion version of each program
+Generating Equivalent Program for number639at833
+now we are at round: 75
+Executing Simulator833
+Executing Classical833
+Executing QC833
+Executing reversion version of each program
+Generating Equivalent Program for number639at834
+now we are at round: 75
+Executing Simulator834
+Executing Classical834
+Executing QC834
+Executing reversion version of each program
+Generating Equivalent Program for number639at835
+now we are at round: 75
+Executing Simulator835
+Executing Classical835
+Executing QC835
+Executing reversion version of each program
+Generating Equivalent Program for number639at836
+now we are at round: 75
+Executing Simulator836
+Executing Classical836
+Executing QC836
+Executing reversion version of each program
+Generating New Program at number837
+Executing Simulator650
+Executing Classical650
+Executing QC650
+Executing reversion version of each program
+Generating Equivalent Program for number650at838
+now we are at round: 76
+Executing Simulator838
+Executing Classical838
+Executing QC838
+Executing reversion version of each program
+Generating Equivalent Program for number650at839
+now we are at round: 76
+Executing Simulator839
+Executing Classical839
+Executing QC839
+Executing reversion version of each program
+Generating Equivalent Program for number650at840
+now we are at round: 76
+Executing Simulator840
+Executing Classical840
+Executing QC840
+Executing reversion version of each program
+Generating Equivalent Program for number650at841
+now we are at round: 76
+Executing Simulator841
+Executing Classical841
+Executing QC841
+Executing reversion version of each program
+Generating Equivalent Program for number650at842
+now we are at round: 76
+Executing Simulator842
+Executing Classical842
+Executing QC842
+Executing reversion version of each program
+Generating Equivalent Program for number650at843
+now we are at round: 76
+Executing Simulator843
+Executing Classical843
+Executing QC843
+Executing reversion version of each program
+Generating Equivalent Program for number650at844
+now we are at round: 76
+Executing Simulator844
+Executing Classical844
+Executing QC844
+Executing reversion version of each program
+Generating Equivalent Program for number650at845
+now we are at round: 76
+Executing Simulator845
+Executing Classical845
+Executing QC845
+Executing reversion version of each program
+Generating Equivalent Program for number650at846
+now we are at round: 76
+Executing Simulator846
+Executing Classical846
+Executing QC846
+Executing reversion version of each program
+Generating Equivalent Program for number650at847
+now we are at round: 76
+Executing Simulator847
+Executing Classical847
+Executing QC847
+Executing reversion version of each program
+Generating New Program at number848
+Executing Simulator661
+Executing Classical661
+Executing QC661
+Executing reversion version of each program
+Generating Equivalent Program for number661at849
+now we are at round: 77
+Executing Simulator849
+Executing Classical849
+Executing QC849
+Executing reversion version of each program
+Generating Equivalent Program for number661at850
+now we are at round: 77
+Executing Simulator850
+Executing Classical850
+Executing QC850
+Executing reversion version of each program
+Generating Equivalent Program for number661at851
+now we are at round: 77
+Executing Simulator851
+Executing Classical851
+Executing QC851
+Executing reversion version of each program
+Generating Equivalent Program for number661at852
+now we are at round: 77
+Executing Simulator852
+Executing Classical852
+Executing QC852
+Executing reversion version of each program
+Generating Equivalent Program for number661at853
+now we are at round: 77
+Executing Simulator853
+Executing Classical853
+Executing QC853
+Executing reversion version of each program
+Generating Equivalent Program for number661at854
+now we are at round: 77
+Executing Simulator854
+Executing Classical854
+Executing QC854
+Executing reversion version of each program
+Generating Equivalent Program for number661at855
+now we are at round: 77
+Executing Simulator855
+Executing Classical855
+Executing QC855
+Executing reversion version of each program
+Generating Equivalent Program for number661at856
+now we are at round: 77
+Executing Simulator856
+Executing Classical856
+Executing QC856
+Executing reversion version of each program
+Generating Equivalent Program for number661at857
+now we are at round: 77
+Executing Simulator857
+Executing Classical857
+Executing QC857
+Executing reversion version of each program
+Generating Equivalent Program for number661at858
+now we are at round: 77
+Executing Simulator858
+Executing Classical858
+Executing QC858
+Executing reversion version of each program
+Generating New Program at number859
+Executing Simulator672
+Executing Classical672
+Executing QC672
+Executing reversion version of each program
+Generating Equivalent Program for number672at860
+now we are at round: 78
+Executing Simulator860
+Executing Classical860
+Executing QC860
+Executing reversion version of each program
+Generating Equivalent Program for number672at861
+now we are at round: 78
+Executing Simulator861
+Executing Classical861
+Executing QC861
+Executing reversion version of each program
+Generating Equivalent Program for number672at862
+now we are at round: 78
+Executing Simulator862
+Executing Classical862
+Executing QC862
+Executing reversion version of each program
+Generating Equivalent Program for number672at863
+now we are at round: 78
+Executing Simulator863
+Executing Classical863
+Executing QC863
+Executing reversion version of each program
+Generating Equivalent Program for number672at864
+now we are at round: 78
+Executing Simulator864
+Executing Classical864
+Executing QC864
+Executing reversion version of each program
+Generating Equivalent Program for number672at865
+now we are at round: 78
+Executing Simulator865
+Executing Classical865
+Executing QC865
+Executing reversion version of each program
+Generating Equivalent Program for number672at866
+now we are at round: 78
+Executing Simulator866
+Executing Classical866
+Executing QC866
+Executing reversion version of each program
+Generating Equivalent Program for number672at867
+now we are at round: 78
+Executing Simulator867
+Executing Classical867
+Executing QC867
+Executing reversion version of each program
+Generating Equivalent Program for number672at868
+now we are at round: 78
+Executing Simulator868
+Executing Classical868
+Executing QC868
+Executing reversion version of each program
+Generating Equivalent Program for number672at869
+now we are at round: 78
+Executing Simulator869
+Executing Classical869
+Executing QC869
+Executing reversion version of each program
+Generating New Program at number870
+Executing Simulator683
+Executing Classical683
+Executing QC683
+Executing reversion version of each program
+Generating Equivalent Program for number683at871
+now we are at round: 79
+Executing Simulator871
+Executing Classical871
+Executing QC871
+Executing reversion version of each program
+Generating Equivalent Program for number683at872
+now we are at round: 79
+Executing Simulator872
+Executing Classical872
+Executing QC872
+Executing reversion version of each program
+Generating Equivalent Program for number683at873
+now we are at round: 79
+Executing Simulator873
+Executing Classical873
+Executing QC873
+Executing reversion version of each program
+Generating Equivalent Program for number683at874
+now we are at round: 79
+Executing Simulator874
+Executing Classical874
+Executing QC874
+Executing reversion version of each program
+Generating Equivalent Program for number683at875
+now we are at round: 79
+Executing Simulator875
+Executing Classical875
+Executing QC875
+Executing reversion version of each program
+Generating Equivalent Program for number683at876
+now we are at round: 79
+Executing Simulator876
+Executing Classical876
+Executing QC876
+Executing reversion version of each program
+Generating Equivalent Program for number683at877
+now we are at round: 79
+Executing Simulator877
+Executing Classical877
+Executing QC877
+Executing reversion version of each program
+Generating Equivalent Program for number683at878
+now we are at round: 79
+Executing Simulator878
+Executing Classical878
+Executing QC878
+Executing reversion version of each program
+Generating Equivalent Program for number683at879
+now we are at round: 79
+Executing Simulator879
+Executing Classical879
+Executing QC879
+Executing reversion version of each program
+Generating Equivalent Program for number683at880
+now we are at round: 79
+Executing Simulator880
+Executing Classical880
+Executing QC880
+Executing reversion version of each program
+Generating New Program at number881
+Executing Simulator694
+Executing Classical694
+Executing QC694
+Executing reversion version of each program
+Generating Equivalent Program for number694at882
+now we are at round: 80
+Executing Simulator882
+Executing Classical882
+Executing QC882
+Executing reversion version of each program
+Generating Equivalent Program for number694at883
+now we are at round: 80
+Executing Simulator883
+Executing Classical883
+Executing QC883
+Executing reversion version of each program
+Generating Equivalent Program for number694at884
+now we are at round: 80
+Executing Simulator884
+Executing Classical884
+Executing QC884
+Executing reversion version of each program
+Generating Equivalent Program for number694at885
+now we are at round: 80
+Executing Simulator885
+Executing Classical885
+Executing QC885
+Executing reversion version of each program
+Generating Equivalent Program for number694at886
+now we are at round: 80
+Executing Simulator886
+Executing Classical886
+Executing QC886
+Executing reversion version of each program
+Generating Equivalent Program for number694at887
+now we are at round: 80
+Executing Simulator887
+Executing Classical887
+Executing QC887
+Executing reversion version of each program
+Generating Equivalent Program for number694at888
+now we are at round: 80
+Executing Simulator888
+Executing Classical888
+Executing QC888
+Executing reversion version of each program
+Generating Equivalent Program for number694at889
+now we are at round: 80
+Executing Simulator889
+Executing Classical889
+Executing QC889
+Executing reversion version of each program
+Generating Equivalent Program for number694at890
+now we are at round: 80
+Executing Simulator890
+Executing Classical890
+Executing QC890
+Executing reversion version of each program
+Generating Equivalent Program for number694at891
+now we are at round: 80
+Executing Simulator891
+Executing Classical891
+Executing QC891
+Executing reversion version of each program
+Generating New Program at number892
+Executing Simulator705
+Executing Classical705
+Executing QC705
+Executing reversion version of each program
+Generating Equivalent Program for number705at893
+now we are at round: 81
+Executing Simulator893
+Executing Classical893
+Executing QC893
+Executing reversion version of each program
+Generating Equivalent Program for number705at894
+now we are at round: 81
+Executing Simulator894
+Executing Classical894
+Executing QC894
+Executing reversion version of each program
+Generating Equivalent Program for number705at895
+now we are at round: 81
+Executing Simulator895
+Executing Classical895
+Executing QC895
+Executing reversion version of each program
+Generating Equivalent Program for number705at896
+now we are at round: 81
+Executing Simulator896
+Executing Classical896
+Executing QC896
+Executing reversion version of each program
+Generating Equivalent Program for number705at897
+now we are at round: 81
+Executing Simulator897
+Executing Classical897
+Executing QC897
+Executing reversion version of each program
+Generating Equivalent Program for number705at898
+now we are at round: 81
+Executing Simulator898
+Executing Classical898
+Executing QC898
+Executing reversion version of each program
+Generating Equivalent Program for number705at899
+now we are at round: 81
+Executing Simulator899
+Executing Classical899
+Executing QC899
+Executing reversion version of each program
+Generating Equivalent Program for number705at900
+now we are at round: 81
+Executing Simulator900
+Executing Classical900
+Executing QC900
+Executing reversion version of each program
+Generating Equivalent Program for number705at901
+now we are at round: 81
+Executing Simulator901
+Executing Classical901
+Executing QC901
+Executing reversion version of each program
+Generating Equivalent Program for number705at902
+now we are at round: 81
+Executing Simulator902
+Executing Classical902
+Executing QC902
+Executing reversion version of each program
+Generating New Program at number903
+Executing Simulator716
+Executing Classical716
+Executing QC716
+Executing reversion version of each program
+Generating Equivalent Program for number716at904
+now we are at round: 82
+Executing Simulator904
+Executing Classical904
+Executing QC904
+Executing reversion version of each program
+Generating Equivalent Program for number716at905
+now we are at round: 82
+Executing Simulator905
+Executing Classical905
+Executing QC905
+Executing reversion version of each program
+Generating Equivalent Program for number716at906
+now we are at round: 82
+Executing Simulator906
+Executing Classical906
+Executing QC906
+Executing reversion version of each program
+Generating Equivalent Program for number716at907
+now we are at round: 82
+Executing Simulator907
+Executing Classical907
+Executing QC907
+Executing reversion version of each program
+Generating Equivalent Program for number716at908
+now we are at round: 82
+Executing Simulator908
+Executing Classical908
+Executing QC908
+Executing reversion version of each program
+Generating Equivalent Program for number716at909
+now we are at round: 82
+Executing Simulator909
+Executing Classical909
+Executing QC909
+Executing reversion version of each program
+Generating Equivalent Program for number716at910
+now we are at round: 82
+Executing Simulator910
+Executing Classical910
+Executing QC910
+Executing reversion version of each program
+Generating Equivalent Program for number716at911
+now we are at round: 82
+Executing Simulator911
+Executing Classical911
+Executing QC911
+Executing reversion version of each program
+Generating Equivalent Program for number716at912
+now we are at round: 82
+Executing Simulator912
+Executing Classical912
+Executing QC912
+Executing reversion version of each program
+Generating Equivalent Program for number716at913
+now we are at round: 82
+Executing Simulator913
+Executing Classical913
+Executing QC913
+Executing reversion version of each program
+Generating New Program at number914
+Executing Simulator727
+Executing Classical727
+Executing QC727
+Executing reversion version of each program
+Generating Equivalent Program for number727at915
+now we are at round: 83
+Executing Simulator915
+Executing Classical915
+Executing QC915
+Executing reversion version of each program
+Generating Equivalent Program for number727at916
+now we are at round: 83
+Executing Simulator916
+Executing Classical916
+Executing QC916
+Executing reversion version of each program
+Generating Equivalent Program for number727at917
+now we are at round: 83
+Executing Simulator917
+Executing Classical917
+Executing QC917
+Executing reversion version of each program
+Generating Equivalent Program for number727at918
+now we are at round: 83
+Executing Simulator918
+Executing Classical918
+Executing QC918
+Executing reversion version of each program
+Generating Equivalent Program for number727at919
+now we are at round: 83
+Executing Simulator919
+Executing Classical919
+Executing QC919
+Executing reversion version of each program
+Generating Equivalent Program for number727at920
+now we are at round: 83
+Executing Simulator920
+Executing Classical920
+Executing QC920
+Executing reversion version of each program
+Generating Equivalent Program for number727at921
+now we are at round: 83
+Executing Simulator921
+Executing Classical921
+Executing QC921
+Executing reversion version of each program
+Generating Equivalent Program for number727at922
+now we are at round: 83
+Executing Simulator922
+Executing Classical922
+Executing QC922
+Executing reversion version of each program
+Generating Equivalent Program for number727at923
+now we are at round: 83
+Executing Simulator923
+Executing Classical923
+Executing QC923
+Executing reversion version of each program
+Generating Equivalent Program for number727at924
+now we are at round: 83
+Executing Simulator924
+Executing Classical924
+Executing QC924
+Executing reversion version of each program
+Generating New Program at number925
+Executing Simulator738
+Executing Classical738
+Executing QC738
+Executing reversion version of each program
+Generating Equivalent Program for number738at926
+now we are at round: 84
+Executing Simulator926
+Executing Classical926
+Executing QC926
+Executing reversion version of each program
+Generating Equivalent Program for number738at927
+now we are at round: 84
+Executing Simulator927
+Executing Classical927
+Executing QC927
+Executing reversion version of each program
+Generating Equivalent Program for number738at928
+now we are at round: 84
+Executing Simulator928
+Executing Classical928
+Executing QC928
+Executing reversion version of each program
+Generating Equivalent Program for number738at929
+now we are at round: 84
+Executing Simulator929
+Executing Classical929
+Executing QC929
+Executing reversion version of each program
+Generating Equivalent Program for number738at930
+now we are at round: 84
+Executing Simulator930
+Executing Classical930
+Executing QC930
+Executing reversion version of each program
+Generating Equivalent Program for number738at931
+now we are at round: 84
+Executing Simulator931
+Executing Classical931
+Executing QC931
+Executing reversion version of each program
+Generating Equivalent Program for number738at932
+now we are at round: 84
+Executing Simulator932
+Executing Classical932
+Executing QC932
+Executing reversion version of each program
+Generating Equivalent Program for number738at933
+now we are at round: 84
+Executing Simulator933
+Executing Classical933
+Executing QC933
+Executing reversion version of each program
+Generating Equivalent Program for number738at934
+now we are at round: 84
+Executing Simulator934
+Executing Classical934
+Executing QC934
+Executing reversion version of each program
+Generating Equivalent Program for number738at935
+now we are at round: 84
+Executing Simulator935
+Executing Classical935
+Executing QC935
+Executing reversion version of each program
+Generating New Program at number936
+Executing Simulator749
+Executing Classical749
+Executing QC749
+Executing reversion version of each program
+Generating Equivalent Program for number749at937
+now we are at round: 85
+Executing Simulator937
+Executing Classical937
+Executing QC937
+Executing reversion version of each program
+Generating Equivalent Program for number749at938
+now we are at round: 85
+Executing Simulator938
+Executing Classical938
+Executing QC938
+Executing reversion version of each program
+Generating Equivalent Program for number749at939
+now we are at round: 85
+Executing Simulator939
+Executing Classical939
+Executing QC939
+Executing reversion version of each program
+Generating Equivalent Program for number749at940
+now we are at round: 85
+Executing Simulator940
+Executing Classical940
+Executing QC940
+Executing reversion version of each program
+Generating Equivalent Program for number749at941
+now we are at round: 85
+Executing Simulator941
+Executing Classical941
+Executing QC941
+Executing reversion version of each program
+Generating Equivalent Program for number749at942
+now we are at round: 85
+Executing Simulator942
+Executing Classical942
+Executing QC942
+Executing reversion version of each program
+Generating Equivalent Program for number749at943
+now we are at round: 85
+Executing Simulator943
+Executing Classical943
+Executing QC943
+Executing reversion version of each program
+Generating Equivalent Program for number749at944
+now we are at round: 85
+Executing Simulator944
+Executing Classical944
+Executing QC944
+Executing reversion version of each program
+Generating Equivalent Program for number749at945
+now we are at round: 85
+Executing Simulator945
+Executing Classical945
+Executing QC945
+Executing reversion version of each program
+Generating Equivalent Program for number749at946
+now we are at round: 85
+Executing Simulator946
+Executing Classical946
+Executing QC946
+Executing reversion version of each program
+Generating New Program at number947
+Executing Simulator760
+Executing Classical760
+Executing QC760
+Executing reversion version of each program
+Generating Equivalent Program for number760at948
+now we are at round: 86
+Executing Simulator948
+Executing Classical948
+Executing QC948
+Executing reversion version of each program
+Generating Equivalent Program for number760at949
+now we are at round: 86
+Executing Simulator949
+Executing Classical949
+Executing QC949
+Executing reversion version of each program
+Generating Equivalent Program for number760at950
+now we are at round: 86
+Executing Simulator950
+Executing Classical950
+Executing QC950
+Executing reversion version of each program
+Generating Equivalent Program for number760at951
+now we are at round: 86
+Executing Simulator951
+Executing Classical951
+Executing QC951
+Executing reversion version of each program
+Generating Equivalent Program for number760at952
+now we are at round: 86
+Executing Simulator952
+Executing Classical952
+Executing QC952
+Executing reversion version of each program
+Generating Equivalent Program for number760at953
+now we are at round: 86
+Executing Simulator953
+Executing Classical953
+Executing QC953
+Executing reversion version of each program
+Generating Equivalent Program for number760at954
+now we are at round: 86
+Executing Simulator954
+Executing Classical954
+Executing QC954
+Executing reversion version of each program
+Generating Equivalent Program for number760at955
+now we are at round: 86
+Executing Simulator955
+Executing Classical955
+Executing QC955
+Executing reversion version of each program
+Generating Equivalent Program for number760at956
+now we are at round: 86
+Executing Simulator956
+Executing Classical956
+Executing QC956
+Executing reversion version of each program
+Generating Equivalent Program for number760at957
+now we are at round: 86
+Executing Simulator957
+Executing Classical957
+Executing QC957
+Executing reversion version of each program
+Generating New Program at number958
+Executing Simulator771
+Executing Classical771
+Executing QC771
+Executing reversion version of each program
+Generating Equivalent Program for number771at959
+now we are at round: 87
+Executing Simulator959
+Executing Classical959
+Executing QC959
+Executing reversion version of each program
+Generating Equivalent Program for number771at960
+now we are at round: 87
+Executing Simulator960
+Executing Classical960
+Executing QC960
+Executing reversion version of each program
+Generating Equivalent Program for number771at961
+now we are at round: 87
+Executing Simulator961
+Executing Classical961
+Executing QC961
+Executing reversion version of each program
+Generating Equivalent Program for number771at962
+now we are at round: 87
+Executing Simulator962
+Executing Classical962
+Executing QC962
+Executing reversion version of each program
+Generating Equivalent Program for number771at963
+now we are at round: 87
+Executing Simulator963
+Executing Classical963
+Executing QC963
+Executing reversion version of each program
+Generating Equivalent Program for number771at964
+now we are at round: 87
+Executing Simulator964
+Executing Classical964
+Executing QC964
+Executing reversion version of each program
+Generating Equivalent Program for number771at965
+now we are at round: 87
+Executing Simulator965
+Executing Classical965
+Executing QC965
+Executing reversion version of each program
+Generating Equivalent Program for number771at966
+now we are at round: 87
+Executing Simulator966
+Executing Classical966
+Executing QC966
+Executing reversion version of each program
+Generating Equivalent Program for number771at967
+now we are at round: 87
+Executing Simulator967
+Executing Classical967
+Executing QC967
+Executing reversion version of each program
+Generating Equivalent Program for number771at968
+now we are at round: 87
+Executing Simulator968
+Executing Classical968
+Executing QC968
+Executing reversion version of each program
+Generating New Program at number969
+Executing Simulator782
+Executing Classical782
+Executing QC782
+Executing reversion version of each program
+Generating Equivalent Program for number782at970
+now we are at round: 88
+Executing Simulator970
+Executing Classical970
+Executing QC970
+Executing reversion version of each program
+Generating Equivalent Program for number782at971
+now we are at round: 88
+Executing Simulator971
+Executing Classical971
+Executing QC971
+Executing reversion version of each program
+Generating Equivalent Program for number782at972
+now we are at round: 88
+Executing Simulator972
+Executing Classical972
+Executing QC972
+Executing reversion version of each program
+Generating Equivalent Program for number782at973
+now we are at round: 88
+Executing Simulator973
+Executing Classical973
+Executing QC973
+Executing reversion version of each program
+Generating Equivalent Program for number782at974
+now we are at round: 88
+Executing Simulator974
+Executing Classical974
+Executing QC974
+Executing reversion version of each program
+Generating Equivalent Program for number782at975
+now we are at round: 88
+Executing Simulator975
+Executing Classical975
+Executing QC975
+Executing reversion version of each program
+Generating Equivalent Program for number782at976
+now we are at round: 88
+Executing Simulator976
+Executing Classical976
+Executing QC976
+Executing reversion version of each program
+Generating Equivalent Program for number782at977
+now we are at round: 88
+Executing Simulator977
+Executing Classical977
+Executing QC977
+Executing reversion version of each program
+Generating Equivalent Program for number782at978
+now we are at round: 88
+Executing Simulator978
+Executing Classical978
+Executing QC978
+Executing reversion version of each program
+Generating Equivalent Program for number782at979
+now we are at round: 88
+Executing Simulator979
+Executing Classical979
+Executing QC979
+Executing reversion version of each program
+Generating New Program at number980
+Executing Simulator793
+Executing Classical793
+Executing QC793
+Executing reversion version of each program
+Generating Equivalent Program for number793at981
+now we are at round: 89
+Executing Simulator981
+Executing Classical981
+Executing QC981
+Executing reversion version of each program
+Generating Equivalent Program for number793at982
+now we are at round: 89
+Executing Simulator982
+Executing Classical982
+Executing QC982
+Executing reversion version of each program
+Generating Equivalent Program for number793at983
+now we are at round: 89
+Executing Simulator983
+Executing Classical983
+Executing QC983
+Executing reversion version of each program
+Generating Equivalent Program for number793at984
+now we are at round: 89
+Executing Simulator984
+Executing Classical984
+Executing QC984
+Executing reversion version of each program
+Generating Equivalent Program for number793at985
+now we are at round: 89
+Executing Simulator985
+Executing Classical985
+Executing QC985
+Executing reversion version of each program
+Generating Equivalent Program for number793at986
+now we are at round: 89
+Executing Simulator986
+Executing Classical986
+Executing QC986
+Executing reversion version of each program
+Generating Equivalent Program for number793at987
+now we are at round: 89
+Executing Simulator987
+Executing Classical987

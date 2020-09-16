@@ -4,6 +4,8 @@
 # @Author  : lingxiangxiang
 # @File    : Mutation_equal.py
 
+
+
 import re
 import random
 import mutation.MutateCirq_equal as MC
@@ -29,11 +31,11 @@ def generate_trival(address_in:str, address_out:str, total_number:int,platform:s
     readfile = open(address_in)
     writefile = open(address_out,"w")
     line = readfile.readline()
-    print("write at:",address_out)
+    print("write at:", address_out)
 
-    i = mutation_number
-    equal_change = ["X","CNOT","Y"]
-    pattern = equal_change[i]
+
+    equal_change = ["X","CNOT","Y","SWAP"]
+    pattern = equal_change[mutation_number]
 
 
     tab = ""
@@ -57,6 +59,11 @@ def generate_trival(address_in:str, address_out:str, total_number:int,platform:s
                         write_line = MQ.two_CNOT(tab, 1, total_number)
                     else:
                         write_line = MQ.two_CNOT(tab, qubit_number,total_number)
+                if pattern == "SWAP":
+                    if qubit_number==0:
+                        write_line = MQ.two_SWAP(tab, 1, total_number)
+                    else:
+                        write_line = MQ.two_SWAP(tab, qubit_number,total_number)
                 if pattern == "Y":
                     write_line = MQ.two_Y(tab, qubit_number,total_number)
                 if pattern == "X":
@@ -67,6 +74,11 @@ def generate_trival(address_in:str, address_out:str, total_number:int,platform:s
                         write_line = MC.two_CNOT(tab, 1, total_number)
                     else:
                         write_line = MC.two_CNOT(tab, qubit_number,total_number)
+                if pattern == "SWAP":
+                    if qubit_number==0:
+                        write_line = MC.two_SWAP(tab, 1, total_number)
+                    else:
+                        write_line = MC.two_SWAP(tab, qubit_number,total_number)
                 if pattern == "Y":
                     write_line = MC.two_Y(tab, qubit_number,total_number)
                 if pattern == "X":
@@ -77,6 +89,11 @@ def generate_trival(address_in:str, address_out:str, total_number:int,platform:s
                         write_line = MP.two_CNOT(tab, 1, total_number)
                     else:
                         write_line = MP.two_CNOT(tab, qubit_number,total_number)
+                if pattern == "SWAP":
+                    if qubit_number==0:
+                        write_line = MP.two_SWAP(tab, 1, total_number)
+                    else:
+                        write_line = MP.two_SWAP(tab, qubit_number,total_number)
                 if pattern == "Y":
                     write_line = MP.two_Y(tab, qubit_number,total_number)
                 if pattern == "X":
@@ -107,7 +124,6 @@ def generate_same(operation_number:int, address_in:str, address_out:str, total_n
 
     operation_find = re.compile("# number="+str(operation_number)+"\n")
     writefile_address = "../data/"+address_out[13:-3]+".csv"
-    print(writefile_address)
     writefile_find = re.compile("../data/"+address_in[13:-3]+".csv")
     total_operation_find = re.compile("# total number=")
 
@@ -129,8 +145,6 @@ def generate_same(operation_number:int, address_in:str, address_out:str, total_n
             if platform=="Qiskit":
                 if pattern == "CNOT":
                     write_line = MQ.cnot_to_hczh(line, total_number)
-                if pattern == "SWAP":
-                    write_line = MQ.swap_to_cnot(line, total_number)
                 if pattern == "Z":
                     write_line = MQ.z_to_cnotzcnot(line, total_number)
                 if pattern == "X":
@@ -138,8 +152,6 @@ def generate_same(operation_number:int, address_in:str, address_out:str, total_n
             elif platform=="Cirq":
                 if pattern == "CNOT":
                     write_line = MC.cnot_to_hczh(line, total_number)
-                if pattern == "SWAP":
-                    write_line = MC.swap_to_cnot(line, total_number)
                 if pattern == "Z":
                     write_line = MC.z_to_cnotzcnot(line, total_number)
                 if pattern == "X":
@@ -147,8 +159,6 @@ def generate_same(operation_number:int, address_in:str, address_out:str, total_n
             else:
                 if pattern == "CNOT":
                     write_line = MP.cnot_to_hczh(line, total_number)
-                if pattern == "SWAP":
-                    write_line = MP.swap_to_cnot(line, total_number)
                 if pattern == "Z":
                     write_line = MP.z_to_cnotzcnot(line, total_number)
                 if pattern == "X":
@@ -161,7 +171,7 @@ def generate_same(operation_number:int, address_in:str, address_out:str, total_n
         if total_operation_find.search(line):
             writefile.write("# total number="+str(total_number+3)+"\n") #update total operation number
         else:
-            writefile.write(line+"\n")
+            writefile.write(line)
 
         line = readfile.readline()
 
@@ -178,8 +188,8 @@ def mutate(seed:int, write:int):
     patterns = {}
 
     patterns["CNOT"] = re.compile("cirq.CNOT")
-    patterns["SWAP"] = re.compile("cirq.SWAP")
     patterns["Z"] = re.compile("cirq.Z")
+    patterns["X"] = re.compile("cirq.X")
 
     circuit_patter_end = re.compile("# circuit end")
 
@@ -219,7 +229,7 @@ def mutate(seed:int, write:int):
 
         if circuit_patter_end.search(line) is not None:
             mutate_qubit_number = random.randint(0,qubit_number-1) # the qubit that mutate operation on
-            mutation_number = random.randint(0,2)
+            mutation_number = random.randint(0,3)  #right now we have four trivial mutation way
             generate_trival(cirq_address_in,cirq_address_out,total_number,"Cirq",mutate_qubit_number,mutation_number)
             generate_trival(pyquil_address_in,pyquil_address_out,total_number,"Pyquil",mutate_qubit_number,mutation_number)
             generate_trival(qiskit_address_in,qiskit_address_out,total_number,"Qiskit",mutate_qubit_number,mutation_number)
@@ -227,7 +237,3 @@ def mutate(seed:int, write:int):
         line = readfile.readline()
 
     readfile.close()
-
-#("./benchmark/startPyquil"+str(seed)+".py", "./benchmark/startPyquil"+str(write)+".py")
-
-    #mutate_qiskit("./benchmark/startQiskit"+str(seed)+".py", "./benchmark/startQiskit"+str(write)+".py")

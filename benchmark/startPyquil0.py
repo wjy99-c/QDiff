@@ -1,5 +1,5 @@
-# qubit number=3
-# total number=6
+# qubit number=4
+# total number=7
 import pyquil
 from pyquil.api import local_forest_runtime, QVMConnection
 from pyquil import Program, get_qc
@@ -14,7 +14,8 @@ def make_circuit(n:int)-> Program:
 
     prog += H(0) # number=3
     prog += H(1) # number=4
-    prog += H(2) # number=5
+    prog += X(2) # number=5
+    prog += X(3) # number=6
     prog += CNOT(0,1) # number=1
     prog += CNOT(0,2) # number=2
 
@@ -34,7 +35,7 @@ def summrise_results(bitstrings) -> dict:
 
 if __name__ == '__main__':
     prog = make_circuit(1)
-    qvm = get_qc('3q-qvm')
+    qvm = get_qc('4q-qvm')
 
     results = qvm.run_and_measure(prog,1024)
     bitstrings = np.vstack([results[i] for i in qvm.qubits()]).T

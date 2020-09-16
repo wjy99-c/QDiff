@@ -3,8 +3,8 @@
 # @Time    : 5/15/20 4:49 PM
 # @File    : grover.py
 
-# qubit number=3
-# total number=6
+# qubit number=4
+# total number=7
 import cirq
 import sys
 from math import log2
@@ -16,7 +16,8 @@ def make_circuit(n: int, input_qubit):
 
     c.append(cirq.H.on(input_qubit[0])) # number=3
     c.append(cirq.H.on(input_qubit[1])) # number=4
-    c.append(cirq.H.on(input_qubit[2])) # number=5
+    c.append(cirq.X.on(input_qubit[2])) # number=5
+    c.append(cirq.X.on(input_qubit[3])) # number=6
 
     c.append(cirq.CNOT.on(input_qubit[0], input_qubit[1])) # number=1
     c.append(cirq.CNOT.on(input_qubit[0], input_qubit[2])) # number=2
@@ -30,7 +31,7 @@ def bitstring(bits):
     return ''.join(str(int(b)) for b in bits)
 
 if __name__ == '__main__':
-    qubit_count = 3
+    qubit_count = 4
 
     input_qubits = [cirq.GridQubit(i, 0) for i in range(qubit_count)]
     circuit = make_circuit(qubit_count,input_qubits)

@@ -101,11 +101,11 @@ if __name__ == '__main__':
 
     frequencies = result.histogram(key='result', fold_func=bitstring)
 
-    writefile = open("../data/startCirq90.csv","w+")
+    #writefile = open("../data/startCirq90.csv","w+")
 
 
-    print(format(frequencies),file=writefile)
+    print(format(frequencies))#,file=writefile)
 
 
 
-    writefile.close()
+    #writefile.close()

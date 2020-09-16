@@ -5,7 +5,6 @@
 # @File    : Mutation_shadow.py
 # Only support reversion for self-reverse gate
 
-
 import re
 rever_self = ["H","X","Z","Y","CNOT","SWAP","CZ"]
 
@@ -22,7 +21,6 @@ def generate_reverse(address_in:str, address_out:str):
     readfile = open(address_in)
     writefile = open(address_out, "w")
     line = readfile.readline()
-    print("shadow version write at:", address_out)
 
     is_operation = re.compile("# number=")
 
@@ -54,4 +52,4 @@ def generate_reverse(address_in:str, address_out:str):
 
 
 if __name__ == '__main__':
-    generate_reverse("../benchmark/startCirq_class0.py","../benchmark/reverse/startCirq_class0.py")
+    generate_reverse("../benchmark/startCirq_Class10.py","../benchmark/reverse/startCirq_class10.py")

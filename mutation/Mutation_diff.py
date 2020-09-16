@@ -4,16 +4,19 @@
 # @Author  : lingxiangxiang
 # @File    : Mutation_diff.py
 
+
+
 import random
 import re
-gate_set_cirq = ["cirq.H","cirq.X","cirq.Y","cirq.Z","cirq.CNOT"]
-gate_set_qiskit = ["prog.h","prog.x","prog.y","prog.z","prog.cx"]
-gate_set_pyquil = ["prog.inst(H(", "prog.inst(X(", "prog.inst(Y(", "prog.inst(Z(", "prog.inst(CNOT("]
+from math import pi
+gate_set_cirq = ["cirq.H","cirq.X","cirq.Y","cirq.Z","cirq.rx","cirq.CNOT","cirq.SWAP"]
+gate_set_qiskit = ["prog.h","prog.x","prog.y","prog.z","prog.rx","prog.cx","prog.swap"]
+gate_set_pyquil = ["prog += H(", "prog += X(","prog += Y(", "prog += Z(","prog += RX(", "prog += CNOT(", "prog += SWAP("]
 
 
 def generate_same_add(operation_number:int, address_in:str, address_out:str, add:str, total_number:int):
 
-    operation_find = re.compile("# number="+str(operation_number))
+    operation_find = re.compile("# number="+str(operation_number)+"\n")
     total_operation_find = re.compile("# total number=")
 
     writefile_address = "../data/"+address_out[13:-3]+".csv"
@@ -71,13 +74,23 @@ def generate_same_delete(operation_number:int, address_in:str, address_out:str):
 def mutate_add(tab:str, qubit_number:int, total_number:int):
 
 
-    operation = random.randint(0,4)
+    operation = random.randint(0,5)
 
-    if  operation!=4:
+    if  operation<4:
         qubit_on = random.randint(0,qubit_number-1)
         qiskit_line = tab+gate_set_qiskit[operation]+"(input_qubit["+str(qubit_on)+"]) # number="+str(total_number)
-        pyquil_line = tab + gate_set_pyquil[operation] + str(qubit_on) + ")) # number=" + str(total_number)
+        pyquil_line = tab + gate_set_pyquil[operation] + str(qubit_on) + ") # number=" + str(total_number)
         cirq_line = tab + "c.append(" + gate_set_cirq[operation] + ".on(input_qubit[" + str(qubit_on) + \
+                    "])) # number=" + str(total_number)
+
+    elif operation==4:
+        rad = random.randint(0,2000)/1000
+        rad = (rad-1) * pi
+        qubit_on = random.randint(0, qubit_number - 1)
+        qiskit_line = tab + gate_set_qiskit[operation] + "("+str(rad)+",input_qubit[" + str(qubit_on) + "]) # number=" + str(
+            total_number)
+        pyquil_line = tab + gate_set_pyquil[operation] +str(rad)+","+ str(qubit_on) + ") # number=" + str(total_number)
+        cirq_line = tab + "c.append(" + gate_set_cirq[operation] +"("+str(rad)+")"+ ".on(input_qubit[" + str(qubit_on) + \
                     "])) # number=" + str(total_number)
 
     else:
@@ -85,9 +98,9 @@ def mutate_add(tab:str, qubit_number:int, total_number:int):
         j = random.randint(0,qubit_number-1)
         while j==i:
             j = random.randint(0,qubit_number-1)
-        qiskit_line = tab+"prog.cx(input_qubit["+str(i)+"],input_qubit["+str(j)+"]) # number="+str(total_number)
-        pyquil_line = tab + "prog.inst(CNOT(" + str(i) + "," + str(j) + ")) # number=" + str(total_number)
-        cirq_line = tab + "c.append(cirq.CNOT.on(input_qubit[" + str(i) + "],input_qubit[" + str(j) + "])) # number=" + str(
+        qiskit_line = tab+gate_set_qiskit[operation]+"(input_qubit["+str(i)+"],input_qubit["+str(j)+"]) # number="+str(total_number)
+        pyquil_line = tab + gate_set_pyquil[operation] + str(i) + "," + str(j) + ") # number=" + str(total_number)
+        cirq_line = tab + "c.append("+gate_set_cirq[operation]+".on(input_qubit[" + str(i) + "],input_qubit[" + str(j) + "])) # number=" + str(
             total_number)
 
     return cirq_line, qiskit_line, pyquil_line
@@ -116,7 +129,6 @@ def mutate_start (address_in : str, seed:int, write:int):
 
     flag = 0
     line = readfile.readline()
-    change_flag = 0
     qubit_number = 0
     total_number = 0
     while line:
@@ -134,7 +146,7 @@ def mutate_start (address_in : str, seed:int, write:int):
         if circuit_patter_end.search(line):
             flag = 0
 
-        if flag > 0 & change_flag!=1:
+        if flag > 0:
             if line!="\n":
                 tab = figure_out_tab(line)
             i = random.randint(1,2)
@@ -171,7 +183,6 @@ def mutate_start (address_in : str, seed:int, write:int):
 
 
 def mutate(seed : int, write : int, platform : str):
-
 
     return  mutate_start("../benchmark/start"+platform+str(seed) + ".py", seed, write)
 

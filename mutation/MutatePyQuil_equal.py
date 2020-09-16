@@ -69,3 +69,7 @@ def two_Y(tab:str, qubit_number:int, number:int):
 def two_CNOT(tab: str, qubit_number: int, number: int):
     return tab+"prog += CNOT("+str(qubit_number)+",0) # number="+str(number)+"\n"+\
            tab+"prog += CNOT("+str(qubit_number)+",0) # number="+str(number+1)+"\n"
+
+def two_SWAP(tab:str, qubit_number:int, number:int):
+    return tab + "prog += SWAP(" + str(qubit_number) + ",0) # number=" + str(number) + "\n" + \
+           tab + "prog += SWAP(" + str(qubit_number) + ",0) # number=" + str(number + 1) + "\n"
