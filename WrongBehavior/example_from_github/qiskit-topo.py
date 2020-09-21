@@ -20,7 +20,7 @@ if __name__ == '__main__':
     circ.toffoli(0,1,2)
     circ.measure([0, 1, 2], [0, 1, 2])
     coupling_map = [[1, 0], [2, 1],[3, 1],[1,4]]
-    basis_gate = ['cx','u3','id']
+    basis_gate = ['cx','u3','id','U','x','x90','cu3']
     print("        coupling_map = "+str(coupling_map))
     print(basis_gate)
     result = execute(circ, backend=backend, coupling_map=coupling_map,shots=1024, basis_gates=basis_gate).result()

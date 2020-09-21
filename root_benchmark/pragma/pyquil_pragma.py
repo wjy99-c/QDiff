@@ -1,5 +1,11 @@
-# qubit number=4
-# total number=7
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 9/18/20 12:11 PM
+# @Author  : lingxiangxiang
+# @File    : pyquil.py
+
+# qubit number=1
+# total number=2
 import pyquil
 from pyquil.api import local_forest_runtime, QVMConnection
 from pyquil import Program, get_qc
@@ -8,16 +14,22 @@ import numpy as np
 
 conn = QVMConnection()
 
-def make_circuit()-> Program:
+def make_circuit(n:int)-> Program:
 
-    prog = Program() # circuit begin
+    prog = Program('PRAGMA INITIAL_REWIRING "PARTIAL"')
 
-    prog += H(0) # number=3
-    prog += H(1) # number=4
-    prog += X(2) # number=5
-    prog += X(3) # number=6
+    prog += 'PRAGMA COMMUTING_BLOCKS'
+
+    prog +='PRAGMA BLOCK'
+    prog += X(0)
+    prog += X(0)
+
     prog += CNOT(0,1) # number=1
-    prog += CNOT(0,2) # number=2
+    prog += 'PRAGMA END_BLOCK'
+
+    prog += 'PRAGMA END_COMMUTING_BLOCKS'
+
+    #prog += 'PRAGMA END_PRESERVE_BLOCK'
 
     # circuit end
 
@@ -34,13 +46,14 @@ def summrise_results(bitstrings) -> dict:
     return d
 
 if __name__ == '__main__':
-    prog = make_circuit()
-    qvm = get_qc('4q-qvm')
+    prog = make_circuit(1)
+    qvm = get_qc('2q-qvm')
 
     results = qvm.run_and_measure(prog,1024)
     bitstrings = np.vstack([results[i] for i in qvm.qubits()]).T
     bitstrings = [''.join(map(str, l)) for l in bitstrings]
-    writefile = open("../data/startPyquil0.csv","w")
+    print(qvm.compile(prog).program)
+    writefile = open("../../data/startPyquil0.csv","w")
     print(summrise_results(bitstrings),file=writefile)
     writefile.close()
 

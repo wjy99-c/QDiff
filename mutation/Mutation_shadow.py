@@ -15,7 +15,7 @@ def reverse_gate(Quantumgate:str):
 def generate_reverse(address_in:str, address_out:str):
 
     end_find = re.compile("# circuit end")
-    writefile_address = "../shadow_data/" + address_out[21:-3] + ".csv"
+    writefile_address = "../data/reverse/" + address_out[21:-3] + ".csv"
     writefile_find = re.compile("../data/" + address_in[13:-3] + ".csv")
 
     readfile = open(address_in)

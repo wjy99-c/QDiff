@@ -6,24 +6,29 @@
 
 import re
 
-def simulator_to_noise_simulator (address:str, iteration:int):
-    writefile = open("../benchmark/startPyquil_Noise" + str(iteration) + ".py", "w")
+def simulator_to_pragma (address:str, iteration:int, pattern:str):
+    writefile = open("../benchmark/startPyquil_pragma" + str(iteration) + ".py", "w")
     readfile = open(address)
     line = readfile.readline()
+    program_begin = re.compile("Program()")
 
     writefile_address = re.compile("../data/startPyquil")
-    writefile_change = "../data/startPyquil_Noise"
+    writefile_change = "../data/startPyquil_pragma"
     while line:
-        n = writefile_address.search(line)
+        n = writefile_address.search(line) # change writefile_address
+        m = program_begin.search(line) # change pragma
+
         if n is not None:
             writefile.write(re.sub(writefile_address, writefile_change, line))
+        elif m is not None:
+            writefile.write(re.sub(program_begin,'Program(\'PRAGMA INITIAL_REWIRING "'+pattern+'"\')',line))
         else:
             writefile.write(line)
         line = readfile.readline()
 
     writefile.close()
     readfile.close()
-    return "startPyquil_Noise" + str(iteration) + ".py"
+    return "startPyquil_pragma" + str(iteration) + ".py"
 
 def simulator_to_qc (address:str, iteration:int):
     writefile = open("../benchmark/startPyquil_QC" + str(iteration) + ".py", "w")

@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 9/15/20 10:33 PM
+# @Time    : 9/17/20 9:14 AM
 # @Author  : lingxiangxiang
-# @File    : cirq-backend.py
-
+# @File    : __init__.py.py
