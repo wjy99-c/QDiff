@@ -6,13 +6,15 @@
 
 import transitionBackend.Pyquilbackend as Pb
 import re
-
+import random
+pragma_pattern = ['NAIVE','PARTIAL','GREEDY']
 
 def generate(address: str, name: str, iteration: int):
     simup = re.compile("startPyquil")
 
+
     if simup.search(name):
-        return Pb.simulator_to_qc(address,iteration), Pb.simulator_to_state_vector(address,iteration)
+        return Pb.simulator_to_pragma(address,iteration), Pb.simulator_to_state_vector(address,iteration)
     else:
         print("Error: backend transition failed. We do not start from simulator")
 

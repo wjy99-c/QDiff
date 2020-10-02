@@ -16,7 +16,7 @@ conn = QVMConnection()
 
 def make_circuit(n:int)-> Program:
 
-    prog = Program('PRAGMA INITIAL_REWIRING "PARTIAL"')
+    prog = Program('PRAGMA INITIAL_REWIRING "NAIVE"')
 
     prog += 'PRAGMA COMMUTING_BLOCKS'
 
@@ -46,6 +46,13 @@ def summrise_results(bitstrings) -> dict:
     return d
 
 if __name__ == '__main__':
+
+    qc = get_qc("3q-qvm", as_qvm=True)
+    p = Program('PRAGMA INITIAL_REWIRING "PARTIAL"', CZ(0,1))
+
+    print(qc.compile(p).program)
+
+
     prog = make_circuit(1)
     qvm = get_qc('2q-qvm')
 

@@ -8,13 +8,14 @@ logfile = open("../testing record.txt","w+")
 import transitionBackend.acrossbackendCirq as acC
 import transitionBackend.acrossbackendPyquil as acP
 import transitionBackend.acrossbackendQiskit as acQ
-import os,sys,shutil
+import os,shutil
 import compare.compareResults as cR
 import mutation.Mutation_diff as diff_m
 import mutation.Mutation_equal as equal_m
 import mutation.Mutation_shadow as reverse_m
 import beginTest.check_qubit_number as q_number
 import re,random
+import mutation.Mutation_must_diff as must_diff_m
 
 def execution(pyfile_name:str):
     try:
@@ -30,26 +31,26 @@ def backend_loop(out_num:int):
     print("Executing Simulator" + str(out_num),file=logfile)
 
     execution('../benchmark/' + "startCirq" + str(out_num) + ".py")
-    #execution('../benchmark/' + "startPyquil" + str(out_num) + ".py")
+    execution('../benchmark/' + "startPyquil" + str(out_num) + ".py")
     execution('../benchmark/' + "startQiskit" + str(out_num) + ".py")
 
 
     cirqP1, cirqP2 = acC.generate("../benchmark/" + "startCirq" + str(out_num) + ".py", "startCirq" + str(out_num) + ".py", out_num)
-    #pyquilP1, pyquilP2 = acP.generate("../benchmark/" + "startPyquil" + str(out_num) + ".py", "startPyquil" + str(out_num) + ".py", out_num)
+    pyquilP1, pyquilP2 = acP.generate("../benchmark/" + "startPyquil" + str(out_num) + ".py", "startPyquil" + str(out_num) + ".py", out_num)
     qiskitP1, qiskitP2 = acQ.generate("../benchmark/" + "startQiskit" + str(out_num) + ".py", "startQiskit" + str(out_num) + ".py", out_num)
+
+    print("Executing Pragma" + str(out_num))
+    print("Executing Pragma" + str(out_num),file=logfile)
+
+    execution('../benchmark/' + cirqP1)
+    execution('../benchmark/' + pyquilP1)
+    execution('../benchmark/' + qiskitP1)
 
     print("Executing Classical" + str(out_num))
     print("Executing Classical" + str(out_num),file=logfile)
 
-    execution('../benchmark/' + cirqP1)
-    #execution('../benchmark/' + pyquilP1)
-    execution('../benchmark/' + qiskitP1)
-
-    print("Executing QC" + str(out_num))
-    print("Executing QC" + str(out_num),file=logfile)
-
     execution('../benchmark/' + cirqP2)
-    #execution('../benchmark/' + pyquilP2)
+    execution('../benchmark/' + pyquilP2)
     execution('../benchmark/' + qiskitP2)
 
     print("Executing reversion version of each program")
@@ -58,15 +59,15 @@ def backend_loop(out_num:int):
 
     execution(reverse_m.generate_reverse('../benchmark/' + "startCirq" + str(out_num) + ".py",
                                          "../benchmark/reverse/"+ "startCirq" + str(out_num) + ".py"))
-    #execution(reverse_m.generate_reverse('../benchmark/' + "startPyquil" + str(out_num) + ".py",
-    #                                     "../benchmark/reverse/" + "startPyquil" + str(out_num) + ".py"))
+    execution(reverse_m.generate_reverse('../benchmark/' + "startPyquil" + str(out_num) + ".py",
+                                         "../benchmark/reverse/" + "startPyquil" + str(out_num) + ".py"))
     execution(reverse_m.generate_reverse('../benchmark/' + "startQiskit" + str(out_num) + ".py",
                                          "../benchmark/reverse/" + "startQiskit" + str(out_num) + ".py"))
 
     execution(reverse_m.generate_reverse('../benchmark/' + cirqP1,'../benchmark/reverse/' + cirqP1))
     execution(reverse_m.generate_reverse('../benchmark/' + cirqP2,'../benchmark/reverse/' + cirqP2))
-    #execution(reverse_m.generate_reverse('../benchmark/' + pyquilP1, '../benchmark/reverse/' + pyquilP1))
-    #execution(reverse_m.generate_reverse('../benchmark/' + pyquilP2, '../benchmark/reverse/' + pyquilP2))
+    execution(reverse_m.generate_reverse('../benchmark/' + pyquilP1, '../benchmark/reverse/' + pyquilP1))
+    execution(reverse_m.generate_reverse('../benchmark/' + pyquilP2, '../benchmark/reverse/' + pyquilP2))
     execution(reverse_m.generate_reverse('../benchmark/' + qiskitP1, '../benchmark/reverse/' + qiskitP1))
     execution(reverse_m.generate_reverse('../benchmark/' + qiskitP2, '../benchmark/reverse/' + qiskitP2))
 
@@ -82,7 +83,7 @@ def calculate_results(out_num:int, directory:str):
         print("Wrong Output Detect:", wrong,file=logfile)
         print("Name:",name)
         print("Name:", name,file=logfile)
-        return 999
+        return diff
 
 def collect_data(num:int,flag:int,directory:str):
 
@@ -124,7 +125,7 @@ if __name__ == '__main__':
         print("Generating New Program at number"+str(tail),file=logfile)
         print("Generating New Program at number" + str(tail))
         text_list.append(tail)
-        tail = tail + diff_m.mutate(text_list[seed], tail, "Cirq")
+        tail = tail + diff_m.mutate(text_list[seed], tail, "Cirq")#diff_m.mutate will return 0 if something goes wrong
 
 
         backend_loop(text_list[seed])
@@ -140,7 +141,9 @@ if __name__ == '__main__':
             print("now we are at round:", seed)
             backend_loop(tail)
             diff = max(calculate_results(tail,"data"),calculate_results(tail,"data/reverse"))
-            if diff==999:
+            print("K-S Diff:", diff,file=logfile)
+            print("K-S Diff:", diff)
+            if diff > thershold:
                 flag_see_wrong = 1
 
             if diff > max_now:
@@ -148,6 +151,18 @@ if __name__ == '__main__':
                 text_list.append(tail)
 
             tail = tail + 1
+
+        must_diff_m.mutate(text_list[seed],tail,"Cirq")   #line 155-162, invoke must-different mutation
+        backend_loop(tail)
+        diff = calculate_results(tail,"data")
+        tail = tail+1
+        if diff > thershold:
+            print("Must different mutation makes different!")
+            print("Must different mutation makes different!",file=logfile)
+        else:
+            print("Must different mutation failed!")
+            print("Must different mutation failed!",file=logfile)
+            flag_see_wrong = 1
 
         collect_data(seed,flag_see_wrong,"data")
         collect_data(seed,flag_see_wrong,"data/reverse")

@@ -5,12 +5,15 @@
 # @File    : Pyquilbackend.py
 
 import re
+import random
+pragma_pattern = ['NAIVE','PARTIAL','GREEDY']
 
-def simulator_to_pragma (address:str, iteration:int, pattern:str):
+def simulator_to_pragma (address:str, iteration:int):
     writefile = open("../benchmark/startPyquil_pragma" + str(iteration) + ".py", "w")
     readfile = open(address)
     line = readfile.readline()
-    program_begin = re.compile("Program()")
+    program_begin = re.compile("Program\(\)")
+    i = random.randint(0,2)
 
     writefile_address = re.compile("../data/startPyquil")
     writefile_change = "../data/startPyquil_pragma"
@@ -21,7 +24,7 @@ def simulator_to_pragma (address:str, iteration:int, pattern:str):
         if n is not None:
             writefile.write(re.sub(writefile_address, writefile_change, line))
         elif m is not None:
-            writefile.write(re.sub(program_begin,'Program(\'PRAGMA INITIAL_REWIRING "'+pattern+'"\')',line))
+            writefile.write(re.sub(program_begin,'Program(\'PRAGMA INITIAL_REWIRING "'+pragma_pattern[i]+'"\')',line))
         else:
             writefile.write(line)
         line = readfile.readline()
@@ -30,13 +33,13 @@ def simulator_to_pragma (address:str, iteration:int, pattern:str):
     readfile.close()
     return "startPyquil_pragma" + str(iteration) + ".py"
 
-def simulator_to_qc (address:str, iteration:int):
+def simulator_to_Same (address:str, iteration:int):
     writefile = open("../benchmark/startPyquil_QC" + str(iteration) + ".py", "w")
     readfile = open(address)
     line = readfile.readline()
 
     writefile_address = re.compile("../data/startPyquil")
-    writefile_change = "../data/startPyquil_QC"
+    writefile_change = "../data/startPyquil_Same"
     while line:
         n = writefile_address.search(line)
         if n is not None:
@@ -47,7 +50,7 @@ def simulator_to_qc (address:str, iteration:int):
 
     writefile.close()
     readfile.close()
-    return "startPyquil_QC" + str(iteration) + ".py"
+    return "startPyquil_Same" + str(iteration) + ".py"
 
 
 

@@ -13,8 +13,30 @@ gate_set_cirq = ["cirq.H","cirq.X","cirq.Y","cirq.Z","cirq.rx","cirq.CNOT","cirq
 gate_set_qiskit = ["prog.h","prog.x","prog.y","prog.z","prog.rx","prog.cx","prog.swap"]
 gate_set_pyquil = ["prog += H(", "prog += X(","prog += Y(", "prog += Z(","prog += RX(", "prog += CNOT(", "prog += SWAP("]
 
+def generate_same_same(address_in:str, address_out:str):
 
-def generate_same_add(operation_number:int, address_in:str, address_out:str, add:str, total_number:int):
+    writefile_address = "../data/"+address_out[13:-3]+".csv"
+    writefile_find = re.compile("../data/"+address_in[13:-3]+".csv")
+
+    readfile = open(address_in)
+    writefile = open(address_out,"w")
+    line = readfile.readline()
+
+    while line:
+
+        if writefile_find.search(line):
+            writefile.write(re.sub(writefile_find,writefile_address,line))
+            line = readfile.readline()
+            continue
+        else:
+            writefile.write(line)
+
+        line = readfile.readline()
+
+    readfile.close()
+    writefile.close()
+
+def generate_same_add(operation_number:int, address_in:str, address_out:str, add:str, total_number:int): # generate same mutation for pyquil and qiskit and cirq
 
     operation_find = re.compile("# number="+str(operation_number)+"\n")
     total_operation_find = re.compile("# total number=")
@@ -45,7 +67,10 @@ def generate_same_add(operation_number:int, address_in:str, address_out:str, add
 
         line = readfile.readline()
 
-def generate_same_delete(operation_number:int, address_in:str, address_out:str):
+    readfile.close()
+    writefile.close()
+
+def generate_same_delete(operation_number:int, address_in:str, address_out:str): # generate same mutation for pyquil and qiskit and cirq
 
     operation_find = re.compile("# number=" + str(operation_number))
 
@@ -70,6 +95,9 @@ def generate_same_delete(operation_number:int, address_in:str, address_out:str):
 
         line = readfile.readline()
 
+    readfile.close()
+    writefile.close()
+
 
 def mutate_add(tab:str, qubit_number:int, total_number:int):
 
@@ -77,7 +105,10 @@ def mutate_add(tab:str, qubit_number:int, total_number:int):
     operation = random.randint(0,5)
 
     if  operation<4:
-        qubit_on = random.randint(0,qubit_number-1)
+        if operation==0:
+            qubit_on = random.randint(1,qubit_number-1)
+        else:
+            qubit_on = random.randint(0,qubit_number-1)
         qiskit_line = tab+gate_set_qiskit[operation]+"(input_qubit["+str(qubit_on)+"]) # number="+str(total_number)
         pyquil_line = tab + gate_set_pyquil[operation] + str(qubit_on) + ") # number=" + str(total_number)
         cirq_line = tab + "c.append(" + gate_set_cirq[operation] + ".on(input_qubit[" + str(qubit_on) + \
@@ -86,7 +117,7 @@ def mutate_add(tab:str, qubit_number:int, total_number:int):
     elif operation==4:
         rad = random.randint(0,2000)/1000
         rad = (rad-1) * pi
-        qubit_on = random.randint(0, qubit_number - 1)
+        qubit_on = random.randint(1, qubit_number - 1)
         qiskit_line = tab + gate_set_qiskit[operation] + "("+str(rad)+",input_qubit[" + str(qubit_on) + "]) # number=" + str(
             total_number)
         pyquil_line = tab + gate_set_pyquil[operation] +str(rad)+","+ str(qubit_on) + ") # number=" + str(total_number)
@@ -94,10 +125,10 @@ def mutate_add(tab:str, qubit_number:int, total_number:int):
                     "])) # number=" + str(total_number)
 
     else:
-        i = random.randint(0,qubit_number-1)
-        j = random.randint(0,qubit_number-1)
+        i = random.randint(1,qubit_number-1)
+        j = random.randint(1,qubit_number-1)
         while j==i:
-            j = random.randint(0,qubit_number-1)
+            j = random.randint(1,qubit_number-1)
         qiskit_line = tab+gate_set_qiskit[operation]+"(input_qubit["+str(i)+"],input_qubit["+str(j)+"]) # number="+str(total_number)
         pyquil_line = tab + gate_set_pyquil[operation] + str(i) + "," + str(j) + ") # number=" + str(total_number)
         cirq_line = tab + "c.append("+gate_set_cirq[operation]+".on(input_qubit[" + str(i) + "],input_qubit[" + str(j) + "])) # number=" + str(
@@ -177,12 +208,20 @@ def mutate_start (address_in : str, seed:int, write:int):
 
         line = readfile.readline()
 
+    readfile.close()
+
     return 0
 
 
 
 
-def mutate(seed : int, write : int, platform : str):
+def mutate(seed : int, write : int, platform : str): # mutate and generate different program
 
     return  mutate_start("../benchmark/start"+platform+str(seed) + ".py", seed, write)
 
+
+def same(seed : int, write : int):  # generate same program
+
+    generate_same_same("../benchmark/startCirq"+str(seed)+ ".py", "../benchmark/startCirq"+str(write)+ ".py")
+    generate_same_same("../benchmark/startPyquil" + str(seed) + ".py", "../benchmark/startPyquil" + str(write) + ".py")
+    generate_same_same("../benchmark/startQiskit" + str(seed) + ".py", "../benchmark/startQiskit" + str(write) + ".py")

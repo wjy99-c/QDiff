@@ -2,34 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1811e07e-f999-42fb-805e-cbdd938b0475" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/WrongBehavior/example_from_github/cirq-pragma1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WrongBehavior/example_from_github/cirq-topo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WrongBehavior/example_from_github/pyquil-topo-right.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WrongBehavior/example_from_github/qiskit-topo-wronggate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/root_benchmark/pragma/pyquil_pragma.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/root_benchmark/pragma/pyquil_pragma_inefficient.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/root_benchmark/pragma/qiskit_pragma_inefficient.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beginTest/QTest_execute_same_program.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mutation/Mutation_must_diff.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root_benchmark/optimization_tools/pyquil-penny-forest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root_benchmark/pragma/cirq-pragma1-wrong.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing record 4q.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing record same 3 platform 3q.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing record same 3 platform 4q.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing record same cirq 4q.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing record same pyquil 4q.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing record same qiskit 4q.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WrongBehavior/2q-1/startCirq190.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WrongBehavior/2q-1/startCirq190.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WrongBehavior/2q-1/startPyquil190.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WrongBehavior/2q-1/startPyquil190.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WrongBehavior/2q-1/startPyquil_Class190.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WrongBehavior/2q-1/startPyquil_class190.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WrongBehavior/2q-2/startCirq90.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WrongBehavior/2q-2/startPyquil90.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WrongBehavior/2q-2/startQiskit90.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WrongBehavior/2q-2/startQiskit_Class90.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WrongBehavior/2q-2/startQiskit_QC90.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WrongBehavior/example_from_github/cirq-pragma1.py" beforeDir="false" afterPath="$PROJECT_DIR$/root_benchmark/pragma/cirq-pragma1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/beginTest/QTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/beginTest/QTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmark/startCirq0.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startCirq0.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/benchmark/startPyquil0.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startPyquil0.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmark/startQiskit0.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startQiskit0.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compare/compareResults.py" beforeDir="false" afterPath="$PROJECT_DIR$/compare/compareResults.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root_benchmark/3q/cirq-topo.py" beforeDir="false" afterPath="$PROJECT_DIR$/WrongBehavior/2q-3q/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root_benchmark/3q/pyquil-topo.py" beforeDir="false" afterPath="$PROJECT_DIR$/WrongBehavior/example_from_github/pyquil-topo-wrong.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root_benchmark/3q/qiskit-topo.py" beforeDir="false" afterPath="$PROJECT_DIR$/WrongBehavior/example_from_github/qiskit-topo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing record.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testing record.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mutation/Mutation_diff.py" beforeDir="false" afterPath="$PROJECT_DIR$/mutation/Mutation_diff.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root_benchmark/pragma/pyquil_pragma.py" beforeDir="false" afterPath="$PROJECT_DIR$/root_benchmark/pragma/pyquil_pragma.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root_benchmark/pragma/qiskit_pragma_inefficient.py" beforeDir="false" afterPath="$PROJECT_DIR$/root_benchmark/pragma/qiskit_pragma_inefficient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing record.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transitionBackend/Cirqbackend.py" beforeDir="false" afterPath="$PROJECT_DIR$/transitionBackend/Cirqbackend.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/transitionBackend/Pyquilbackend.py" beforeDir="false" afterPath="$PROJECT_DIR$/transitionBackend/Pyquilbackend.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/transitionBackend/Qiskitbackend.py" beforeDir="false" afterPath="$PROJECT_DIR$/transitionBackend/Qiskitbackend.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transitionBackend/acrossbackendCirq.py" beforeDir="false" afterPath="$PROJECT_DIR$/transitionBackend/acrossbackendCirq.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transitionBackend/acrossbackendPyquil.py" beforeDir="false" afterPath="$PROJECT_DIR$/transitionBackend/acrossbackendPyquil.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transitionBackend/acrossbackendQiskit.py" beforeDir="false" afterPath="$PROJECT_DIR$/transitionBackend/acrossbackendQiskit.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,53 +39,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Pyquilbackend.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/transitionBackend/Pyquilbackend.py">
+      <file leaf-file-name="Mutation_diff.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mutation/Mutation_diff.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+            <state relative-caret-position="404">
+              <caret line="130" column="48" selection-start-line="130" selection-start-column="48" selection-end-line="130" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MutateQiskit_equal.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mutation/MutateQiskit_equal.py">
+      <file leaf-file-name="compareResults.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/compare/compareResults.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-215">
-              <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Qiskitbackend.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/transitionBackend/Qiskitbackend.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="62" column="25" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="qiskit_pragma_inefficient.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/root_benchmark/pragma/qiskit_pragma_inefficient.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="42" column="111" selection-start-line="42" selection-start-column="91" selection-end-line="42" selection-end-column="111" />
+            <state relative-caret-position="362">
+              <caret line="113" column="36" lean-forward="true" selection-start-line="113" selection-start-column="36" selection-end-line="113" selection-end-column="36" />
               <folding>
-                <element signature="e#135#174#0" expanded="true" />
+                <element signature="e#135#153#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="startQiskit0.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="startCirq0.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/benchmark/startCirq0.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="61">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+              <folding>
+                <element signature="e#133#144#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="startPyquil0.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/benchmark/startPyquil0.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+              <folding>
+                <element signature="e#34#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="startQiskit0.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/benchmark/startQiskit0.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="14" selection-start-line="14" selection-end-line="14" selection-end-column="42" />
-              <folding>
-                <element signature="e#34#45#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -102,20 +104,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>match</find>
-      <find>print(line</find>
-      <find>000000</find>
-      <find>out_num</find>
-      <find>tab</find>
-      <find>639</find>
-      <find>round: 2</find>
-      <find>Wrong</find>
-      <find>at57</find>
-      <find>at12</find>
-      <find>total_number</find>
-      <find>44</find>
-      <find>43</find>
-      <find>at15</find>
       <find>number23</find>
       <find>startCirq18</find>
       <find>w</find>
@@ -123,7 +111,6 @@
       <find>wr</find>
       <find>at</find>
       <find>3</find>
-      <find>wrong</find>
       <find>982</find>
       <find>848</find>
       <find>number705</find>
@@ -132,6 +119,21 @@
       <find>logfile</find>
       <find>171</find>
       <find>100</find>
+      <find>s</find>
+      <find>shadow_data</find>
+      <find>Mutation</find>
+      <find>mutation</find>
+      <find>diff</find>
+      <find>fail</find>
+      <find>Must</find>
+      <find>300</find>
+      <find>Mutation makes</find>
+      <find>24</find>
+      <find>0.09</find>
+      <find>wrong</find>
+      <find>0.13</find>
+      <find>0.08</find>
+      <find>0.1</find>
     </findStrings>
     <replaceStrings>
       <replace>startPyquil_Class</replace>
@@ -145,23 +147,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/benchmark/startQiskit_QC176.py" />
-        <option value="$PROJECT_DIR$/benchmark/startCirq_QC4.py" />
-        <option value="$PROJECT_DIR$/benchmark/startPyquil541.py" />
-        <option value="$PROJECT_DIR$/benchmark/startPyquil495.py" />
-        <option value="$PROJECT_DIR$/benchmark/startPyquil_Class541.py" />
-        <option value="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class541.py" />
-        <option value="$PROJECT_DIR$/WrongBehavior/2q-2/startCirq90.py" />
-        <option value="$PROJECT_DIR$/benchmark/startCirq255.py" />
-        <option value="$PROJECT_DIR$/benchmark/reverse/startPyquil541.py" />
-        <option value="$PROJECT_DIR$/benchmark/startPyquil5.py" />
-        <option value="$PROJECT_DIR$/WrongBehavior/2q-1/startPyquil_Class190.py" />
-        <option value="$PROJECT_DIR$/WrongBehavior/2q-1/startPyquil190.py" />
-        <option value="$PROJECT_DIR$/WrongBehavior/2q-2/startQiskit90.py" />
-        <option value="$PROJECT_DIR$/WrongBehavior/2q-1/startCirq190.py" />
         <option value="$PROJECT_DIR$/benchmark/startPyquil_Class13.py" />
-        <option value="$PROJECT_DIR$/benchmark/startQiskit0.py" />
-        <option value="$PROJECT_DIR$/benchmark/startCirq0.py" />
         <option value="$PROJECT_DIR$/benchmark/reverse/startPyquil_QC981.py" />
         <option value="$PROJECT_DIR$/benchmark/startPyquil_Class982.py" />
         <option value="$PROJECT_DIR$/benchmark/startCirq848.py" />
@@ -171,37 +157,53 @@
         <option value="$PROJECT_DIR$/mutation/MutateCirq_equal.py" />
         <option value="$PROJECT_DIR$/benchmark/startCirq694.py" />
         <option value="$PROJECT_DIR$/mutation/Mutation_equal.py" />
-        <option value="$PROJECT_DIR$/mutation/Mutation_shadow.py" />
-        <option value="$PROJECT_DIR$/mutation/Mutation_diff.py" />
-        <option value="$PROJECT_DIR$/transitionBackend/acrossbackendQiskit.py" />
-        <option value="$PROJECT_DIR$/transitionBackend/acrossbackendCirq.py" />
-        <option value="$PROJECT_DIR$/transitionBackend/acrossbackendPyquil.py" />
-        <option value="$PROJECT_DIR$/transitionBackend/Cirqbackend.py" />
         <option value="$PROJECT_DIR$/root_benchmark/3q/qiskit-backend.py" />
         <option value="$PROJECT_DIR$/root_benchmark/3q/cirq-backend.py" />
         <option value="$PROJECT_DIR$/root_benchmark/3q/qiskit-topo.py" />
-        <option value="$PROJECT_DIR$/beginTest/QTest.py" />
         <option value="$PROJECT_DIR$/root_benchmark/3q/cirq-topo.py" />
         <option value="$PROJECT_DIR$/root_benchmark/3q/pyquil-topo.py" />
         <option value="$PROJECT_DIR$/WrongBehavior/topo/pyquil-topo-right.py" />
-        <option value="$PROJECT_DIR$/WrongBehavior/example_from_github/cirq-pragma1.py" />
-        <option value="$PROJECT_DIR$/compare/compareResults.py" />
-        <option value="$PROJECT_DIR$/benchmark/startPyquil0.py" />
         <option value="$PROJECT_DIR$/root_benchmark/pragma/pyquil.py" />
-        <option value="$PROJECT_DIR$/root_benchmark/pragma/pyquil_pragma.py" />
         <option value="$PROJECT_DIR$/root_benchmark/pragma/pyquil_pragma_inefficient.py" />
         <option value="$PROJECT_DIR$/WrongBehavior/example_from_github/qiskit-topo.py" />
         <option value="$PROJECT_DIR$/WrongBehavior/example_from_github/qiskit-topo-wronggate.py" />
         <option value="$PROJECT_DIR$/root_benchmark/pragma/qiskit_pragma.py" />
-        <option value="$PROJECT_DIR$/transitionBackend/Pyquilbackend.py" />
+        <option value="$PROJECT_DIR$/mutation/Mutation_shadow.py" />
         <option value="$PROJECT_DIR$/root_benchmark/pragma/qiskit_pragma_inefficient.py" />
+        <option value="$PROJECT_DIR$/WrongBehavior/example_from_github/cirq-pragma1.py" />
+        <option value="$PROJECT_DIR$/WrongBehavior/example_from_github/cirq-pragma2.py" />
+        <option value="$PROJECT_DIR$/root_benchmark/pragma/pyquil_pragma.py" />
+        <option value="$PROJECT_DIR$/root_benchmark/pragma/cirq-pragma1.py" />
+        <option value="$PROJECT_DIR$/root_benchmark/pragma/cirq-pragma1-wrong.py" />
+        <option value="/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pennylane_forest/device.py" />
+        <option value="/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pennylane_forest/qvm.py" />
+        <option value="$PROJECT_DIR$/root_benchmark/optimization_tools/pyquil-penny-forest.py" />
+        <option value="$PROJECT_DIR$/transitionBackend/acrossbackendQiskit.py" />
+        <option value="$PROJECT_DIR$/testing record same 3 platform.txt" />
+        <option value="$PROJECT_DIR$/testing record same cirq.txt" />
+        <option value="$PROJECT_DIR$/testing record same pyquil.txt" />
+        <option value="$PROJECT_DIR$/testing record same qiskit.txt" />
+        <option value="$PROJECT_DIR$/transitionBackend/acrossbackendCirq.py" />
+        <option value="$PROJECT_DIR$/transitionBackend/acrossbackendPyquil.py" />
+        <option value="$PROJECT_DIR$/transitionBackend/Pyquilbackend.py" />
         <option value="$PROJECT_DIR$/transitionBackend/Qiskitbackend.py" />
+        <option value="$PROJECT_DIR$/benchmark/startCirq_pragma0.py" />
+        <option value="$PROJECT_DIR$/transitionBackend/Cirqbackend.py" />
+        <option value="$PROJECT_DIR$/mutation/Mutation_diff.py" />
+        <option value="$PROJECT_DIR$/mutation/Mutation_must_diff.py" />
+        <option value="$PROJECT_DIR$/beginTest/QTest.py" />
+        <option value="$PROJECT_DIR$/testing record 4q.txt" />
+        <option value="$PROJECT_DIR$/beginTest/QTest_execute_same_program.py" />
+        <option value="$PROJECT_DIR$/compare/compareResults.py" />
+        <option value="$PROJECT_DIR$/benchmark/startCirq0.py" />
+        <option value="$PROJECT_DIR$/benchmark/startPyquil0.py" />
+        <option value="$PROJECT_DIR$/benchmark/startQiskit0.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="12" />
-    <option name="y" value="27" />
+    <option name="x" value="132" />
+    <option name="y" value="23" />
     <option name="width" value="1310" />
     <option name="height" value="811" />
   </component>
@@ -210,17 +212,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="QUnit" type="b2602c69:ProjectViewProjectNode" />
               <item name="QUnit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QUnit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QUnit" type="462c0819:PsiDirectoryNode" />
-              <item name="beginTest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QUnit" type="b2602c69:ProjectViewProjectNode" />
@@ -234,36 +232,17 @@
             </path>
             <path>
               <item name="QUnit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QUnit" type="462c0819:PsiDirectoryNode" />
-              <item name="mutation" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
               <item name="QUnit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QUnit" type="462c0819:PsiDirectoryNode" />
-              <item name="root_benchmark" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QUnit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QUnit" type="462c0819:PsiDirectoryNode" />
-              <item name="root_benchmark" type="462c0819:PsiDirectoryNode" />
-              <item name="2q" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QUnit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QUnit" type="462c0819:PsiDirectoryNode" />
-              <item name="root_benchmark" type="462c0819:PsiDirectoryNode" />
-              <item name="pragma" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QUnit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QUnit" type="462c0819:PsiDirectoryNode" />
-              <item name="transitionBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.7 &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -272,18 +251,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/benchmark" />
       <recent name="$PROJECT_DIR$/WrongBehavior/2q-1" />
       <recent name="$PROJECT_DIR$/root_benchmark" />
       <recent name="$PROJECT_DIR$/WrongBehavior/2" />
       <recent name="$PROJECT_DIR$/WrongBehavior" />
-      <recent name="$PROJECT_DIR$/benchmark" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/root_benchmark/pragma" />
       <recent name="$PROJECT_DIR$/WrongBehavior/topo" />
       <recent name="$PROJECT_DIR$/root_benchmark/2q" />
       <recent name="$PROJECT_DIR$/WrongBehavior/1" />
-      <recent name="$PROJECT_DIR$/data" />
-      <recent name="$PROJECT_DIR$/compare" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -298,8 +277,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.qiskit_pragma">
-    <configuration name="cirq-pragma1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.compareResults">
+    <configuration name="QTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="QUnit" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -307,11 +286,29 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WrongBehavior/example_from_github" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/beginTest" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WrongBehavior/example_from_github/cirq-pragma1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beginTest/QTest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="QTest_execute_same_program" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="QUnit" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/beginTest" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beginTest/QTest_execute_same_program.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -335,7 +332,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="pyquil_pragma" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="startCirq0" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="QUnit" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -343,17 +340,17 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/root_benchmark/pragma" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/benchmark" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/root_benchmark/pragma/pyquil_pragma.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/benchmark/startCirq0.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="qiskit-topo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="startCirq12" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="QUnit" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -361,48 +358,30 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WrongBehavior/example_from_github" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/benchmark" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WrongBehavior/example_from_github/qiskit-topo.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="qiskit_pragma" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="QUnit" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/root_benchmark/pragma" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/root_benchmark/pragma/qiskit_pragma_inefficient.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/benchmark/startCirq12.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.cirq-pragma1" />
+      <item itemvalue="Python.startCirq0" />
+      <item itemvalue="Python.QTest" />
+      <item itemvalue="Python.startCirq12" />
       <item itemvalue="Python.compareResults" />
-      <item itemvalue="Python.pyquil_pragma" />
-      <item itemvalue="Python.qiskit_pragma" />
-      <item itemvalue="Python.qiskit-topo" />
+      <item itemvalue="Python.QTest_execute_same_program" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.qiskit_pragma" />
-        <item itemvalue="Python.qiskit-topo" />
-        <item itemvalue="Python.pyquil_pragma" />
         <item itemvalue="Python.compareResults" />
-        <item itemvalue="Python.cirq-pragma1" />
+        <item itemvalue="Python.QTest" />
+        <item itemvalue="Python.QTest_execute_same_program" />
+        <item itemvalue="Python.startCirq12" />
+        <item itemvalue="Python.startCirq0" />
       </list>
     </recent_temporary>
   </component>
@@ -429,45 +408,45 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="12" y="27" width="1310" height="811" extended-state="0" />
+    <frame x="132" y="23" width="1310" height="811" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24515128" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24515128" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32961783" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32867134" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.011204482" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32867134" />
       <window_info anchor="bottom" id="Python Console" order="9" weight="0.32914925" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.17787115" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.46918768" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32633054" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32633054" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="2" weight="0.39968154" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.39915967" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.011204482" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24359968" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32961783" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32867134" />
       <window_info anchor="bottom" id="Run" order="5" weight="0.35104895" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32867134" />
+      <window_info anchor="bottom" id="Python Console" order="9" weight="0.32914925" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.39968154" />
       <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32867134" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32867134" />
-      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32867134" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32867134" />
-      <window_info anchor="bottom" id="Python Console" order="9" weight="0.32914925" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -475,7 +454,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="21" />
+      <option name="time" value="24" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -498,250 +477,50 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq40.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-137" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq41.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq68.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq103.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-46" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq107.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-84" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq106.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq125.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-195" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq123.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-58" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq116.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-487" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq129.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-165" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq115.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-438">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq130.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq140.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-409" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq152.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-70" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq171.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq100.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-113" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq62.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-88" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mutation/Mutation_equal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1535">
-          <caret line="131" column="30" selection-start-line="131" selection-start-column="30" selection-end-line="131" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mutation/Mutation_diff.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2090">
-          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+        <state relative-caret-position="1920">
+          <caret line="130" column="48" selection-start-line="130" selection-start-column="48" selection-end-line="130" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/transitionBackend/acrossbackendPyquil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WrongBehavior/untitled folder/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-302473" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/transitionBackend/acrossbackendCirq.py">
+    <entry file="file://$PROJECT_DIR$/benchmark/startQiskit0.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="15" column="81" selection-start-line="15" selection-start-column="81" selection-end-line="15" selection-end-column="81" />
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/transitionBackend/acrossbackendQiskit.py">
+    <entry file="file://$PROJECT_DIR$/testing record same 3 platform 3q.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        <state relative-caret-position="30765">
+          <caret line="2051" column="29" selection-start-line="2051" selection-start-column="15" selection-end-line="2051" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/root_benchmark/2q/startQiskit0.py">
+    <entry file="file://$PROJECT_DIR$/testing record 4q.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-365" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startQiskit560.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-290" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startPyquil499.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-410" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startPyquil911.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="10" selection-start-line="10" selection-end-line="32" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="43" selection-start-line="43" selection-end-line="45" selection-end-column="69" />
+        <state relative-caret-position="1185">
+          <caret line="79" column="43" lean-forward="true" selection-start-line="79" selection-start-column="43" selection-end-line="79" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/beginTest/QTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="144" lean-forward="true" selection-start-line="144" selection-end-line="144" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WrongBehavior/example_from_github/cirq-topo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+        <state relative-caret-position="1995">
+          <caret line="143" column="49" selection-start-line="143" selection-start-column="49" selection-end-line="143" selection-end-column="49" />
           <folding>
-            <element signature="e#134#145#0" expanded="true" />
+            <element signature="e#172#221#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WrongBehavior/example_from_github/pyquil-topo-wrong.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-          <folding>
-            <element signature="e#133#154#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/transitionBackend/Cirqbackend.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="47" lean-forward="true" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/compare/compareResults.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startCirq0.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/root_benchmark/2q/startPyquil0.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/qiskit/providers/basicaer/qasm_simulator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="582" selection-start-line="582" selection-end-line="582" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WrongBehavior/example_from_github/qiskit-topo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        <state relative-caret-position="1650">
+          <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
           <folding>
-            <element signature="e#136#177#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WrongBehavior/example_from_github/qiskit-topo-wronggate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-          <folding>
-            <element signature="e#279#320#0" expanded="true" />
+            <element signature="e#135#153#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -750,37 +529,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
           <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#133#154#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WrongBehavior/example_from_github/cirq-pragma1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startPyquil0.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/root_benchmark/pragma/pyquil_pragma_inefficient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/root_benchmark/pragma/pyquil_pragma.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="21" lean-forward="true" selection-end-line="59" />
         </state>
       </provider>
     </entry>
@@ -791,44 +539,305 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mutation/MutateQiskit_equal.py">
+    <entry file="file://$PROJECT_DIR$/mutation/Mutation_shadow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-215">
-          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+        <state relative-caret-position="32">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/transitionBackend/Pyquilbackend.py">
+    <entry file="file://$PROJECT_DIR$/root_benchmark/pragma/pyquil_pragma_inefficient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/startQiskit0.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="14" selection-start-line="14" selection-end-line="14" selection-end-column="42" />
-          <folding>
-            <element signature="e#34#45#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="49">
+          <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/root_benchmark/pragma/qiskit_pragma_inefficient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="42" column="111" selection-start-line="42" selection-start-column="91" selection-end-line="42" selection-end-column="111" />
-          <folding>
-            <element signature="e#135#174#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="195">
+          <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pennylane/_qubit_device.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="181" selection-start-line="181" selection-end-line="181" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pennylane_forest/device.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="231" column="35" selection-start-line="231" selection-start-column="35" selection-end-line="231" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pennylane_forest/qvm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="190" column="44" selection-start-line="190" selection-start-column="44" selection-end-line="190" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pennylane/qnodes/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="700" lean-forward="true" selection-start-line="700" selection-end-line="700" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/root_benchmark/optimization_tools/pyquil-penny-forest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/root_benchmark/pragma/cirq-pragma1-wrong.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transitionBackend/acrossbackendQiskit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing record same cirq 4q.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="1638" selection-start-line="1638" selection-end-line="1638" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing record same pyquil 4q.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2028">
+          <caret line="2901" column="22" lean-forward="true" selection-start-line="2901" selection-start-column="22" selection-end-line="2901" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing record same qiskit 4q.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="2914" selection-start-line="2914" selection-end-line="2914" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/root_benchmark/pragma/cirq-pragma1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="51" selection-start-line="51" selection-end-line="51" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transitionBackend/acrossbackendCirq.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/root_benchmark/pragma/pyquil_pragma.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="50" column="49" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transitionBackend/acrossbackendPyquil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/transitionBackend/Qiskitbackend.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="62" column="25" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
+        <state relative-caret-position="261">
+          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mutation/Mutation_equal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-40">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmark/startCirq_pragma0.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transitionBackend/Pyquilbackend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transitionBackend/Cirqbackend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="45" column="71" selection-start-line="45" selection-start-column="71" selection-end-line="45" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmark/startCirq13.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-143" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmark/startCirq1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-97" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmark/startCirq2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-62" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/0/startCirq0.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mutation/MutateQiskit_equal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmark/startCirq12.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="36" column="19" lean-forward="true" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing record same 3 platform 4q.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="2537" column="22" selection-start-line="2537" selection-start-column="22" selection-end-line="2537" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mutation/Mutation_must_diff.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1710">
+          <caret line="116" selection-start-line="116" selection-end-line="116" />
+          <folding>
+            <element signature="e#137#150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing record 4q.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="58" selection-start-column="58" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing record same 3 platform 3q.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="555" column="22" selection-start-line="555" selection-start-column="22" selection-end-line="555" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Wrong8/startPyquil23.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Wrong8/startPyquil93.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Wrong8/startPyquil99.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beginTest/QTest_execute_same_program.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beginTest/QTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="109" column="19" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
+          <folding>
+            <element signature="e#172#221#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing record 5q.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="5160" column="31" selection-start-line="5160" selection-start-column="31" selection-end-line="5160" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mutation/Mutation_diff.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="130" column="48" selection-start-line="130" selection-start-column="48" selection-end-line="130" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compare/compareResults.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="113" column="36" lean-forward="true" selection-start-line="113" selection-start-column="36" selection-end-line="113" selection-end-column="36" />
+          <folding>
+            <element signature="e#135#153#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmark/startCirq0.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="e#133#144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmark/startPyquil0.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+          <folding>
+            <element signature="e#34#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmark/startQiskit0.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
         </state>
       </provider>
     </entry>

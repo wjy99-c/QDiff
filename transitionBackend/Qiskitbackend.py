@@ -5,14 +5,16 @@
 # @File    : Qiskitbackend.py
 
 import re
+import random
 coupling_map = [[1, 0], [2, 1], [3, 1], [1, 4]]
 basic_gate = ['cx','u3','id']
 
-def simulator_to_pragma (address:str, iteration:int, pattern:int):
+def simulator_to_pragma (address:str, iteration:int):
     writefile = open("../benchmark/startQiskit_pragma" + str(iteration) + ".py", "w")
     readfile = open(address)
     line = readfile.readline()
 
+    pattern = random.randint(0,3)
 
     writefile_address = re.compile("../data/startQiskit")
     writefile_change = "../data/startQiskit_pragma"
@@ -27,23 +29,23 @@ def simulator_to_pragma (address:str, iteration:int, pattern:int):
         elif m is not None:
             writefile.write("    coupling_map = "+str(coupling_map)+"\n")
             writefile.write("    basic_gate = "+str(basic_gate)+"\n")
-            writefile.write("    info = execute(circ, backend=backend, coupling_map=coupling_map,shots=1024, basis_gates"
-                            "=basis_gate, optimization_level="+str(pattern)+").result().get_counts()\n")
+            writefile.write("    info = execute(prog, backend=backend, coupling_map=coupling_map,shots=1024, basis_gates"
+                            "=basic_gate, optimization_level="+str(pattern)+").result().get_counts()\n")
         else:
             writefile.write(line)
         line = readfile.readline()
 
     writefile.close()
     readfile.close()
-    return "startQiskit_topo" + str(iteration) + ".py"
+    return "startQiskit_pragma" + str(iteration) + ".py"
 
-def simulator_to_qc (address:str, iteration:int):
+def simulator_to_Same (address:str, iteration:int):
     writefile = open("../benchmark/startQiskit_QC" + str(iteration) + ".py", "w")
     readfile = open(address)
     line = readfile.readline()
 
     writefile_address = re.compile("../data/startQiskit")
-    writefile_change = "../data/startQiskit_QC"
+    writefile_change = "../data/startQiskit_Same"
     while line:
         n = writefile_address.search(line)
         if n is not None:
@@ -54,7 +56,7 @@ def simulator_to_qc (address:str, iteration:int):
 
     writefile.close()
     readfile.close()
-    return "startQiskit_QC" + str(iteration) + ".py"
+    return "startQiskit_Same" + str(iteration) + ".py"
 
 def simulator_to_state_vector (address:str, iteration:int):
     pattern = re.compile("qasm_simulator")

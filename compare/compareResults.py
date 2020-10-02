@@ -43,7 +43,7 @@ def trans(data:str,qubit_number:int,flag1:int): #flag1: to check if the order is
     return final_data
 
 def read_results(filename: str, qubit_number:int):
-    data = []
+
     pattern_qiskit = re.compile("Qiskit")
     pattern_pyquilc = re.compile("Pyquil_Class")
     flag1 = 0
@@ -103,6 +103,7 @@ def compare(path:str, thershold:float, qubit_number:int):
             max_diff = k
             max_diff_name = name[i]
         if k > thershold:
+            print(k)
             print(name[i]+":"+str(data[i]))
             wrong_out.append(name[i])
 
@@ -110,4 +111,4 @@ def compare(path:str, thershold:float, qubit_number:int):
     return wrong_out, max_diff, max_diff_name
 
 if __name__ == '__main__':
-    compare("../data/Wrong47",0.1,4)
+    compare("../data/Wrong62",0.1,5)

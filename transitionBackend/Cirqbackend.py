@@ -5,14 +5,15 @@
 # @File    : Cirqbackend.py
 
 import re
+import random
 
-def simulator_to_topology_simulator (address:str, iteration:int):
-    writefile = open("../benchmark/startCirq_topo" + str(iteration) + ".py", "w")
+def simulator_to_same (address:str, iteration:int):
+    writefile = open("../benchmark/startPyquil_QC" + str(iteration) + ".py", "w")
     readfile = open(address)
     line = readfile.readline()
 
-    writefile_address = re.compile("../data/startCirq")
-    writefile_change = "../data/startCirq_topo"
+    writefile_address = re.compile("../data/startPyquil")
+    writefile_change = "../data/startCirq_Same"
     while line:
         n = writefile_address.search(line)
         if n is not None:
@@ -23,56 +24,64 @@ def simulator_to_topology_simulator (address:str, iteration:int):
 
     writefile.close()
     readfile.close()
-    return "startCirq_topo" + str(iteration) + ".py"
+    return "startCirq_Same" + str(iteration) + ".py"
 
-def simulator_to_qc (address:str, iteration:int):
-    writefile = open("../benchmark/startCirq_QC" + str(iteration) + ".py", "w")
+def simulator_to_pragma (address:str, iteration:int):#, clear_qubits:str):
+    writefile = open("../benchmark/startCirq_pragma" + str(iteration) + ".py", "w")
     readfile = open(address)
     line = readfile.readline()
 
+    clear_span = 1
+
     writefile_address = re.compile("../data/startCirq")
-    writefile_change = "../data/startCirq_QC"
+    writefile_change = "../data/startCirq_pragma"
+
+    begin_optimizer = re.compile("import numpy as np")
+    optimizer = "class Opty(cirq.PointOptimizer):\n" \
+                "    def optimization_at(\n" \
+                "            self,\n" \
+                "            circuit: 'cirq.Circuit',\n" \
+                "            index: int,\n" \
+                "            op: 'cirq.Operation'\n" \
+                "    ) -> Optional[cirq.PointOptimizationSummary]:\n" \
+                "        if (isinstance(op, cirq.ops.GateOperation) and isinstance(op.gate, cirq.CZPowGate)):\n" \
+                "            return cirq.PointOptimizationSummary(\n" \
+                "                clear_span="+str(clear_span)+",\n" \
+                "                clear_qubits=op.qubits, \n" \
+                "                new_operations=[\n" \
+                "                    cirq.CZ(*op.qubits),\n" \
+                "                    cirq.X.on_each(*op.qubits),\n" \
+                "                    cirq.X.on_each(*op.qubits),\n" \
+                "                ]\n" \
+                "            )\n"
+
+    begin_run = re.compile("circuit_sample_count = 1024")
+
     while line:
         n = writefile_address.search(line)
+        m = begin_optimizer.search(line)
+        k = begin_run.search(line)
+
         if n is not None:
             writefile.write(re.sub(writefile_address, writefile_change, line))
+        elif m is not None:
+            writefile.write(line)
+            writefile.write(optimizer)
+        elif k is not None:
+            writefile.write(line)
+            writefile.write("    Opty().optimize_circuit(circuit)\n")
         else:
             writefile.write(line)
         line = readfile.readline()
 
     writefile.close()
     readfile.close()
-    return "startCirq_QC" + str(iteration) + ".py"
-
-'''
-def simulator_to_qc (address:str, iteration:int):
-
-    pattern = re.compile("cirq.Simulator()")
-    pattern1 = re.compile("simulator.run")
-
-    writefile = open("../benchmark/startCirq_QC"+str(iteration)+".py","w")
-    readfile = open(address)
-    line = readfile.readline()
-    while line:
-        m = pattern.search(line)
-        if m is not None:
-            writefile.write("   engine = cg.Engine(project_id=YOUR_PROJECT_ID, proto_version=cg.ProtoVersion.V2)")
-            writefile.write("   sampler = engine.sampler(processor_id='PROCESSOR_ID', gate_set=cg.SYC_GATESET)")
-            writefile.write("   results = sampler.run(circuit, repetitions=circuit_sample_count)")
-        else:
-            if pattern1.search(line) is None:
-                writefile.write(line+"\n")
-        line = readfile.readline()
-
-    writefile.close()
-    readfile.close()
-    return "startCirq_QC"+str(iteration)+".py"
-'''
+    return "startCirq_pragma" + str(iteration) + ".py"
 
 
 def simulator_to_state_vector (address:str, iteration:int):
     pattern = re.compile("cirq.Simulator()")
-    pattern1 = re.compile("simulator.run")
+    pattern1 = re.compile("simulator.run")  #find simulator
 
     writefile= open("../benchmark/startCirq_Class"+str(iteration)+".py", "w")
     writefile_address = re.compile("../data/startCirq")

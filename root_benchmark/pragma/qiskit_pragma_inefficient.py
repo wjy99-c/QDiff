@@ -12,17 +12,18 @@ from qiskit.compiler import transpile
 from qiskit.transpiler import PassManager
 
 if __name__ == '__main__':
-    coupling = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]
+    coupling = [[0, 1], [1, 2]]#, [2, 3], [3, 4], [4, 5], [5, 6]]
     backend = BasicAer.get_backend('qasm_simulator')
 
-    classical = ClassicalRegister(7)
+    classical = ClassicalRegister(3)
 
-    circuit = QuantumCircuit(7)
+    circuit = QuantumCircuit(3)
     circuit.x(0)
     circuit.cx(0,1)
     circuit.x(0)
     circuit.cx(0,1)
     circuit.cx(0, 1)
+    circuit.h(0)
     circuit.h(0)
     circuit.h(0)
     circuit.measure_all()
@@ -34,21 +35,30 @@ if __name__ == '__main__':
     bs = BasicSwap(coupling_map=coupling_map)
     pass_manager = PassManager(bs)
     basic_circ = pass_manager.run(circuit)
-    optimized_0 = transpile(circuit,backend,coupling_map=coupling_map,basis_gates=basis_gate,optimization_level=0)
+    optimized_0 = transpile(circuit,backend,
+                            coupling_map=coupling_map,
+                            basis_gates=basis_gate,
+                            optimization_level=0)
     print(optimized_0.draw())
 
     ls = LookaheadSwap(coupling_map=coupling_map)
     pass_manager = PassManager(ls)
     lookahead_circ = pass_manager.run(circuit)
-    optimized_1 = execute(circuit,backend,coupling_map=coupling_map,basis_gates=basis_gate,optimization_level=1)
-    print(optimized_1.result().get_counts())
+    optimized_1 = transpile(circuit,backend,
+                            coupling_map=coupling_map,
+                            basis_gates=basis_gate,
+                            optimization_level=1)
+    print(optimized_1.draw())
 
 
 
     ss = StochasticSwap(coupling_map=coupling_map)
     pass_manager = PassManager(ss)
     stochastic_circ = pass_manager.run(circuit)
-    optimized_2 = transpile(circuit, backend, coupling_map=coupling_map, basis_gates=basis_gate,optimization_level=3)
-    print(optimized_2.draw())
+    optimized_3 = transpile(circuit, backend,
+                            coupling_map=coupling_map,
+                            basis_gates=basis_gate,
+                            optimization_level=3)
+    print(optimized_3.draw())
 
     # optimization_level = 3 performs worse than optimization_level = 1
