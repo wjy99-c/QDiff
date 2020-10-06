@@ -6,7 +6,7 @@
 
 import re
 import random
-coupling_map = [[1, 0], [2, 1], [3, 1], [1, 4]]
+coupling_map = [[1, 0], [2, 1], [3, 1], [1, 4],[1, 5]]
 basic_gate = ['cx','u3','id']
 
 def simulator_to_pragma (address:str, iteration:int):

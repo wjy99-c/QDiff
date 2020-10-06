@@ -1,5 +1,5 @@
-# qubit number=5
-# total number=9
+# qubit number=6
+# total number=11
 import cirq
 import qiskit
 
@@ -15,21 +15,25 @@ def make_circuit(n:int) -> QuantumCircuit:
     classical = ClassicalRegister(n, "qm")
     prog = QuantumCircuit(input_qubit, classical)
     prog.y(input_qubit[0]) # number=3
-    prog.z(input_qubit[3]) # number=8
     prog.h(input_qubit[1]) # number=4
     prog.x(input_qubit[2]) # number=5
     prog.x(input_qubit[3]) # number=6
     prog.h(input_qubit[4]) # number=7
+    prog.h(input_qubit[5]) # number=8
     prog.cx(input_qubit[1],input_qubit[3])  # number=1
+    prog.x(input_qubit[0]) # number=10
     prog.cx(input_qubit[1],input_qubit[2])  # number=2
+    prog.cx(input_qubit[4],input_qubit[5]) # number=9
 
+    prog.cx(input_qubit[4],input_qubit[5]) # number=9
     prog.cx(input_qubit[1],input_qubit[2])  # number=2
+    prog.x(input_qubit[0]) # number=10
     prog.cx(input_qubit[1],input_qubit[3])  # number=1
+    prog.h(input_qubit[5]) # number=8
     prog.h(input_qubit[4]) # number=7
     prog.x(input_qubit[3]) # number=6
     prog.x(input_qubit[2]) # number=5
     prog.h(input_qubit[1]) # number=4
-    prog.z(input_qubit[3]) # number=8
     prog.y(input_qubit[0]) # number=3
     # circuit end
 
@@ -43,12 +47,12 @@ def make_circuit(n:int) -> QuantumCircuit:
 
 if __name__ == '__main__':
 
-    prog = make_circuit(5)
+    prog = make_circuit(6)
     backend = BasicAer.get_backend('qasm_simulator')
 
-    coupling_map = [[1, 0], [2, 1], [3, 1], [1, 4]]
+    coupling_map = [[1, 0], [2, 1], [3, 1], [1, 4], [1, 5]]
     basic_gate = ['cx', 'u3', 'id']
-    info = execute(prog, backend=backend, coupling_map=coupling_map,shots=1024, basis_gates=basic_gate, optimization_level=1).result().get_counts()
+    info = execute(prog, backend=backend, coupling_map=coupling_map,shots=1024, basis_gates=basic_gate, optimization_level=2).result().get_counts()
 
     writefile = open("../data/reverse/startQiskit_pragma1.csv","w")
     pprint(info,writefile)

@@ -1,5 +1,5 @@
-# qubit number=5
-# total number=11
+# qubit number=6
+# total number=13
 import cirq
 import qiskit
 
@@ -16,21 +16,25 @@ def make_circuit(n:int) -> QuantumCircuit:
     prog = QuantumCircuit(input_qubit, classical)
     prog.y(input_qubit[0]) # number=3
     prog.h(input_qubit[1]) # number=4
-    prog.x(input_qubit[2]) # number=5
-    prog.cx(input_qubit[0],input_qubit[3]) # number=8
-    prog.x(input_qubit[3]) # number=9
-    prog.cx(input_qubit[0],input_qubit[3]) # number=10
+    prog.cx(input_qubit[0],input_qubit[2]) # number=10
+    prog.x(input_qubit[2]) # number=11
+    prog.cx(input_qubit[0],input_qubit[2]) # number=12
+    prog.x(input_qubit[3]) # number=6
     prog.h(input_qubit[4]) # number=7
+    prog.h(input_qubit[5]) # number=8
     prog.cx(input_qubit[1],input_qubit[3])  # number=1
     prog.cx(input_qubit[1],input_qubit[2])  # number=2
+    prog.cx(input_qubit[4],input_qubit[5]) # number=9
 
+    prog.cx(input_qubit[4],input_qubit[5]) # number=9
     prog.cx(input_qubit[1],input_qubit[2])  # number=2
     prog.cx(input_qubit[1],input_qubit[3])  # number=1
+    prog.h(input_qubit[5]) # number=8
     prog.h(input_qubit[4]) # number=7
-    prog.cx(input_qubit[0],input_qubit[3]) # number=10
-    prog.x(input_qubit[3]) # number=9
-    prog.cx(input_qubit[0],input_qubit[3]) # number=8
-    prog.x(input_qubit[2]) # number=5
+    prog.x(input_qubit[3]) # number=6
+    prog.cx(input_qubit[0],input_qubit[2]) # number=12
+    prog.x(input_qubit[2]) # number=11
+    prog.cx(input_qubit[0],input_qubit[2]) # number=10
     prog.h(input_qubit[1]) # number=4
     prog.y(input_qubit[0]) # number=3
     # circuit end
@@ -43,7 +47,7 @@ def make_circuit(n:int) -> QuantumCircuit:
 
 if __name__ == '__main__':
 
-    prog = make_circuit(5)
+    prog = make_circuit(6)
     backend = BasicAer.get_backend('statevector_simulator')
 
     info = execute(prog, backend=backend).result().get_statevector()

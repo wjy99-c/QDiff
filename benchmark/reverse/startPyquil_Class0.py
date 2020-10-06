@@ -1,5 +1,5 @@
-# qubit number=5
-# total number=8
+# qubit number=6
+# total number=10
 import pyquil
 from pyquil.api import local_forest_runtime, QVMConnection
 from pyquil import Program, get_qc
@@ -17,11 +17,15 @@ def make_circuit()-> Program:
     prog += X(2) # number=5
     prog += X(3) # number=6
     prog += H(4) # number=7
+    prog += H(5) # number=8
     prog += CNOT(1,3) # number=1
     prog += CNOT(1,2) # number=2
+    prog += CNOT(4,5) # number=9
 
+    prog += CNOT(4,5) # number=9
     prog += CNOT(1,2) # number=2
     prog += CNOT(1,3) # number=1
+    prog += H(5) # number=8
     prog += H(4) # number=7
     prog += X(3) # number=6
     prog += X(2) # number=5

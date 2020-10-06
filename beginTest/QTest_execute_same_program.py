@@ -29,8 +29,8 @@ def backend_loop(out_num:int):
     print("Executing Simulator" + str(out_num))
     print("Executing Simulator" + str(out_num),file=logfile)
 
-    execution('../benchmark/' + "startCirq" + str(out_num) + ".py")
-    execution('../benchmark/' + "startPyquil" + str(out_num) + ".py")
+    #execution('../benchmark/' + "startCirq" + str(out_num) + ".py")
+    #execution('../benchmark/' + "startPyquil" + str(out_num) + ".py")
     execution('../benchmark/' + "startQiskit" + str(out_num) + ".py")
 
 
