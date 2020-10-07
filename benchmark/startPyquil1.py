@@ -1,5 +1,5 @@
 # qubit number=4
-# total number=21
+# total number=22
 import pyquil
 from pyquil.api import QVMConnection
 from pyquil import Program, get_qc
@@ -37,6 +37,7 @@ def make_circuit(n:int,f)-> Program:
     prog += H(0) # number=3
     prog += H(1) # number=4
     prog += H(2) # number=5
+    prog += X(0) # number=21
     prog += H(3) # number=6
     repeat = floor(sqrt(2 ** n) * pi / 4)
     for i in range(repeat):
@@ -64,26 +65,6 @@ def make_circuit(n:int,f)-> Program:
         prog += H(3)  # number=20
 
 
-        prog += H(3)  # number=20
-        prog += H(2)  # number=19
-        prog += H(1)  # number=18
-        prog += H(0)  # number=17
-        prog += X(3)  # number=16
-        prog += X(2)  # number=15
-        prog += X(1)  # number=14
-        prog += X(0)  # number=13
-        prog += X(3)  # number=12
-        prog += X(2)  # number=11
-        prog += X(1)  # number=10
-        prog += X(0)  # number=9
-        prog += H(3)  # number=8
-        prog += H(2)  # number=7
-        prog += H(1)  # number=2
-        prog += H(0)  # number=1
-    prog += H(3) # number=6
-    prog += H(2) # number=5
-    prog += H(1) # number=4
-    prog += H(0) # number=3
     # circuit end
 
     return prog
@@ -104,9 +85,13 @@ if __name__ == '__main__':
     f = lambda rep: str(int(rep == x_bits))
 
     prog = make_circuit(4,f)
-    state = conn.wavefunction(prog)
+    qvm = get_qc('4q-qvm')
+    qvm.compiler.client.rpc_timeout = 60
 
-    writefile = open("../data/reverse/startPyquil_Class0.csv","w")
-    print(state.get_outcome_probs(),file=writefile)
+    results = qvm.run_and_measure(prog,1024)
+    bitstrings = np.vstack([results[i] for i in qvm.qubits()]).T
+    bitstrings = [''.join(map(str, l)) for l in bitstrings]
+    writefile = open("../data/startPyquil1.csv","w")
+    print(summrise_results(bitstrings),file=writefile)
     writefile.close()
 

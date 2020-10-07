@@ -10,23 +10,6 @@ from typing import Optional
 import sys
 from math import sqrt, floor, pi,log2
 import numpy as np
-class Opty(cirq.PointOptimizer):
-    def optimization_at(
-            self,
-            circuit: 'cirq.Circuit',
-            index: int,
-            op: 'cirq.Operation'
-    ) -> Optional[cirq.PointOptimizationSummary]:
-        if (isinstance(op, cirq.ops.GateOperation) and isinstance(op.gate, cirq.CZPowGate)):
-            return cirq.PointOptimizationSummary(
-                clear_span=1,
-                clear_qubits=op.qubits, 
-                new_operations=[
-                    cirq.CZ(*op.qubits),
-                    cirq.X.on_each(*op.qubits),
-                    cirq.X.on_each(*op.qubits),
-                ]
-            )
 
 #thatsNoCode
 
@@ -91,29 +74,8 @@ def make_grover_circuit(n:int,input_qubits, f):
         c.append(cirq.H.on(input_qubits[3]))  # number=20
 
 
-        c.append(cirq.H.on(input_qubits[3]))  # number=20
-        c.append(cirq.H.on(input_qubits[2]))  # number=19
-        c.append(cirq.H.on(input_qubits[1]))  # number=18
-        c.append(cirq.H.on(input_qubits[0]))  # number=17
-        c.append(cirq.X.on(input_qubits[3]))  # number=16
-        c.append(cirq.X.on(input_qubits[2]))  # number=15
-        c.append(cirq.X.on(input_qubits[1]))  # number=14
-        c.append(cirq.X.on(input_qubits[0]))  # number=13
-        c.append(cirq.X.on(input_qubits[3]))  # number=12
-        c.append(cirq.X.on(input_qubits[2]))  # number=11
-        c.append(cirq.X.on(input_qubits[1]))  # number=10
-        c.append(cirq.X.on(input_qubits[0]))  # number=9
-        c.append(cirq.H.on(input_qubits[3]))  # number=8
-        c.append(cirq.H.on(input_qubits[2]))  # number=7
-        c.append(cirq.H.on(input_qubits[1]))  # number=2
-        c.append(cirq.H.on(input_qubits[0]))  # number=1
-    c.append(cirq.H.on(input_qubits[3])) # number=6
-    c.append(cirq.H.on(input_qubits[2])) # number=5
-    c.append(cirq.H.on(input_qubits[1])) # number=4
-    c.append(cirq.H.on(input_qubits[0])) # number=3
     # circuit end
 
-    c.append(cirq.measure(*input_qubits, key='result'))
 
     return c
 
@@ -132,14 +94,16 @@ if __name__ == '__main__':
     circuit = make_grover_circuit(qubit_count, input_qubits, f)
 
     circuit_sample_count = 1024
-    Opty().optimize_circuit(circuit)
 
 
-    simulator = cirq.Simulator()
-    result = simulator.run(circuit, repetitions=circuit_sample_count)
+    info = cirq.final_wavefunction(circuit)
 
-    frequencies = result.histogram(key='result', fold_func=bitstring)
-    writefile = open("../data/reverse/startCirq_pragma2.csv","w+")
+    qubits = round(log2(len(info)))
+    frequencies = {
+        np.binary_repr(i, qubits): round((info[i]*(info[i].conjugate())).real*1024,3)
+        for i in range(2 ** qubits)
+    }
+    writefile = open("../data/startCirq_Class2.csv","w+")
 
     print(format(frequencies),file=writefile)
 

@@ -77,26 +77,6 @@ def make_circuit(n:int,f) -> QuantumCircuit:
         prog.h(input_qubit[3])  # number=20
 
 
-        prog.h(input_qubit[3])  # number=20
-        prog.h(input_qubit[2])  # number=19
-        prog.h(input_qubit[1])  # number=18
-        prog.h(input_qubit[0])  # number=17
-        prog.x(input_qubit[3])  # number=16
-        prog.x(input_qubit[2])  # number=15
-        prog.x(input_qubit[1])  # number=14
-        prog.x(input_qubit[0])  # number=13
-        prog.x(input_qubit[3])  # number=12
-        prog.x(input_qubit[2])  # number=11
-        prog.x(input_qubit[1])  # number=10
-        prog.x(input_qubit[0])  # number=9
-        prog.h(input_qubit[3])  # number=8
-        prog.h(input_qubit[2])  # number=7
-        prog.h(input_qubit[1])  # number=2
-        prog.h(input_qubit[0])  # number=1
-    prog.h(input_qubit[3]) # number=6
-    prog.h(input_qubit[2]) # number=5
-    prog.h(input_qubit[1]) # number=4
-    prog.h(input_qubit[0]) # number=3
     # circuit end
 
     for i in range(n):
@@ -117,6 +97,6 @@ if __name__ == '__main__':
     basic_gate = ['cx', 'u3', 'id']
     info = execute(prog, backend=backend, coupling_map=coupling_map,shots=1024, basis_gates=basic_gate, optimization_level=1).result().get_counts()
 
-    writefile = open("../data/reverse/startQiskit_pragma2.csv","w")
+    writefile = open("../data/startQiskit_pragma2.csv","w")
     pprint(info,writefile)
     writefile.close()

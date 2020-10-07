@@ -91,26 +91,6 @@ def make_grover_circuit(n:int,input_qubits, f):
         c.append(cirq.H.on(input_qubits[3]))  # number=20
 
 
-        c.append(cirq.H.on(input_qubits[3]))  # number=20
-        c.append(cirq.H.on(input_qubits[2]))  # number=19
-        c.append(cirq.H.on(input_qubits[1]))  # number=18
-        c.append(cirq.H.on(input_qubits[0]))  # number=17
-        c.append(cirq.X.on(input_qubits[3]))  # number=16
-        c.append(cirq.X.on(input_qubits[2]))  # number=15
-        c.append(cirq.X.on(input_qubits[1]))  # number=14
-        c.append(cirq.X.on(input_qubits[0]))  # number=13
-        c.append(cirq.X.on(input_qubits[3]))  # number=12
-        c.append(cirq.X.on(input_qubits[2]))  # number=11
-        c.append(cirq.X.on(input_qubits[1]))  # number=10
-        c.append(cirq.X.on(input_qubits[0]))  # number=9
-        c.append(cirq.H.on(input_qubits[3]))  # number=8
-        c.append(cirq.H.on(input_qubits[2]))  # number=7
-        c.append(cirq.H.on(input_qubits[1]))  # number=2
-        c.append(cirq.H.on(input_qubits[0]))  # number=1
-    c.append(cirq.H.on(input_qubits[3])) # number=6
-    c.append(cirq.H.on(input_qubits[2])) # number=5
-    c.append(cirq.H.on(input_qubits[1])) # number=4
-    c.append(cirq.H.on(input_qubits[0])) # number=3
     # circuit end
 
     c.append(cirq.measure(*input_qubits, key='result'))
@@ -139,7 +119,7 @@ if __name__ == '__main__':
     result = simulator.run(circuit, repetitions=circuit_sample_count)
 
     frequencies = result.histogram(key='result', fold_func=bitstring)
-    writefile = open("../data/reverse/startCirq_pragma2.csv","w+")
+    writefile = open("../data/startCirq_pragma2.csv","w+")
 
     print(format(frequencies),file=writefile)
 
