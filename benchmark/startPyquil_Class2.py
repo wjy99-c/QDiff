@@ -34,15 +34,16 @@ def make_circuit(n:int,f)-> Program:
 
     prog = Program() # circuit begin
 
-    prog += H(0) # number=3
+    prog += H(0) # number=1
     prog += H(1) # number=4
     prog += H(2) # number=5
     prog += H(3) # number=6
     repeat = floor(sqrt(2 ** n) * pi / 4)
+
     for i in range(repeat):
         prog.defgate("Zf",build_G(n,f))
         prog.inst(("Zf", *[i for i in range(n)]))
-        prog += H(0)  # number=1
+        prog += H(0)  # number=3
         prog += H(1)  # number=2
         prog += H(2)  # number=7
         prog += H(3)  # number=8

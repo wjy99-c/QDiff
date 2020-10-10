@@ -41,10 +41,10 @@ def make_circuit(n:int,f) -> QuantumCircuit:
     input_qubit = QuantumRegister(n,"qc")
     classical = ClassicalRegister(n, "qm")
     prog = QuantumCircuit(input_qubit, classical)
-    prog.h(input_qubit[0]) # number=3
+    prog.h(input_qubit[0]) # number=1
     prog.h(input_qubit[1]) # number=4
+    prog.h(input_qubit[1]) # number=21
     prog.h(input_qubit[2]) # number=5
-    prog.x(input_qubit[0]) # number=21
     prog.h(input_qubit[3]) # number=6
 
     Zf = build_oracle(n, f)
@@ -52,7 +52,7 @@ def make_circuit(n:int,f) -> QuantumCircuit:
     repeat = floor(sqrt(2 ** n) * pi / 4)
     for i in range(repeat):
         prog.append(Zf.to_gate(), [input_qubit[i] for i in range(n)])
-        prog.h(input_qubit[0])  # number=1
+        prog.h(input_qubit[0])  # number=3
         prog.h(input_qubit[1])  # number=2
         prog.h(input_qubit[2])  # number=7
         prog.h(input_qubit[3])  # number=8

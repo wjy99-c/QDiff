@@ -53,10 +53,11 @@ def backend_loop(out_num:int):
     execution('../benchmark/' + pyquilP2)
     execution('../benchmark/' + qiskitP2)
 
+    """
     print("Executing reversion version of each program")
     print("Executing reversion version of each program",file=logfile)
 
-
+    
     execution(reverse_m.generate_reverse('../benchmark/' + "startCirq" + str(out_num) + ".py",
                                          "../benchmark/reverse/"+ "startCirq" + str(out_num) + ".py"))
     execution(reverse_m.generate_reverse('../benchmark/' + "startPyquil" + str(out_num) + ".py",
@@ -70,7 +71,7 @@ def backend_loop(out_num:int):
     execution(reverse_m.generate_reverse('../benchmark/' + pyquilP2, '../benchmark/reverse/' + pyquilP2))
     execution(reverse_m.generate_reverse('../benchmark/' + qiskitP1, '../benchmark/reverse/' + qiskitP1))
     execution(reverse_m.generate_reverse('../benchmark/' + qiskitP2, '../benchmark/reverse/' + qiskitP2))
-
+    """
 
 def calculate_results(out_num:int, directory:str):
     wrong, diff, name = cR.compare("../"+directory, thershold=thershold,
@@ -140,7 +141,8 @@ if __name__ == '__main__':
             print("now we are at round:", seed,file=logfile)
             print("now we are at round:", seed)
             backend_loop(tail)
-            diff = max(calculate_results(tail,"data"),calculate_results(tail,"data/reverse"))
+            #diff = max(calculate_results(tail,"data"),calculate_results(tail,"data/reverse"))
+            diff = calculate_results(tail,"data")
             print("K-S Diff:", diff,file=logfile)
             print("K-S Diff:", diff)
             if diff > thershold:
@@ -165,7 +167,7 @@ if __name__ == '__main__':
             flag_see_wrong = 1
 
         collect_data(seed,flag_see_wrong,"data")
-        collect_data(seed,flag_see_wrong,"data/reverse")
+        #collect_data(seed,flag_see_wrong,"data/reverse")
 
         seed = seed + 1
 

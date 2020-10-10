@@ -41,7 +41,7 @@ def make_circuit(n:int,f) -> QuantumCircuit:
     input_qubit = QuantumRegister(n,"qc")
     classical = ClassicalRegister(n, "qm")
     prog = QuantumCircuit(input_qubit, classical)
-    prog.h(input_qubit[0]) # number=3
+    prog.h(input_qubit[0]) # number=1
     prog.h(input_qubit[1]) # number=4
     prog.h(input_qubit[2]) # number=5
     prog.h(input_qubit[3]) # number=6
@@ -51,7 +51,7 @@ def make_circuit(n:int,f) -> QuantumCircuit:
     repeat = floor(sqrt(2 ** n) * pi / 4)
     for i in range(repeat):
         prog.append(Zf.to_gate(), [input_qubit[i] for i in range(n)])
-        prog.h(input_qubit[0])  # number=1
+        prog.h(input_qubit[0])  # number=3
         prog.h(input_qubit[1])  # number=2
         prog.h(input_qubit[2])  # number=7
         prog.h(input_qubit[3])  # number=8
@@ -95,7 +95,7 @@ if __name__ == '__main__':
 
     coupling_map = [[1, 0], [2, 1], [3, 1], [1, 4], [1, 5]]
     basic_gate = ['cx', 'u3', 'id']
-    info = execute(prog, backend=backend, coupling_map=coupling_map,shots=1024, basis_gates=basic_gate, optimization_level=2).result().get_counts()
+    info = execute(prog, backend=backend, coupling_map=coupling_map,shots=1024, basis_gates=basic_gate, optimization_level=1).result().get_counts()
 
     writefile = open("../data/startQiskit_pragma0.csv","w")
     pprint(info,writefile)
