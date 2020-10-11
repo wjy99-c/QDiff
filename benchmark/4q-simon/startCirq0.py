@@ -37,18 +37,14 @@ def make_simon_circuit(input_qubit, secret_string):
 
     # Initialize qubits.
     c.append(cirq.H.on(input_qubit[1])) # number=1
-    c.append(cirq.H.on(input_qubit[2])) # number=5
-    c.append(cirq.H.on(input_qubit[3])) # number=6
-    c.append(cirq.H.on(input_qubit[0])) # number=3
+    c.append(cirq.H.on(input_qubit[0])) # number=2
 
     # Query oracle.
-    oracle = make_oracle(input_qubit, input_qubit[4], secret_string)
+    oracle = make_oracle(input_qubit[0:2], input_qubit[2:4], secret_string)
     c.append(oracle)
 
-    c.append(cirq.H.on(input_qubit[1]))  # number=2
-    c.append(cirq.H.on(input_qubit[2]))  # number=4
-    c.append(cirq.H.on(input_qubit[3]))  # number=7
-    c.append(cirq.H.on(input_qubit[0]))  # number=8
+    c.append(cirq.H.on(input_qubit[1]))  # number=3
+    c.append(cirq.H.on(input_qubit[0]))  # number=4
     # Measure in X basis.
     c.append([
         cirq.measure(*input_qubit, key='result')
@@ -62,11 +58,9 @@ def bitstring(bits):
 if __name__ == '__main__':
     qubit_count = 4
 
-    x_bits = "1111"
-    f = lambda rep: str(int(rep == x_bits))
 
     input_qubits = [cirq.GridQubit(i, 0) for i in range(qubit_count)]
-    circuit = make_simon_circuit(input_qubits[0:4], [1,1,1,1])
+    circuit = make_simon_circuit(input_qubits[0:4], [0,1])
 
     circuit_sample_count = 1024
 
@@ -75,7 +69,7 @@ if __name__ == '__main__':
     result = simulator.run(circuit, repetitions=circuit_sample_count)
 
     frequencies = result.histogram(key='result', fold_func=bitstring)
-    writefile = open("../data/startCirq0.csv","w+")
+    writefile = open("../../data/startCirq0.csv","w+")
 
     print(format(frequencies),file=writefile)
 

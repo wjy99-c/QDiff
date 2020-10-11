@@ -2,223 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1811e07e-f999-42fb-805e-cbdd938b0475" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/benchmark/4q-ber/startCirq0.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/benchmark/4q-ber/startPyquil0.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/benchmark/4q-ber/startQiskit0.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/benchmark/4q-simon/startCirq0.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/benchmark/4q-simon/startQiskit0.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/benchmark/4q-simon/startPyquil0.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beginTest/QTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/beginTest/QTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq0.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq1.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/5q-deutsch/startCirq0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq10.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq11.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq12.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq14.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq15.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq16.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq17.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq18.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq19.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq20.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq21.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq6.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq7.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq8.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq9.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class0.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class10.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class11.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class12.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class14.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class15.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class16.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class17.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class18.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class19.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class20.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class21.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class6.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class7.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class8.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_Class9.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma0.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma10.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma11.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma12.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma14.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma15.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma16.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma17.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma18.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma19.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma20.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma21.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma6.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma7.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma8.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startCirq_pragma9.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil0.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil1.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/5q-deutsch/startPyquil0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil10.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil11.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil12.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil14.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil15.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil16.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil17.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil18.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil19.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil20.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil21.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil6.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil7.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil8.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil9.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class0.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class10.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class11.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class12.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class14.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class15.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class16.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class17.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class18.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class19.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class20.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class6.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class7.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class8.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_Class9.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma0.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma10.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma11.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma12.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma14.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma15.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma16.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma17.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma18.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma19.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma20.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma21.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma6.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma7.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma8.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startPyquil_pragma9.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit0.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit1.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/5q-deutsch/startQiskit0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit10.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit11.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit12.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit14.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit15.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit16.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit17.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit18.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit19.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit20.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit21.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit6.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit7.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit8.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit9.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class0.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class10.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class11.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class12.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class14.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class15.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class16.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class17.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class18.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class19.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class20.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class6.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class7.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class8.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_Class9.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma0.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma10.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma11.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma12.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma14.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma15.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma16.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma17.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma18.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma19.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma20.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma6.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma7.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma8.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/reverse/startQiskit_pragma9.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startCirq0.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startCirq0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startCirq1.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startCirq1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startCirq2.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startCirq2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startCirq_Class0.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startCirq_Class0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startCirq_Class2.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startCirq_Class2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startCirq_pragma0.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startCirq_pragma0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startCirq_pragma2.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startCirq_pragma2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startPyquil0.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startPyquil0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startPyquil1.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startPyquil1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startPyquil2.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startPyquil2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startPyquil_Class0.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startPyquil_Class0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startPyquil_Class2.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startPyquil_Class2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startPyquil_pragma0.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startPyquil_pragma0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startPyquil_pragma2.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startPyquil_pragma2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startQiskit0.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startQiskit0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startQiskit1.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startQiskit1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startQiskit2.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startQiskit2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startQiskit_Class0.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startQiskit_Class0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startQiskit_Class2.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startQiskit_Class2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startQiskit_pragma0.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startQiskit_pragma0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/startQiskit_pragma2.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/startQiskit_pragma2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mutation/Mutation_diff.py" beforeDir="false" afterPath="$PROJECT_DIR$/mutation/Mutation_diff.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mutation/Mutation_equal.py" beforeDir="false" afterPath="$PROJECT_DIR$/mutation/Mutation_equal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing record.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testing record.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmark/4q-simon/startCirq0.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/4q-simon/startCirq0.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmark/4q-simon/startQiskit0.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/4q-simon/startQiskit0.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/startCirq0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/startCirq0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/startQiskit0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/startQiskit0.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -232,7 +21,7 @@
       <file leaf-file-name="QTest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/beginTest/QTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="2040">
               <caret line="146" column="36" selection-start-line="146" selection-start-column="36" selection-end-line="146" selection-end-column="36" />
               <folding>
                 <element signature="e#172#221#0" expanded="true" />
@@ -241,35 +30,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="startQiskit0.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/benchmark/5q-deutsch/startQiskit0.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="32" selection-start-line="32" selection-end-line="33" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="startCirq0.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="startCirq0.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/benchmark/4q-simon/startCirq0.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-64">
-              <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-              <folding>
-                <element signature="e#131#142#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="601">
+              <caret line="68" column="69" selection-start-line="68" selection-start-column="69" selection-end-line="68" selection-end-column="69" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="startQiskit0.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/benchmark/4q-simon/startQiskit0.py">
+      <file leaf-file-name="startPyquil0.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/benchmark/4q-ber/startPyquil0.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-              <folding>
-                <element signature="e#36#105#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-914">
+              <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="startPyquil0.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/benchmark/5q-seed/startPyquil0.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="106">
+              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="startPyquil0.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/benchmark/4q-simon/startPyquil0.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -328,7 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/root_benchmark/pragma/pyquil.py" />
         <option value="$PROJECT_DIR$/root_benchmark/pragma/pyquil_pragma_inefficient.py" />
         <option value="$PROJECT_DIR$/WrongBehavior/example_from_github/qiskit-topo.py" />
         <option value="$PROJECT_DIR$/WrongBehavior/example_from_github/qiskit-topo-wronggate.py" />
@@ -377,14 +168,15 @@
         <option value="$PROJECT_DIR$/benchmark/4q-ber/startCirq0.py" />
         <option value="$PROJECT_DIR$/benchmark/5q-deutsch/startPyquil0.py" />
         <option value="$PROJECT_DIR$/benchmark/5q-deutsch/startQiskit0.py" />
-        <option value="$PROJECT_DIR$/benchmark/4q-simon/startCirq0.py" />
         <option value="$PROJECT_DIR$/benchmark/4q-simon/startQiskit0.py" />
+        <option value="$PROJECT_DIR$/benchmark/4q-simon/startCirq0.py" />
+        <option value="$PROJECT_DIR$/benchmark/4q-simon/startPyquil0.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="247" />
-    <option name="y" value="43" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-31" />
+    <option name="y" value="29" />
     <option name="width" value="1310" />
     <option name="height" value="793" />
   </component>
@@ -415,24 +207,13 @@
               <item name="QUnit" type="b2602c69:ProjectViewProjectNode" />
               <item name="QUnit" type="462c0819:PsiDirectoryNode" />
               <item name="benchmark" type="462c0819:PsiDirectoryNode" />
-              <item name="4q-ber" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QUnit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QUnit" type="462c0819:PsiDirectoryNode" />
-              <item name="benchmark" type="462c0819:PsiDirectoryNode" />
               <item name="4q-simon" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QUnit" type="b2602c69:ProjectViewProjectNode" />
               <item name="QUnit" type="462c0819:PsiDirectoryNode" />
               <item name="benchmark" type="462c0819:PsiDirectoryNode" />
-              <item name="5q-deutsch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QUnit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QUnit" type="462c0819:PsiDirectoryNode" />
-              <item name="mutation" type="462c0819:PsiDirectoryNode" />
+              <item name="5q-seed" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QUnit" type="b2602c69:ProjectViewProjectNode" />
@@ -486,25 +267,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.startCirq0 (2)">
-    <configuration name="cirq-ber" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="QUnit" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/benchmark/4q-ber" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/benchmark/4q-ber/cirq-ber.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
+  <component name="RunManager" selected="Python.startPyquil0">
     <configuration name="startCirq0 (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="QUnit" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -536,6 +299,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/benchmark/4q-ber/startCirq0.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="startPyquil0" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="QUnit" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/benchmark/4q-simon" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/benchmark/4q-simon/startPyquil0.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -580,17 +361,17 @@
     <list>
       <item itemvalue="Python.startCirq0" />
       <item itemvalue="Python.startQiskit0" />
-      <item itemvalue="Python.cirq-ber" />
       <item itemvalue="Python.startQiskit0 (1)" />
       <item itemvalue="Python.startCirq0 (2)" />
+      <item itemvalue="Python.startPyquil0" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.startPyquil0" />
         <item itemvalue="Python.startCirq0 (2)" />
         <item itemvalue="Python.startQiskit0 (1)" />
         <item itemvalue="Python.startQiskit0" />
         <item itemvalue="Python.startCirq0" />
-        <item itemvalue="Python.cirq-ber" />
       </list>
     </recent_temporary>
   </component>
@@ -617,7 +398,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="247" y="43" width="1310" height="793" extended-state="1" />
+    <frame x="-31" y="29" width="1310" height="793" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24515128" />
@@ -625,9 +406,9 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32867134" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32867134" />
       <window_info anchor="bottom" id="Python Console" order="9" weight="0.32914925" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.2571839" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.43534482" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.23706897" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.094827585" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.13793103" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -640,22 +421,22 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.50970876" />
-      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24515128" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32961783" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.011204482" />
-      <window_info anchor="bottom" id="Python Console" order="9" weight="0.32914925" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32867134" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.50970876" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.39915967" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.23786408" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32867134" />
-      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32867134" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.011204482" />
+      <window_info anchor="bottom" id="Python Console" order="9" weight="0.32914925" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -663,7 +444,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="30" />
+      <option name="time" value="31" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -686,6 +467,13 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/benchmark/4q-simon/startCirq0.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mutation/Mutation_shadow.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-77">
@@ -712,9 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1665">
           <caret line="113" column="36" selection-start-line="113" selection-start-column="36" selection-end-line="113" selection-end-column="36" />
-          <folding>
-            <element signature="e#135#153#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -736,9 +521,6 @@
     <entry file="file://$PROJECT_DIR$/benchmark/startCirq4.py" />
     <entry file="file://$PROJECT_DIR$/benchmark/startCirq5.py" />
     <entry file="file://$PROJECT_DIR$/benchmark/startCirq7.py" />
-    <entry file="file://$PROJECT_DIR$/data/0/startCirq2.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/testing record 4q.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-885">
@@ -746,16 +528,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/0/startPyquil5.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/transitionBackend/Qiskitbackend.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-648">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#134#143#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -787,9 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/0/startCirq0.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/benchmark/startCirq_pragma0.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
@@ -804,9 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/startQiskit0.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/startCirq0.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -814,13 +584,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/startPyquil0.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/startPyquil0.csv" />
     <entry file="file://$PROJECT_DIR$/benchmark/4q-grover/startQiskit0.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-136" />
@@ -892,23 +656,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/4q-ber/cirq-ber.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-          <folding>
-            <element signature="e#129#142#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/reverse/startCirq12.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmark/4q-ber/cirq-ber.py" />
+    <entry file="file://$PROJECT_DIR$/benchmark/reverse/startCirq12.py" />
     <entry file="file://$PROJECT_DIR$/benchmark/startCirq100.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -944,9 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-          <folding>
-            <element signature="e#134#145#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -959,7 +705,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/beginTest/QTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="2040">
           <caret line="146" column="36" selection-start-line="146" selection-start-column="36" selection-end-line="146" selection-end-column="36" />
           <folding>
             <element signature="e#172#221#0" expanded="true" />
@@ -981,37 +727,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/4q-ber/startPyquil0.py">
+    <entry file="file://$PROJECT_DIR$/benchmark/5q-deutsch/startQiskit0.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        <state relative-caret-position="375">
+          <caret line="32" selection-start-line="32" selection-end-line="33" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/5q-deutsch/startQiskit0.py">
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/qiskit/circuit/quantumcircuit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="32" selection-start-line="32" selection-end-line="33" selection-end-column="38" />
+        <state relative-caret-position="113">
+          <caret line="1816" selection-start-line="1816" selection-end-line="1816" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/benchmark/4q-simon/startQiskit0.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-          <folding>
-            <element signature="e#36#105#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="196">
+          <caret line="83" column="75" selection-start-line="83" selection-start-column="75" selection-end-line="83" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmark/4q-ber/startPyquil0.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-914">
+          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmark/5q-seed/startPyquil0.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/benchmark/4q-simon/startCirq0.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-64">
-          <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-          <folding>
-            <element signature="e#131#142#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="601">
+          <caret line="68" column="69" selection-start-line="68" selection-start-column="69" selection-end-line="68" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmark/4q-simon/startPyquil0.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
         </state>
       </provider>
     </entry>
