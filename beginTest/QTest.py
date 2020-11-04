@@ -74,8 +74,9 @@ def backend_loop(out_num:int):
     """
 
 def calculate_results(out_num:int, directory:str):
-    wrong, diff, name = cR.compare("../"+directory, thershold=thershold,
-                                   qubit_number=q_number.check("../benchmark/" + "startCirq" + str(out_num) + ".py"))
+    qubit_number = q_number.check("../benchmark/" + "startCirq" + str(out_num) + ".py")
+    wrong, diff, name = cR.compare("../"+directory, thershold=thershold/qubit_number,
+                                   qubit_number=qubit_number)
 
     if len(wrong)==0:
         return diff
@@ -108,7 +109,7 @@ def collect_data(num:int,flag:int,directory:str):
 
 if __name__ == '__main__':
 
-    thershold = 0.1
+    thershold = 0.15
 
 
     n = 1000

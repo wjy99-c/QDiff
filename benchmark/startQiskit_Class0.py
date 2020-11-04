@@ -92,6 +92,7 @@ if __name__ == '__main__':
     backend = BasicAer.get_backend('statevector_simulator')
 
     info = execute(prog, backend=backend).result().get_statevector()
+    print(info)
     qubits = round(log2(len(info)))
     info = {
         np.binary_repr(i, qubits): round((info[i]*(info[i].conjugate())).real*1024,3)

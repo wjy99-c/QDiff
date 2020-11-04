@@ -4,7 +4,7 @@
 # @File    : grover.py
 
 # qubit number=4
-# total number=29
+# total number=31
 import cirq
 from typing import Optional
 import sys
@@ -18,14 +18,13 @@ class Opty(cirq.PointOptimizer):
             op: 'cirq.Operation'
     ) -> Optional[cirq.PointOptimizationSummary]:
         if (isinstance(op, cirq.ops.GateOperation) and isinstance(op.gate, cirq.CZPowGate)):
-            change_qubit = [input_qubits[8],input_qubits[9]]
             return cirq.PointOptimizationSummary(
                 clear_span=1,
-                clear_qubits=change_qubit,
+                clear_qubits=(cirq.GridQubit(2,1),cirq.GridQubit(1,2)),
                 new_operations=[
-                    cirq.CZ(*change_qubit),
-                    cirq.X.on_each(*change_qubit),
-                    cirq.X.on_each(*change_qubit),
+                    cirq.CZ(*op.qubits),
+                    cirq.X.on_each(*op.qubits),
+                    cirq.X.on_each(*op.qubits),
                 ]
             )
 
@@ -60,11 +59,10 @@ def make_grover_circuit(n:int, input_qubit, f):
     c = cirq.Circuit() # circuit begin
 
     c.append(cirq.H.on(input_qubit[0])) # number=1
-    c.append(cirq.X.on(input_qubit[0])) # number=22
     c.append(cirq.H.on(input_qubit[1])) # number=4
     c.append(cirq.H.on(input_qubit[1])) # number=21
     c.append(cirq.H.on(input_qubit[2])) # number=5
-    c.append(cirq.H.on(input_qubit[3])) # number=6
+    c.append(cirq.CZ.on(input_qubit[3],input_qubits[1])) # number=6
 
 
     repeat = floor(sqrt(2 ** n)*pi/4)
@@ -115,7 +113,6 @@ if __name__ == '__main__':
     circuit = make_grover_circuit(qubit_count, input_qubits, f)
 
     circuit_sample_count = 1024
-    print(circuit)
     Opty().optimize_circuit(circuit)
     print(circuit)
 
@@ -124,8 +121,8 @@ if __name__ == '__main__':
     result = simulator.run(circuit, repetitions=circuit_sample_count)
 
     frequencies = result.histogram(key='result', fold_func=bitstring)
-    writefile = open("../data/startCirq_pragma221.csv","w+")
+    #writefile = open("../data/startCirq_pragma246.csv","w+")
 
-    print(format(frequencies),file=writefile)
+    print(format(frequencies))#,file=writefile)
 
-    writefile.close()
+    #writefile.close()

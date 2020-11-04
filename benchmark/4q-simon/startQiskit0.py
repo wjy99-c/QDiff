@@ -58,6 +58,7 @@ def make_circuit(n:int) -> QuantumCircuit:
     prog = QuantumCircuit(input_qubit, classical)
     prog.h(input_qubit[1]) # number=1
     prog.h(input_qubit[0]) # number=2
+    prog.cnot(input_qubit[1],input_qubit[0]) # number=7
 
     oracle = make_oracle(n,[0,1])
     k=int(n/2)
