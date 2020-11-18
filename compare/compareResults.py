@@ -111,4 +111,4 @@ def compare(path:str, thershold:float, qubit_number:int):
     return wrong_out, max_diff, max_diff_name
 
 if __name__ == '__main__':
-    compare("../data/Wrong55",0.1,6)
+    print(compare("../data",0.1,1))

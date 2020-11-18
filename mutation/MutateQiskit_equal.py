@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 7/6/20 3:12 PM
-# @Author  : lingxiangxiang
+# Quantum transformation rules
 # @File    : MutateQiskit_equal.py
 
 import re
@@ -17,6 +17,13 @@ def cnot_to_hczh(codeline:str,number:int):
 
 def order_change(codeline1:str, codeline2:str):
     return codeline2, codeline1
+
+def cx_to_cnot(codeline:str,number:int):
+    if re.search('prog.cx',codeline) is not None:
+        new_codeline = re.sub("# number=(.*)[\n]", "", codeline)
+        return re.sub('cx','cnot',new_codeline)+"# number="+str(number)+"\n"
+    else:
+        raise Exception('No Cx gate for Cnot transformation')
 
 def swap_to_cnot(codeline:str,number:int):
     if re.search('prog.swap', codeline) is not None:

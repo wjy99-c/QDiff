@@ -11,11 +11,12 @@ from pyquil.pyqvm import PyQVM
 def make_circuit()-> Program:
 
     prog = Program() # circuit begin
-    ro = prog.declare('ro', memory_type='BIT', memory_size=2)
+    #ro = prog.declare('ro', memory_type='BIT', memory_size=2)
     prog += H(0) # number=1
     prog += X(0) # number=2
     prog += H(1) # number=4
-    prog += X(1).controlled(0) # number=3
+    #prog += X(1).controlled(0) # number=3
+    prog += CNOT(0,1)
     # circuit end
 
     return prog
@@ -27,5 +28,5 @@ if __name__ == '__main__':
     results = [0,0]
     meas_qubits = [0, 1]
 
-    qvm = PyQVM(n_qubits=2)
+    qvm = PyQVM(n_qubits=4)
     print(qvm.execute(p).wf_simulator.sample_bitstrings(10))

@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 10/11/20 2:40 PM
-# @Author  : lingxiangxiang
 # @File    : startPyquil0.py
 
 # qubit number=4

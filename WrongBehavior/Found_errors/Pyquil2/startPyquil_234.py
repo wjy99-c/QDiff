@@ -21,6 +21,7 @@ if __name__ == '__main__':
     p = make_circuit()
 
     qvm = get_qc('3q-qvm')
+
     try:
         qvm.run(p)
     except:

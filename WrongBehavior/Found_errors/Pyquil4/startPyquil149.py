@@ -2,7 +2,7 @@
 # total number=24
 import pyquil
 from pyquil.api import QVMConnection
-from pyquil import Program, get_qc
+from pyquil import Program, get_qc,list_quantum_computers
 from pyquil.gates import *
 import numpy as np
 from math import floor,sqrt,pi
@@ -85,7 +85,8 @@ if __name__ == '__main__':
     f = lambda rep: str(int(rep == x_bits))
 
     prog = make_circuit(4,f)
-    qvm = get_qc('4q-qvm')
+    print(list_quantum_computers(qpus=False))
+    qvm = get_qc('9q-square-qvm')
     qvm.compiler.client.rpc_timeout = 60
 
     results = qvm.run_and_measure(prog,1024)

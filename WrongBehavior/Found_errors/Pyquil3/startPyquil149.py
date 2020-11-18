@@ -15,7 +15,7 @@ def make_circuit()-> Program:
 
     prog = Program() # circuit begin
 
-    prog += H(0) # number=1
+    prog += X(0) # number=1
     prog += H(2) # number=2
 
     # circuit end
@@ -35,13 +35,14 @@ def summrise_results(bitstrings) -> dict:
 if __name__ == '__main__':
 
     prog = make_circuit()
-    qvm = get_qc('4q-qvm')
+    print(prog)
+    qvm = get_qc('3q-qvm')
     qvm.compiler.client.rpc_timeout = 60
 
     results = qvm.run_and_measure(prog,1024)
     bitstrings = np.vstack([results[i] for i in qvm.qubits()]).T
     bitstrings = [''.join(map(str, l)) for l in bitstrings]
-    writefile = open("../data/startPyquil149.csv","w")
-    print(summrise_results(bitstrings),file=writefile)
-    writefile.close()
+    #writefile = open("../data/startPyquil149.csv","w")
+    print(summrise_results(bitstrings))#,file=writefile)
+    #writefile.close()
 

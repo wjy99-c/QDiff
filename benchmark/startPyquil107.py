@@ -1,71 +1,32 @@
-# qubit number=4
-# total number=28
+# qubit number=6
+# total number=15
 import pyquil
-from pyquil.api import QVMConnection
+from pyquil.api import local_forest_runtime, QVMConnection
 from pyquil import Program, get_qc
 from pyquil.gates import *
 import numpy as np
-from math import floor,sqrt,pi
-from functools import reduce
 
 conn = QVMConnection()
 
-def matrix_controlled_z(n: int, y: str) -> np.ndarray:
-    # implement Z_f
-    # or controlled Z gate with X flip (placing CZ is arbitrary)
-    I = np.identity(2 ** n)
-    v = int(y, 2)
-    I[v, v] = -1
-    return I
-
-def build_G(n:int, f):
-    Zf = []
-    for i in range(2 ** n):
-        rep = np.binary_repr(i, n)
-        if f(rep) == "1":
-            Zf.append(matrix_controlled_z(n, rep))
-
-    # O_f^\pm
-    Zf = reduce(np.multiply, Zf, np.identity(2 ** n))
-
-    return Zf
-
-def make_circuit(n:int,f)-> Program:
+def make_circuit()-> Program:
 
     prog = Program() # circuit begin
 
-    prog += H(0) # number=1
+    prog += Y(0) # number=3
     prog += H(1) # number=4
-    prog += H(1) # number=21
-    prog += H(2) # number=5
-    prog += H(3) # number=6
-    repeat = floor(sqrt(2 ** n) * pi / 4)
+    prog += X(2) # number=5
+    prog += X(3) # number=6
+    prog += H(4) # number=7
+    prog += H(5) # number=8
+    prog += CNOT(1,3) # number=1
+    prog += X(1) # number=12
+    prog += CNOT(1,2) # number=2
+    prog += CNOT(4,5) # number=9
 
-    for i in range(repeat):
-        prog.defgate("Zf",build_G(n,f))
-        prog.inst(("Zf", *[i for i in range(n)]))
-        prog += H(0)  # number=3
-        prog += H(1)  # number=2
-        prog += H(2)  # number=7
-        prog += H(3)  # number=8
-
-        prog += X(0)  # number=9
-        prog += X(1)  # number=10
-        prog += X(2)  # number=11
-        prog += X(3)  # number=12
-
-        prog += Z(0).controlled([1, 2, 3])
-        prog += X(0)  # number=13
-        prog += X(1)  # number=14
-        prog += X(2)  # number=15
-        prog += X(3)  # number=16
-
-        prog += H(0)  # number=17
-        prog += H(1)  # number=18
-        prog += H(2)  # number=19
-        prog += H(3)  # number=20
-
-
+    prog += X(2) # number=10
+    prog += X(2) # number=11
+    prog += X(2) # number=13
+    prog += X(2) # number=14
     # circuit end
 
     return prog
@@ -81,13 +42,8 @@ def summrise_results(bitstrings) -> dict:
     return d
 
 if __name__ == '__main__':
-
-    x_bits = "1111"
-    f = lambda rep: str(int(rep == x_bits))
-
-    prog = make_circuit(4,f)
-    qvm = get_qc('4q-qvm')
-    qvm.compiler.client.rpc_timeout = 60
+    prog = make_circuit()
+    qvm = get_qc('6q-qvm')
 
     results = qvm.run_and_measure(prog,1024)
     bitstrings = np.vstack([results[i] for i in qvm.qubits()]).T

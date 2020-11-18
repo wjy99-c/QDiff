@@ -92,7 +92,7 @@ def bitstring(bits):
 
 if __name__ == '__main__':
 
-    #length of the grid
+    #length of the grid ,10, 5
     lenght = 3
     #Define Qubits on the grid
     qubits = [cirq.GridQubit(i,j) for i in range(lenght) for j in range(lenght)]
@@ -108,18 +108,16 @@ if __name__ == '__main__':
     alpha = sympy.Symbol('alpha')
     beta = sympy.Symbol('beta')
     gamma = sympy.Symbol('gamma')
-    circuit.append(one_step(h,jc,jr,alpha,beta,gamma))
+    circuit.append(one_step(h,jc,jr,0.1,0.3,gamma))
     circuit.append(cirq.measure(*qubits,key='x'))
-    resolver = cirq.ParamResolver({'alpha':0.1,'beta':0.3,'gamma':0.7})
-    resolved_circuit = cirq.resolve_parameters(circuit,resolver)
+    #resolver = cirq.ParamResolver({'alpha':0.1,'beta':0.3,'gamma':0.7})
+    #resolved_circuit = cirq.resolve_parameters(circuit,resolver)
     simulator = cirq.Simulator()
     print(circuit)
 
-    sweep = (cirq.Linspace(key='alpha', start=0.1, stop=0.1, length=1)
-             * cirq.Linspace(key='beta', start=0.3, stop=1.0, length=8)
-             * cirq.Linspace(key='gamma', start=0.1, stop=1, length=10))
+    sweep = (cirq.Linspace(key='gamma', start=0.7, stop=3, length=30))
 
-    results = simulator.run_sweep(circuit, params=sweep, repetitions=100)
+    results = simulator.run_sweep(circuit, params=sweep, repetitions=1000)
     for result in results:
         frequencies = result.histogram(key='x',fold_func=bitstring)
         print(format(frequencies))

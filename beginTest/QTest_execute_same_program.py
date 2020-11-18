@@ -26,7 +26,7 @@ def execution(pyfile_name:str):
 
 
 def backend_loop(out_num:int):
-    print("Executing Simulator" + str(out_num))
+    #print("Executing Simulator" + str(out_num))
     print("Executing Simulator" + str(out_num),file=logfile)
 
     #execution('../benchmark/' + "startCirq" + str(out_num) + ".py")
@@ -70,10 +70,10 @@ def collect_data(num:int,flag:int,directory:str):
 
 if __name__ == '__main__':
 
-    thershold = 0.1
+    thershold = 0.15
 
 
-    n = 1000
+    n = 100
     tail = 1
     seed = 0
     max_now = 0
@@ -86,7 +86,7 @@ if __name__ == '__main__':
         j = 0
 
         print("Generating Same Program at number"+str(tail),file=logfile)
-        print("Generating Same Program at number" + str(tail))
+        #print("Generating Same Program at number" + str(tail))
         text_list.append(tail)
         diff_m.same(text_list[seed],tail)
         tail = tail +1
@@ -95,24 +95,33 @@ if __name__ == '__main__':
         backend_loop(text_list[seed])
         flag_see_wrong = 0
 
-        while j < 10:
+        while j < 100:
 
             j = j + 1
             print("now we are at round:", seed,file=logfile)
-            print("now we are at round:", seed)
+            #print("now we are at round:", seed)
             diff_m.same(text_list[seed], tail)
             backend_loop(tail)
-            diff = calculate_results(tail,"data")
-            print("K-S Diff:", diff,file=logfile)
-            print("K-S Diff:", diff)
-            if diff>thershold:
-                flag_see_wrong = 1
+            #diff = calculate_results(tail,"data")
+            #if diff>thershold:
+            #    flag_see_wrong = 1
 
-            if diff > max_now:
-                max_now = diff
-                text_list.append(tail)
+            #if diff > max_now:
+            #    max_now = diff
+            #    text_list.append(tail)
+
+            #print("K-S Diff:", max_now, file=logfile)
+            #print("K-S Diff:", max_now)
 
             tail = tail + 1
+
+        diff = calculate_results(tail-1, "data")
+        if diff > max_now:
+            max_now = diff
+            text_list.append(tail)
+
+        print("K-S Diff:", max_now)
+        print("K-S Diff:", max_now, file=logfile)
 
         collect_data(seed,flag_see_wrong,"data")
         #collect_data(seed,flag_see_wrong,"data/reverse")

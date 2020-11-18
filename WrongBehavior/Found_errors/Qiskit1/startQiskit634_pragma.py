@@ -2,7 +2,7 @@
 # total number=25
 
 
-from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
+from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister,transpile
 from qiskit import BasicAer, execute
 from pprint import pprint
 from math import log2,floor, sqrt, pi
@@ -66,9 +66,12 @@ if __name__ == '__main__':
     backend = BasicAer.get_backend('qasm_simulator')
 
     coupling_map = [[1, 0], [2, 1]]
-    basis_gate = ['cx', 'u3', 'u1', 'u2']
-    info = execute(prog, backend=backend, coupling_map=coupling_map,shots=1024, basis_gates=basis_gate, optimization_level=3).result().get_counts()
+    basis_gate = ['cx', 'u3', 'u2']
+    optimize_0 = transpile(circuits=prog,backend=backend,coupling_map=coupling_map,basis_gates=basis_gate,optimization_level=1)
+    print(optimize_0)
+    optimize_3 = transpile(circuits=prog, backend=backend,coupling_map=coupling_map, basis_gates=basis_gate, optimization_level=3)
+    print(optimize_0)
 
-    writefile = open("../data/startQiskit_pragma634.csv","w")
-    pprint(info,writefile)
-    writefile.close()
+    #writefile = open("../data/startQiskit_pragma634.csv","w")
+    #pprint(info,writefile)
+    #writefile.close()

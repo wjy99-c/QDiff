@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 6/26/20 10:09 PM
-# @Author  : lingxiangxiang
+# Quantum transformation rules
 # @File    : MutateCirq_equal.py
 
 import numpy as np

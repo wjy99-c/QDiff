@@ -102,13 +102,16 @@ def generate_same_delete(operation_number:int, address_in:str, address_out:str):
 def mutate_add(tab:str, qubit_number:int, total_number:int):
 
 
-    operation = random.randint(0,5)
+
+    if qubit_number==1:
+        start_qubit = 0
+    else:
+        start_qubit = 1
+
+    operation = random.randint(0, 5-(1-start_qubit))
 
     if  operation<4:
-        if operation==0:
-            qubit_on = random.randint(1,qubit_number-1)
-        else:
-            qubit_on = random.randint(0,qubit_number-1)
+        qubit_on = random.randint(start_qubit,qubit_number-1)
         qiskit_line = tab+gate_set_qiskit[operation]+"(input_qubit["+str(qubit_on)+"]) # number="+str(total_number)
         pyquil_line = tab + gate_set_pyquil[operation] + str(qubit_on) + ") # number=" + str(total_number)
         cirq_line = tab + "c.append(" + gate_set_cirq[operation] + ".on(input_qubit[" + str(qubit_on) + \
@@ -117,7 +120,7 @@ def mutate_add(tab:str, qubit_number:int, total_number:int):
     elif operation==4:
         rad = random.randint(0,2000)/1000
         rad = (rad-1) * pi
-        qubit_on = random.randint(1, qubit_number - 1)
+        qubit_on = random.randint(start_qubit, qubit_number - 1)
         qiskit_line = tab + gate_set_qiskit[operation] + "("+str(rad)+",input_qubit[" + str(qubit_on) + "]) # number=" + str(
             total_number)
         pyquil_line = tab + gate_set_pyquil[operation] +str(rad)+","+ str(qubit_on) + ") # number=" + str(total_number)
@@ -162,6 +165,7 @@ def mutate_start (address_in : str, seed:int, write:int):
     line = readfile.readline()
     qubit_number = 0
     total_number = 0
+    random_number = 1
     while line:
         if figure_out_tab(line)!="":
             tab = figure_out_tab(line)
@@ -170,6 +174,7 @@ def mutate_start (address_in : str, seed:int, write:int):
 
         if total_operation_id.search(line):
             total_number = int(line[total_operation_id.search(line).span()[1]:])
+            random_number=random.randint(1,total_number-1)
 
         if operation_id.search(line):
             flag = int(line[operation_id.search(line).span()[1]:])
@@ -177,7 +182,7 @@ def mutate_start (address_in : str, seed:int, write:int):
         if circuit_patter_end.search(line):
             flag = 0
 
-        if flag > 0:
+        if flag == random_number:
             if line!="\n":
                 tab = figure_out_tab(line)
             i = random.randint(1,2)
@@ -201,10 +206,6 @@ def mutate_start (address_in : str, seed:int, write:int):
                 generate_same_delete(flag,cirq_address_in,"../benchmark/startCirq"+str(write)+".py")
 
                 return 1
-
-
-        if circuit_patter.search(line):
-            flag = 1
 
         line = readfile.readline()
 

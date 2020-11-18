@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 6/29/20 3:00 PM
-# @Author  : lingxiangxiang
 # @File    : acrossbackendCirq.py
 
 import transitionBackend.Cirqbackend as Cb

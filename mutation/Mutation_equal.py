@@ -34,7 +34,7 @@ def generate_trival(address_in:str, address_out:str, total_number:int,platform:s
     print("write at:", address_out)
 
 
-    equal_change = ["X","CNOT","Y","SWAP"]
+    equal_change = ["X","Y","SWAP","CNOT"]
     pattern = equal_change[mutation_number]
 
 
@@ -218,7 +218,7 @@ def mutate(seed:int, write:int):
             flag = int(line[operation_id.search(line).span()[1]:len(line)-1])
 
         for pattern in patterns:
-            if (patterns[pattern].search(line) is not None) and (total_operation_id.search(line) is not None):
+            if (patterns[pattern].search(line) is not None) and (total_operation_id.search(line) is not None) and (qubit_number>1):
                 if random.randint(0,5)>3 :
 
                     readfile.close()
@@ -230,6 +230,8 @@ def mutate(seed:int, write:int):
         if circuit_patter_end.search(line) is not None:
             mutate_qubit_number = random.randint(0,qubit_number-1) # the qubit that mutate operation on
             mutation_number = random.randint(0,3)  #right now we have four trivial mutation way
+            if qubit_number==1:
+                mutation_number = random.randint(0,1)
             generate_trival(cirq_address_in,cirq_address_out,total_number,"Cirq",mutate_qubit_number,mutation_number)
             generate_trival(pyquil_address_in,pyquil_address_out,total_number,"Pyquil",mutate_qubit_number,mutation_number)
             generate_trival(qiskit_address_in,qiskit_address_out,total_number,"Qiskit",mutate_qubit_number,mutation_number)

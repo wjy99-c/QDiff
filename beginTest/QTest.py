@@ -4,6 +4,10 @@
 # @Author  : lingxiangxiang
 # @File    : QTest.py
 
+Framework=['Cirq','Qiskit','Pyquil']
+Cirq_t = [0.118,0.079,0.060,0.044,0.030,0.025]
+Qiskit_t = [0.090,0.079,0.057,0.046,0.029,0.026]
+Pyquil_t = [0.102,0.084,0.062,0.042,0.028,0.023]
 logfile = open("../testing record.txt","w+")
 import transitionBackend.acrossbackendCirq as acC
 import transitionBackend.acrossbackendPyquil as acP
@@ -17,12 +21,13 @@ import beginTest.check_qubit_number as q_number
 import re,random
 import mutation.Mutation_must_diff as must_diff_m
 
-def execution(pyfile_name:str):
+def execution(pyfile_name:str,reason:str):
     try:
         os.system('python3.7 ' + pyfile_name)
     except Exception as e:
         print("OS error:" + str(e))
         print("Save document as:" + pyfile_name)
+        print("Bugs in" + reason)
 
 
 
@@ -30,28 +35,28 @@ def backend_loop(out_num:int):
     print("Executing Simulator" + str(out_num))
     print("Executing Simulator" + str(out_num),file=logfile)
 
-    execution('../benchmark/' + "startCirq" + str(out_num) + ".py")
-    execution('../benchmark/' + "startPyquil" + str(out_num) + ".py")
-    execution('../benchmark/' + "startQiskit" + str(out_num) + ".py")
+    #execution('../benchmark/' + "startCirq" + str(out_num) + ".py","quantum-simulator")
+    #execution('../benchmark/' + "startPyquil" + str(out_num) + ".py","quantum-simulator")
+    #execution('../benchmark/' + "startQiskit" + str(out_num) + ".py","quantum-simulator")
 
 
     cirqP1, cirqP2 = acC.generate("../benchmark/" + "startCirq" + str(out_num) + ".py", "startCirq" + str(out_num) + ".py", out_num)
-    pyquilP1, pyquilP2 = acP.generate("../benchmark/" + "startPyquil" + str(out_num) + ".py", "startPyquil" + str(out_num) + ".py", out_num)
+    #pyquilP1, pyquilP2 = acP.generate("../benchmark/" + "startPyquil" + str(out_num) + ".py", "startPyquil" + str(out_num) + ".py", out_num)
     qiskitP1, qiskitP2 = acQ.generate("../benchmark/" + "startQiskit" + str(out_num) + ".py", "startQiskit" + str(out_num) + ".py", out_num)
 
-    print("Executing Pragma" + str(out_num))
-    print("Executing Pragma" + str(out_num),file=logfile)
+    print("Executing compiler setting" + str(out_num))
+    print("Executing compiler setting" + str(out_num),file=logfile)
 
-    execution('../benchmark/' + cirqP1)
-    execution('../benchmark/' + pyquilP1)
-    execution('../benchmark/' + qiskitP1)
+    #execution('../benchmark/' + cirqP1,"compilerSetting")
+    #execution('../benchmark/' + pyquilP1,"compilerSetting")
+    execution('../benchmark/' + qiskitP1,"compilerSetting")
 
     print("Executing Classical" + str(out_num))
     print("Executing Classical" + str(out_num),file=logfile)
 
-    execution('../benchmark/' + cirqP2)
-    execution('../benchmark/' + pyquilP2)
-    execution('../benchmark/' + qiskitP2)
+    #execution('../benchmark/' + cirqP2,"state-vector")
+    #execution('../benchmark/' + pyquilP2,"state-vector")
+    execution('../benchmark/' + qiskitP2,"state-vector")
 
     """
     print("Executing reversion version of each program")
@@ -73,9 +78,8 @@ def backend_loop(out_num:int):
     execution(reverse_m.generate_reverse('../benchmark/' + qiskitP2, '../benchmark/reverse/' + qiskitP2))
     """
 
-def calculate_results(out_num:int, directory:str):
-    qubit_number = q_number.check("../benchmark/" + "startCirq" + str(out_num) + ".py")
-    wrong, diff, name = cR.compare("../"+directory, thershold=thershold/qubit_number,
+def calculate_results(directory:str,qubit_number:int):
+    wrong, diff, name = cR.compare("../"+directory, thershold=thershold_const/qubit_number,
                                    qubit_number=qubit_number)
 
     if len(wrong)==0:
@@ -85,6 +89,7 @@ def calculate_results(out_num:int, directory:str):
         print("Wrong Output Detect:", wrong,file=logfile)
         print("Name:",name)
         print("Name:", name,file=logfile)
+        print("Bugs in compiler")
         return diff
 
 def collect_data(num:int,flag:int,directory:str):
@@ -109,10 +114,10 @@ def collect_data(num:int,flag:int,directory:str):
 
 if __name__ == '__main__':
 
-    thershold = 0.15
+    thershold_const= Cirq_t[1]
 
 
-    n = 1000
+    n = 100
     tail = 1
     seed = 0
     max_now = 0
@@ -141,12 +146,14 @@ if __name__ == '__main__':
             equal_m.mutate(text_list[seed], tail)
             print("now we are at round:", seed,file=logfile)
             print("now we are at round:", seed)
-            backend_loop(tail)
+            backend_loop(tail) # execute programs on each backends
+
             #diff = max(calculate_results(tail,"data"),calculate_results(tail,"data/reverse"))
-            diff = calculate_results(tail,"data")
+            qubit_number = q_number.check("../benchmark/" + "startCirq" + str(tail) + ".py")
+            diff = calculate_results("data",qubit_number) # calculate the K-S statics
             print("K-S Diff:", diff,file=logfile)
             print("K-S Diff:", diff)
-            if diff > thershold:
+            if diff > thershold_const/qubit_number:
                 flag_see_wrong = 1
 
             if diff > max_now:
@@ -155,11 +162,12 @@ if __name__ == '__main__':
 
             tail = tail + 1
 
-        must_diff_m.mutate(text_list[seed],tail,"Cirq")   #line 155-162, invoke must-different mutation
+        qubit_number = q_number.check("../benchmark/" + "startCirq" + str(seed) + ".py") #invoke must-different mutation
+        must_diff_m.mutate(text_list[seed],tail,"Cirq")
         backend_loop(tail)
-        diff = calculate_results(tail,"data")
+        diff = calculate_results("data",qubit_number)
         tail = tail+1
-        if diff > thershold:
+        if diff > thershold_const/qubit_number:
             print("Must different mutation makes different!")
             print("Must different mutation makes different!",file=logfile)
         else:

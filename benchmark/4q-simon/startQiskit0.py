@@ -1,7 +1,6 @@
 # qubit number=5
-# total number=12
+# total number=6
 
-#undone
 
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 from qiskit import BasicAer, execute
@@ -58,7 +57,8 @@ def make_circuit(n:int) -> QuantumCircuit:
     prog = QuantumCircuit(input_qubit, classical)
     prog.h(input_qubit[1]) # number=1
     prog.h(input_qubit[0]) # number=2
-    prog.cnot(input_qubit[1],input_qubit[0]) # number=7
+    prog.cx(input_qubit[1],input_qubit[0]) # number=5
+    prog.cnot(input_qubit[1],input_qubit[0])
 
     oracle = make_oracle(n,[0,1])
     k=int(n/2)
@@ -84,6 +84,6 @@ if __name__ == '__main__':
 
     info = execute(prog, backend=backend, shots=1024).result().get_counts()
 
-    writefile = open("../../data/startQiskit0.csv","w")
-    pprint(info,writefile)
-    writefile.close()
+    #writefile = open("../../data/startQiskit0.csv","w")
+    pprint(info)#,writefile)
+    #writefile.close()

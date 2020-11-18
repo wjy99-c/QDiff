@@ -1,4 +1,4 @@
-# qubit number=4
+# qubit number=6
 # total number=28
 
 
@@ -7,6 +7,7 @@ from qiskit import BasicAer, execute
 from pprint import pprint
 from math import log2,floor, sqrt, pi
 import numpy as np
+import datetime
 
 
 def build_oracle(n: int, f) -> QuantumCircuit:
@@ -41,18 +42,19 @@ def make_circuit(n:int,f) -> QuantumCircuit:
     input_qubit = QuantumRegister(n,"qc")
     classical = ClassicalRegister(n, "qm")
     prog = QuantumCircuit(input_qubit, classical)
-    prog.h(input_qubit[0]) # number=1
+    prog.h(input_qubit[0]) # number=3
     prog.h(input_qubit[1]) # number=4
-    prog.h(input_qubit[1]) # number=21
     prog.h(input_qubit[2]) # number=5
     prog.h(input_qubit[3]) # number=6
+    prog.h(input_qubit[4])  # number=21
+    prog.h(input_qubit[5])  # number=22
 
     Zf = build_oracle(n, f)
 
     repeat = floor(sqrt(2 ** n) * pi / 4)
     for i in range(repeat):
         prog.append(Zf.to_gate(), [input_qubit[i] for i in range(n)])
-        prog.h(input_qubit[0])  # number=3
+        prog.h(input_qubit[0])  # number=1
         prog.h(input_qubit[1])  # number=2
         prog.h(input_qubit[2])  # number=7
         prog.h(input_qubit[3])  # number=8
@@ -62,6 +64,7 @@ def make_circuit(n:int,f) -> QuantumCircuit:
         prog.x(input_qubit[1])  # number=10
         prog.x(input_qubit[2])  # number=11
         prog.x(input_qubit[3])  # number=12
+        prog.cx(input_qubit[5],input_qubit[1]) # number=23
 
         if n>=2:
             prog.mcu1(pi,input_qubit[1:],input_qubit[0])
@@ -78,6 +81,10 @@ def make_circuit(n:int,f) -> QuantumCircuit:
         prog.h(input_qubit[3])  # number=20
 
 
+    prog.x(input_qubit[3]) # number=24
+    prog.x(input_qubit[3]) # number=25
+    prog.cx(input_qubit[2],input_qubit[0]) # number=26
+    prog.cx(input_qubit[2],input_qubit[0]) # number=27
     # circuit end
 
     for i in range(n):
@@ -89,9 +96,11 @@ def make_circuit(n:int,f) -> QuantumCircuit:
 
 
 if __name__ == '__main__':
-    key = "1111"
+    #start = datetime.datetime.now()
+    #print(start)
+    key = "111111"
     f = lambda rep: str(int(rep == key))
-    prog = make_circuit(4,f)
+    prog = make_circuit(6,f)
     backend = BasicAer.get_backend('qasm_simulator')
 
     info = execute(prog, backend=backend, shots=1024).result().get_counts()
@@ -99,3 +108,6 @@ if __name__ == '__main__':
     writefile = open("../data/startQiskit105.csv","w")
     pprint(info,writefile)
     writefile.close()
+    #end = datetime.datetime.now()
+    #print(end)
+    #print((end-start).microseconds)

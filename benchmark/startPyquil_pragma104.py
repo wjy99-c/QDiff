@@ -1,4 +1,4 @@
-# qubit number=4
+# qubit number=6
 # total number=28
 import pyquil
 from pyquil.api import QVMConnection
@@ -7,6 +7,8 @@ from pyquil.gates import *
 import numpy as np
 from math import floor,sqrt,pi
 from functools import reduce
+import datetime
+import ast
 
 conn = QVMConnection()
 
@@ -32,19 +34,20 @@ def build_G(n:int, f):
 
 def make_circuit(n:int,f)-> Program:
 
-    prog = Program('PRAGMA INITIAL_REWIRING "NAIVE"') # circuit begin
+    prog = Program('PRAGMA INITIAL_REWIRING "PARTIAL"') # circuit begin
 
-    prog += H(0) # number=1
+    prog += H(0) # number=3
     prog += H(1) # number=4
-    prog += H(1) # number=21
     prog += H(2) # number=5
     prog += H(3) # number=6
+    prog += H(4)  # number=21
+    prog += H(5)  # number=22
     repeat = floor(sqrt(2 ** n) * pi / 4)
 
     for i in range(repeat):
         prog.defgate("Zf",build_G(n,f))
         prog.inst(("Zf", *[i for i in range(n)]))
-        prog += H(0)  # number=3
+        prog += H(0)  # number=1
         prog += H(1)  # number=2
         prog += H(2)  # number=7
         prog += H(3)  # number=8
@@ -53,6 +56,7 @@ def make_circuit(n:int,f)-> Program:
         prog += X(1)  # number=10
         prog += X(2)  # number=11
         prog += X(3)  # number=12
+        prog += CNOT(5,1) # number=23
 
         prog += Z(0).controlled([1, 2, 3])
         prog += X(0)  # number=13
@@ -66,6 +70,10 @@ def make_circuit(n:int,f)-> Program:
         prog += H(3)  # number=20
 
 
+    prog += X(3) # number=24
+    prog += X(3) # number=25
+    prog += CNOT(1,0) # number=26
+    prog += CNOT(1,0) # number=27
     # circuit end
 
     return prog
@@ -82,16 +90,20 @@ def summrise_results(bitstrings) -> dict:
 
 if __name__ == '__main__':
 
-    x_bits = "1111"
+
+    x_bits = "111111"
     f = lambda rep: str(int(rep == x_bits))
 
-    prog = make_circuit(4,f)
-    qvm = get_qc('4q-qvm')
+    prog = make_circuit(6,f)
+    qvm = get_qc('6q-qvm')
     qvm.compiler.client.rpc_timeout = 60
 
     results = qvm.run_and_measure(prog,1024)
     bitstrings = np.vstack([results[i] for i in qvm.qubits()]).T
     bitstrings = [''.join(map(str, l)) for l in bitstrings]
+    end = datetime.datetime.now()
+
+
     writefile = open("../data/startPyquil_pragma104.csv","w")
     print(summrise_results(bitstrings),file=writefile)
     writefile.close()
