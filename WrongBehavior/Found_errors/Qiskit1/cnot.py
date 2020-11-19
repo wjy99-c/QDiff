@@ -57,11 +57,8 @@ if __name__ == '__main__':
     prog = make_circuit(3)
     backend = BasicAer.get_backend('qasm_simulator')
 
-    coupling_map = [[1, 0], [2, 1]]
-    basis_gate = ['u1','x','h']
-    optimize_0 = transpile(circuits=prog,backend=backend,coupling_map=coupling_map,basis_gates=basis_gate,optimization_level=1)
-    print(optimize_0)
-    info = execute(prog, backend=backend, coupling_map=coupling_map,shots=1024, basis_gates=basis_gate, optimization_level=3).result().get_counts()
+
+    info = execute(prog, backend=backend, shots=1024).result().get_counts()
 
     #writefile = open("../data/startQiskit_pragma634.csv","w")
     #pprint(info,writefile)
