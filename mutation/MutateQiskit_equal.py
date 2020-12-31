@@ -4,6 +4,9 @@
 # Quantum transformation rules
 # @File    : MutateQiskit_equal.py
 
+#TODO: test transformation
+
+
 import re
 
 def cnot_to_hczh(codeline:str,number:int):
@@ -13,7 +16,16 @@ def cnot_to_hczh(codeline:str,number:int):
                re.sub('cx', "cz", new_codeline)+"# number="+str(number+1)+"\n"+\
                re.sub('cx[(](.*)[,]',"h(", new_codeline)+"# number="+str(number+2)+"\n"
     else:
-        raise Exception('No CNOT gate for Swap transformation')
+        raise Exception('No CNOT gate for CZ transformation')
+
+def cz_to_hcnoth(codeline:str,number:int):
+    if re.search('prog.cz', codeline) is not None:
+        new_codeline = re.sub("# number=(.*)[\n]", "", codeline)
+        return re.sub('cz[(](.*)[,]', "h(", new_codeline)+"# number="+str(number)+"\n"+\
+               re.sub('cz', "cx", new_codeline)+"# number="+str(number+1)+"\n"+\
+               re.sub('cz[(](.*)[,]',"h(", new_codeline)+"# number="+str(number+2)+"\n"
+    else:
+        raise Exception('No CZ gate for CNOT transformation')
 
 def order_change(codeline1:str, codeline2:str):
     return codeline2, codeline1
@@ -80,3 +92,32 @@ def two_CNOT(tab:str, qubit_number:int, number:int):
 def two_SWAP(tab:str, qubit_number:int, number:int):
     return tab + "prog.swap(input_qubit[" + str(qubit_number) + "],input_qubit[0]) # number=" + str(number) + "\n" + \
            tab + "prog.swap(input_qubit[" + str(qubit_number) + "],input_qubit[0]) # number=" + str(number + 1) + "\n"
+
+def S_to_T(codeline:str,number:int):
+    if re.search('prog.s',codeline) is not None:
+        new_codeline = re.sub("# number=(.*)[\n]", "", codeline)
+        codeline = re.sub(r's',"t",new_codeline)+"# number="+str(number)+"\n"+\
+                   re.sub(r's',"t",new_codeline)+"# number="+str(number+1)+"\n"
+        return codeline
+    else:
+        raise Exception('No S gate for T transformation')
+
+def Z_to_S(codeline:str,number:int):
+    if re.search('prog.z',codeline) is not None:
+        new_codeline = re.sub("# number=(.*)[\n]", "", codeline)
+        codeline = re.sub(r'z',"s",new_codeline)+"# number="+str(number)+"\n"+\
+                   re.sub(r'z',"s",new_codeline)+"# number="+str(number+1)+"\n"
+        return codeline
+    else:
+        raise Exception('No Z gate for S transformation')
+
+def X_to_HSSH(codeline:str,number:int):
+    if re.search('prog.x',codeline) is not None:
+        new_codeline = re.sub("# number=(.*)[\n]", "", codeline)
+        codeline = re.sub(r'x',"h",new_codeline)+"# number="+str(number)+"\n"+\
+                   re.sub(r'x',"s",new_codeline)+"# number="+str(number+1)+"\n"+ \
+                   re.sub(r'x', "s", new_codeline)+"# number="+str(number+2)+"\n" + \
+                   re.sub(r'x', "h", new_codeline) + "# number=" + str(number + 3) + "\n"
+        return codeline
+    else:
+        raise Exception('No X gate for HSSH transformation')

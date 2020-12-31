@@ -59,6 +59,7 @@ if __name__ == '__main__':
 
 
     info = execute(prog, backend=backend, shots=1024).result().get_counts()
+    print(info)
 
     #writefile = open("../data/startQiskit_pragma634.csv","w")
     #pprint(info,writefile)
