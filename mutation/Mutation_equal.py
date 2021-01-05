@@ -8,9 +8,9 @@
 
 import re
 import random
-import mutation.MutateCirq_equal as MC
-import mutation.MutateQiskit_equal as MQ
-import mutation.MutatePyQuil_equal as MP
+import mutation.gateCirq_EqualT as MC
+import mutation.gateQiskit_EqualT as MQ
+import mutation.gatePyQuil_EqualT as MP
 
 def figure_out_tab (line:str):
     i = 0
