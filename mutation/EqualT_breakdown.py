@@ -7,7 +7,7 @@
 import re
 import mutation.Mutation_equal as MET
 
-#TODO:perhaps we need reshape -> get the list, not write the program -> can't
+#TODO: undone
 
 def breakdown(operation_number:int, address_in:str, address_out:str):
     operation_find = re.compile("# number=" + str(operation_number) + "\n")

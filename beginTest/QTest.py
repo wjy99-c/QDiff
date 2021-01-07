@@ -13,7 +13,7 @@ import transitionBackend.acrossbackendCirq as acC
 import transitionBackend.acrossbackendPyquil as acP
 import transitionBackend.acrossbackendQiskit as acQ
 import os,shutil
-import compare.compareResults as cR
+import compare.KScompare as cR
 import mutation.Mutation_diff as diff_m
 import mutation.Mutation_equal as equal_m
 import mutation.Mutation_shadow as reverse_m
