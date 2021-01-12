@@ -16,7 +16,7 @@ import os,shutil
 import compare.KScompare as cR
 import mutation.Mutation_diff as diff_m
 import mutation.Mutation_equal as equal_m
-import mutation.Mutation_shadow as reverse_m
+import mutation.Mutation_reverse as reverse_m
 import beginTest.check_qubit_number as q_number
 import re,random
 import mutation.Mutation_must_diff as must_diff_m
@@ -42,7 +42,7 @@ def backend_loop(out_num:int):
 
     cirqP1, cirqP2 = acC.generate("../benchmark/" + "startCirq" + str(out_num) + ".py", "startCirq" + str(out_num) + ".py", out_num)
     #pyquilP1, pyquilP2 = acP.generate("../benchmark/" + "startPyquil" + str(out_num) + ".py", "startPyquil" + str(out_num) + ".py", out_num)
-    qiskitP1, qiskitP2 = acQ.generate("../benchmark/" + "startQiskit" + str(out_num) + ".py", "startQiskit" + str(out_num) + ".py", out_num)
+    qiskitP1, qiskitP2, qiskitP3 = acQ.generate("../benchmark/" + "startQiskit" + str(out_num) + ".py", "startQiskit" + str(out_num) + ".py", out_num)
 
     print("Executing compiler setting" + str(out_num))
     print("Executing compiler setting" + str(out_num),file=logfile)
@@ -57,6 +57,13 @@ def backend_loop(out_num:int):
     #execution('../benchmark/' + cirqP2,"state-vector")
     #execution('../benchmark/' + pyquilP2,"state-vector")
     execution('../benchmark/' + qiskitP2,"state-vector")
+
+    print("Executing quantum computer" + str(out_num))
+    print("Executing quantum computer" + str(out_num),file=logfile)
+
+    # execution('../benchmark/' + cirqP3,"state-vector")
+    # execution('../benchmark/' + pyquilP3,"state-vector")
+    execution('../benchmark/' + qiskitP3, "quantum-computer")
 
     """
     print("Executing reversion version of each program")
@@ -114,8 +121,8 @@ def collect_data(num:int,flag:int,directory:str):
 
 if __name__ == '__main__':
 
-    thershold_const= Cirq_t[1]
-
+    #thershold_const= Cirq_t[1]
+    thershold_const = 4
 
     n = 100
     tail = 1

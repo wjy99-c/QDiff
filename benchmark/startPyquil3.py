@@ -14,8 +14,8 @@ def make_circuit()-> Program:
 
     prog += Y(0) # number=1
 
-    prog += X(0) # number=3
-    prog += X(0) # number=4
+    prog += Y(0) # number=3
+    prog += Y(0) # number=4
     # circuit end
 
     return prog

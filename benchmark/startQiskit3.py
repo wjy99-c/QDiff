@@ -17,8 +17,8 @@ def make_circuit(n:int) -> QuantumCircuit:
     prog.h(input_qubit[0]) # number=1
     prog.h(input_qubit[1]) # number=2
 
-    prog.x(input_qubit[0]) # number=3
-    prog.x(input_qubit[0]) # number=4
+    prog.y(input_qubit[0]) # number=3
+    prog.y(input_qubit[0]) # number=4
     # circuit end
 
     for i in range(n):

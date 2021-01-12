@@ -11,8 +11,6 @@ import transitionBackend.acrossbackendQiskit as acQ
 import os,sys,shutil
 import compare.KScompare as cR
 import mutation.Mutation_diff as diff_m
-import mutation.Mutation_equal as equal_m
-import mutation.Mutation_shadow as reverse_m
 import beginTest.check_qubit_number as q_number
 import re,random
 

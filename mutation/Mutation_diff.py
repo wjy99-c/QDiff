@@ -129,6 +129,8 @@ def mutate_add(tab:str, qubit_number:int, total_number:int):
 
     else:
         i = random.randint(1,qubit_number-1)
+        if qubit_number==2:
+            i = 0
         j = random.randint(1,qubit_number-1)
         while j==i:
             j = random.randint(1,qubit_number-1)

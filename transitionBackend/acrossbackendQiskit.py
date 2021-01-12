@@ -13,6 +13,7 @@ def generate(address: str, name: str, iteration: int):
 
 
     if simup.search(name):
-        return Qb.simulator_to_pragma(address,iteration), Qb.simulator_to_state_vector(address,iteration)
+        return Qb.simulator_to_pragma(address,iteration), Qb.simulator_to_state_vector(address,iteration), \
+               Qb.simulator_to_qc(address,iteration)
     else:
         print("Error: backend transition failed. We do not start from simulator")

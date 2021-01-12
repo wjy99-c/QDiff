@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 1/7/21 8:22 AM
-# @Author  : lingxiangxiang
 # @File    : crossEntropy.py
 
 from math import log2
@@ -13,7 +12,10 @@ def entropy_score(r_true:[],r_false:[]):
 
     h = 0.0
     for i in range(0,len(r_true)):
-        h = -r_true[i] * log2(r_false[i])+h
+        if r_false[i]!=0:
+            h = -r_true[i] * log2(r_false[i])+h
+        else:
+            h = -r_true[i] * log2(1/1024) + h
 
     return h
 
@@ -80,7 +82,7 @@ def compare(path:str, thershold:float, qubit_number:int):
         if right_answer_file.search(file) is not None:
             candidates.append(np.asarray(read_results(path+"/"+file, qubit_number)))
 
-    answer = -1
+    answer = 0
 
 
 
@@ -97,8 +99,6 @@ def compare(path:str, thershold:float, qubit_number:int):
 
         if flag == -1:
             candidates.append(np.asarray(results))
-            if answer == -1:
-                answer = 0
 
     wrong_out = []      # wrong_out -> the output that is more than threshold could bare
     max_diff = 0        # max k_S score
@@ -119,4 +119,4 @@ def compare(path:str, thershold:float, qubit_number:int):
     return wrong_out, max_diff, max_diff_name
 
 if __name__ == '__main__':
-    print(compare("../data",0.1,1))
+    print(compare("../data/4q-wrong/Wrong29",2,4))

@@ -106,6 +106,7 @@ def simulator_to_state_vector (address:str, iteration:int):
 
 def simulator_to_qc (address:str, iteration:int):
     pattern = re.compile("qasm_simulator")
+    library = re.compile("import qiskit")
 
     writefile = open("../benchmark/startQiskit_QC" + str(iteration) + ".py", "w")
     writefile_address = re.compile("../data/startQiskit")
@@ -116,19 +117,27 @@ def simulator_to_qc (address:str, iteration:int):
     while line:
         m = pattern.search(line)
         n = writefile_address.search(line)
+        k = library.search(line)
 
         if m is not None:
-            writefile.write("   IBMQ.load_account() \n"
-                            "   provider = IBMQ.get_provider(hub='ibm-q') \n"
-                            "   provider.backends()\n")
-            writefile.write("   backend = least_busy(provider.backends(filters=lambda x: x.configuration().n_qubits >= n+1 and "
+            writefile.write("    IBMQ.load_account() \n"
+                            "    provider = IBMQ.get_provider(hub='ibm-q') \n"
+                            "    provider.backends()\n")
+            writefile.write("    backend = least_busy(provider.backends(filters=lambda x: x.configuration().n_qubits >= 2 and "
                             "not x.configuration().simulator and x.status().operational == True))\n")
 
         elif n is not None:
             writefile.write(re.sub(writefile_address, writefile_change, line))
 
+        elif k is not None:
+            writefile.write(line)
+            writefile.write("from qiskit import IBMQ\n")
+            writefile.write("from qiskit.providers.ibmq import least_busy\n")
+
         else:
             writefile.write(line)
+
+        line = readfile.readline()
 
     writefile.close()
     readfile.close()
