@@ -101,7 +101,7 @@ def compare(path:str, thershold:float, qubit_number:int):
             candidates.append(np.asarray(results))
 
     wrong_out = []      # wrong_out -> the output that is more than threshold could bare
-    max_diff = 0        # max k_S score
+    max_diff = 0
     print("Right answer:",candidates[answer]/candidates[answer].sum()*1024)
     max_diff_name = ''
 
