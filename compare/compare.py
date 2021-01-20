@@ -28,6 +28,57 @@ class Compare:
     def score(self, r1:[], r2:[]) -> float:
         return 0
 
+    def compare(self):
+        path = self.address
+        qubit_number = self.qubit_number
+        threshold = self.threshold
+        print("qubit_number:", qubit_number)
+        data = []
+        name = []
+        right_file = re.compile("start")
+        files = os.listdir(path)
+        for file in files:
+            if (not os.path.isdir(file)) & (right_file.search(file) is not None):
+                data.append(self.read_results())
+                name.append(file)
+
+        candidates = []  # save right answer candidates
+        answer = -1
+
+        for results in data:
+
+            flag = -1
+            for i in range(0, len(candidates)):
+                if self.score(candidates[i] / (candidates[i].sum()),
+                            np.asarray(results) / (np.asarray(results).sum())) < threshold:
+                    flag = i
+                    candidates[i] = candidates[i] + np.asarray(results)
+                    if candidates[i].sum() > candidates[answer].sum():
+                        answer = i
+                    break
+
+            if flag == -1:
+                candidates.append(np.asarray(results))
+                if answer == -1:
+                    answer = 0
+
+        wrong_out = []  # wrong_out -> the output that is more than threshold could bare
+        max_diff = 0  # max k_S score
+        print("Right answer:", candidates[answer] / candidates[answer].sum() * 1024)
+        max_diff_name = ''
+
+        for i in range(0, len(data)):
+            k = self.score(np.asarray(data[i]) / np.asarray(data[i]).sum(), candidates[answer] / candidates[answer].sum())
+            if k > max_diff:
+                max_diff = k
+                max_diff_name = name[i]
+            if k > threshold:
+                print(k)
+                print(name[i] + ":" + str(data[i]))
+                wrong_out.append(name[i])
+
+        return wrong_out, max_diff, max_diff_name
+
     def trans(self, data: str, flag1: int):  # flag1: to check if the order is upside down
         result = re.split(',|}', data)
         final_data = []
@@ -67,6 +118,20 @@ class Compare:
                 line = line + end_file
             data = self.trans(line, flag1)
         return data
+
+
+
+
+class KSScore(Compare):
+
+    def __init__(self, address, threshold, qubit_number):
+        Compare.__init__(self,address,threshold,qubit_number)
+
+    def score(self, r1:[], r2:[]):
+        r = r1 - r2
+        max_ks = max(max(r), 0)
+        min_ks = min(min(r), 0)
+        return (abs(max_ks) + abs(min_ks)) / r1.sum()
 
 
 
@@ -140,64 +205,3 @@ class CrossEntropy(Compare):
             return wrong_out, max_diff, max_diff_name
 
 
-class KSScore(Compare):
-
-    def __init__(self, address, threshold, qubit_number):
-        Compare.__init__(self,address,threshold,qubit_number)
-
-    def score(self, r1:[], r2:[]):
-        r = r1 - r2
-        max_ks = max(max(r), 0)
-        min_ks = min(min(r), 0)
-        return (abs(max_ks) + abs(min_ks)) / r1.sum()
-
-    def compare(self):
-        path = self.address
-        qubit_number = self.qubit_number
-        threshold = self.threshold
-        print("qubit_number:", qubit_number)
-        data = []
-        name = []
-        right_file = re.compile("start")
-        files = os.listdir(path)
-        for file in files:
-            if (not os.path.isdir(file)) & (right_file.search(file) is not None):
-                data.append(self.read_results())
-                name.append(file)
-
-        candidates = []  # save right answer candidates
-        answer = -1
-
-        for results in data:
-
-            flag = -1
-            for i in range(0, len(candidates)):
-                if self.score(candidates[i] / (candidates[i].sum()),
-                            np.asarray(results) / (np.asarray(results).sum())) < threshold:
-                    flag = i
-                    candidates[i] = candidates[i] + np.asarray(results)
-                    if candidates[i].sum() > candidates[answer].sum():
-                        answer = i
-                    break
-
-            if flag == -1:
-                candidates.append(np.asarray(results))
-                if answer == -1:
-                    answer = 0
-
-        wrong_out = []  # wrong_out -> the output that is more than threshold could bare
-        max_diff = 0  # max k_S score
-        print("Right answer:", candidates[answer] / candidates[answer].sum() * 1024)
-        max_diff_name = ''
-
-        for i in range(0, len(data)):
-            k = self.score(np.asarray(data[i]) / np.asarray(data[i]).sum(), candidates[answer] / candidates[answer].sum())
-            if k > max_diff:
-                max_diff = k
-                max_diff_name = name[i]
-            if k > threshold:
-                print(k)
-                print(name[i] + ":" + str(data[i]))
-                wrong_out.append(name[i])
-
-        return wrong_out, max_diff, max_diff_name
