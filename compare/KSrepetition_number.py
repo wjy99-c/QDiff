@@ -29,7 +29,7 @@ if __name__ == '__main__':
                     max = abs(answer[i]-repetition/n)
 
             ave = ave+max/experiment
-            ks = ave/repetition*1000
+            ks = ave/repetition
 
         print("repetition",repetition)
         print("KS:",ks)

@@ -39,7 +39,7 @@ class Compare:
         files = os.listdir(path)
         for file in files:
             if (not os.path.isdir(file)) & (right_file.search(file) is not None):
-                data.append(self.read_results())
+                data.append(self.read_results(self.address+"/"+file))
                 name.append(file)
 
         candidates = []  # save right answer candidates
@@ -100,9 +100,9 @@ class Compare:
 
         return final_data
 
-    def read_results(self):
+    def read_results(self,path:str):
 
-        filename = self.address
+        filename = path
         pattern_qiskit = re.compile("Qiskit")
         pattern_pyquilc = re.compile("Pyquil_Class")
         flag1 = 0
@@ -151,57 +151,54 @@ class CrossEntropy(Compare):
         return h
 
     def compare(self):
-            path = self.address
-            qubit_number = self.qubit_number
-            threshold = self.threshold
-            print("qubit_number:", qubit_number)
-            data = []
-            name = []
-            right_file = re.compile("start")
-            right_answer_file = re.compile("Cirq_Class")
-            files = os.listdir(path)
-            candidates = []  # save right answer candidates, first candidate will be matrix results
+        print("qubit_number:", self.qubit_number)
+        data = []
+        name = []
+        right_file = re.compile("start")
+        right_answer_file = re.compile("Cirq_Class")
+        files = os.listdir(self.address)
+        candidates = []  # save right answer candidates, first candidate will be matrix results
 
-            for file in files:
-                if (not os.path.isdir(file)) & (right_file.search(file) is not None):
-                    data.append(self.read_results())
-                    name.append(file)
-                if right_answer_file.search(file) is not None:
-                    candidates.append(np.asarray(self.read_results()))
+        for file in files:
+            if (not os.path.isdir(file)) & (right_file.search(file) is not None):
+                data.append(self.read_results(self.address+"/"+file))
+                name.append(file)
+            if right_answer_file.search(file) is not None:
+                candidates.append(np.asarray(self.read_results(self.address+ "/" + file)))
 
-            answer = 0
+        answer = 0
 
-            for results in data:
+        for results in data:
 
-                flag = -1
-                for i in range(0, len(candidates)):
-                    if self.score(candidates[i] / (candidates[i].sum()),
-                                     np.asarray(results) / (np.asarray(results).sum())) < threshold:
-                        flag = i
-                        candidates[i] = candidates[i] + np.asarray(results)
-                        if candidates[i].sum() > candidates[answer].sum():
-                            answer = i
-                        break
+            flag = -1
+            for i in range(0, len(candidates)):
+                if self.score(candidates[i] / (candidates[i].sum()),
+                                 np.asarray(results) / (np.asarray(results).sum())) < self.threshold:
+                    flag = i
+                    candidates[i] = candidates[i] + np.asarray(results)
+                    if candidates[i].sum() > candidates[answer].sum():
+                        answer = i
+                    break
 
-                if flag == -1:
-                    candidates.append(np.asarray(results))
+            if flag == -1:
+                candidates.append(np.asarray(results))
 
-            wrong_out = []  # wrong_out -> the output that is more than threshold could bare
-            max_diff = 0
-            print("Right answer:", candidates[answer] / candidates[answer].sum() * 1024)
-            max_diff_name = ''
+        wrong_out = []  # wrong_out -> the output that is more than threshold could bare
+        max_diff = 0
+        print("Right answer:", candidates[answer] / candidates[answer].sum() * 1024)
+        max_diff_name = ''
 
-            for i in range(0, len(data)):
-                k = self.score(np.asarray(data[i]) / np.asarray(data[i]).sum(),
-                                  candidates[answer] / candidates[answer].sum())
-                if k > max_diff:
-                    max_diff = k
-                    max_diff_name = name[i]
-                if k > threshold:
-                    print(k)
-                    print(name[i] + ":" + str(data[i]))
-                    wrong_out.append(name[i])
+        for i in range(0, len(data)):
+            k = self.score(np.asarray(data[i]) / np.asarray(data[i]).sum(),
+                              candidates[answer] / candidates[answer].sum())
+            if k > max_diff:
+                max_diff = k
+                max_diff_name = name[i]
+            if k > self.threshold:
+                print(k)
+                print(name[i] + ":" + str(data[i]))
+                wrong_out.append(name[i])
 
-            return wrong_out, max_diff, max_diff_name
+        return wrong_out, max_diff, max_diff_name
 
 
