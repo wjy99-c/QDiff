@@ -93,7 +93,7 @@ def two_SWAP(tab:str, qubit_number:int, number:int):
     return tab + "prog.swap(input_qubit[" + str(qubit_number) + "],input_qubit[0]) # number=" + str(number) + "\n" + \
            tab + "prog.swap(input_qubit[" + str(qubit_number) + "],input_qubit[0]) # number=" + str(number + 1) + "\n"
 
-def S_to_T(codeline:str,number:int):
+def s_to_t(codeline:str,number:int):
     if re.search('prog.s',codeline) is not None:
         new_codeline = re.sub("# number=(.*)[\n]", "", codeline)
         codeline = re.sub(r's',"t",new_codeline)+"# number="+str(number)+"\n"+\
@@ -102,7 +102,7 @@ def S_to_T(codeline:str,number:int):
     else:
         raise Exception('No S gate for T transformation')
 
-def Z_to_S(codeline:str,number:int):
+def z_to_s(codeline:str,number:int):
     if re.search('prog.z',codeline) is not None:
         new_codeline = re.sub("# number=(.*)[\n]", "", codeline)
         codeline = re.sub(r'z',"s",new_codeline)+"# number="+str(number)+"\n"+\
@@ -111,7 +111,7 @@ def Z_to_S(codeline:str,number:int):
     else:
         raise Exception('No Z gate for S transformation')
 
-def X_to_HSSH(codeline:str,number:int):
+def x_to_hssh(codeline:str,number:int):
     if re.search('prog.x',codeline) is not None:
         new_codeline = re.sub("# number=(.*)[\n]", "", codeline)
         codeline = re.sub(r'x',"h",new_codeline)+"# number="+str(number)+"\n"+\

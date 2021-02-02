@@ -218,7 +218,7 @@ def mutate(seed:int, write:int):
             flag = int(line[operation_id.search(line).span()[1]:len(line)-1])
 
         for pattern in patterns:
-            if (patterns[pattern].search(line) is not None) and (total_operation_id.search(line) is not None) and (qubit_number>1):
+            if (patterns[pattern].search(line) is not None) and (operation_id.search(line) is not None) and (qubit_number>1):
                 if random.randint(0,5)>3 :
 
                     readfile.close()

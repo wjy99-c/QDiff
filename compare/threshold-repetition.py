@@ -32,4 +32,4 @@ class EntropyRepetition(ThresholdRepetition):
 
     def repetition(self):
 
-        return 100 * round(math.sqrt(self.qubit_state_number/self.max_p) / (self.threshold * self.threshold))
+        return 20 * round(self.max_p * math.sqrt(self.max_p * self.qubit_state_number) / (self.threshold * self.threshold))
