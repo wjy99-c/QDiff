@@ -9,11 +9,18 @@ from mutation.Mutation_equal import generate_same
 import mutation.gateCirq_EqualT as MC
 import mutation.gateQiskit_EqualT as MQ
 import mutation.gatePyQuil_EqualT as MP
+import mutation.TransformBack as Tr
 
 
 #TODO: undone -> transform back
 
+
+
 def generate_back():
+
+    SS = Tr.TransformBack(2,['S','S'],['Z'])
+    TT = Tr.TransformBack(2,['T','T'],['S'])
+
     return 0
 
 def generate_same_breakdown(operation_number:int, address_in:str, address_out:str, total_number:int, pattern:str, platform:str):
