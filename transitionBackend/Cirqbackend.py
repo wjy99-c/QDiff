@@ -121,5 +121,29 @@ def simulator_to_state_vector (address:str, iteration:int):
     readfile.close()
     return "startCirq_Class"+str(iteration)+".py"
 
+def simulator_to_noisy (address:str, iteration:int):
+    writefile = open("../benchmark/startCirq_noisy" + str(iteration) + ".py", "w")
+    writefile_address = re.compile("../data/startCirq")
+    writefile_change = "../data/startCirq_noisy"
+
+    start_point = re.compile("simulator = cirq.Simulator()")
+    readfile = open(address)
+    line = readfile.readline()
+
+    noisy = "   circuit = circuit.with_noise(cirq.depolarize(p=0.01))\n"
+    while line:
+        m = re.search(start_point)
+        n = writefile_address.search(line)
+
+        if n is not None:
+            writefile.write(re.sub(writefile_address, writefile_change, line))
+        elif m is not None:
+            writefile.write(noisy)
+            writefile.write(line)
+
+        line = readfile.readline()
 
 
+    writefile.close()
+    readfile.close()
+    return "startCirq_noisy" + str(iteration) + ".py"

@@ -20,6 +20,8 @@ def generate_back():
 
     SS = Tr.TransformBack(2,['S','S'],['Z'])
     TT = Tr.TransformBack(2,['T','T'],['S'])
+    HZH = Tr.TransformBack(2,['H','Z','H'],['X'])
+
 
     return 0
 

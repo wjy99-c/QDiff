@@ -142,3 +142,18 @@ def simulator_to_qc (address:str, iteration:int):
     writefile.close()
     readfile.close()
     return "startQiskit_QC" + str(iteration) + ".py"
+
+def simulator_to_noisy (address:str, iteration:int):
+
+    writefile = open("../benchmark/startQiskit_noisy" + str(iteration) + ".py", "w")
+    writefile_address = re.compile("../data/startQiskit")
+    writefile_change = "../data/startQiskit_noisy"
+
+    readfile = open(address)
+    line = readfile.readline()
+
+    noisy = "   "
+    while line:
+
+
+

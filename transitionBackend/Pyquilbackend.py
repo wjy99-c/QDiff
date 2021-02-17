@@ -86,5 +86,3 @@ def simulator_to_state_vector (address:str, iteration:int):
     writefile.close()
     readfile.close()
     return "startPyquil_Class" + str(iteration) + ".py"
-
-

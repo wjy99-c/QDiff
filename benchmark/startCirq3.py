@@ -16,7 +16,8 @@ import numpy as np
 def make_circuit(n: int, input_qubit):
     c = cirq.Circuit()  # circuit begin
 
-    c.append(cirq.H.on(input_qubit[0])) # number=1
+
+    c.append(cirq.X.on(input_qubit[0])) # number=1
     c.append(cirq.CNOT.on(input_qubit[0],input_qubit[1]))  # number=2
     c.append(cirq.CNOT.on(input_qubit[0], input_qubit[1]))
     c.append(cirq.H.on(input_qubit[0]))
@@ -37,6 +38,7 @@ if __name__ == '__main__':
 
     circuit_sample_count = 1024
 
+    circuit = circuit.with_noise(cirq.depolarize(p=0.01))
     simulator = cirq.Simulator()
     result = simulator.run(circuit, repetitions=circuit_sample_count)
 
