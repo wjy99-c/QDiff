@@ -145,6 +145,9 @@ def simulator_to_qc (address:str, iteration:int):
 
 def simulator_to_noisy (address:str, iteration:int):
 
+    pattern = re.compile("qasm_simulator")
+    library = re.compile("import qiskit")
+
     writefile = open("../benchmark/startQiskit_noisy" + str(iteration) + ".py", "w")
     writefile_address = re.compile("../data/startQiskit")
     writefile_change = "../data/startQiskit_noisy"
@@ -152,8 +155,28 @@ def simulator_to_noisy (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
 
-    noisy = "   "
+    noisy = "   simulator = QasmSimulator.from_backend(FakeVigo())\n"
     while line:
 
+        m = pattern.search(line)
+        n = writefile_address.search(line)
+        k = library.search(line)
+
+
+        if m is not None:
+            writefile.write(noisy)
+        elif n is not None:
+            writefile.write(re.sub(writefile_address, writefile_change, line))
+        elif k is not None:
+            writefile.write(line)
+            writefile.write("from qiskit.providers.aer import QasmSimulator\n")
+            writefile.write("from qiskit.test.mock import FakeVigo\n")
+
+        line = readfile.readline()
+
+    writefile.close()
+    readfile.close()
+
+    return  "startQiskit_noisy" + str(iteration) + ".py"
 
 
