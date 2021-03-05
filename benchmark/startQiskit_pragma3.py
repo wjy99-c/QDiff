@@ -17,8 +17,8 @@ def make_circuit(n:int) -> QuantumCircuit:
     prog.h(input_qubit[0]) # number=1
     prog.h(input_qubit[1]) # number=2
 
-    prog.y(input_qubit[0]) # number=3
-    prog.y(input_qubit[0]) # number=4
+    prog.x(input_qubit[0]) # number=3
+    prog.x(input_qubit[0]) # number=4
     # circuit end
 
     for i in range(n):
@@ -36,7 +36,7 @@ if __name__ == '__main__':
 
     coupling_map = [[1, 0], [2, 1], [3, 1], [1, 4], [1, 5]]
     basic_gate = ['cx', 'u3', 'id']
-    info = execute(prog, backend=backend, coupling_map=coupling_map,shots=1024, basis_gates=basic_gate, optimization_level=0).result().get_counts()
+    info = execute(prog, backend=backend, coupling_map=coupling_map,shots=1024, basis_gates=basic_gate, optimization_level=3).result().get_counts()
 
     writefile = open("../data/startQiskit_pragma3.csv","w")
     pprint(info,writefile)

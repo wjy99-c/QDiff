@@ -20,6 +20,7 @@ import mutation.Mutation_reverse as reverse_m
 import beginTest.check_qubit_number as q_number
 import re,random
 import mutation.Mutation_must_diff as must_diff_m
+import compare.compare
 
 def execution(pyfile_name:str,reason:str):
     try:
@@ -63,7 +64,7 @@ def backend_loop(out_num:int):
 
     # execution('../benchmark/' + cirqP3,"state-vector")
     # execution('../benchmark/' + pyquilP3,"state-vector")
-    execution('../benchmark/' + qiskitP3, "quantum-computer")
+    #execution('../benchmark/' + qiskitP3, "quantum-computer")
 
     """
     print("Executing reversion version of each program")
@@ -86,8 +87,13 @@ def backend_loop(out_num:int):
     """
 
 def calculate_results(directory:str,qubit_number:int):
+    KScompare = compare.compare.KSScore(address="../"+directory ,qubit_number=qubit_number,threshold=thershold_const/qubit_number)
+
     wrong, diff, name = cR.compare("../"+directory, thershold=thershold_const/qubit_number,
                                    qubit_number=qubit_number)
+
+
+    print(wrong,diff,name)
 
     if len(wrong)==0:
         return diff
@@ -118,11 +124,12 @@ def collect_data(num:int,flag:int,directory:str):
             shutil.move("../"+directory+"/"+str(file),"../"+dir_name+str(num))
 
 
-
 if __name__ == '__main__':
 
     #thershold_const= Cirq_t[1]
     thershold_const = 4
+
+
 
     n = 100
     tail = 1

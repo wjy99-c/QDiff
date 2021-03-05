@@ -180,3 +180,24 @@ def simulator_to_noisy (address:str, iteration:int):
     return  "startQiskit_noisy" + str(iteration) + ".py"
 
 
+def change_repetition (address:str, repetition:int):
+
+    repetition_find =  re.compile("sample_shot")
+    readfile = open(address,"r")
+    filedate=""
+
+    line = readfile.readline()
+    while line:
+        m = repetition_find.search(line)
+
+        if m is not None:
+            filedate += "    sample_shot ="+str(repetition)+"\n"
+        else:
+            filedate += line
+
+        line =readfile.readline()
+
+    readfile.close()
+    writefile = open(address,"w")
+    writefile.write(filedate)
+    writefile.close()

@@ -4,7 +4,6 @@ import cirq
 import qiskit
 from qiskit import IBMQ
 from qiskit.providers.ibmq import least_busy
-#IBMQ.save_account('5ca3d08495c99ad2d50c7b82202e96a99f6791223f1b0e07ff51ec7244960299e659612bcce5863e93ec3234e651ab2798f84b03a3fcb43a08f50523de6d6237')
 
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 from qiskit import BasicAer, execute
@@ -34,7 +33,7 @@ if __name__ == '__main__':
 
     prog = make_circuit(2)
     IBMQ.load_account() 
-    provider = IBMQ.get_provider(hub='ibm-q')
+    provider = IBMQ.get_provider(hub='ibm-q') 
     provider.backends()
     backend = least_busy(provider.backends(filters=lambda x: x.configuration().n_qubits >= 2 and not x.configuration().simulator and x.status().operational == True))
 

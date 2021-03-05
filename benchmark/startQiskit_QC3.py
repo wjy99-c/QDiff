@@ -3,7 +3,7 @@
 import cirq
 import qiskit
 from qiskit import IBMQ
-from qiskit.providers.ibmq import least_busyIBMQ.save_account('5ca3d08495c99ad2d50c7b82202e96a99f6791223f1b0e07ff51ec7244960299e659612bcce5863e93ec3234e651ab2798f84b03a3fcb43a08f50523de6d6237')
+from qiskit.providers.ibmq import least_busy
 
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 from qiskit import BasicAer, execute
@@ -19,8 +19,8 @@ def make_circuit(n:int) -> QuantumCircuit:
     prog.h(input_qubit[0]) # number=1
     prog.h(input_qubit[1]) # number=2
 
-    prog.y(input_qubit[0]) # number=3
-    prog.y(input_qubit[0]) # number=4
+    prog.x(input_qubit[0]) # number=3
+    prog.x(input_qubit[0]) # number=4
     # circuit end
 
     for i in range(n):
@@ -37,7 +37,7 @@ if __name__ == '__main__':
     IBMQ.load_account() 
     provider = IBMQ.get_provider(hub='ibm-q') 
     provider.backends()
-    backend = least_busy(provider.backends(filters=lambda x: x.configuration().n_qubits >= n+1 and not x.configuration().simulator and x.status().operational == True))
+    backend = least_busy(provider.backends(filters=lambda x: x.configuration().n_qubits >= 2 and not x.configuration().simulator and x.status().operational == True))
 
     info = execute(prog, backend=backend, shots=1024).result().get_counts()
 

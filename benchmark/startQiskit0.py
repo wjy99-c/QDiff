@@ -30,9 +30,10 @@ def make_circuit(n:int) -> QuantumCircuit:
 if __name__ == '__main__':
 
     prog = make_circuit(2)
+    sample_shot = 1024
     backend = BasicAer.get_backend('qasm_simulator')
 
-    info = execute(prog, backend=backend, shots=1024).result().get_counts()
+    info = execute(prog, backend=backend, shots=sample_shot).result().get_counts()
 
     writefile = open("../data/startQiskit0.csv","w")
     pprint(info,writefile)

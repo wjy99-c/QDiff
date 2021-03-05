@@ -16,11 +16,10 @@ import numpy as np
 def make_circuit(n: int, input_qubit):
     c = cirq.Circuit()  # circuit begin
 
-
-    c.append(cirq.X.on(input_qubit[0])) # number=1
-    c.append(cirq.CNOT.on(input_qubit[0],input_qubit[1]))  # number=2
-    c.append(cirq.CNOT.on(input_qubit[0], input_qubit[1]))
-    c.append(cirq.H.on(input_qubit[0]))
+    c.append(cirq.H.on(input_qubit[0])) # number=1
+    c.append(cirq.H.on(input_qubit[1]))  # number=2
+    c.append(cirq.X.on(input_qubit[0])) # number=3
+    c.append(cirq.X.on(input_qubit[0])) # number=4
     # circuit end
 
     c.append(cirq.measure(*input_qubit, key='result'))
@@ -38,13 +37,12 @@ if __name__ == '__main__':
 
     circuit_sample_count = 1024
 
-    circuit = circuit.with_noise(cirq.depolarize(p=0.01))
     simulator = cirq.Simulator()
     result = simulator.run(circuit, repetitions=circuit_sample_count)
 
     frequencies = result.histogram(key='result', fold_func=bitstring)
-    #writefile = open("../data/startCirq3.csv","w+")
+    writefile = open("../data/startCirq3.csv","w+")
 
-    print(format(frequencies))#,file=writefile)
+    print(format(frequencies),file=writefile)
 
-    #writefile.close()
+    writefile.close()

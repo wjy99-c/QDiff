@@ -14,8 +14,8 @@ def make_circuit()-> Program:
 
     prog += Y(0) # number=1
 
-    prog += SWAP(1,0) # number=3
-    prog += SWAP(1,0) # number=4
+    prog += CNOT(1,0) # number=3
+    prog += CNOT(1,0) # number=4
     # circuit end
 
     return prog

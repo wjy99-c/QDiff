@@ -86,3 +86,25 @@ def simulator_to_state_vector (address:str, iteration:int):
     writefile.close()
     readfile.close()
     return "startPyquil_Class" + str(iteration) + ".py"
+
+def change_repetition (address:str, iteration:int):
+
+    repetition_find = re.compile("qvm")
+    readfile = open(address,"r")
+    filedata=""
+
+    line = readfile.readline()
+    while line:
+        m = repetition_find.search(line)
+
+        if m is not None:
+            filedata += "    results = qvm.run_and_measure(prog,"+str(iteration)+")\n"
+        else:
+            filedata += line
+        line = readfile.readline()
+
+    readfile.close()
+
+    writefile = open(address,"w")
+    writefile.write(filedata)
+    writefile.close()

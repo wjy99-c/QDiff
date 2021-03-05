@@ -4,7 +4,6 @@ import cirq
 import qiskit
 from qiskit import IBMQ
 from qiskit.providers.ibmq import least_busy
-IBMQ.save_account('5ca3d08495c99ad2d50c7b82202e96a99f6791223f1b0e07ff51ec7244960299e659612bcce5863e93ec3234e651ab2798f84b03a3fcb43a08f50523de6d6237')
 
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 from qiskit import BasicAer, execute
@@ -20,8 +19,8 @@ def make_circuit(n:int) -> QuantumCircuit:
     prog.h(input_qubit[0]) # number=1
     prog.h(input_qubit[1]) # number=2
 
-    prog.x(input_qubit[1]) # number=3
-    prog.x(input_qubit[1]) # number=4
+    prog.swap(input_qubit[1],input_qubit[0]) # number=3
+    prog.swap(input_qubit[1],input_qubit[0]) # number=4
     # circuit end
 
     for i in range(n):

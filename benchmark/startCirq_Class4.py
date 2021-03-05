@@ -18,8 +18,8 @@ def make_circuit(n: int, input_qubit):
 
     c.append(cirq.H.on(input_qubit[0])) # number=1
     c.append(cirq.H.on(input_qubit[1]))  # number=2
-    c.append(cirq.Y.on(input_qubit[1])) # number=3
-    c.append(cirq.Y.on(input_qubit[1])) # number=4
+    c.append(cirq.SWAP.on(input_qubit[1],input_qubit[0])) # number=3
+    c.append(cirq.SWAP.on(input_qubit[1],input_qubit[0])) # number=4
     # circuit end
 
 

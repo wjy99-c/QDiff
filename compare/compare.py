@@ -6,12 +6,15 @@
 import re,os
 import numpy as np
 from math import log2
+from compare.threshold_repetition import KSRepetition
+from compare.threshold_repetition import EntropyRepetition
 
 class Compare:
 
     threshold = 0
     address = ''
     qubit_number = 0
+    max_p = 0.0
 
     def __init__(self, address, threshold, qubit_number):
         self.address = address
@@ -27,6 +30,7 @@ class Compare:
 
     def score(self, r1:[], r2:[]) -> float:
         return 0
+
 
     def compare(self):
         path = self.address
@@ -117,6 +121,9 @@ class Compare:
                 end_file = f.readline()
                 line = line + end_file
             data = self.trans(line, flag1)
+
+        if max(data)>self.max_p:
+            self.max_p = max(data)
         return data
 
 

@@ -132,13 +132,15 @@ def simulator_to_noisy (address:str, iteration:int):
 
     noisy = "   circuit = circuit.with_noise(cirq.depolarize(p=0.01))\n"
     while line:
-        m = re.search(start_point)
+        m = start_point.search(line)
         n = writefile_address.search(line)
 
         if n is not None:
             writefile.write(re.sub(writefile_address, writefile_change, line))
         elif m is not None:
             writefile.write(noisy)
+            writefile.write(line)
+        else:
             writefile.write(line)
 
         line = readfile.readline()
@@ -147,3 +149,26 @@ def simulator_to_noisy (address:str, iteration:int):
     writefile.close()
     readfile.close()
     return "startCirq_noisy" + str(iteration) + ".py"
+
+def change_repetition  (address:str, repetition:int):
+
+    readfile = open(address,"r")
+    filedata =""
+
+    repetition_find = re.compile("circuit_sample_count =")
+
+    line = readfile.readline()
+    while line:
+        m = repetition_find.search(line)
+        if m is not None:
+            filedata += "   circuit_sample_count ="+str(repetition)+"\n"
+        else:
+            filedata += line
+    readfile.close()
+
+    writefile = open(address,"w")
+    writefile.write(filedata)
+    writefile.close()
+
+
+
