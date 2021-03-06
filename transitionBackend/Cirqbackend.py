@@ -152,7 +152,7 @@ def simulator_to_noisy (address:str, iteration:int):
 
 def change_repetition  (address:str, repetition:int):
 
-    readfile = open(address,"r")
+    readfile = open("../benchmark/"+ address,"r")
     filedata =""
 
     repetition_find = re.compile("circuit_sample_count =")
@@ -169,6 +169,8 @@ def change_repetition  (address:str, repetition:int):
     writefile = open(address,"w")
     writefile.write(filedata)
     writefile.close()
+
+    return address
 
 
 

@@ -14,7 +14,6 @@ class Compare:
     threshold = 0
     address = ''
     qubit_number = 0
-    max_p = 0.0
 
     def __init__(self, address, threshold, qubit_number):
         self.address = address
@@ -122,8 +121,6 @@ class Compare:
                 line = line + end_file
             data = self.trans(line, flag1)
 
-        if max(data)>self.max_p:
-            self.max_p = max(data)
         return data
 
 

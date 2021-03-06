@@ -4,6 +4,13 @@
 # @Author  : lingxiangxiang
 # @File    : QTest.py
 
+"""
+TODO: finish part. we need to add (max_p, qubit number)->repetition number.
+TODO: Already have: max_p, qubit number, and repetition number.
+TODO: first run classical, get max_p and qubit number(DONE), then change all simulation/noisy simulation repetition number.
+
+"""
+
 Framework=['Cirq','Qiskit','Pyquil']
 Cirq_t = [0.118,0.079,0.060,0.044,0.030,0.025]
 Qiskit_t = [0.090,0.079,0.057,0.046,0.029,0.026]
@@ -12,8 +19,12 @@ logfile = open("../testing record.txt","w+")
 import transitionBackend.acrossbackendCirq as acC
 import transitionBackend.acrossbackendPyquil as acP
 import transitionBackend.acrossbackendQiskit as acQ
+import transitionBackend.Qiskitbackend
+import transitionBackend.Pyquilbackend
+import transitionBackend.Cirqbackend
 import os,shutil
 import compare.KScompare as cR
+import compare.threshold_repetition
 import mutation.Mutation_diff as diff_m
 import mutation.Mutation_equal as equal_m
 import mutation.Mutation_reverse as reverse_m
@@ -31,19 +42,84 @@ def execution(pyfile_name:str,reason:str):
         print("Bugs in" + reason)
 
 
+def read_max_qubit_state(address:str, qubit_number:int)->(float,float):
+
+    def trans_str(qubit_number: int, number: int) -> str:
+
+        results = bin(number)
+        results = results[2:len(results)]
+
+        return results.zfill(qubit_number)
+
+    def trans(data: str, flag_upside: int):  # flag1: to check if the bit order is upside down. Bit order for qiskit and pyquil classical are different
+        result = re.split(',|}', data)
+        final_data = []
+        qubit_nonzero_state = 0
+
+
+        for i in range(0, pow(2, qubit_number)):
+            if flag_upside == 0:
+                pattern = re.compile(trans_str(i) + "':")
+            else:
+                pattern = re.compile(''.join(reversed(trans_str(i))) + "':")
+            flag = 0
+            for results in result:
+                s = re.search(pattern, results)
+                if s is not None:
+                    final_data.append(float(results[s.span()[1]:]))
+                    flag = 1
+                    qubit_nonzero_state += 1
+                    break
+            if flag == 0:
+                final_data.append(0)
+
+        return final_data, qubit_nonzero_state
+
+    filename = address
+    pattern_qiskit = re.compile("Qiskit")
+    pattern_pyquilc = re.compile("Pyquil_Class")
+    flag1 = 0
+    with open(filename, 'r') as f:
+        print("Now read:" + filename)
+        if (re.search(pattern_pyquilc, filename) is not None) or (re.search(pattern_qiskit, filename) is not None):
+            flag1 = 1
+        line = f.readline()
+
+        end_file = line
+        while end_file:
+            end_file = f.readline()
+            line = line + end_file
+        data, qubit_state = trans(line, flag1)
+
+    return max(data), qubit_state
 
 def backend_loop(out_num:int):
-    print("Executing Simulator" + str(out_num))
-    print("Executing Simulator" + str(out_num),file=logfile)
-
-    #execution('../benchmark/' + "startCirq" + str(out_num) + ".py","quantum-simulator")
-    #execution('../benchmark/' + "startPyquil" + str(out_num) + ".py","quantum-simulator")
-    #execution('../benchmark/' + "startQiskit" + str(out_num) + ".py","quantum-simulator")
-
 
     cirqP1, cirqP2 = acC.generate("../benchmark/" + "startCirq" + str(out_num) + ".py", "startCirq" + str(out_num) + ".py", out_num)
     #pyquilP1, pyquilP2 = acP.generate("../benchmark/" + "startPyquil" + str(out_num) + ".py", "startPyquil" + str(out_num) + ".py", out_num)
     qiskitP1, qiskitP2, qiskitP3 = acQ.generate("../benchmark/" + "startQiskit" + str(out_num) + ".py", "startQiskit" + str(out_num) + ".py", out_num)
+
+    print("Executing Classical" + str(out_num))
+    print("Executing Classical" + str(out_num),file=logfile)
+
+    #execution('../benchmark/' + cirqP2,"state-vector")
+    #execution('../benchmark/' + pyquilP2,"state-vector")
+    execution('../benchmark/' + qiskitP2,"state-vector")
+
+    max_p, qubit_state = read_max_qubit_state("../data/" + qiskitP2, qubit_number) #get max_p and qubit number, and then get repetition number
+    repetition_number = compare.threshold_repetition.KSRepetition(max_p=max_p,qubit_state_number=qubit_state,threshold=thershold_const).repetition()
+
+    qiskitP0 = transitionBackend.Qiskitbackend.change_repetition("startQiskit" + str(out_num) + ".py",repetition_number) #change repetition number
+    qiskitP1 = transitionBackend.Qiskitbackend.change_repetition(qiskitP1,repetition_number)
+    qiskitP3 = transitionBackend.Qiskitbackend.change_repetition(qiskitP3,repetition_number)
+
+
+    print("Executing Simulator" + str(out_num))
+    print("Executing Simulator" + str(out_num),file=logfile)
+
+    execution('../benchmark/' + "startCirq" + str(out_num) + ".py","quantum-simulator")
+    #execution('../benchmark/' + "startPyquil" + str(out_num) + ".py","quantum-simulator")
+    execution('../benchmark/' + qiskitP0,"quantum-simulator")
 
     print("Executing compiler setting" + str(out_num))
     print("Executing compiler setting" + str(out_num),file=logfile)
@@ -52,12 +128,6 @@ def backend_loop(out_num:int):
     #execution('../benchmark/' + pyquilP1,"compilerSetting")
     execution('../benchmark/' + qiskitP1,"compilerSetting")
 
-    print("Executing Classical" + str(out_num))
-    print("Executing Classical" + str(out_num),file=logfile)
-
-    #execution('../benchmark/' + cirqP2,"state-vector")
-    #execution('../benchmark/' + pyquilP2,"state-vector")
-    execution('../benchmark/' + qiskitP2,"state-vector")
 
     print("Executing quantum computer" + str(out_num))
     print("Executing quantum computer" + str(out_num),file=logfile)
@@ -127,7 +197,7 @@ def collect_data(num:int,flag:int,directory:str):
 if __name__ == '__main__':
 
     #thershold_const= Cirq_t[1]
-    thershold_const = 4
+    thershold_const = 0.4
 
 
 
