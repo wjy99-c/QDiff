@@ -4,7 +4,7 @@
 # @File    : grover.py
 
 # qubit number=2
-# total number=6
+# total number=8
 import cirq
 from typing import Optional
 import sys
@@ -17,10 +17,12 @@ def make_circuit(n: int, input_qubit):
     c = cirq.Circuit()  # circuit begin
 
     c.append(cirq.H.on(input_qubit[0])) # number=1
+    c.append(cirq.H.on(input_qubit[1])) # number=3
     c.append(cirq.H.on(input_qubit[1]))  # number=2
-    c.append(cirq.rx(0.7571238295151405).on(input_qubit[1])) # number=5
-    c.append(cirq.X.on(input_qubit[0])) # number=3
     c.append(cirq.X.on(input_qubit[0])) # number=4
+    c.append(cirq.X.on(input_qubit[0])) # number=5
+    c.append(cirq.SWAP.on(input_qubit[1],input_qubit[0])) # number=6
+    c.append(cirq.SWAP.on(input_qubit[1],input_qubit[0])) # number=7
     # circuit end
 
     c.append(cirq.measure(*input_qubit, key='result'))
@@ -45,5 +47,9 @@ if __name__ == '__main__':
     writefile = open("../data/startCirq47.csv","w+")
 
     print(format(frequencies),file=writefile)
+
+    symore_circuit = cg.optimized_for_sycamore(circuit, optimizer_type='sqrt_iswap')
+    print(symore_circuit,file=writefile)
+    print("circuit length:", symore_circuit.__len__(),file=writefile)
 
     writefile.close()

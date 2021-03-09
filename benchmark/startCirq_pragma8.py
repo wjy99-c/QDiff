@@ -63,4 +63,8 @@ if __name__ == '__main__':
 
     print(format(frequencies),file=writefile)
 
+    symore_circuit = cg.optimized_for_sycamore(circuit, optimizer_type='sqrt_iswap')
+    print(symore_circuit,file=writefile)
+    print("circuit length:", symore_circuit.__len__(),file=writefile)
+
     writefile.close()

@@ -18,9 +18,9 @@ def make_circuit(n: int, input_qubit):
 
     c.append(cirq.H.on(input_qubit[0])) # number=1
     c.append(cirq.H.on(input_qubit[1]))  # number=2
-    c.append(cirq.Y.on(input_qubit[1])) # number=3
-    c.append(cirq.Y.on(input_qubit[1])) # number=4
-    c.append(cirq.X.on(input_qubit[0])) # number=5
+    c.append(cirq.X.on(input_qubit[1])) # number=3
+    c.append(cirq.X.on(input_qubit[1])) # number=4
+    c.append(cirq.CNOT.on(input_qubit[0],input_qubit[1])) # number=5
     # circuit end
 
 
@@ -47,5 +47,9 @@ if __name__ == '__main__':
     writefile = open("../data/startCirq_Class22.csv","w+")
 
     print(format(frequencies),file=writefile)
+
+    symore_circuit = cg.optimized_for_sycamore(circuit, optimizer_type='sqrt_iswap')
+    print(symore_circuit,file=writefile)
+    print("circuit length:", symore_circuit.__len__(),file=writefile)
 
     writefile.close()

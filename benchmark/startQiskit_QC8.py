@@ -6,8 +6,9 @@ from qiskit import IBMQ
 from qiskit.providers.ibmq import least_busy
 
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
-from qiskit import BasicAer, execute
+from qiskit import BasicAer, execute, transpile
 from pprint import pprint
+from qiskit.test.mock import FakeVigo
 from math import log2
 import numpy as np
 
@@ -38,9 +39,15 @@ if __name__ == '__main__':
     provider = IBMQ.get_provider(hub='ibm-q') 
     provider.backends()
     backend = least_busy(provider.backends(filters=lambda x: x.configuration().n_qubits >= 2 and not x.configuration().simulator and x.status().operational == True))
+    sample_shot =120
 
-    info = execute(prog, backend=backend, shots=1024).result().get_counts()
+    info = execute(prog, backend=backend, shots=sample_shot).result().get_counts()
+    backend = FakeVigo()
+    circuit1 = transpile(prog,backend,optimization_level=2)
 
     writefile = open("../data/startQiskit_QC8.csv","w")
-    pprint(info,writefile)
+    print(info,file=writefile)
+    print("results end", file=writefile)
+    print(circuit1.__len__(),file=writefile)
+    print(circuit1,file=writefile)
     writefile.close()

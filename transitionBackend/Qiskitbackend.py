@@ -182,7 +182,7 @@ def simulator_to_noisy (address:str, iteration:int):
 
 def change_repetition (address:str, repetition:int):
 
-    repetition_find =  re.compile("sample_shot")
+    repetition_find =  re.compile("sample_shot =")
     readfile = open(address,"r")
     filedate=""
 
@@ -201,3 +201,5 @@ def change_repetition (address:str, repetition:int):
     writefile = open(address,"w")
     writefile.write(filedate)
     writefile.close()
+
+    return address

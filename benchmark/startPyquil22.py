@@ -14,9 +14,9 @@ def make_circuit()-> Program:
 
     prog += Y(0) # number=1
 
-    prog += Y(1) # number=3
-    prog += Y(1) # number=4
-    prog += X(0) # number=5
+    prog += X(1) # number=3
+    prog += X(1) # number=4
+    prog += CNOT(0,1) # number=5
     # circuit end
 
     return prog

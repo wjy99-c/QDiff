@@ -3,8 +3,8 @@
 # @Time    : 5/15/20 4:49 PM
 # @File    : grover.py
 
-# qubit number=1
-# total number=9
+# qubit number=2
+# total number=12
 import cirq
 from typing import Optional
 import sys
@@ -16,14 +16,16 @@ import numpy as np
 def make_circuit(n: int, input_qubit):
     c = cirq.Circuit()  # circuit begin
 
-    c.append(cirq.Y.on(input_qubit[0])) # number=1
-    c.append(cirq.Z.on(input_qubit[0])) # number=4
-    c.append(cirq.Y.on(input_qubit[0])) # number=2
-    c.append(cirq.Y.on(input_qubit[0])) # number=3
-    c.append(cirq.rx(-1.354026433697201).on(input_qubit[0])) # number=5
-    c.append(cirq.X.on(input_qubit[0])) # number=6
-    c.append(cirq.X.on(input_qubit[0])) # number=7
-    c.append(cirq.X.on(input_qubit[0])) # number=8
+    c.append(cirq.H.on(input_qubit[0])) # number=1
+    c.append(cirq.H.on(input_qubit[1]))  # number=2
+    c.append(cirq.Y.on(input_qubit[1])) # number=5
+    c.append(cirq.Y.on(input_qubit[1])) # number=6
+    c.append(cirq.X.on(input_qubit[1])) # number=3
+    c.append(cirq.CNOT.on(input_qubit[0],input_qubit[1])) # number=9
+    c.append(cirq.X.on(input_qubit[1])) # number=10
+    c.append(cirq.CNOT.on(input_qubit[0],input_qubit[1])) # number=11
+    c.append(cirq.Y.on(input_qubit[0])) # number=7
+    c.append(cirq.Y.on(input_qubit[0])) # number=8
     # circuit end
 
     c.append(cirq.measure(*input_qubit, key='result'))
@@ -34,7 +36,7 @@ def bitstring(bits):
     return ''.join(str(int(b)) for b in bits)
 
 if __name__ == '__main__':
-    qubit_count = 1
+    qubit_count = 2
 
     input_qubits = [cirq.GridQubit(i, 0) for i in range(qubit_count)]
     circuit = make_circuit(qubit_count,input_qubits)
@@ -48,5 +50,9 @@ if __name__ == '__main__':
     writefile = open("../data/startCirq104.csv","w+")
 
     print(format(frequencies),file=writefile)
+
+    symore_circuit = cg.optimized_for_sycamore(circuit, optimizer_type='sqrt_iswap')
+    print(symore_circuit,file=writefile)
+    print("circuit length:", symore_circuit.__len__(),file=writefile)
 
     writefile.close()

@@ -4,8 +4,9 @@ import cirq
 import qiskit
 
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
-from qiskit import BasicAer, execute
+from qiskit import BasicAer, execute, transpile
 from pprint import pprint
+from qiskit.test.mock import FakeVigo
 from math import log2
 import numpy as np
 
@@ -17,8 +18,8 @@ def make_circuit(n:int) -> QuantumCircuit:
     prog.h(input_qubit[0]) # number=1
     prog.h(input_qubit[1]) # number=2
 
-    prog.swap(input_qubit[1],input_qubit[0]) # number=3
-    prog.swap(input_qubit[1],input_qubit[0]) # number=4
+    prog.x(input_qubit[1]) # number=3
+    prog.x(input_qubit[1]) # number=4
     # circuit end
 
 
@@ -31,14 +32,15 @@ if __name__ == '__main__':
 
     prog = make_circuit(2)
     backend = BasicAer.get_backend('statevector_simulator')
+    sample_shot =120
 
-    info = execute(prog, backend=backend).result().get_statevector()
-    qubits = round(log2(len(info)))
-    info = {
-        np.binary_repr(i, qubits): round((info[i]*(info[i].conjugate())).real*1024,3)
-        for i in range(2 ** qubits)
-    }
+    info = execute(prog, backend=backend, shots=sample_shot).result().get_counts()
+    backend = FakeVigo()
+    circuit1 = transpile(prog,backend,optimization_level=2)
 
     writefile = open("../data/startQiskit_Class2.csv","w")
-    pprint(info,writefile)
+    print(info,file=writefile)
+    print("results end", file=writefile)
+    print(circuit1.__len__(),file=writefile)
+    print(circuit1,file=writefile)
     writefile.close()

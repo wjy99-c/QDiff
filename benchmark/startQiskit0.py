@@ -4,8 +4,9 @@ import cirq
 import qiskit
 
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
-from qiskit import BasicAer, execute
+from qiskit import BasicAer, execute, transpile
 from pprint import pprint
+from qiskit.test.mock import FakeVigo
 from math import log2
 import numpy as np
 
@@ -30,11 +31,16 @@ def make_circuit(n:int) -> QuantumCircuit:
 if __name__ == '__main__':
 
     prog = make_circuit(2)
-    sample_shot = 1024
     backend = BasicAer.get_backend('qasm_simulator')
+    sample_shot =120
 
     info = execute(prog, backend=backend, shots=sample_shot).result().get_counts()
+    backend = FakeVigo()
+    circuit1 = transpile(prog,backend,optimization_level=2)
 
     writefile = open("../data/startQiskit0.csv","w")
-    pprint(info,writefile)
+    print(info,file=writefile)
+    print("results end", file=writefile)
+    print(circuit1.__len__(),file=writefile)
+    print(circuit1,file=writefile)
     writefile.close()

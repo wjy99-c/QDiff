@@ -13,11 +13,11 @@ def make_circuit()-> Program:
     prog = Program() # circuit begin
 
     prog += Y(0) # number=1
+    prog += H(1) # number=3
 
-    prog += Y(0) # number=3
-    prog += Y(0) # number=4
-    prog += SWAP(1,0) # number=5
-    prog += SWAP(1,0) # number=6
+    prog += X(0) # number=4
+    prog += X(0) # number=5
+    prog += RX(-3.0096457621390216,1) # number=6
     # circuit end
 
     return prog
