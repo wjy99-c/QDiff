@@ -1,5 +1,5 @@
-# qubit number=2
-# total number=13
+# qubit number=4
+# total number=10
 import cirq
 import qiskit
 from qiskit import IBMQ
@@ -11,6 +11,7 @@ from pprint import pprint
 from qiskit.test.mock import FakeVigo
 from math import log2
 import numpy as np
+import networkx as nx
 
 def make_circuit(n:int) -> QuantumCircuit:
     # circuit begin
@@ -18,16 +19,24 @@ def make_circuit(n:int) -> QuantumCircuit:
     classical = ClassicalRegister(n, "qm")
     prog = QuantumCircuit(input_qubit, classical)
     prog.h(input_qubit[0]) # number=1
+    prog.rx(-1.7247343668207962,input_qubit[1]) # number=5
     prog.h(input_qubit[1]) # number=2
-    prog.h(input_qubit[1]) # number=4
-    prog.h(input_qubit[1]) # number=10
-    prog.cz(input_qubit[0],input_qubit[1]) # number=11
-    prog.h(input_qubit[1]) # number=12
+    prog.h(input_qubit[2])  # number=3
+    prog.h(input_qubit[3])  # number=4
 
-    prog.cx(input_qubit[1],input_qubit[0]) # number=7
-    prog.x(input_qubit[0]) # number=8
-    prog.cx(input_qubit[1],input_qubit[0]) # number=9
-    prog.x(input_qubit[0]) # number=6
+    for edge in E:
+        k = edge[0]
+        l = edge[1]
+        prog.cp(-2 * gamma, input_qubit[k-1], input_qubit[l-1])
+        prog.p(gamma, k)
+        prog.p(gamma, l)
+
+    prog.rx(2 * beta, range(len(V)))
+
+    prog.swap(input_qubit[1],input_qubit[0]) # number=6
+    prog.swap(input_qubit[1],input_qubit[0]) # number=7
+    prog.swap(input_qubit[3],input_qubit[0]) # number=8
+    prog.swap(input_qubit[3],input_qubit[0]) # number=9
     # circuit end
 
     for i in range(n):
@@ -39,13 +48,35 @@ def make_circuit(n:int) -> QuantumCircuit:
 
 
 if __name__ == '__main__':
+    n = 4
+    V = np.arange(0, n, 1)
+    E = [(0, 1, 1.0), (0, 2, 1.0), (1, 2, 1.0), (3, 2, 1.0), (3, 1, 1.0)]
 
-    prog = make_circuit(2)
+    G = nx.Graph()
+    G.add_nodes_from(V)
+    G.add_weighted_edges_from(E)
+
+    step_size = 0.1
+
+    a_gamma = np.arange(0, np.pi, step_size)
+    a_beta = np.arange(0, np.pi, step_size)
+    a_gamma, a_beta = np.meshgrid(a_gamma, a_beta)
+
+    F1 = 3 - (np.sin(2 * a_beta) ** 2 * np.sin(2 * a_gamma) ** 2 - 0.5 * np.sin(4 * a_beta) * np.sin(4 * a_gamma)) * (
+                1 + np.cos(4 * a_gamma) ** 2)
+
+    result = np.where(F1 == np.amax(F1))
+    a = list(zip(result[0], result[1]))[0]
+
+    gamma = a[0] * step_size
+    beta = a[1] * step_size
+
+    prog = make_circuit(4)
     IBMQ.load_account() 
     provider = IBMQ.get_provider(hub='ibm-q') 
     provider.backends()
     backend = least_busy(provider.backends(filters=lambda x: x.configuration().n_qubits >= 2 and not x.configuration().simulator and x.status().operational == True))
-    sample_shot =120
+    sample_shot =2780
 
     info = execute(prog, backend=backend, shots=sample_shot).result().get_counts()
     backend = FakeVigo()

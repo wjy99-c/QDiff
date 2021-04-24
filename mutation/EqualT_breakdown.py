@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 12/31/20 8:49 PM
-# @Author  : lingxiangxiang
+# @Author  : anonymous
 # @File    : EqualT_breakdown.py
 
 import re

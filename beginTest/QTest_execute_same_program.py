@@ -1,8 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 7/13/20 11:15 AM
-# @Author  : lingxiangxiang
-# @File    : QTest.py
+
 
 logfile = open("../testing record.txt","w+")
 import transitionBackend.acrossbackendCirq as acC

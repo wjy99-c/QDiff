@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 10/29/20 4:32 PM
-# @Author  : lingxiangxiang
+# @Author  : anonymous
 # @File    : pyquil-controlh.py
 
 from pyquil import Program

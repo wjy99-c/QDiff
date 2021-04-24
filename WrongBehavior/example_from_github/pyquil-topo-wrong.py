@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 9/15/20 11:16 PM
-# @Author  : lingxiangxiang
+# @Author  : anonymous
 # @File    : pyquil-topo.py
 
 import networkx as nx
