@@ -53,7 +53,6 @@ def simulator_to_Same (address:str, iteration:int):
     return "startPyquil_Same" + str(iteration) + ".py"
 
 
-
 def simulator_to_state_vector (address:str, iteration:int):
     pattern = re.compile("qvm")
     pattern_follow = re.compile("bitstrings =")
