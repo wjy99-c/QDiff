@@ -48,7 +48,6 @@ def make_circuit(n:int,f) -> QuantumCircuit:
     prog.h(input_qubit[2]) # number=5
     prog.h(input_qubit[3]) # number=6
     prog.h(input_qubit[4])  # number=21
-    prog.h(input_qubit[5])  # number=22
 
     Zf = build_oracle(n, f)
 
@@ -93,9 +92,9 @@ def make_circuit(n:int,f) -> QuantumCircuit:
 
 
 if __name__ == '__main__':
-    key = "111111"
+    key = "00000"
     f = lambda rep: str(int(rep == key))
-    prog = make_circuit(6,f)
+    prog = make_circuit(5,f)
     backend = BasicAer.get_backend('qasm_simulator')
     sample_shot =2720
 
@@ -103,9 +102,9 @@ if __name__ == '__main__':
     backend = FakeVigo()
     circuit1 = transpile(prog,backend,optimization_level=2)
 
-    writefile = open("../data/startQiskit0.csv","w")
+    writefile = open("../startQiskit0.csv","w")
     print(info,file=writefile)
     print("results end", file=writefile)
-    print(circuit1.__len__(),file=writefile)
+    print(circuit1.depth(),file=writefile)
     print(circuit1,file=writefile)
     writefile.close()
