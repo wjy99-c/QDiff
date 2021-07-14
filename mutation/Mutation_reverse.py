@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 9/4/20 9:55 AM
-# @Author  : lingxiangxiang
+# @Author  : anonymous
 # @File    : Mutation_shadow.py
 # Only support reversion for self-reverse gate
 

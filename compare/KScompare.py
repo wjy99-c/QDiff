@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 7/6/20 4:58 PM
-# @Author  : lingxiangxiang
+# @Author  : anonymous
 # @File    : compareResults.py
 
 
 import numpy as np
 import os
 import re
+from qiskit.visualization import plot_histogram
+import matplotlib.pyplot as plt
 
 def ks_score(r1, r2):
     r = r1-r2
@@ -44,7 +46,7 @@ def trans(data:str,qubit_number:int,flag1:int): #flag1: to check if the order is
 
 def read_results(filename: str, qubit_number:int):
 
-    pattern_qiskit = re.compile("Qiskit")
+    pattern_qiskit = re.compile("Qiskt")
     pattern_pyquilc = re.compile("Pyquil_Class")
     flag1 = 0
     with open(filename, 'r') as f:
@@ -64,7 +66,7 @@ def compare(path:str, thershold:float, qubit_number:int):
     print("qubit_number:",qubit_number)
     data = []
     name = []
-    right_file = re.compile("start")
+    right_file = re.compile("startQiskit")
     files = os.listdir(path)
     for file in files:
         if (not os.path.isdir(file)) & (right_file.search(file) is not None):
@@ -82,19 +84,22 @@ def compare(path:str, thershold:float, qubit_number:int):
         for i in range(0,len(candidates)):
             if ks_score(candidates[i]/(candidates[i].sum()),np.asarray(results)/(np.asarray(results).sum()))<thershold:
                 flag = i
-                candidates[i] = candidates[i] + np.asarray(results)
+                candidates[i] = candidates[i] + np.asarray(results)/(np.asarray(results).sum())
                 if candidates[i].sum() > candidates[answer].sum():
                     answer = i
                 break
 
         if flag == -1:
-            candidates.append(np.asarray(results))
+            candidates.append(np.asarray(results)/(np.asarray(results).sum()))
             if answer == -1:
                 answer = 0
 
     wrong_out = []      # wrong_out -> the output that is more than threshold could bare
     max_diff = 0        # max k_S score
     print("Right answer:",candidates[answer]/candidates[answer].sum()*1024)
+
+
+
     max_diff_name = ''
 
     for i in range(0, len(data)):
@@ -111,4 +116,9 @@ def compare(path:str, thershold:float, qubit_number:int):
     return wrong_out, max_diff, max_diff_name
 
 if __name__ == '__main__':
-    print(compare("../data",0.1,1))
+    ans=0
+
+
+    #for i in range(50,99):
+        #a1, average, a2 = compare("../data/Qiskit_new2/"+str(i)+"/",0.1,4)
+    print(compare("../data/Qiskit_new2/Wrong67",0.1,4))

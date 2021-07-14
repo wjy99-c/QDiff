@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 10/27/20 8:26 PM
-# @Author  : lingxiangxiang
+# @Author  : anonymous
 # @File    : qiskit-opt.py
 
 from qiskit import Aer, execute, BasicAer,transpile

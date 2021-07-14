@@ -15,7 +15,7 @@ def entropy_score(r_true:[],r_false:[]):
         if r_false[i]!=0:
             h = -r_true[i] * log2(r_false[i])+h
         else:
-            h = -r_true[i] * log2(1/1024) + h
+            h = -r_true[i] * log2(1/1000) + h
 
     return h
 
@@ -70,7 +70,7 @@ def compare(path:str, thershold:float, qubit_number:int):
     data = []
     name = []
     right_file = re.compile("start")
-    right_answer_file = re.compile("Cirq_Class")
+    right_answer_file = re.compile("Qiskit_Class")
     files = os.listdir(path)
     candidates = []  # save right answer candidates, first candidate will be matrix results
 
@@ -82,41 +82,47 @@ def compare(path:str, thershold:float, qubit_number:int):
         if right_answer_file.search(file) is not None:
             candidates.append(np.asarray(read_results(path+"/"+file, qubit_number)))
 
-    answer = 0
+    answer = 1
 
 
-
+    """
     for results in data:
 
         flag = -1
         for i in range(0,len(candidates)):
             if entropy_score(candidates[i]/(candidates[i].sum()),np.asarray(results)/(np.asarray(results).sum()))<thershold:
                 flag = i
-                candidates[i] = candidates[i] + np.asarray(results)
+                candidates[i] = candidates[i] + np.asarray(results)/(np.asarray(results).sum())
                 if candidates[i].sum() > candidates[answer].sum():
                     answer = i
                 break
 
         if flag == -1:
-            candidates.append(np.asarray(results))
+            candidates.append(candidates.append(np.asarray(results)/(np.asarray(results).sum())))
+    """
 
     wrong_out = []      # wrong_out -> the output that is more than threshold could bare
     max_diff = 0
     print("Right answer:",candidates[answer]/candidates[answer].sum()*1024)
     max_diff_name = ''
-
+    print(entropy_score(candidates[answer]/candidates[answer].sum(),candidates[answer]/candidates[answer].sum()))
     for i in range(0, len(data)):
-        k = entropy_score(np.asarray(data[i])/np.asarray(data[i]).sum(),candidates[answer]/candidates[answer].sum())
+        k = entropy_score(candidates[answer]/candidates[answer].sum(),np.asarray(data[i])/np.asarray(data[i]).sum())-\
+            entropy_score(candidates[answer]/candidates[answer].sum(),candidates[answer]/candidates[answer].sum())
         if k > max_diff:
             max_diff = k
             max_diff_name = name[i]
         if k > thershold:
             print(k)
-            print(name[i]+":"+str(data[i]))
+            print("Wrong"+name[i]+":"+str(data[i]))
             wrong_out.append(name[i])
 
 
     return wrong_out, max_diff, max_diff_name
 
 if __name__ == '__main__':
-    print(compare("../data/4q-wrong/Wrong29",2,4))
+    ans=0
+    for i in range(0,10):
+        a1,average,a2 = compare("../data/Qiskit_new1/"+str(i)+"/",0.03,4)
+        ans+=average
+        print(compare("../data/Qiskit_new1/"+str(i)+"/",0.03,4))

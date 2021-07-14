@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 12/31/20 8:49 PM
-# @Author  : lingxiangxiang
+# @Author  : anonymous
 # @File    : EqualT_breakdown.py
 
 import re
@@ -9,9 +9,21 @@ from mutation.Mutation_equal import generate_same
 import mutation.gateCirq_EqualT as MC
 import mutation.gateQiskit_EqualT as MQ
 import mutation.gatePyQuil_EqualT as MP
+import mutation.TransformBack as Tr
 
 
-#TODO: undone
+#TODO: undone -> transform back
+
+
+
+def generate_back():
+
+    SS = Tr.TransformBack(2,['S','S'],['Z'])
+    TT = Tr.TransformBack(2,['T','T'],['S'])
+    HZH = Tr.TransformBack(2,['H','Z','H'],['X'])
+
+
+    return 0
 
 def generate_same_breakdown(operation_number:int, address_in:str, address_out:str, total_number:int, pattern:str, platform:str):
 
@@ -92,7 +104,7 @@ def generate_same_breakdown(operation_number:int, address_in:str, address_out:st
     readfile.close()
 
 
-def breakdown(seed:int, write:str) -> int:
+def breakdown(seed:int, write:int) -> int:
 
 
     cirq_address_in = "../benchmark/startCirq"+str(seed)+".py"
@@ -103,7 +115,6 @@ def breakdown(seed:int, write:str) -> int:
     pyquil_address_out = "../benchmark/startPyquil"+ str(write) + ".py"
     qiskit_address_out = "../benchmark/startQiskit"+ str(write) + ".py"
 
-    qubit_number_patter = re.compile("# qubit number=")
     total_operation_id = re.compile("# total number=")
     operation_id = re.compile("# number=")
 
@@ -122,9 +133,6 @@ def breakdown(seed:int, write:str) -> int:
         if total_operation_id.search(line):
             total_number = int(line[total_operation_id.search(line).span()[1]:len(line)-1])
 
-        if qubit_number_patter.search(line):
-            qubit_number = int(line[qubit_number_patter.search(line).span()[1]:])
-
         if operation_id.search(line):
             flag = int(line[operation_id.search(line).span()[1]:len(line)-1])
 
@@ -140,4 +148,14 @@ def breakdown(seed:int, write:str) -> int:
     readfile.close()
 
 
-    return 1 #all possible transitions have been done
+    return 1 # all possible transformation have been done
+
+def breakdown_equal_transformation(seed:int, write:int) -> int:
+
+    write_now = write
+    flag = breakdown(seed, write_now)
+    while flag != 1:
+        write_now = write_now + 1
+        flag = breakdown(seed, write_now) # execute all possible transformation
+
+    return write_now-write # return how many programs we generate

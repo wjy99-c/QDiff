@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 6/29/20 3:17 PM
-# @Author  : lingxiangxiang
+# @Author  : anonymous
 # @File    : Pyquilbackend.py
 
 import re
@@ -53,7 +53,6 @@ def simulator_to_Same (address:str, iteration:int):
     return "startPyquil_Same" + str(iteration) + ".py"
 
 
-
 def simulator_to_state_vector (address:str, iteration:int):
     pattern = re.compile("qvm")
     pattern_follow = re.compile("bitstrings =")
@@ -87,4 +86,24 @@ def simulator_to_state_vector (address:str, iteration:int):
     readfile.close()
     return "startPyquil_Class" + str(iteration) + ".py"
 
+def change_repetition (address:str, iteration:int):
 
+    repetition_find = re.compile("qvm")
+    readfile = open(address,"r")
+    filedata=""
+
+    line = readfile.readline()
+    while line:
+        m = repetition_find.search(line)
+
+        if m is not None:
+            filedata += "    results = qvm.run_and_measure(prog,"+str(iteration)+")\n"
+        else:
+            filedata += line
+        line = readfile.readline()
+
+    readfile.close()
+
+    writefile = open(address,"w")
+    writefile.write(filedata)
+    writefile.close()

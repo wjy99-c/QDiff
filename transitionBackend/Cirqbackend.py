@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 6/29/20 3:03 PM
-# @Author  : lingxiangxiang
+# @Author  : anonymous
 # @File    : Cirqbackend.py
 
 import re
@@ -103,13 +103,13 @@ def simulator_to_state_vector (address:str, iteration:int):
             continue
 
         if m is not None:
-            writefile.write("    info = cirq.final_wavefunction(circuit)\n")
+            writefile.write("    info = cirq.final_state_vector(circuit)\n")
         elif n is not None:
             writefile.write(re.sub(writefile_address, writefile_change, line))
         elif k is not None:
             writefile.write("    qubits = round(log2(len(info)))\n"
                             "    frequencies = {\n"
-                            "        np.binary_repr(i, qubits): round((info[i]*(info[i].conjugate())).real*1024,3)\n"
+                            "        np.binary_repr(i, qubits): round((info[i]*(info[i].conjugate())).real,3)\n"
                             "        for i in range(2 ** qubits)\n"
                             "    }\n")
         else:
@@ -120,6 +120,59 @@ def simulator_to_state_vector (address:str, iteration:int):
     writefile.close()
     readfile.close()
     return "startCirq_Class"+str(iteration)+".py"
+
+def simulator_to_noisy (address:str, iteration:int):
+    writefile = open("../benchmark/startCirq_noisy" + str(iteration) + ".py", "w")
+    writefile_address = re.compile("../data/startCirq")
+    writefile_change = "../data/startCirq_noisy"
+
+    start_point = re.compile("simulator = cirq.Simulator()")
+    readfile = open(address)
+    line = readfile.readline()
+
+    noisy = "    circuit = circuit.with_noise(cirq.depolarize(p=0.01))\n"
+    while line:
+        m = start_point.search(line)
+        n = writefile_address.search(line)
+
+        if n is not None:
+            writefile.write(re.sub(writefile_address, writefile_change, line))
+        elif m is not None:
+            writefile.write(noisy)
+            writefile.write(line)
+        else:
+            writefile.write(line)
+
+        line = readfile.readline()
+
+
+    writefile.close()
+    readfile.close()
+    return "startCirq_noisy" + str(iteration) + ".py"
+
+def change_repetition  (address:str, repetition:int):
+
+    readfile = open(address,"r")
+    filedata =""
+
+    repetition_find = re.compile("circuit_sample_count =")
+
+    line = readfile.readline()
+    while line:
+        m = repetition_find.search(line)
+        if m is not None:
+            filedata += "    circuit_sample_count ="+str(repetition)+"\n"
+        else:
+            filedata += line
+
+        line = readfile.readline()
+    readfile.close()
+
+    writefile = open(address,"w")
+    writefile.write(filedata)
+    writefile.close()
+
+    return address
 
 
 

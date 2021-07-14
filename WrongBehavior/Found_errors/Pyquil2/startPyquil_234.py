@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 11/3/20 9:38 AM
-# @Author  : lingxiangxiang
-# @File    : startPyquil3.py
 
 from pyquil import Program, get_qc
 from pyquil.gates import H, X, CNOT, MEASURE

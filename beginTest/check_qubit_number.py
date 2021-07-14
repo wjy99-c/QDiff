@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 8/3/20 11:22 AM
-# @Author  : lingxiangxiang
-# @File    : check_qubit_number.py
 
 import re
 

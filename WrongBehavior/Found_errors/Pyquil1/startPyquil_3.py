@@ -1,8 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 11/3/20 9:38 AM
-# @Author  : lingxiangxiang
-# @File    : startPyquil3.py
+
 
 from pyquil import Program
 from pyquil.gates import H, X, CNOT, MEASURE
@@ -23,10 +19,10 @@ def make_circuit()-> Program:
 
 if __name__ == '__main__':
 
-    p = Program(X(0), X(1).controlled(0))
-    p = make_circuit()
+    p = Program(X(0), X(3).controlled(1))
+    #p = make_circuit()
     results = [0,0]
     meas_qubits = [0, 1]
 
     qvm = PyQVM(n_qubits=4)
-    print(qvm.execute(p).wf_simulator.sample_bitstrings(10))
+    qvm.execute(p)

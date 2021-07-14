@@ -1,8 +1,10 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 7/13/20 11:15 AM
-# @Author  : lingxiangxiang
-# @File    : QTest.py
+
+
+"""
+TODO: Add restriction on circuit length
+
+"""
+
 
 Framework=['Cirq','Qiskit','Pyquil']
 Cirq_t = [0.118,0.079,0.060,0.044,0.030,0.025]
@@ -12,14 +14,19 @@ logfile = open("../testing record.txt","w+")
 import transitionBackend.acrossbackendCirq as acC
 import transitionBackend.acrossbackendPyquil as acP
 import transitionBackend.acrossbackendQiskit as acQ
+import transitionBackend.Qiskitbackend
+import transitionBackend.Pyquilbackend
+import transitionBackend.Cirqbackend
 import os,shutil
 import compare.KScompare as cR
+import compare.threshold_repetition
 import mutation.Mutation_diff as diff_m
 import mutation.Mutation_equal as equal_m
 import mutation.Mutation_reverse as reverse_m
 import beginTest.check_qubit_number as q_number
 import re,random
 import mutation.Mutation_must_diff as must_diff_m
+import compare.compare
 
 def execution(pyfile_name:str,reason:str):
     try:
@@ -30,26 +37,82 @@ def execution(pyfile_name:str,reason:str):
         print("Bugs in" + reason)
 
 
+def read_max_qubit_state(address:str, qubit_number:int)->(float,float):
 
-def backend_loop(out_num:int):
-    print("Executing Simulator" + str(out_num))
-    print("Executing Simulator" + str(out_num),file=logfile)
+    def trans_str(qubit_number: int, number: int) -> str:
 
-    #execution('../benchmark/' + "startCirq" + str(out_num) + ".py","quantum-simulator")
-    #execution('../benchmark/' + "startPyquil" + str(out_num) + ".py","quantum-simulator")
-    #execution('../benchmark/' + "startQiskit" + str(out_num) + ".py","quantum-simulator")
+        results = bin(number)
+        results = results[2:len(results)]
+
+        return results.zfill(qubit_number)
+
+    def trans(data: str, flag_upside: int):  # flag1: to check if the bit order is upside down. Bit order for qiskit and pyquil classical are different
+        result = re.split(',|}', data)
+        final_data = []
+        qubit_nonzero_state = 0
 
 
-    cirqP1, cirqP2 = acC.generate("../benchmark/" + "startCirq" + str(out_num) + ".py", "startCirq" + str(out_num) + ".py", out_num)
+        for i in range(0, pow(2, qubit_number)):
+            if flag_upside == 0:
+                pattern = re.compile(trans_str(qubit_number,i) + "':")
+            else:
+                pattern = re.compile(''.join(reversed(trans_str(qubit_number,i))) + "':")
+            flag = 0
+            for results in result:
+                s = re.search(pattern, results)
+                if s is not None:
+                    final_data.append(float(results[s.span()[1]:]))
+                    flag = 1
+                    qubit_nonzero_state += 1
+                    break
+            if flag == 0:
+                final_data.append(0)
+
+        return final_data, qubit_nonzero_state
+
+    filename = address
+    pattern_qiskit = re.compile("Qiskit")
+    pattern_pyquilc = re.compile("Pyquil_Class")
+    flag1 = 0
+    pattern_result = re.compile("end")
+
+    with open(filename, 'r') as f:
+        print("Now read:" + filename)
+        if (re.search(pattern_pyquilc, filename) is not None) or (re.search(pattern_qiskit, filename) is not None):
+            flag1 = 1
+        line = f.readline()
+
+        end_file = line
+        while end_file:
+            end_file = f.readline()
+            if pattern_result.search(end_file) is not None:
+                break
+            line = line + end_file
+        data, qubit_state = trans(line, flag1)
+
+
+        end_file = f.readline()
+        length = float(end_file)
+        print(length)
+
+        circuit = f.readline()
+        end_file = circuit
+        while end_file:
+            end_file = f.readline()
+            circuit += end_file
+
+
+    return max(data), qubit_state, length, circuit
+
+def filter():
+    return 0
+
+
+def backend_loop(out_num:int, queue:[]):
+
+    #cirqP1, cirqP2, cirqP3 = acC.generate("../benchmark/" + "startCirq" + str(out_num) + ".py", "startCirq" + str(out_num) + ".py", out_num)
     #pyquilP1, pyquilP2 = acP.generate("../benchmark/" + "startPyquil" + str(out_num) + ".py", "startPyquil" + str(out_num) + ".py", out_num)
     qiskitP1, qiskitP2, qiskitP3 = acQ.generate("../benchmark/" + "startQiskit" + str(out_num) + ".py", "startQiskit" + str(out_num) + ".py", out_num)
-
-    print("Executing compiler setting" + str(out_num))
-    print("Executing compiler setting" + str(out_num),file=logfile)
-
-    #execution('../benchmark/' + cirqP1,"compilerSetting")
-    #execution('../benchmark/' + pyquilP1,"compilerSetting")
-    execution('../benchmark/' + qiskitP1,"compilerSetting")
 
     print("Executing Classical" + str(out_num))
     print("Executing Classical" + str(out_num),file=logfile)
@@ -58,10 +121,47 @@ def backend_loop(out_num:int):
     #execution('../benchmark/' + pyquilP2,"state-vector")
     execution('../benchmark/' + qiskitP2,"state-vector")
 
-    print("Executing quantum computer" + str(out_num))
-    print("Executing quantum computer" + str(out_num),file=logfile)
+    max_p, qubit_state, circuit_length, circuit_picture = read_max_qubit_state("../data/" + "startQiskit_Class" + str(out_num) + ".csv", qubit_number) #get max_p and qubit number, and then get repetition number
+    repetition_number = compare.threshold_repetition.KSRepetition(max_p=max_p,qubit_state_number=qubit_state,threshold=thershold_const).repetition()
+    print("number of trail:",repetition_number)
+    for circuits in queue:
+        if circuits.__eq__(circuit_picture):
+            print("Same circuit, skip!!")
+            return "same"
 
-    # execution('../benchmark/' + cirqP3,"state-vector")
+
+    qiskitP0 = transitionBackend.Qiskitbackend.change_repetition("../benchmark/startQiskit" + str(out_num) + ".py",repetition_number) #change repetition number
+    qiskitP1 = transitionBackend.Qiskitbackend.change_repetition("../benchmark/"+qiskitP1,repetition_number)
+    qiskitP3 = transitionBackend.Qiskitbackend.change_repetition("../benchmark/"+qiskitP3,repetition_number)
+
+    #cirqP0 = transitionBackend.Cirqbackend.change_repetition("../benchmark/startCirq" + str(out_num) + ".py", repetition_number)
+    #cirqP1 = transitionBackend.Cirqbackend.change_repetition("../benchmark/" + cirqP1, repetition_number)
+    #cirqP3 = transitionBackend.Cirqbackend.change_repetition("../benchmark/" + cirqP3, repetition_number)
+
+    print("Executing Simulator" + str(out_num))
+    print("Executing Simulator" + str(out_num),file=logfile)
+
+    #execution('../benchmark/' + cirqP0,"quantum-simulator")
+    #execution('../benchmark/' + "startPyquil" + str(out_num) + ".py","quantum-simulator")
+    execution('../benchmark/' + qiskitP0,"quantum-simulator")
+
+    #print("Executing compiler setting" + str(out_num))
+    #print("Executing compiler setting" + str(out_num),file=logfile)
+    print("Executing noisy simulation" + str(out_num))
+    print("Executing noisy simulation" + str(out_num), file=logfile)
+
+    #execution('../benchmark/' + cirqP1,"compilerSetting")
+    #execution('../benchmark/' + pyquilP1,"compilerSetting")
+    execution('../benchmark/' + qiskitP1,"noisy simulation")
+
+
+    #print("Executing noisy simulation" + str(out_num))
+    #print("Executing noisy simulation" + str(out_num),file=logfile)
+    print("Executing quantum computer" + str(out_num))
+    print("Executing quantum computer" + str(out_num), file=logfile)
+
+
+    # execution('../benchmark/' + cirqP3,"noisy simulation")
     # execution('../benchmark/' + pyquilP3,"state-vector")
     execution('../benchmark/' + qiskitP3, "quantum-computer")
 
@@ -85,9 +185,16 @@ def backend_loop(out_num:int):
     execution(reverse_m.generate_reverse('../benchmark/' + qiskitP2, '../benchmark/reverse/' + qiskitP2))
     """
 
+    return circuit_picture
+
 def calculate_results(directory:str,qubit_number:int):
-    wrong, diff, name = cR.compare("../"+directory, thershold=thershold_const/qubit_number,
+    KScompare = compare.compare.KSScore(address="../"+directory ,qubit_number=qubit_number,threshold=thershold_const)
+
+    wrong, diff, name = cR.compare("../"+directory, thershold=thershold_const,
                                    qubit_number=qubit_number)
+
+
+    print(wrong,diff,name)
 
     if len(wrong)==0:
         return diff
@@ -118,57 +225,72 @@ def collect_data(num:int,flag:int,directory:str):
             shutil.move("../"+directory+"/"+str(file),"../"+dir_name+str(num))
 
 
-
 if __name__ == '__main__':
 
     #thershold_const= Cirq_t[1]
-    thershold_const = 4
 
-    n = 100
+    thershold_const = 0.1
+    total_identical_circuit = 0
+
+    n = 12000
     tail = 1
     seed = 0
     max_now = 0
-    text_list = []
+    program_list = []
 
-    text_list.append(0)
+    program_list.append(0)
 
     while tail < n:
-
-        j = 0
+        circuit_queue = []
+        j = 0 #https://en.wikipedia.org/wiki/Sequential_probability_ratio_test
 
         print("Generating New Program at number"+str(tail),file=logfile)
         print("Generating New Program at number" + str(tail))
-        text_list.append(tail)
-        tail = tail + diff_m.mutate(text_list[seed], tail, "Cirq")#diff_m.mutate will return 0 if something goes wrong
+        program_list.append(tail)
+        tail = tail + diff_m.mutate(program_list[seed], tail, "Cirq")#diff_m.mutate will return 0 if something goes wrong
 
+        qubit_number = q_number.check("../benchmark/" + "startCirq" + str(program_list[seed]) + ".py")
+        new_circuit=backend_loop(program_list[seed], queue=circuit_queue)
+        if new_circuit!="same":
+            circuit_queue.append(new_circuit)
+            total_identical_circuit+=1
 
-        backend_loop(text_list[seed])
         flag_see_wrong = 0
+
+
+
 
         while j < 10:
 
             j = j + 1
-            print("Generating Equivalent Program for number"+str(text_list[seed])+"at"+str(tail),file=logfile)
-            print("Generating Equivalent Program for number" + str(text_list[seed]) + "at" + str(tail))
-            equal_m.mutate(text_list[seed], tail)
+            print("Generating Equivalent Program for number" + str(program_list[seed]) + "at" + str(tail), file=logfile)
+            print("Generating Equivalent Program for number" + str(program_list[seed]) + "at" + str(tail))
+            equal_m.mutate(program_list[seed], tail)
             print("now we are at round:", seed,file=logfile)
             print("now we are at round:", seed)
-            backend_loop(tail) # execute programs on each backends
+            new_circuit = backend_loop(tail, queue=circuit_queue) # execute programs on each backends
+            if new_circuit != "same":
+                circuit_queue.append(new_circuit)
+                total_identical_circuit += 1
+            else:
+                tail = tail + 1
+                continue
 
             #diff = max(calculate_results(tail,"data"),calculate_results(tail,"data/reverse"))
             qubit_number = q_number.check("../benchmark/" + "startCirq" + str(tail) + ".py")
             diff = calculate_results("data",qubit_number) # calculate the K-S statics
             print("K-S Diff:", diff,file=logfile)
             print("K-S Diff:", diff)
-            if diff > thershold_const/qubit_number:
+            if diff > thershold_const:
                 flag_see_wrong = 1
 
             if diff > max_now:
                 max_now = diff
-                text_list.append(tail)
+                program_list.append(tail)
 
             tail = tail + 1
 
+        """
         qubit_number = q_number.check("../benchmark/" + "startCirq" + str(seed) + ".py") #invoke must-different mutation
         must_diff_m.mutate(text_list[seed],tail,"Cirq")
         backend_loop(tail)
@@ -181,14 +303,23 @@ if __name__ == '__main__':
             print("Must different mutation failed!")
             print("Must different mutation failed!",file=logfile)
             flag_see_wrong = 1
+        """
 
         collect_data(seed,flag_see_wrong,"data")
         #collect_data(seed,flag_see_wrong,"data/reverse")
 
         seed = seed + 1
 
-        if seed > len(text_list):
+        if seed > len(program_list):
             seed = random.randint(seed-1)
 
+        print("Identical circuit:",total_identical_circuit)
+        print("Identical circuit:",total_identical_circuit, file=logfile)
+
+        print("total circuit:", tail)
+        print("total circuit:", tail, file=logfile)
+
+    print("Identical circuit:", total_identical_circuit)
+    print("Identical circuit:", total_identical_circuit, file=logfile)
     logfile.close()
 

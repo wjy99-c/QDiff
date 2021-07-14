@@ -6,6 +6,8 @@
 import re,os
 import numpy as np
 from math import log2
+from compare.threshold_repetition import KSRepetition
+from compare.threshold_repetition import EntropyRepetition
 
 class Compare:
 
@@ -27,6 +29,7 @@ class Compare:
 
     def score(self, r1:[], r2:[]) -> float:
         return 0
+
 
     def compare(self):
         path = self.address
@@ -117,6 +120,7 @@ class Compare:
                 end_file = f.readline()
                 line = line + end_file
             data = self.trans(line, flag1)
+
         return data
 
 

@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 9/19/20 10:59 PM
-# @Author  : lingxiangxiang
+# @Author  : anonymous
 # @File    : qiskit-topo-wronggate.py
 
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 9/15/20 11:09 AM
-# @Author  : lingxiangxiang
+# @Author  : anonymous
 # @File    : qiskit-backend.py
 
 from qiskit import Aer, execute, BasicAer
