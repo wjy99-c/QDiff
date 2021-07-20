@@ -53,19 +53,17 @@ def make_circuit(n:int,f) -> QuantumCircuit:
     input_qubit = QuantumRegister(n,"qc")
     classical = ClassicalRegister(n, "qm")
     prog = QuantumCircuit(input_qubit, classical)
-    prog.x(input_qubit[4]) # number=1
+    prog.x(input_qubit[3]) # number=1
     prog.h(input_qubit[1]) # number=4
     prog.h(input_qubit[2]) # number=5
     prog.h(input_qubit[3]) # number=6
-    prog.h(input_qubit[4]) # number=7
     prog.h(input_qubit[0]) # number=3
 
     oracle = build_oracle(n-1, f)
     prog.append(oracle.to_gate(),[input_qubit[i] for i in range(n-1)]+[input_qubit[n-1]])
     prog.h(input_qubit[1])  # number=8
     prog.h(input_qubit[2])  # number=9
-    prog.h(input_qubit[3])  # number=10
-    prog.h(input_qubit[4])  # number=11
+    prog.h(input_qubit[3])  # number=7
     prog.h(input_qubit[0])  # number=2
 
     # circuit end
@@ -79,10 +77,10 @@ def make_circuit(n:int,f) -> QuantumCircuit:
 
 
 if __name__ == '__main__':
-    a = "1111"
+    a = "101"
     b = "0"
     f = lambda rep: bitwise_xor(bitwise_dot(a, rep), b)
-    prog = make_circuit(5,f)
+    prog = make_circuit(4,f)
     backend = BasicAer.get_backend('qasm_simulator')
     sample_shot =2720
 
@@ -90,7 +88,7 @@ if __name__ == '__main__':
     backend = FakeVigo()
     circuit1 = transpile(prog,backend,optimization_level=2)
 
-    writefile = open("../startQiskit0.csv","w")
+    writefile = open("startQiskit0.csv","w")
     print(info,file=writefile)
     print("results end", file=writefile)
     print(circuit1.__len__(),file=writefile)

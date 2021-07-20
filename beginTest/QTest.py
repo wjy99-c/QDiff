@@ -138,12 +138,12 @@ def backend_loop(out_num:int, queue:[]):
     #cirqP1 = transitionBackend.Cirqbackend.change_repetition("../benchmark/" + cirqP1, repetition_number)
     #cirqP3 = transitionBackend.Cirqbackend.change_repetition("../benchmark/" + cirqP3, repetition_number)
 
-    print("Executing Simulator" + str(out_num))
-    print("Executing Simulator" + str(out_num),file=logfile)
+    #print("Executing Simulator" + str(out_num))
+    #print("Executing Simulator" + str(out_num),file=logfile)
 
     #execution('../benchmark/' + cirqP0,"quantum-simulator")
     #execution('../benchmark/' + "startPyquil" + str(out_num) + ".py","quantum-simulator")
-    execution('../benchmark/' + qiskitP0,"quantum-simulator")
+    #execution('../benchmark/' + qiskitP0,"quantum-simulator")
 
     #print("Executing compiler setting" + str(out_num))
     #print("Executing compiler setting" + str(out_num),file=logfile)
@@ -157,13 +157,13 @@ def backend_loop(out_num:int, queue:[]):
 
     #print("Executing noisy simulation" + str(out_num))
     #print("Executing noisy simulation" + str(out_num),file=logfile)
-    print("Executing quantum computer" + str(out_num))
-    print("Executing quantum computer" + str(out_num), file=logfile)
+    #print("Executing quantum computer" + str(out_num))
+    #print("Executing quantum computer" + str(out_num), file=logfile)
 
 
     # execution('../benchmark/' + cirqP3,"noisy simulation")
     # execution('../benchmark/' + pyquilP3,"state-vector")
-    execution('../benchmark/' + qiskitP3, "quantum-computer")
+    #execution('../benchmark/' + qiskitP3, "quantum-computer")
 
     """
     print("Executing reversion version of each program")
@@ -232,7 +232,7 @@ if __name__ == '__main__':
     thershold_const = 0.1
     total_identical_circuit = 0
 
-    n = 12000
+    n = 1000
     tail = 1
     seed = 0
     max_now = 0
@@ -281,7 +281,7 @@ if __name__ == '__main__':
             diff = calculate_results("data",qubit_number) # calculate the K-S statics
             print("K-S Diff:", diff,file=logfile)
             print("K-S Diff:", diff)
-            if diff > thershold_const:
+            if diff > thershold_const: #should be thershold_const
                 flag_see_wrong = 1
 
             if diff > max_now:

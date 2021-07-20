@@ -9,7 +9,7 @@ import cirq
 import random
 import numpy as np
 import sympy
-import numpy as np
+
 #thatsNoCode
 
 def make_oracle(input_qubits, n:int, f):
@@ -100,6 +100,7 @@ def rot_11_layer(jc,jr,half_turns):
 #Step of the construction of the anzats
 def one_step(h,jc,jr,x_hs,h_hs,j_hs):
     lenght = len(h)
+    print(lenght)
     yield rot_x_layer(lenght,x_hs)
     yield rot_z_layer(h,h_hs)
     yield rot_11_layer(jc,jr,j_hs)
@@ -122,8 +123,11 @@ def bitstring(bits):
 
 def make_circuit(n:int):
     h = [[-1.0, 1.0, 1.0], [-1.0, 1.0, 1.0], [-1.0, 1.0, 1.0]]
+    #h = [[-1.0, 1.0], [-1.0, 1.0]]
     jc = [[-1.0, -1.0], [-1.0, 1.0], [1.0, 1.0]]
+    #jc = [[-1.0, -1.0]]
     jr = [[1.0, 1.0, 1.0], [1.0, -1.0, 1.0]]
+    #jr = [[1.0], [-1.0]]
     lenght = n
     #Define Qubits on the grid
     qubits = [cirq.GridQubit(i,j) for i in range(lenght) for j in range(lenght)]
@@ -143,7 +147,7 @@ def bitstring(bits):
 if __name__ == '__main__':
     qubit_count = 3
 
-    x_bits = "1111"
+    x_bits = "111"
     f = lambda rep: str(int(rep == x_bits))
     circuit = make_circuit(qubit_count)
     circuit_sample_count = 1024

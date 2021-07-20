@@ -26,7 +26,7 @@ class KSRepetition(ThresholdRepetition):
 
     def repetition(self):
 
-        return 20 * round(math.sqrt(self.max_p * self.qubit_state_number) / (self.threshold * self.threshold))
+        return 14 * round(math.sqrt(self.qubit_state_number) / (self.threshold * self.threshold))
 
 class EntropyRepetition(ThresholdRepetition):
 

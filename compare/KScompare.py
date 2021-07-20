@@ -66,7 +66,9 @@ def compare(path:str, thershold:float, qubit_number:int):
     print("qubit_number:",qubit_number)
     data = []
     name = []
-    right_file = re.compile("startQiskit")
+    right_file = re.compile("startQiskit_noisy|startQiskit_QC") # only consider Qiskit noisy
+    #right_file = re.compile("startQiskit")
+    #right_file = re.compile("start)
     files = os.listdir(path)
     for file in files:
         if (not os.path.isdir(file)) & (right_file.search(file) is not None):
@@ -109,7 +111,7 @@ def compare(path:str, thershold:float, qubit_number:int):
             max_diff_name = name[i]
         if k > thershold:
             print(k)
-            print(name[i]+":"+str(data[i]))
+            print(name[i]+":"+str(data[i])+":"+str(k))
             wrong_out.append(name[i])
 
 
@@ -121,4 +123,4 @@ if __name__ == '__main__':
 
     #for i in range(50,99):
         #a1, average, a2 = compare("../data/Qiskit_new2/"+str(i)+"/",0.1,4)
-    print(compare("../data/Qiskit_new2/Wrong67",0.1,4))
+    print(compare("../WrongBehavior/quantumHardware/other/Wrong114",0.1,4))
