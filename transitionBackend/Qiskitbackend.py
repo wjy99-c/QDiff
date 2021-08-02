@@ -68,6 +68,7 @@ def simulator_to_state_vector (address:str, iteration:int):
 
     delete_measure_1 = re.compile("for i in range[(]n[)]:")
     delete_measure_2 = re.compile("prog.measure")
+    delete_measure_3 = re.compile("circuit1.measure_all()")
     readfile = open(address)
     line = readfile.readline()
     while line:
@@ -77,9 +78,17 @@ def simulator_to_state_vector (address:str, iteration:int):
 
         skip_measure = delete_measure_1.search(line)
         if skip_measure is not None:
+            line_before = line
+            line = readfile.readline()
+            if delete_measure_2.search(line) is not None:
+                continue
+            else:
+                writefile.write(line_before)
+        skip_measure = delete_measure_2.search(line)
+        if skip_measure is not None:
             line = readfile.readline()
             continue
-        skip_measure = delete_measure_2.search(line)
+        skip_measure = delete_measure_3.search(line)
         if skip_measure is not None:
             line = readfile.readline()
             continue
@@ -106,7 +115,7 @@ def simulator_to_state_vector (address:str, iteration:int):
 
 def simulator_to_qc (address:str, iteration:int):
     pattern = re.compile("qasm_simulator")
-    library = re.compile("import qiskit")
+    Fakebackend = re.compile("backend = FakeVigo")
 
     writefile = open("../benchmark/startQiskit_QC" + str(iteration) + ".py", "w")
     writefile_address = re.compile("../data/startQiskit")
@@ -117,22 +126,23 @@ def simulator_to_qc (address:str, iteration:int):
     while line:
         m = pattern.search(line)
         n = writefile_address.search(line)
-        k = library.search(line)
+        k = Fakebackend.search(line)
 
         if m is not None:
             writefile.write("    IBMQ.load_account() \n"
                             "    provider = IBMQ.get_provider(hub='ibm-q') \n"
                             "    provider.backends()\n")
-            writefile.write("    backend = least_busy(provider.backends(filters=lambda x: x.configuration().n_qubits >= 2 and "
-                            "not x.configuration().simulator and x.status().operational == True))\n")
+            #writefile.write("    backend = least_busy(provider.backends(filters=lambda x: x.configuration().n_qubits >= 2 and "
+            #                "not x.configuration().simulator and x.status().operational == True))\n")
+            writefile.write("    backend = provider.get_backend(\"ibmq_5_yorktown\")\n")
 
         elif n is not None:
             writefile.write(re.sub(writefile_address, writefile_change, line))
 
         elif k is not None:
-            writefile.write(line)
-            writefile.write("from qiskit import IBMQ\n")
-            writefile.write("from qiskit.providers.ibmq import least_busy\n")
+            writefile.write("\n")
+            #writefile.write("from qiskit import IBMQ\n")
+            #writefile.write("from qiskit.providers.ibmq import least_busy\n")
 
         else:
             writefile.write(line)
@@ -155,7 +165,7 @@ def simulator_to_noisy (address:str, iteration:int):
     readfile = open(address)
     line = readfile.readline()
 
-    noisy = "    backend = FakeVigo()\n"
+    noisy = "    backend = FakeYorktown()\n"
     while line:
 
         m = pattern.search(line)

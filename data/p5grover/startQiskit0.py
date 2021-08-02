@@ -79,11 +79,12 @@ def make_circuit(n:int,f) -> QuantumCircuit:
         prog.h(input_qubit[2])  # number=19
         #prog.h(input_qubit[3])  # number=20
 
+    #prog.h(input_qubit[3])  # number=20
 
     # circuit end
 
-    for i in range(n):
-        prog.measure(input_qubit[i], classical[i])
+    #for i in range(n):
+    #    prog.measure(input_qubit[i], classical[i])
 
 
     return prog
@@ -95,12 +96,16 @@ if __name__ == '__main__':
     key = "000"
     f = lambda rep: str(int(rep == key))
     prog = make_circuit(3,f)
-    backend = BasicAer.get_backend('qasm_simulator')
+    #backend = BasicAer.get_backend('qasm_simulator')
     sample_shot =2720
 
-    info = execute(prog, backend=backend, shots=sample_shot).result().get_counts()
+    #info = execute(prog, backend=backend, shots=sample_shot).result().get_counts()
     backend = FakeVigo()
     circuit1 = transpile(prog,backend,optimization_level=2)
+    circuit1.h(qubit=3)
+    circuit1.h(qubit=4)
+    circuit1.measure_all()
+    info = execute(circuit1,backend=backend, shots=sample_shot).result().get_counts()
 
     writefile = open("startQiskit0.csv","w")
     print(info,file=writefile)

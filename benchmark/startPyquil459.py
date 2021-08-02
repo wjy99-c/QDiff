@@ -1,5 +1,5 @@
-# qubit number=5
-# total number=34
+# qubit number=2
+# total number=84
 import pyquil
 from pyquil.api import local_forest_runtime, QVMConnection
 from pyquil import Program, get_qc
@@ -14,40 +14,72 @@ def make_circuit()-> Program:
 
 
 
-    prog += H(0)  # number=3
-    prog += H(1) # number=4
-    prog += H(2) # number=5
-    prog += H(3)  # number=6
-    prog += H(4)  # number=21
-
     prog += H(0)  # number=1
-    prog += H(1)  # number=2
-    prog += H(2)  # number=7
-    prog += H(3)  # number=8
+    prog += H(1) # number=70
+    prog += RX(-0.09738937226128368,2) # number=2
+    prog += H(1) # number=33
+    prog += Y(2) # number=56
+    prog += CZ(2,1) # number=34
+    prog += H(1) # number=35
+    prog += H(1) # number=3
 
-    prog += H(0)  # number=28
-    prog += CZ(1,0)  # number=29
-    prog += H(0)  # number=30
-    prog += X(0)  # number=25
-    prog += H(0)  # number=31
-    prog += CZ(1,0)  # number=32
-    prog += H(0)  # number=33
-        prog += CNOT(2,1) # number=22
-    prog += X(1)  # number=10
-    prog += X(2)  # number=11
-    prog += X(3)  # number=12
-        prog += H(1) # number=23
-
-    prog += X(0)  # number=13
-    prog += X(1)  # number=14
-    prog += X(2)  # number=15
-    prog += X(3)  # number=16
-        prog += CNOT(1,3) # number=27
-
-    prog += H(0)  # number=17
-    prog += H(1)  # number=18
-    prog += H(2)  # number=19
-    prog += H(3)  # number=20
+    prog += H(0) # number=45
+    prog += H(1) # number=77
+    prog += CZ(2,1) # number=78
+    prog += H(1) # number=79
+    prog += CZ(1,0) # number=46
+    prog += H(0) # number=47
+    prog += Y(1) # number=15
+    prog += H(0) # number=66
+    prog += CZ(1,0) # number=67
+    prog += H(0) # number=68
+    prog += H(1) # number=19
+    prog += CZ(0,1) # number=20
+    prog += RX(-0.6000441968356504,1) # number=28
+    prog += H(1) # number=21
+    prog += H(1) # number=30
+    prog += CZ(0,1) # number=31
+    prog += H(1) # number=32
+    prog += H(1) # number=57
+    prog += CZ(0,1) # number=58
+    prog += H(1) # number=59
+    prog += CNOT(0,1) # number=51
+    prog += CNOT(0,1) # number=71
+    prog += X(1) # number=72
+    prog += H(1) # number=81
+    prog += CZ(0,1) # number=82
+    prog += H(1) # number=83
+    prog += CNOT(0,1) # number=53
+    prog += CNOT(0,1) # number=50
+    prog += Y(2) # number=69
+    prog += H(2) # number=29
+    prog += H(1) # number=36
+    prog += X(1) # number=64
+    prog += CZ(0,1) # number=37
+    prog += H(2) # number=80
+    prog += Y(2) # number=44
+    prog += H(1) # number=38
+    prog += Z(1) # number=55
+    prog += H(1) # number=61
+    prog += CZ(0,1) # number=62
+    prog += Z(2) # number=65
+    prog += H(1) # number=63
+    prog += Z(1) # number=11
+    prog += RX(-1.1780972450961724,2) # number=54
+    prog += H(1) # number=42
+    prog += H(0) # number=39
+    prog += CZ(1,0) # number=40
+    prog += H(0) # number=41
+    prog += CNOT(2,1) # number=26
+    prog += Y(1) # number=14
+    prog += CNOT(1,0) # number=5
+    prog += CNOT(0,1) # number=74
+    prog += X(1) # number=75
+    prog += CNOT(0,1) # number=76
+    prog += Z(1) # number=8
+    prog += X(1) # number=7
+    prog += H(2) # number=43
+    prog += RX(-2.42845112122491,1) # number=25
     # circuit end
 
     return prog
@@ -64,7 +96,7 @@ def summrise_results(bitstrings) -> dict:
 
 if __name__ == '__main__':
     prog = make_circuit()
-    qvm = get_qc('5q-qvm')
+    qvm = get_qc('1q-qvm')
 
     results = qvm.run_and_measure(prog,1024)
     bitstrings = np.vstack([results[i] for i in qvm.qubits()]).T

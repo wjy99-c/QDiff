@@ -129,7 +129,7 @@ def backend_loop(out_num:int, queue:[]):
             print("Same circuit, skip!!")
             return "same"
 
-
+    #repetition_number = 5200 #should be change;
     qiskitP0 = transitionBackend.Qiskitbackend.change_repetition("../benchmark/startQiskit" + str(out_num) + ".py",repetition_number) #change repetition number
     qiskitP1 = transitionBackend.Qiskitbackend.change_repetition("../benchmark/"+qiskitP1,repetition_number)
     qiskitP3 = transitionBackend.Qiskitbackend.change_repetition("../benchmark/"+qiskitP3,repetition_number)
@@ -157,13 +157,13 @@ def backend_loop(out_num:int, queue:[]):
 
     #print("Executing noisy simulation" + str(out_num))
     #print("Executing noisy simulation" + str(out_num),file=logfile)
-    #print("Executing quantum computer" + str(out_num))
-    #print("Executing quantum computer" + str(out_num), file=logfile)
+    print("Executing quantum computer" + str(out_num))
+    print("Executing quantum computer" + str(out_num), file=logfile)
 
 
     # execution('../benchmark/' + cirqP3,"noisy simulation")
     # execution('../benchmark/' + pyquilP3,"state-vector")
-    #execution('../benchmark/' + qiskitP3, "quantum-computer")
+    execution('../benchmark/' + qiskitP3, "quantum-computer")
 
     """
     print("Executing reversion version of each program")
@@ -232,7 +232,7 @@ if __name__ == '__main__':
     thershold_const = 0.1
     total_identical_circuit = 0
 
-    n = 1000
+    n = 2000
     tail = 1
     seed = 0
     max_now = 0
@@ -278,7 +278,7 @@ if __name__ == '__main__':
 
             #diff = max(calculate_results(tail,"data"),calculate_results(tail,"data/reverse"))
             qubit_number = q_number.check("../benchmark/" + "startCirq" + str(tail) + ".py")
-            diff = calculate_results("data",qubit_number) # calculate the K-S statics
+            diff = calculate_results("data",5)#qubit_number) # calculate the K-S statics
             print("K-S Diff:", diff,file=logfile)
             print("K-S Diff:", diff)
             if diff > thershold_const: #should be thershold_const

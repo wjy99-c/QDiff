@@ -1,129 +1,235 @@
-# qubit number=5
-# total number=35
-import cirq
-import qiskit
-from qiskit import IBMQ
-from qiskit.providers.ibmq import least_busy
+# qubit number=3
+# total number=78
 
-from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
-from qiskit import BasicAer, execute, transpile
-from pprint import pprint
-from qiskit.test.mock import FakeVigo
-from math import log2,floor, sqrt, pi
 import numpy as np
-import networkx as nx
 
-def build_oracle(n: int, f) -> QuantumCircuit:
-    # implement the oracle O_f^\pm
-    # NOTE: use U1 gate (P gate) with \lambda = 180 ==> CZ gate
-    # or multi_control_Z_gate (issue #127)
+from qiskit import QuantumCircuit, execute, Aer, QuantumRegister, ClassicalRegister, transpile, BasicAer, IBMQ
+from qiskit.visualization import plot_histogram
+from typing import *
+from pprint import pprint
+from math import log2
+from collections import Counter
+from qiskit.test.mock import FakeVigo, FakeYorktown
 
+kernel = 'circuit/bernstein'
+
+
+def bitwise_xor(s: str, t: str) -> str:
+    length = len(s)
+    res = []
+    for i in range(length):
+        res.append(str(int(s[i]) ^ int(t[i])))
+    return ''.join(res[::-1])
+
+
+def bitwise_dot(s: str, t: str) -> str:
+    length = len(s)
+    res = 0
+    for i in range(length):
+        res += int(s[i]) * int(t[i])
+    return str(res % 2)
+
+
+def build_oracle(n: int, f: Callable[[str], str]) -> QuantumCircuit:
+    # implement the oracle O_f
+    # NOTE: use multi_control_toffoli_gate ('noancilla' mode)
+    # https://qiskit.org/documentation/_modules/qiskit/aqua/circuits/gates/multi_control_toffoli_gate.html
+    # https://quantumcomputing.stackexchange.com/questions/3943/how-do-you-implement-the-toffoli-gate-using-only-single-qubit-and-cnot-gates
+    # https://quantumcomputing.stackexchange.com/questions/2177/how-can-i-implement-an-n-bit-toffoli-gate
     controls = QuantumRegister(n, "ofc")
-    oracle = QuantumCircuit(controls, name="Zf")
-
+    target = QuantumRegister(1, "oft")
+    oracle = QuantumCircuit(controls, target, name="Of")
     for i in range(2 ** n):
         rep = np.binary_repr(i, n)
         if f(rep) == "1":
             for j in range(n):
                 if rep[j] == "0":
                     oracle.x(controls[j])
-
-            # oracle.h(controls[n])
-            if n >= 2:
-                oracle.mcu1(pi, controls[1:], controls[0])
-
+            oracle.mct(controls, target[0], None, mode='noancilla')
             for j in range(n):
                 if rep[j] == "0":
                     oracle.x(controls[j])
             # oracle.barrier()
-
+    # oracle.draw('mpl', filename=(kernel + '-oracle.png'))
     return oracle
 
 
-def make_circuit(n:int,f) -> QuantumCircuit:
+def build_circuit(n: int, f: Callable[[str], str]) -> QuantumCircuit:
+    # implement the Bernstein-Vazirani circuit
+    zero = np.binary_repr(0, n)
+    b = f(zero)
+
+    # initial n + 1 bits
+    input_qubit = QuantumRegister(n+1, "qc")
+    classicals = ClassicalRegister(n, "qm")
+    prog = QuantumCircuit(input_qubit, classicals)
+
+    # inverse last one (can be omitted if using O_f^\pm)
+    prog.x(input_qubit[n])
     # circuit begin
-    input_qubit = QuantumRegister(n,"qc")
-    classical = ClassicalRegister(n, "qm")
-    prog = QuantumCircuit(input_qubit, classical)
-    prog.h(input_qubit[0]) # number=3
-    prog.h(input_qubit[1]) # number=4
-    prog.h(input_qubit[2]) # number=5
-    prog.h(input_qubit[3]) # number=6
-    prog.h(input_qubit[4])  # number=21
+    prog.h(input_qubit[1])  # number=1
+    prog.h(input_qubit[2]) # number=38
+    prog.cz(input_qubit[0],input_qubit[2]) # number=39
+    prog.h(input_qubit[2]) # number=40
+    prog.h(input_qubit[2]) # number=59
+    prog.cz(input_qubit[0],input_qubit[2]) # number=60
+    prog.h(input_qubit[2]) # number=61
+    prog.h(input_qubit[2]) # number=42
+    prog.cz(input_qubit[0],input_qubit[2]) # number=43
+    prog.h(input_qubit[2]) # number=44
+    prog.h(input_qubit[2]) # number=48
+    prog.cz(input_qubit[0],input_qubit[2]) # number=49
+    prog.h(input_qubit[2]) # number=50
+    prog.h(input_qubit[2]) # number=71
+    prog.cz(input_qubit[0],input_qubit[2]) # number=72
+    prog.h(input_qubit[2]) # number=73
+    prog.x(input_qubit[2]) # number=55
+    prog.h(input_qubit[2]) # number=67
+    prog.cz(input_qubit[0],input_qubit[2]) # number=68
+    prog.h(input_qubit[2]) # number=69
+    prog.h(input_qubit[2]) # number=64
+    prog.cz(input_qubit[0],input_qubit[2]) # number=65
+    prog.h(input_qubit[2]) # number=66
+    prog.cx(input_qubit[0],input_qubit[2]) # number=37
+    prog.h(input_qubit[2]) # number=51
+    prog.cz(input_qubit[0],input_qubit[2]) # number=52
+    prog.h(input_qubit[2]) # number=53
+    prog.h(input_qubit[2]) # number=25
+    prog.cz(input_qubit[0],input_qubit[2]) # number=26
+    prog.h(input_qubit[2]) # number=27
+    prog.h(input_qubit[1]) # number=7
+    prog.cz(input_qubit[2],input_qubit[1]) # number=8
+    prog.rx(0.17592918860102857,input_qubit[2]) # number=34
+    prog.rx(-0.3989822670059037,input_qubit[1]) # number=30
+    prog.h(input_qubit[1]) # number=9
+    prog.h(input_qubit[1]) # number=18
+    prog.rx(2.3310617489636263,input_qubit[2]) # number=58
+    prog.cx(input_qubit[0],input_qubit[2]) # number=75
+    prog.x(input_qubit[2]) # number=76
+    prog.cx(input_qubit[0],input_qubit[2]) # number=77
+    prog.cz(input_qubit[2],input_qubit[1]) # number=19
+    prog.h(input_qubit[1]) # number=20
+    prog.x(input_qubit[1]) # number=62
+    prog.y(input_qubit[1]) # number=14
+    prog.h(input_qubit[1]) # number=22
+    prog.cz(input_qubit[2],input_qubit[1]) # number=23
+    prog.rx(-0.9173450548482197,input_qubit[1]) # number=57
+    prog.cx(input_qubit[2],input_qubit[1]) # number=63
+    prog.h(input_qubit[1]) # number=24
+    prog.z(input_qubit[2]) # number=3
+    prog.cx(input_qubit[2],input_qubit[1]) # number=70
+    prog.z(input_qubit[1]) # number=41
+    prog.x(input_qubit[1]) # number=17
+    prog.y(input_qubit[2]) # number=5
+    prog.x(input_qubit[2]) # number=21
 
-    Zf = build_oracle(n, f)
-
-    repeat = floor(sqrt(2 ** n) * pi / 4)
-    for i in range(1):
-        prog.append(Zf.to_gate(), [input_qubit[i] for i in range(n)])
-        prog.h(input_qubit[0])  # number=1
-        prog.h(input_qubit[1])  # number=2
-        prog.h(input_qubit[2])  # number=7
-        prog.h(input_qubit[3])  # number=8
-
-
-        prog.x(input_qubit[0])  # number=9
-        prog.cx(input_qubit[0],input_qubit[1])  # number=28
-        prog.h(input_qubit[4]) # number=31
-        prog.x(input_qubit[1])  # number=29
-        prog.cx(input_qubit[0],input_qubit[1])  # number=30
-        prog.cx(input_qubit[0],input_qubit[2])  # number=22
-        prog.cx(input_qubit[0],input_qubit[2])  # number=25
-        prog.x(input_qubit[2])  # number=26
-        prog.h(input_qubit[2])  # number=32
-        prog.cz(input_qubit[0],input_qubit[2])  # number=33
-        prog.h(input_qubit[2])  # number=34
-        prog.cx(input_qubit[0],input_qubit[2])  # number=24
-        prog.x(input_qubit[3])  # number=12
-
-        if n>=2:
-            prog.mcu1(pi,input_qubit[1:],input_qubit[0])
-
-        prog.x(input_qubit[0])  # number=13
-        prog.x(input_qubit[1])  # number=14
-        prog.x(input_qubit[2])  # number=15
-        prog.x(input_qubit[3])  # number=16
-
-
-        prog.h(input_qubit[0])  # number=17
-        prog.h(input_qubit[1])  # number=18
-        prog.h(input_qubit[2])  # number=19
-        prog.h(input_qubit[3])  # number=20
-
-        prog.h(input_qubit[0])  
-        prog.h(input_qubit[1])
-        prog.h(input_qubit[2])
-        prog.h(input_qubit[3])
-
-
-    # circuit end
-
+    # apply H to get superposition
     for i in range(n):
-        prog.measure(input_qubit[i], classical[i])
+        prog.h(input_qubit[i])
+    prog.h(input_qubit[n])
+    prog.barrier()
 
+    # apply oracle O_f
+    oracle = build_oracle(n, f)
+    prog.append(
+        oracle.to_gate(),
+        [input_qubit[i] for i in range(n)] + [input_qubit[n]])
+
+    # apply H back (QFT on Z_2^n)
+    for i in range(n):
+        prog.h(input_qubit[i])
+    prog.barrier()
+
+    # measure
 
     return prog
 
 
+def get_statevector(prog: QuantumCircuit) -> Any:
+    state_backend = Aer.get_backend('statevector_simulator')
+    statevec = execute(prog, state_backend).result()
+    quantum_state = statevec.get_statevector()
+    qubits = round(log2(len(quantum_state)))
+    quantum_state = {
+        "|" + np.binary_repr(i, qubits) + ">": quantum_state[i]
+        for i in range(2 ** qubits)
+    }
+    return quantum_state
 
 
-if __name__ == '__main__':
-    key = "00000"
-    f = lambda rep: str(int(rep == key))
-    prog = make_circuit(5,f)
+def evaluate(backend_str: str, prog: QuantumCircuit, shots: int, b: str) -> Any:
+    # Q: which backend should we use?
+
+    # get state vector
+    quantum_state = get_statevector(prog)
+
+    # get simulate results
+
+    # provider = IBMQ.load_account()
+    # backend = provider.get_backend(backend_str)
+    # qobj = compile(prog, backend, shots)
+    # job = backend.run(qobj)
+    # job.result()
+    backend = Aer.get_backend(backend_str)
+    # transpile/schedule -> assemble -> backend.run
+    results = execute(prog, backend, shots=shots).result()
+    counts = results.get_counts()
+    a = Counter(counts).most_common(1)[0][0][::-1]
+
+    return {
+        "measurements": counts,
+        # "state": statevec,
+        "quantum_state": quantum_state,
+        "a": a,
+        "b": b
+    }
+
+
+def bernstein_test_1(rep: str):
+    """011 . x + 1"""
+    a = "011"
+    b = "1"
+    return bitwise_xor(bitwise_dot(a, rep), b)
+
+
+def bernstein_test_2(rep: str):
+    """000 . x + 0"""
+    a = "000"
+    b = "0"
+    return bitwise_xor(bitwise_dot(a, rep), b)
+
+
+def bernstein_test_3(rep: str):
+    """111 . x + 1"""
+    a = "111"
+    b = "1"
+    return bitwise_xor(bitwise_dot(a, rep), b)
+
+
+if __name__ == "__main__":
+    n = 2
+    a = "11"
+    b = "1"
+    f = lambda rep: \
+        bitwise_xor(bitwise_dot(a, rep), b)
+    prog = build_circuit(n, f)
+    sample_shot =4000
+    writefile = open("../data/startQiskit_QC399.csv", "w")
+    # prog.draw('mpl', filename=(kernel + '.png'))
     IBMQ.load_account() 
     provider = IBMQ.get_provider(hub='ibm-q') 
     provider.backends()
-    backend = least_busy(provider.backends(filters=lambda x: x.configuration().n_qubits >= 2 and not x.configuration().simulator and x.status().operational == True))
-    sample_shot =7924
+    backend = provider.get_backend("ibmq_5_yorktown")
 
-    info = execute(prog, backend=backend, shots=sample_shot).result().get_counts()
-    backend = FakeVigo()
-    circuit1 = transpile(prog,backend,optimization_level=2)
+    circuit1 = transpile(prog, FakeYorktown())
+    circuit1.h(qubit=2)
+    circuit1.x(qubit=3)
+    circuit1.measure_all()
 
-    writefile = open("../data/startQiskit_QC399.csv","w")
-    print(info,file=writefile)
+    info = execute(circuit1,backend=backend, shots=sample_shot).result().get_counts()
+
+    print(info, file=writefile)
     print("results end", file=writefile)
-    print(circuit1.depth(),file=writefile)
-    print(circuit1,file=writefile)
+    print(circuit1.depth(), file=writefile)
+    print(circuit1, file=writefile)
     writefile.close()

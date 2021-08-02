@@ -86,8 +86,8 @@ def two_Y(tab:str, qubit_number:int, number:int):
            tab + "prog.y(input_qubit[" + str(qubit_number) + "]) # number=" + str(number + 1) + "\n"
 
 def two_CNOT(tab:str, qubit_number:int, number:int):
-    return tab+ "prog.cx(input_qubit["+str(qubit_number)+"],input_qubit[0]) # number=" + str(number) +"\n" +\
-           tab+ "prog.cx(input_qubit["+str(qubit_number)+"],input_qubit[0]) # number=" + str(number+1) +"\n"
+    return tab+ "prog.cx(input_qubit[1],input_qubit[0]) # number=" + str(number) +"\n" +\
+           tab+ "prog.cx(input_qubit[1],input_qubit[0]) # number=" + str(number+1) +"\n" #should be input_qubit[str(qubit_number)]
 
 def two_SWAP(tab:str, qubit_number:int, number:int):
     return tab + "prog.swap(input_qubit[" + str(qubit_number) + "],input_qubit[0]) # number=" + str(number) + "\n" + \

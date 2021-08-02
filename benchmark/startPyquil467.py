@@ -1,5 +1,5 @@
-# qubit number=5
-# total number=34
+# qubit number=1
+# total number=28
 import pyquil
 from pyquil.api import local_forest_runtime, QVMConnection
 from pyquil import Program, get_qc
@@ -14,40 +14,34 @@ def make_circuit()-> Program:
 
 
 
-    prog += H(0)  # number=3
-    prog += H(1) # number=4
-    prog += H(2) # number=5
-    prog += H(3)  # number=6
-    prog += H(4)  # number=21
+    prog += X(0)  # number=1
+    prog += Y(0) # number=21
+    prog += RX(1.6807520696705391,0) # number=15
 
-    prog += H(0)  # number=1
-    prog += H(1)  # number=2
-        prog += H(4) # number=27
-    prog += H(2)  # number=7
-    prog += H(3)  # number=8
-
-    prog += H(0)  # number=31
-    prog += CZ(1,0)  # number=32
-    prog += H(0)  # number=33
-    prog += X(0)  # number=29
-    prog += CNOT(1,0)  # number=30
-    prog += X(1)  # number=10
-    prog += CNOT(0,2)  # number=22
-    prog += X(2)  # number=23
-    prog += CNOT(0,2)  # number=24
-    prog += X(3)  # number=12
-
-    prog += X(0)  # number=13
-    prog += X(1)  # number=14
-    prog += X(2)  # number=15
-        prog += Y(1) # number=26
-    prog += X(3)  # number=16
-
-    prog += H(0)  # number=17
-        prog += CNOT(4,2) # number=25
-    prog += H(1)  # number=18
-    prog += H(2)  # number=19
-    prog += H(3)  # number=20
+    prog += Y(0) # number=2
+    prog += H(0) # number=7
+    prog += Y(0) # number=3
+    prog += Y(0) # number=10
+    prog += H(0) # number=4
+    prog += Y(0) # number=5
+    prog += Y(0) # number=6
+    prog += Y(0) # number=8
+    prog += Y(0) # number=9
+    prog += X(0) # number=11
+    prog += X(0) # number=12
+    prog += X(0) # number=13
+    prog += X(0) # number=14
+    prog += Y(0) # number=16
+    prog += Y(0) # number=17
+    prog += Y(0) # number=20
+    prog += Y(0) # number=18
+    prog += Y(0) # number=19
+    prog += X(0) # number=22
+    prog += X(0) # number=23
+    prog += X(0) # number=24
+    prog += X(0) # number=25
+    prog += Y(0) # number=26
+    prog += Y(0) # number=27
     # circuit end
 
     return prog
@@ -64,7 +58,7 @@ def summrise_results(bitstrings) -> dict:
 
 if __name__ == '__main__':
     prog = make_circuit()
-    qvm = get_qc('5q-qvm')
+    qvm = get_qc('1q-qvm')
 
     results = qvm.run_and_measure(prog,1024)
     bitstrings = np.vstack([results[i] for i in qvm.qubits()]).T

@@ -22,7 +22,9 @@ transitionBackend: Backend transformation.
 
 In order to run QDiff, you'll need to install Qiskit, Cirq, and Pyquil first. If you want to use IBM quantum computer, you need to register an IBM account.
 
-## First Try:
+You can start QDiff directly with the default seed programs:
+
+python3 ./beginTest/QTest.py
 
 ## Write your own seed program:
 

@@ -3,8 +3,8 @@
 # @Time    : 5/15/20 4:49 PM
 # @File    : grover.py
 
-# qubit number=5
-# total number=37
+# qubit number=3
+# total number=83
 import cirq
 import cirq.google as cg
 from typing import Optional
@@ -20,42 +20,71 @@ from cirq.contrib.svg import SVGCircuit
 def make_circuit(n: int, input_qubit):
     c = cirq.Circuit()  # circuit begin
 
-    c.append(cirq.H.on(input_qubit[0]))  # number=3
-    c.append(cirq.H.on(input_qubit[1]))  # number=4
-    c.append(cirq.H.on(input_qubit[2]))  # number=5
-    c.append(cirq.H.on(input_qubit[3]))  # number=6
-    c.append(cirq.H.on(input_qubit[4]))  # number=21
-    for i in range(2):
-        c.append(cirq.H.on(input_qubit[0]))  # number=1
-        c.append(cirq.H.on(input_qubit[1]))  # number=2
-        c.append(cirq.H.on(input_qubit[2]))  # number=7
-        c.append(cirq.H.on(input_qubit[3]))  # number=8
+    c.append(cirq.H.on(input_qubit[0]))  # number=1
+    c.append(cirq.H.on(input_qubit[1])) # number=70
+    c.append(cirq.rx(-0.09738937226128368).on(input_qubit[2])) # number=2
+    c.append(cirq.H.on(input_qubit[1])) # number=33
+    c.append(cirq.Y.on(input_qubit[2])) # number=56
+    c.append(cirq.CZ.on(input_qubit[2],input_qubit[1])) # number=34
+    c.append(cirq.H.on(input_qubit[1])) # number=35
+    c.append(cirq.H.on(input_qubit[1])) # number=3
 
-        c.append(cirq.H.on(input_qubit[0]))  # number=17
-        c.append(cirq.H.on(input_qubit[1]))  # number=18
-        c.append(cirq.H.on(input_qubit[2]))  # number=19
-        c.append(cirq.H.on(input_qubit[3]))  # number=20
-
-        c.append(cirq.CNOT.on(input_qubit[1],input_qubit[0]))  # number=22
-        c.append(cirq.H.on(input_qubit[0]))  # number=28
-        c.append(cirq.CZ.on(input_qubit[1],input_qubit[0]))  # number=29
-        c.append(cirq.H.on(input_qubit[0]))  # number=30
-        c.append(cirq.H.on(input_qubit[0]))  # number=34
-        c.append(cirq.CZ.on(input_qubit[1],input_qubit[0]))  # number=35
-        c.append(cirq.H.on(input_qubit[0]))  # number=36
-        c.append(cirq.X.on(input_qubit[0]))  # number=32
-        c.append(cirq.CNOT.on(input_qubit[1],input_qubit[0]))  # number=33
-        c.append(cirq.CNOT.on(input_qubit[1],input_qubit[0]))  # number=27
-        c.append(cirq.CNOT.on(input_qubit[1],input_qubit[0]))  # number=24
-        c.append(cirq.X.on(input_qubit[1]))  # number=10
-        c.append(cirq.X.on(input_qubit[2]))  # number=11
-        c.append(cirq.X.on(input_qubit[3]))  # number=12
-
-        c.append(cirq.X.on(input_qubit[0]))  # number=13
-        c.append(cirq.X.on(input_qubit[1]))  # number=14
-        c.append(cirq.X.on(input_qubit[2]))  # number=15
-        c.append(cirq.X.on(input_qubit[3]))  # number=16
-
+    c.append(cirq.H.on(input_qubit[0])) # number=45
+    c.append(cirq.H.on(input_qubit[1])) # number=77
+    c.append(cirq.CZ.on(input_qubit[2],input_qubit[1])) # number=78
+    c.append(cirq.H.on(input_qubit[1])) # number=79
+    c.append(cirq.CZ.on(input_qubit[1],input_qubit[0])) # number=46
+    c.append(cirq.H.on(input_qubit[0])) # number=47
+    c.append(cirq.Y.on(input_qubit[1])) # number=15
+    c.append(cirq.H.on(input_qubit[0])) # number=66
+    c.append(cirq.CZ.on(input_qubit[1],input_qubit[0])) # number=67
+    c.append(cirq.H.on(input_qubit[0])) # number=68
+    c.append(cirq.H.on(input_qubit[1])) # number=19
+    c.append(cirq.CZ.on(input_qubit[0],input_qubit[1])) # number=20
+    c.append(cirq.rx(-0.6000441968356504).on(input_qubit[1])) # number=28
+    c.append(cirq.H.on(input_qubit[1])) # number=21
+    c.append(cirq.H.on(input_qubit[1])) # number=30
+    c.append(cirq.CZ.on(input_qubit[0],input_qubit[1])) # number=31
+    c.append(cirq.H.on(input_qubit[1])) # number=32
+    c.append(cirq.H.on(input_qubit[1])) # number=57
+    c.append(cirq.CZ.on(input_qubit[0],input_qubit[1])) # number=58
+    c.append(cirq.H.on(input_qubit[1])) # number=59
+    c.append(cirq.CNOT.on(input_qubit[0],input_qubit[1])) # number=51
+    c.append(cirq.CNOT.on(input_qubit[0],input_qubit[1])) # number=71
+    c.append(cirq.X.on(input_qubit[1])) # number=72
+    c.append(cirq.CNOT.on(input_qubit[0],input_qubit[1])) # number=73
+    c.append(cirq.CNOT.on(input_qubit[0],input_qubit[1])) # number=53
+    c.append(cirq.CNOT.on(input_qubit[0],input_qubit[1])) # number=50
+    c.append(cirq.Y.on(input_qubit[2])) # number=69
+    c.append(cirq.H.on(input_qubit[2])) # number=29
+    c.append(cirq.H.on(input_qubit[1])) # number=36
+    c.append(cirq.X.on(input_qubit[1])) # number=64
+    c.append(cirq.CZ.on(input_qubit[0],input_qubit[1])) # number=37
+    c.append(cirq.Y.on(input_qubit[2])) # number=44
+    c.append(cirq.H.on(input_qubit[1])) # number=38
+    c.append(cirq.Z.on(input_qubit[1])) # number=55
+    c.append(cirq.H.on(input_qubit[1])) # number=61
+    c.append(cirq.CZ.on(input_qubit[0],input_qubit[1])) # number=62
+    c.append(cirq.CNOT.on(input_qubit[2],input_qubit[0])) # number=80
+    c.append(cirq.Z.on(input_qubit[2])) # number=81
+    c.append(cirq.CNOT.on(input_qubit[2],input_qubit[0])) # number=82
+    c.append(cirq.H.on(input_qubit[1])) # number=63
+    c.append(cirq.Z.on(input_qubit[1])) # number=11
+    c.append(cirq.rx(-1.1780972450961724).on(input_qubit[2])) # number=54
+    c.append(cirq.H.on(input_qubit[1])) # number=42
+    c.append(cirq.H.on(input_qubit[0])) # number=39
+    c.append(cirq.CZ.on(input_qubit[1],input_qubit[0])) # number=40
+    c.append(cirq.H.on(input_qubit[0])) # number=41
+    c.append(cirq.CNOT.on(input_qubit[2],input_qubit[1])) # number=26
+    c.append(cirq.Y.on(input_qubit[1])) # number=14
+    c.append(cirq.CNOT.on(input_qubit[1],input_qubit[0])) # number=5
+    c.append(cirq.CNOT.on(input_qubit[0],input_qubit[1])) # number=74
+    c.append(cirq.X.on(input_qubit[1])) # number=75
+    c.append(cirq.CNOT.on(input_qubit[0],input_qubit[1])) # number=76
+    c.append(cirq.Z.on(input_qubit[1])) # number=8
+    c.append(cirq.X.on(input_qubit[1])) # number=7
+    c.append(cirq.H.on(input_qubit[2])) # number=43
+    c.append(cirq.rx(-2.42845112122491).on(input_qubit[1])) # number=25
     # circuit end
 
     c.append(cirq.measure(*input_qubit, key='result'))
@@ -66,7 +95,7 @@ def bitstring(bits):
     return ''.join(str(int(b)) for b in bits)
 
 if __name__ == '__main__':
-    qubit_count = 5
+    qubit_count = 4
 
     input_qubits = [cirq.GridQubit(i, 0) for i in range(qubit_count)]
     circuit = make_circuit(qubit_count,input_qubits)

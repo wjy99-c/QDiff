@@ -126,7 +126,7 @@ if __name__ == '__main__':
     provider = IBMQ.get_provider(hub='ibm-q') 
     provider.backends()
     backend = least_busy(provider.backends(filters=lambda x: x.configuration().n_qubits >= 2 and not x.configuration().simulator and x.status().operational == True))
-    sample_shot =7924
+    sample_shot =8924
 
     info = execute(prog, backend=backend, shots=sample_shot).result().get_counts()
     backend = FakeVigo()
