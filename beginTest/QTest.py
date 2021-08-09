@@ -1,7 +1,7 @@
 
 
 """
-TODO: Add restriction on circuit length
+TODO: Add threshold for each quantum computer on circuit length
 
 """
 
@@ -11,6 +11,7 @@ Cirq_t = [0.118,0.079,0.060,0.044,0.030,0.025]
 Qiskit_t = [0.090,0.079,0.057,0.046,0.029,0.026]
 Pyquil_t = [0.102,0.084,0.062,0.042,0.028,0.023]
 logfile = open("../testing record.txt","w+")
+twoq_gate_number = -1
 import transitionBackend.acrossbackendCirq as acC
 import transitionBackend.acrossbackendPyquil as acP
 import transitionBackend.acrossbackendQiskit as acQ
@@ -104,8 +105,17 @@ def read_max_qubit_state(address:str, qubit_number:int)->(float,float):
 
     return max(data), qubit_state, length, circuit
 
-def filter():
+def filter(circuit:str, two_qgate_number_ini:int, circuit_depth:int, threshold_circuit_depth:int, threshold2gate:int)->int:
+    two_qpattern = re.compile('■')
+    result =  two_qpattern.findall(circuit)
+    if circuit_depth>threshold_circuit_depth:
+        return -1
+    if two_qgate_number_ini == -1:
+        return result.__len__()
+    if abs(result.__len__()-two_qgate_number_ini)>threshold2gate:
+        return -1
     return 0
+
 
 
 def backend_loop(out_num:int, queue:[]):
@@ -129,6 +139,14 @@ def backend_loop(out_num:int, queue:[]):
             print("Same circuit, skip!!")
             return "same"
 
+    '''
+    filter_flag = filter(circuit=circuit_picture,two_qgate_number_ini=twoq_gate_number,circuit_depth=round(circuit_length),threshold_circuit_depth=100,threshold2gate=10)<0
+    if filter_flag<0:
+        return "filtered"
+    elif filter_flag>0:
+        global twoq_gate_number
+        twoq_gate_number = filter_flag
+    '''
     #repetition_number = 5200 #should be change;
     qiskitP0 = transitionBackend.Qiskitbackend.change_repetition("../benchmark/startQiskit" + str(out_num) + ".py",repetition_number) #change repetition number
     qiskitP1 = transitionBackend.Qiskitbackend.change_repetition("../benchmark/"+qiskitP1,repetition_number)
@@ -256,7 +274,7 @@ if __name__ == '__main__':
             total_identical_circuit+=1
 
         flag_see_wrong = 0
-
+        twoq_gate_number = -1
 
 
 
@@ -281,7 +299,7 @@ if __name__ == '__main__':
             diff = calculate_results("data",5)#qubit_number) # calculate the K-S statics
             print("K-S Diff:", diff,file=logfile)
             print("K-S Diff:", diff)
-            if diff > thershold_const: #should be thershold_const
+            if diff > thershold_const:
                 flag_see_wrong = 1
 
             if diff > max_now:

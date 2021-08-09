@@ -185,9 +185,11 @@ def mutate_start (address_in : str, seed:int, write:int):
             flag = 0
 
         if flag == random_number:
+
             if line!="\n":
                 tab = figure_out_tab(line)
             i = random.randint(1,2)
+
             if i == 1:
                 if qubit_number == 0:
                     print(" Error: No Qubit")
@@ -201,12 +203,13 @@ def mutate_start (address_in : str, seed:int, write:int):
                 print("Mutation"+str(write)+":"+cirq_line)
                 return 1
 
-            if (i == 2) & (total_operation_id.search(line) is not None):
+            if (i == 2) & (total_number>0):
                 readfile.close()
                 generate_same_delete(flag,pyquil_address_in,"../benchmark/startPyquil"+str(write)+".py")
                 generate_same_delete(flag,qiskit_address_in,"../benchmark/startQiskit"+str(write)+".py")
                 generate_same_delete(flag,cirq_address_in,"../benchmark/startCirq"+str(write)+".py")
 
+                print("Mutation" + str(write) + ":" + str(flag))
                 return 1
 
         line = readfile.readline()
