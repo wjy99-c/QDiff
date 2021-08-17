@@ -25,9 +25,3 @@ In order to run QDiff, you'll need to install Qiskit, Cirq, and Pyquil first. If
 You can start QDiff directly with the default seed programs:
 
 python3 ./beginTest/QTest.py
-
-## Write your own seed program:
-
-## Write your own mutation operators:
-
-## Write your own transformation rules:
