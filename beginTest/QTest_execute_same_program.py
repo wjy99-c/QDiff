@@ -1,6 +1,6 @@
 
 
-logfile = open("../testing record.txt","w+")
+logfile = open("../testing_record.txt","w+")
 import transitionBackend.acrossbackendCirq as acC
 import transitionBackend.acrossbackendPyquil as acP
 import transitionBackend.acrossbackendQiskit as acQ
