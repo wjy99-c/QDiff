@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qdiff-testing"
+version = "0.2.0"
+description = "Reproducible differential and metamorphic testing of quantum SDKs"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = ["numpy>=2.2,<3"]
+
+[project.optional-dependencies]
+qiskit = ["qiskit>=2.6,<3", "qiskit-aer>=0.18,<1"]
+cirq = ["cirq-core>=1.7,<2"]
+pyquil = ["pyquil>=4.22,<5"]
+all = [
+    "qiskit>=2.6,<3",
+    "qiskit-aer>=0.18,<1",
+    "cirq-core>=1.7,<2",
+    "pyquil>=4.22,<5",
+]
+dev = ["pytest>=8,<10", "ruff>=0.14,<1", "build>=1,<2"]
+
+[project.scripts]
+qdiff = "qdiff.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+include = ["src/**/*.py", "tests/**/*.py", "beginTest/QTest.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]

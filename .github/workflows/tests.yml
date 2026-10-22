@@ -1,0 +1,55 @@
+name: Current SDK tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            src
+            tests
+            examples
+            docs
+            requirements
+            beginTest
+            .github
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install current supported SDK releases
+        run: python -m pip install -e '.[all,dev]'
+      - name: Record versions
+        run: qdiff doctor
+      - name: Lint and test
+        run: |
+          ruff check src tests beginTest/QTest.py
+          ruff format --check src tests beginTest/QTest.py
+          python -m pytest
+      - name: CLI smoke and replay
+        run: |
+          qdiff run --input examples/asymmetric.json --cases 1 --variants 2 --shots 256 --output results/smoke
+          qdiff replay results/smoke/case-0000 --output results/replay
+          python beginTest/QTest.py --backends qiskit --cases 1 --variants 1 --shots 128 --output results/legacy-entry
+      - name: Build wheel and source distribution
+        run: python -m build
+      - name: Retain smoke evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qdiff-python-${{ matrix.python }}
+          path: results/
