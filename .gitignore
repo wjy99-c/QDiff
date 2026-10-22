@@ -1,2 +1,12 @@
 /.idea/
 .DS_Store
+__pycache__/
+*.py[cod]
+.venv*/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+/build/
+/dist/
+/results/
+/hardware-runs/

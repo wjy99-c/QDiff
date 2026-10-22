@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "num_qubits": 3,
+  "gates": [
+    {"gate": "ry", "qubits": [0], "params": [0.37]},
+    {"gate": "rx", "qubits": [2], "params": [-0.91]},
+    {"gate": "cx", "qubits": [2, 1]},
+    {"gate": "p", "qubits": [1], "params": [0.73]},
+    {"gate": "swap", "qubits": [0, 2]}
+  ]
+}

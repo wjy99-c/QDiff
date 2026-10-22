@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "num_qubits": 2,
+  "gates": [
+    {"gate": "h", "qubits": [0]},
+    {"gate": "cx", "qubits": [0, 1]}
+  ]
+}
